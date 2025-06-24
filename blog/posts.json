@@ -1,0 +1,82 @@
+{
+  "posts": [
+    {
+      "id": "tipy-pro-uspesny-pronajem",
+      "title": "10 tipů pro úspěšný pronájem nemovitosti",
+      "excerpt": "Objevte osvědčené strategie, které vám pomohou najít spolehlivé nájemníky a maximalizovat výnos z vaší nemovitosti.",
+      "category": "tips",
+      "categoryName": "Tipy & Triky",
+      "image": "/images/blog/clanek1.png",
+      "imageAlt": "Klíče od bytu a podpis nájemní smlouvy",
+      "date": "2024-12-20",
+      "dateFormatted": "20. prosince 2024",
+      "readTime": 8,
+      "keywords": "pronájem nemovitosti, nájemníci, tipy, strategie"
+    },
+    {
+      "id": "pravni-aspekty-najemni-smlouvy",
+      "title": "Právní aspekty nájemní smlouvy, které musíte znát",
+      "excerpt": "Kompletní průvodce právními náležitostmi nájemní smlouvy. Vyvarujte se chyb, které mohou stát tisíce korun.",
+      "category": "legal",
+      "categoryName": "Právní rady",
+      "image": "/images/blog/clanek2.png",
+      "imageAlt": "Právní dokumenty a smlouva",
+      "date": "2024-12-15",
+      "dateFormatted": "15. prosince 2024",
+      "readTime": 12,
+      "keywords": "nájemní smlouva, právo, právní aspekty, smlouva"
+    },
+    {
+      "id": "jak-stanovit-spravedlivou-cenu-najmu",
+      "title": "Jak stanovit spravedlivou cenu nájmu",
+      "excerpt": "Praktický návod na stanovení optimální ceny nájemného. Analýza trhu, faktory ovlivňující cenu a kalkulace nákladů.",
+      "category": "market",
+      "categoryName": "Trh & Finance",
+      "image": "/images/blog/clanek3.png",
+      "imageAlt": "Kalkulačka a grafy s cenami nemovitostí",
+      "date": "2024-12-10",
+      "dateFormatted": "10. prosince 2024",
+      "readTime": 10,
+      "keywords": "cena nájmu, tržní cena, kalkulace, oceňování"
+    },
+    {
+      "id": "dane-z-pronajmu-kompletni-pruvodce",
+      "title": "Daně z pronájmu: Kompletní průvodce pro rok 2024",
+      "excerpt": "Vše co potřebujete vědět o zdanění příjmů z pronájmu nemovitosti. Výdaje, které si můžete odečíst a jak ušetřit.",
+      "category": "legal",
+      "categoryName": "Právní rady", 
+      "image": "/images/blog/clanek4.png",
+      "imageAlt": "Daňové formuláře a kalkulačka",
+      "date": "2024-12-05",
+      "dateFormatted": "5. prosince 2024",
+      "readTime": 15,
+      "keywords": "daně, pronájem, daňové přiznání, výdaje"
+    },
+    {
+      "id": "pojisteni-nemovitosti-pro-pronajmatele",
+      "title": "Pojištění nemovitosti pro pronajímatele",
+      "excerpt": "Jaké pojištění potřebujete jako pronajímatel? Porovnání typů pojištění a tipy pro výběr správné pojistky.",
+      "category": "tips",
+      "categoryName": "Tipy & Triky",
+      "image": "/images/blog/clanek5.png",
+      "imageAlt": "Dům pod ochranným deštníkem",
+      "date": "2024-11-28",
+      "dateFormatted": "28. listopadu 2024",
+      "readTime": 7,
+      "keywords": "pojištění, pronajímatel, ochrana majetku, pojistka"
+    },
+    {
+      "id": "trendy-najemniho-bydleni-2024",
+      "title": "Trendy nájemního bydlení v roce 2024",
+      "excerpt": "Aktuální trendy na trhu s nájemním bydlením. Co chtějí nájemníci a jak přizpůsobit svou nabídku poptávce.",
+      "category": "market",
+      "categoryName": "Trh & Finance",
+      "image": "/images/blog/clanek6.png",
+      "imageAlt": "Moderní byt s designovým nábytkem",
+      "date": "2024-11-20",
+      "dateFormatted": "20. listopadu 2024",
+      "readTime": 9,
+      "keywords": "trendy, nájemní bydlení, trh, poptávka"
+    }
+  ]
+}

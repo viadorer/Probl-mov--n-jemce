@@ -1,0 +1,42 @@
+<nav class="bg-white/80 backdrop-blur-md fixed w-full z-50 transition-all duration-300" x-data="{ isScrolled: false, isOpen: false }" @scroll.window="isScrolled = window.pageYOffset > 20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-20" :class="{ 'h-16': isScrolled }">
+            <div class="flex items-center">
+                <a href="/" class="flex-shrink-0 flex items-center space-x-3">
+                    <img class="h-12 w-12 transition-all duration-300 rounded-full shadow-md object-cover" :class="{ 'h-8 w-8': isScrolled }" src="images/logo.png" alt="Problémový nájemník">
+                    <span class="text-xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">Problémový nájemník</span>
+                </a>
+            </div>
+            <div class="flex items-center">
+                <!-- Mobile menu button -->
+                <button type="button" class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-500" @click="isOpen = !isOpen" aria-controls="mobile-menu" aria-expanded="false">
+                    <span class="sr-only">Otevřít menu</span>
+                    <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+
+                <!-- Mobile menu -->
+                <div x-show="isOpen" class="md:hidden absolute top-full left-0 w-full bg-white shadow-lg py-2">
+                    <div class="px-4 pt-2 pb-3 space-y-1">
+                        <a href="#vyresit-problem" class="text-gray-700 hover:text-gray-900 block px-3 py-2 text-base font-medium transition-colors duration-200">Vyřešit problém</a>
+                        <a href="#budu-pronajimat" class="text-gray-700 hover:text-gray-900 block px-3 py-2 text-base font-medium transition-colors duration-200">Budu pronajímat</a>
+                        <a href="#calculator" class="text-gray-700 hover:text-gray-900 block px-3 py-2 text-base font-medium transition-colors duration-200">Kalkulačka nákladů</a>
+                        <a href="/blog.html" class="text-gray-700 hover:text-gray-900 block px-3 py-2 text-base font-medium transition-colors duration-200">Blog</a>
+                        <a href="#konzultace" class="text-gray-700 hover:text-gray-900 block px-3 py-2 text-base font-medium transition-colors duration-200">Konzultace</a>
+                        <a href="#kontakt" class="text-gray-700 hover:text-gray-900 block px-3 py-2 text-base font-medium transition-colors duration-200">Kontakt</a>
+                    </div>
+                </div>
+
+                <div class="hidden md:flex md:space-x-8">
+                    <a href="#vyresit-problem" class="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors duration-200">Vyřešit problém</a>
+                    <a href="#budu-pronajimat" class="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors duration-200">Budu pronájímat</a>
+                    <a href="#calculator" class="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors duration-200">Kalkulačka nákladů</a>
+                    <a href="blog.html" class="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors duration-200">Blog</a>
+                    <a href="#konzultace" class="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors duration-200">Konzultace</a>
+                    <a href="#kontakt" class="ml-8 inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-full text-white bg-gray-900 hover:bg-gray-800 transition-colors duration-200">Kontakt</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
