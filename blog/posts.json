@@ -1,6 +1,19 @@
 {
   "posts": [
     {
+      "id": "past-na-neplatice-a-vandaly-3krokova-proverka",
+      "title": "Past na neplatiče a vandaly: Jak naše 3kroková prověrka chrání vaši nemovitost (a váš klid) už před podpisem smlouvy!",
+      "excerpt": "Objevte naši osvědčenou 3krokovou metodu prověřování nájemníků, která funguje jako neprůstřelný štít proti problémovým nájemníkům. Prevence je milionkrát levnější než řešení následků.",
+      "category": "tips",
+      "categoryName": "Tipy & Triky",
+      "image": "/images/blog/clanek7.png",
+      "imageAlt": "Prověřování dokumentů a podpis smlouvy",
+      "date": "2024-12-24",
+      "dateFormatted": "24. prosince 2024",
+      "readTime": 12,
+      "keywords": "prověřování nájemníků, solventnost, reference, problémový nájemník, prevence"
+    },
+    {
       "id": "tipy-pro-uspesny-pronajem",
       "title": "10 tipů pro úspěšný pronájem nemovitosti",
       "excerpt": "Objevte osvědčené strategie, které vám pomohou najít spolehlivé nájemníky a maximalizovat výnos z vaší nemovitosti.",
