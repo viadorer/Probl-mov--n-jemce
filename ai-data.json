@@ -1,0 +1,45 @@
+{
+  "@context": "https://schema.org",
+  "generatedAt": "2026-03-06T20:27:01.637Z",
+  "generatedBy": "Hugo Orchestrator AIO Engine",
+  "projectType": "html",
+  "schemas": {
+    "organization": {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Problémový nájemník",
+      "description": "Průvodce pro majitele bytů řešící obtížné situace s nájemníky v ČR. Právní postupy, vzory dokumentů, kalkulačky.",
+      "keywords": "problémový nájemník, neplacení nájmu, výpověď z nájmu, vystěhování nájemníka, práva pronajímatele, občanský zákoník, nájemní smlouva"
+    },
+    "faq": {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Co je cílem stránky Problémový nájemník?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cílem stránky je poradit pronajímatelům, jak správně vybrat nájemníka a jak postupovat v případě problémů. Nabízí odborné rady a právní podporu pro klidný pronájem."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Pro koho je stránka Problémový nájemník určena?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Stránka je určena pro majitele nemovitostí k pronájmu, tedy pronajímatele."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Jaké informace stránka Problémový nájemník nabízí?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Stránka nabízí rady ohledně výběru nájemníka a postupu při problémech, odborné rady a právní podporu pro pronajímatele."
+          }
+        }
+      ]
+    }
+  }
+}
