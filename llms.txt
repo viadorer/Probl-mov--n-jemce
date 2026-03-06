@@ -1,0 +1,74 @@
+# Problémový nájemník
+
+> Průvodce pro majitele bytů řešící obtížné situace s nájemníky v ČR. Právní postupy, vzory dokumentů, kalkulačky.
+
+## Pro koho
+- Segmenty majitelů: Témata: Investor (35-55, 1-3 byty, čas=peníze). Dědic (45-65, neumí pronajímat). Expat (30-50, vzdálená správa). Senior (60-80, starší přístup). Prvopronajímatel (25-45, důvěřivý). Rozvedený/á (35-55,...
+- Bolesti majitelů – akutní fáze: Témata: Nájemník přestal platit (dluh 1-6 měsíců). Poškozená nemovitost. Odmítá opustit byt. Podnajímá bez souhlasu. Havárie a spory. Právní nejistota. Vzdálená správa selhává. Potřebují OKAMŽITĚ vědě...
+- Bolesti majitelů – preventivní fáze: Témata: Jak prověřit nájemníka. Pochybnosti o smlouvě. Předání bytu. Pronajímají poprvé. Zdědili nemovitost. Nejcennější leadové – otevření změnám před problémem.
+
+## Případové studie
+- Vzorec: Preventivní příběh: Témata: Segment majitele. Co udělal před problémem (prověření/smlouva/protokol/fotodokumentace). Jak se to vyplatilo (konkrétní situace, kde to pomohlo). Čísla (ušetřený čas/peníze). Poučení. Anonymiz...
+- Vzorec: Úspěšné řešení: Témata: Segment majitele. Problém (konkrétní situace). Jak postupoval (kroky 1-2-3). Čísla (časová osa, náklady). Výsledek (vyřešeno jak). Klíč k úspěchu (co bylo rozhodující). Anonymizováno.
+- Vzorec: Náklady vs prevence: Témata: Náklady problému (soud 20-60k, škoda 30-80k, vakance 6-12 měsíců, čas správy). Náklady prevence (prověření 500-2000 Kč, kvalitní smlouva 3-5k, fotodokumentace 0 Kč). Rozdíl. ROI prevence. Orie...
+- Vzorec: Problémový příběh: Témata: Segment majitele (investor/dědic/expat/senior/prvopronajímatel). Problém (neplatič/škoda/odmítá odejít/podnájem). Chyba (co udělal špatně). Důsledek (čísla - čas, náklady, ztráta). Poučení (co...
+- Vzorec: Timeline problému: Témata: Den 0 (co se stalo). Týden 1 (první reakce). Měsíc 1-3 (eskalace). Měsíc 3-6 (právní kroky). Měsíc 6-12 (soud). Celkem (čas, náklady, ztráta). Co mohlo být jinak. Čísla povinná.
+- Vzorec: Srovnání scénářů: Témata: Scénář A (majitel bez přípravy): co neudělal, co se stalo, čísla (čas, náklady). Scénář B (majitel s přípravou): co udělal, jak to dopadlo, čísla. Rozdíl (ušetřený čas/peníze/stres). Poučení.
+
+## Data a statistiky
+- Náklady vlastní správy: Témata: Kalkulace 2+kk Praha, nájem 20k/měs, 3 roky. Hrubý příjem 720k. Vakance -90k. Neplatič -40k. Čas správy -108k. Reálný čistý 482k. Orientační kalkulace.
+- Právní lhůty: Témata: Výpovědní lhůta 3 měsíce. Výpověď pro neplacení po 3 měsících dluhu. Soudní vystěhování 6-12 měsíců. Kauce max 3 měsíce (standardně 2). Drobné opravy do 100 Kč/měs nebo 1000 Kč/rok.
+- Nejčastější chyby majitelů: Témata: Žádná fotodokumentace. Smlouva z internetu. Nedostatečné prověření. Nízká kauce. Žádný protokol. Opravy bez dokumentace. Reakce na dluh pozdě (3+ měsíce).
+- Nájemní trh ČR 2026: Témata: 1,2 mil. domácností v nájmu (28 %). Průměrný nájem 2+kk: Praha 24k, Brno 18k, Ostrava 12k, Plzeň 14k. Růst 5-8 % ročně. BTR roste. Regulace posiluje ochranu nájemníků.
+- Statistiky problémových nájemníků: Témata: 8-12 % přestane platit. 15 % majitelů zažilo škodu nad 50 tis. Průměrná vakance 1,5 měs/rok. Soudní vystěhování 6-12 měsíců. Právní náklady 20-60 tis. Škoda 30-80 tis. 40 % bez předávacího pro...
+
+## Časté otázky
+- Co musí obsahovat smlouva: Témata: Povinné - strany, nemovitost, nájem, zálohy, délka, platba, výpověď, opravy. Doporučené - zákaz podnájmu, zvířata, havárie, fotodokumentace, kauce. Smlouva z internetu NEMUSÍ stačit.
+- Když nájemník přestane platit: Témata: Týden 1 - písemná výzva 7 dní. Týden 2 - doporučený dopis. Měsíc 2-3 - výpověď. Krok 4 - soudní řízení 6-12 měsíců. Vždy dokumentovat písemně. Konzultovat advokáta.
+- Jak prověřit nájemníka: Témata: Ověření identity. Potvrzení příjmu (min 3× nájem). Registry: SOLUS, CRIBIS, exekuce. Reference od předchozího. Osobní setkání. Odmítnutí 20-30 % je normální.
+- Předání bytu: Témata: Předávací protokol písemně. Fotodokumentace KAŽDÉ místnosti. Stav měřičů. Podpis obou stran. Kopie oběma. BEZ protokolu těžko prokážete škodu.
+- Kdo platí opravy: Témata: Nájemník - drobné (do 100 Kč/měs nebo 1000 Kč/rok). Závady způsobené nájemníkem - vždy nájemník. Větší opravy - majitel. Havárie - majitel zajišťuje, nájemník hlásí. Vždy písemný souhlas.
+- Jak funguje kauce: Témata: Max 3 měsíce (standardně 2). Pokrytí dluhu/škod. Vrácení do 1 měsíce. Kauce zpravidla nestačí pokrýt průměrnou škodu (30-80 tis). Vždy fotodokumentace.
+- Když nájemník odmítá odejít: Témata: Písemná výzva. Doporučený dopis. Soudní žaloba 6-12 měsíců. NESMÍ - vyměnit zámky, odstřihnout energie, vyhazovat věci (trestné). Vždy advokát.
+- Kdy svěřit správu firmě: Témata: Více nemovitostí. Bydlíte daleko. Zažili problémového nájemníka. Nemáte čas. Stres převažuje nad příjmem. Modely: správcovská firma (8-15 %, nezaručuje příjem) nebo garantovaný nájem (nižší, a...
+
+## Obecné informace
+- Fáze a tón obsahu: Témata: PREVENCE (klidný, praktický). AKTIVNÍ PROBLÉM (přímý, akční). POUČENÍ Z CHYBY (empatický, s čísly). PRÁVNÍ UVĚDOMĚNÍ (věcný, odvážný). Fáze určuje tón, ne obsah.
+
+## Právní informace
+- Daňové aspekty: Témata: FO - daň 15 %, paušální výdaje 30 % nebo skutečné. PO - daň 21 %. DPH osvobozeno. Sociální/zdravotní neplatí pokud není hlavní činnost. Správa = daňově uznatelný náklad. Konzultovat daňového p...
+- Problémy – smlouva a dokumentace: Témata: Smlouva z internetu bez úprav. Žádný předávací protokol. Fotodokumentace chybí. Stav měřičů nezdokumentován. Kauce nízká/nevybraná. Zákaz podnájmu chybí. Postup při havárii nestanoven.
+- Trendy legislativy 2026: Témata: Ochrana nájemníků posilována. PENB - povinnosti majitelů rostou. Digitalizace soudů. Exekuce může trvat i po vítězství. Sledovat změny NOZ. Konzultovat advokáta při nových smlouvách.
+- Právní rámec nájmu ČR: Témata: Smlouva písemně nad 1 rok. Výpovědní lhůta 3 měsíce. Výpověď nájemníkovi - zákonné důvody. Kauce max 3 měsíce. Vystěhování jen soudem. Vstup se souhlasem. Drobné opravy - nájemník. Větší - maj...
+- Problémy – ukončení nájmu: Témata: Odmítá odejít po skončení. Odešel bez ohlášení, zanechal dluh. Výpověď s formální chybou. Byt vrácen v horším stavu bez fotek. Kauce nestačí. Vymáhání 6-24 měsíců. Odvolává se a prodlužuje.
+
+## Trh
+- Trendy 2026: Témata: Růst 5-8 % ročně. BTR tlačí na kvalitu. Regulace posiluje ochranu. Digitalizace správy. ESG a PENB. Remote work - poptávka po větších bytech. Rostoucí nároky nájemníků.
+- Profesionalizace trhu: Témata: BTR projekty (Heimstaden, Mint, Trigema). Mají standardizované smlouvy, screening, právní oddělení, rychlý servis. Individuální majitelé ve strukturální nevýhodě. Řešení - profesionalizovat ne...
+
+## Jak to funguje
+- Problémy – průběh nájmu: Témata: Nájemník přestal platit, reakce po 2+ měsících. Platby nepravidelné. Podnajal bez souhlasu (Airbnb). Stavební úpravy bez souhlasu. Způsobil škodu, odmítá odpovědnost. Nehlásil závady. Oprava b...
+- Checklist prověření (12 kroků): Témata: Ověření identity. Potvrzení příjmu (3× nájem). Pracovní smlouva. SOLUS. CRIBIS. Exekuce. Insolvence. Reference. Délka předchozího nájmu. Důvod odchodu. Počet osob. Osobní pohovor. Odmítnutí 20...
+- Checklist předání (fotodokumentace): Témata: Každá místnost - 4 rohy. Všechny stěny. Podlahy. Okna a parapety. Dveře. Kuchyň - spotřebiče, plocha, skříňky. Koupelna - vana, WC, dlažba. Měřiče energií (číslo + datum). Klíče (počet + typ)....
+- Varovné signály: Témata: Okamžité zamítnutí - odmítnutí prověření, odmítnutí registrů, naléhání na rychlý podpis, jen hotovost, nejasný důvod odchodu, negativní reference. Zvýšená opatrnost - krátké zaměstnání, příjem...
+- Problémy – výběr nájemníka: Témata: Prověření v registrech neprovedeno. Příjem ověřen jen ústně. Reference nekontaktována. Smlouva podepsána ve spěchu. Nájemník zatajil počet osob/zvíře. Výběr podle sympatie.
+
+## Služby
+- Kdy zmínit garantovaný nájem: Témata: POUZE pokud obsah vede k delegování. Formulace - "model kde riziko nese správce, pevná platba každý měsíc". NIKDY přímý odkaz, jméno firmy, URL. Vždy jako JEDNA Z MOŽNOSTÍ. Odkaz patří do foll...
+- Vzorný nájemce — prevence problémů: Většina problémů s nájemníky vzniká špatným výběrem nebo nedostatečnou smlouvou. Vzorný nájemce řeší oboje — prověření nájemníka, profesionální smlouva, předávací protokol, kompletní správa. Garantova...
+- Vzorný nájemce — řešení aktivního problému: Už máte problémového nájemníka? Vzorný nájemce pomůže i v této fázi — právní podpora, komunikace s nájemníkem, správa celého procesu výpovědi a předání. Po vyřešení problému převezme správu pronájmu, ...
+- odhad.online — správné nastavení nájmu: Příliš nízký nájem přitahuje problémové nájemníky. Příliš vysoký odradí ty spolehlivé. Správná cena je základ prevence. Na odhad.online zadáte adresu a dostanete orientační tržní nájem na základě reál...
+
+## Klíčové výhody
+- Odvaha říkat pravdu: Témata: Vystěhování trvá 6-12 měsíců. Bez fotek škodu neprokážete. Smlouva z internetu nechrání. Vlastní správa stojí víc než si myslíte. Kauce nestačí. Říkáme i nepříjemné věci.
+- Neutrální průvodce: Témata: Neprodáváme žádný produkt v obsahu. Pomáháme rozhodnout se informovaně. Ať si nechají správu nebo ji svěří - mají vědět co dělají. Empatický, věcný, odvážný.
+
+## FAQ
+- Co musí obsahovat smlouva Témata: Povinné - strany, nemovitost, nájem, zálohy, délka, platba, výpověď, opravy. Doporučené - zákaz podnájmu, zvířata, havárie, fotodokumentace, kauce. Smlouva z internetu NEMUSÍ stačit.
+- Když nájemník přestane platit Témata: Týden 1 - písemná výzva 7 dní. Týden 2 - doporučený dopis. Měsíc 2-3 - výpověď. Krok 4 - soudní řízení 6-12 měsíců. Vždy dokumentovat písemně. Konzultovat advokáta.
+- Jak prověřit nájemníka Témata: Ověření identity. Potvrzení příjmu (min 3× nájem). Registry: SOLUS, CRIBIS, exekuce. Reference od předchozího. Osobní setkání. Odmítnutí 20-30 % je normální.
+- Předání bytu Témata: Předávací protokol písemně. Fotodokumentace KAŽDÉ místnosti. Stav měřičů. Podpis obou stran. Kopie oběma. BEZ protokolu těžko prokážete škodu.
+- Kdo platí opravy Témata: Nájemník - drobné (do 100 Kč/měs nebo 1000 Kč/rok). Závady způsobené nájemníkem - vždy nájemník. Větší opravy - majitel. Havárie - majitel zajišťuje, nájemník hlásí. Vždy písemný souhlas.
+- Jak funguje kauce Témata: Max 3 měsíce (standardně 2). Pokrytí dluhu/škod. Vrácení do 1 měsíce. Kauce zpravidla nestačí pokrýt průměrnou škodu (30-80 tis). Vždy fotodokumentace.
+- Když nájemník odmítá odejít Témata: Písemná výzva. Doporučený dopis. Soudní žaloba 6-12 měsíců. NESMÍ - vyměnit zámky, odstřihnout energie, vyhazovat věci (trestné). Vždy advokát.
+- Kdy svěřit správu firmě Témata: Více nemovitostí. Bydlíte daleko. Zažili problémového nájemníka. Nemáte čas. Stres převažuje nad příjmem. Modely: správcovská firma (8-15 %, nezaručuje příjem) nebo garantovaný nájem (nižší, ale pevný).
