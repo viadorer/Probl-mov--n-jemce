@@ -1,6 +1,6 @@
 {
   "@context": "https://schema.org",
-  "generatedAt": "2026-03-06T20:27:01.637Z",
+  "generatedAt": "2026-03-06T21:02:57.358Z",
   "generatedBy": "Hugo Orchestrator AIO Engine",
   "projectType": "html",
   "schemas": {
@@ -20,7 +20,7 @@
           "name": "Co je cílem stránky Problémový nájemník?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Cílem stránky je poradit pronajímatelům, jak správně vybrat nájemníka a jak postupovat v případě problémů. Nabízí odborné rady a právní podporu pro klidný pronájem."
+            "text": "Cílem stránky je poskytnout pronajímatelům rady a právní podporu ohledně výběru nájemníků a řešení problémů, které mohou nastat během pronájmu."
           }
         },
         {
@@ -28,7 +28,7 @@
           "name": "Pro koho je stránka Problémový nájemník určena?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Stránka je určena pro majitele nemovitostí k pronájmu, tedy pronajímatele."
+            "text": "Stránka je určena pro majitele nemovitostí, kteří pronajímají nebo se chystají pronajímat nemovitost."
           }
         },
         {
@@ -36,7 +36,15 @@
           "name": "Jaké informace stránka Problémový nájemník nabízí?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Stránka nabízí rady ohledně výběru nájemníka a postupu při problémech, odborné rady a právní podporu pro pronajímatele."
+            "text": "Stránka nabízí odborné rady a právní podporu pro pronajímatele, kteří se potýkají s problémovými nájemníky, nebo se chtějí problémům vyhnout."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Na co se má pronajímatel zaměřit při výběru nájemníka?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Stránka poradí, jak správně vybrat nájemníka, aby se pronajímatel vyhnul problémům."
           }
         }
       ]
