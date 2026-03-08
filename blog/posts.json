@@ -1,6 +1,23 @@
 {
   "posts": [
     {
+      "date": "2026-03-08",
+      "slug": "garantovany-najem-nejbezpecnejsi-pronajem",
+      "image": "/images/blog/garantovany-najem-nejbezpecnejsi-pronajem.png",
+      "title": "Garantovaný nájem: Nejbezpečnější cesta pro majitele bytů?",
+      "excerpt": "Uvažujete o pronájmu bytu a hledáte jistotu? Garantovaný nájem může být řešením. Přečtěte si o výhodách a nevýhodách tohoto modelu a zjistěte, zda je pro vás vhodný.",
+      "category": "market",
+      "featured": false,
+      "imageAlt": "Ruka s klíčem od bytu a smlouvou o garantovaném nájmu",
+      "keywords": "garantovaný nájem, pronájem bytu, správa nemovitostí, investice do nemovitostí, pasivní příjem",
+      "readTime": 7,
+      "seoTitle": "Garantovaný nájem: Bezpečný pronájem bytu",
+      "categoryName": "Trh & Finance",
+      "dateFormatted": "8. března 2026",
+      "seoDescription": "Garantovaný nájem: Jistota příjmu a správy bytu bez starostí. Jak funguje, pro koho je vhodný a kolik stojí?",
+      "id": "garantovany-najem-nejbezpecnejsi-pronajem"
+    },
+    {
       "date": "2026-03-07",
       "slug": "3-chyby-pri-vyberu-najemnika",
       "image": "",
