@@ -504,10 +504,17 @@
                             <div class="lg:w-1/3">
                                 <div x-data="initContactForm()" class="relative">
                                     <form @submit.prevent="submitForm" class="space-y-6" :class="{ 'opacity-50': loading }">
-                                        <div>
-                                            <label for="name" class="block text-sm font-medium text-gray-700">Jméno a příjmení</label>
-                                            <input type="text" id="name" name="name" required :disabled="loading || success"
-                                                   class="mt-1 block w-full px-4 py-3 rounded-lg border-gray-300 shadow-sm focus:ring-2 focus:ring-gray-500 focus:border-transparent">
+                                        <div class="grid grid-cols-2 gap-4">
+                                            <div>
+                                                <label for="firstName" class="block text-sm font-medium text-gray-700">Jméno</label>
+                                                <input type="text" id="firstName" name="firstName" required :disabled="loading || success"
+                                                       class="mt-1 block w-full px-4 py-3 rounded-lg border-gray-300 shadow-sm focus:ring-2 focus:ring-gray-500 focus:border-transparent">
+                                            </div>
+                                            <div>
+                                                <label for="lastName" class="block text-sm font-medium text-gray-700">Příjmení</label>
+                                                <input type="text" id="lastName" name="lastName" required :disabled="loading || success"
+                                                       class="mt-1 block w-full px-4 py-3 rounded-lg border-gray-300 shadow-sm focus:ring-2 focus:ring-gray-500 focus:border-transparent">
+                                            </div>
                                         </div>
                                         <div>
                                             <label for="email" class="block text-sm font-medium text-gray-700">E-mail</label>
@@ -520,14 +527,56 @@
                                                    class="mt-1 block w-full px-4 py-3 rounded-lg border-gray-300 shadow-sm focus:ring-2 focus:ring-gray-500 focus:border-transparent">
                                         </div>
                                         <div>
-                                            <label for="message" class="block text-sm font-medium text-gray-700">Stručný popis problému</label>
-                                            <textarea id="message" name="message" rows="4" :disabled="loading || success"
+                                            <label for="problemType" class="block text-sm font-medium text-gray-700">Typ problému</label>
+                                            <select id="problemType" name="problemType" required :disabled="loading || success"
+                                                    class="mt-1 block w-full px-4 py-3 rounded-lg border-gray-300 shadow-sm focus:ring-2 focus:ring-gray-500 focus:border-transparent">
+                                                <option value="" disabled selected>Vyberte typ problému</option>
+                                                <option value="neplati_najem">Neplatí nájem</option>
+                                                <option value="nici_byt">Ničí nemovitost</option>
+                                                <option value="odmita_vystehovat">Odmítá se vystěhovat</option>
+                                                <option value="nelegalni_podnajemnik">Nelegální podnájemník</option>
+                                                <option value="ruseni_sousedu">Rušení sousedů / stížnosti</option>
+                                                <option value="jine">Jiný problém</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label for="duration" class="block text-sm font-medium text-gray-700">Jak dlouho problém trvá?</label>
+                                            <select id="duration" name="duration" :disabled="loading || success"
+                                                    class="mt-1 block w-full px-4 py-3 rounded-lg border-gray-300 shadow-sm focus:ring-2 focus:ring-gray-500 focus:border-transparent">
+                                                <option value="" disabled selected>Vyberte délku trvání</option>
+                                                <option value="mene_mesic">Méně než měsíc</option>
+                                                <option value="1-3_mesice">1–3 měsíce</option>
+                                                <option value="3-6_mesicu">3–6 měsíců</option>
+                                                <option value="6-12_mesicu">6–12 měsíců</option>
+                                                <option value="vice_rok">Více než rok</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label for="propertyType" class="block text-sm font-medium text-gray-700">Typ nemovitosti</label>
+                                            <select id="propertyType" name="propertyType" :disabled="loading || success"
+                                                    class="mt-1 block w-full px-4 py-3 rounded-lg border-gray-300 shadow-sm focus:ring-2 focus:ring-gray-500 focus:border-transparent">
+                                                <option value="" disabled selected>Vyberte typ</option>
+                                                <option value="flat">Byt</option>
+                                                <option value="house">Rodinný dům</option>
+                                                <option value="commercial">Komerční prostor</option>
+                                                <option value="other">Jiné</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label for="address" class="block text-sm font-medium text-gray-700">Adresa nemovitosti</label>
+                                            <input type="text" id="address" name="address" placeholder="Ulice, město" :disabled="loading || success"
+                                                   class="mt-1 block w-full px-4 py-3 rounded-lg border-gray-300 shadow-sm focus:ring-2 focus:ring-gray-500 focus:border-transparent">
+                                        </div>
+                                        <div>
+                                            <label for="message" class="block text-sm font-medium text-gray-700">Stručný popis situace</label>
+                                            <textarea id="message" name="message" rows="3" :disabled="loading || success"
+                                                      placeholder="Popište stručně vaši situaci..."
                                                       class="mt-1 block w-full px-4 py-3 rounded-lg border-gray-300 shadow-sm focus:ring-2 focus:ring-gray-500 focus:border-transparent"></textarea>
                                         </div>
-        
+
                                         <!-- Chybová hláška -->
                                         <div x-show="error" class="text-red-500 text-sm mt-2" x-text="error"></div>
-        
+
                                         <!-- Tlačítko -->
                                         <button type="submit" :disabled="loading || success"
                                                 class="w-full inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-medium rounded-full text-white bg-gray-900 hover:bg-gray-800 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
@@ -547,6 +596,7 @@
                                                 Odeslané
                                             </span>
                                         </button>
+                                        <p class="text-xs text-gray-400 text-center mt-2">Vaše údaje jsou v bezpečí. Nikdy je nesdílíme s třetími stranami.</p>
                                     </form>
         
                                     <!-- Úspěšná zpráva -->
@@ -649,6 +699,139 @@
 </script>
 
 
+<!-- Valuo - Ocenění nájmu -->
+<section id="oceneni" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-center mb-16 space-x-8">
+            <div class="w-16 h-16 bg-gray-900 rounded-2xl flex items-center justify-center flex-shrink-0">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                </svg>
+            </div>
+            <div class="text-left max-w-2xl">
+                <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">Zjistěte tržní hodnotu nájmu</h2>
+                <p class="text-xl text-gray-600">Bezplatné ocenění vaší nemovitosti. Zjistěte, kolik byste měli inkasovat za nájem a zda váš nájemník platí férovou cenu.</p>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-xl overflow-hidden max-w-3xl mx-auto" x-data="valuoForm()">
+            <div class="p-8 sm:p-12">
+                <form @submit.prevent="submitValuation" :class="{ 'opacity-50 pointer-events-none': loading }">
+                    <div class="grid gap-6 md:grid-cols-2 mb-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Jméno</label>
+                            <input type="text" x-model="form.firstName" required
+                                   class="w-full px-4 py-3 rounded-lg border-gray-300 shadow-sm focus:ring-2 focus:ring-gray-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Příjmení</label>
+                            <input type="text" x-model="form.lastName" required
+                                   class="w-full px-4 py-3 rounded-lg border-gray-300 shadow-sm focus:ring-2 focus:ring-gray-500 focus:border-transparent">
+                        </div>
+                    </div>
+                    <div class="grid gap-6 md:grid-cols-2 mb-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">E-mail</label>
+                            <input type="email" x-model="form.email" required
+                                   class="w-full px-4 py-3 rounded-lg border-gray-300 shadow-sm focus:ring-2 focus:ring-gray-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Telefon</label>
+                            <input type="tel" x-model="form.phone"
+                                   class="w-full px-4 py-3 rounded-lg border-gray-300 shadow-sm focus:ring-2 focus:ring-gray-500 focus:border-transparent">
+                        </div>
+                    </div>
+
+                    <hr class="my-8 border-gray-200">
+                    <h3 class="text-lg font-bold text-gray-900 mb-6">Údaje o nemovitosti</h3>
+
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Adresa nemovitosti</label>
+                        <input type="text" x-model="form.address" required placeholder="např. Korunní 104, Praha"
+                               class="w-full px-4 py-3 rounded-lg border-gray-300 shadow-sm focus:ring-2 focus:ring-gray-500 focus:border-transparent">
+                    </div>
+
+                    <div class="grid gap-6 md:grid-cols-2 mb-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Typ nemovitosti</label>
+                            <select x-model="form.propertyType" required
+                                    class="w-full px-4 py-3 rounded-lg border-gray-300 shadow-sm focus:ring-2 focus:ring-gray-500 focus:border-transparent">
+                                <option value="" disabled>Vyberte typ</option>
+                                <option value="flat">Byt</option>
+                                <option value="house">Rodinný dům</option>
+                                <option value="land">Pozemek</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Užitná plocha (m²)</label>
+                            <input type="number" x-model="form.floorArea" min="1" required placeholder="např. 65"
+                                   class="w-full px-4 py-3 rounded-lg border-gray-300 shadow-sm focus:ring-2 focus:ring-gray-500 focus:border-transparent">
+                        </div>
+                    </div>
+
+                    <div class="grid gap-6 md:grid-cols-3 mb-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Počet pokojů</label>
+                            <select x-model="form.rooms"
+                                    class="w-full px-4 py-3 rounded-lg border-gray-300 shadow-sm focus:ring-2 focus:ring-gray-500 focus:border-transparent">
+                                <option value="">Vyberte</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5+</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Stav</label>
+                            <select x-model="form.rating"
+                                    class="w-full px-4 py-3 rounded-lg border-gray-300 shadow-sm focus:ring-2 focus:ring-gray-500 focus:border-transparent">
+                                <option value="">Vyberte stav</option>
+                                <option value="bad">Špatný</option>
+                                <option value="nothing_much">Nic moc</option>
+                                <option value="good">Dobrý</option>
+                                <option value="very_good">Velmi dobrý</option>
+                                <option value="new">Nový</option>
+                                <option value="excellent">Výborný</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Vlastnictví</label>
+                            <select x-model="form.ownership"
+                                    class="w-full px-4 py-3 rounded-lg border-gray-300 shadow-sm focus:ring-2 focus:ring-gray-500 focus:border-transparent">
+                                <option value="">Vyberte</option>
+                                <option value="private">Osobní</option>
+                                <option value="cooperative">Družstevní</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Status -->
+                    <div x-show="error" class="mb-4 p-4 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm" x-text="error"></div>
+                    <div x-show="success" class="mb-4 p-4 bg-green-50 border border-green-200 rounded-lg text-green-700 text-sm">
+                        Ocenění bylo úspěšně odesláno! Výsledek obdržíte na váš e-mail.
+                    </div>
+
+                    <button type="submit" :disabled="loading || success"
+                            class="w-full inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-medium rounded-full text-white bg-gray-900 hover:bg-gray-800 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
+                            :class="{ 'cursor-not-allowed opacity-75': loading || success }">
+                        <span x-show="!loading && !success">Získat ocenění nájmu zdarma</span>
+                        <span x-show="loading" class="flex items-center">
+                            <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                            Zpracovávám ocenění...
+                        </span>
+                        <span x-show="success">Ocenění odesláno</span>
+                    </button>
+                    <p class="text-xs text-gray-400 text-center mt-3">Výsledek ocenění obdržíte obratem na e-mail. Vaše údaje jsou v bezpečí.</p>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Sekce s ebookem -->
 <section id="ebook" class="py-24 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -719,39 +902,11 @@
 <div id="footer-placeholder"></div>
 
 <script>
-const ECOMAIL_API_KEY = 'VAS_API_KLIC'; // Nahradit vaším API klíčem
-
-async function submitToEcomail(data) {
-    try {
-        const response = await fetch('https://api2.ecomailapp.cz/subscribers', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${ECOMAIL_API_KEY}`
-            },
-            body: JSON.stringify({
-                subscriber_data: {
-                    email: data.email,
-                    name: data.name,
-                    phone: data.phone,
-                    custom_fields: {
-                        problem_description: data.message
-                    },
-                    tags: ['poptavka_reseni']
-                }
-            })
-        });
-
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-
-        return await response.json();
-    } catch (error) {
-        console.error('Error:', error);
-        throw error;
-    }
-}
+const REALVISOR_BASE = 'https://api-production-88cf.up.railway.app/api/v1/public';
+const REALVISOR_LEAD_URL = REALVISOR_BASE + '/api-leads/submit';
+const REALVISOR_VALUATION_URL = REALVISOR_BASE + '/valuations';
+const REALVISOR_GEOCODE_URL = REALVISOR_BASE + '/geocode';
+const REALVISOR_API_KEY = 'rv_live_b1b5b1e9346dfc9ba3bf7ef6bdbc6b43a31254fd8b9484f1';
 
 function initContactForm() {
     return {
@@ -764,29 +919,100 @@ function initContactForm() {
             this.error = null;
 
             const formData = new FormData(event.target);
-            const data = {
-                name: formData.get('name'),
+            const payload = {
+                firstName: formData.get('firstName'),
+                lastName: formData.get('lastName'),
                 email: formData.get('email'),
                 phone: formData.get('phone'),
-                message: formData.get('message')
+                message: [
+                    'Zdroj: problemovynajemnik.cz',
+                    'Typ problému: ' + (formData.get('problemType') || '-'),
+                    'Délka trvání: ' + (formData.get('duration') || '-'),
+                    'Typ nemovitosti: ' + (formData.get('propertyType') || '-'),
+                    'Adresa: ' + (formData.get('address') || '-'),
+                    'Popis: ' + (formData.get('message') || '-')
+                ].join('\n')
             };
 
             try {
-                await submitToEcomail(data);
-                this.success = true;
-                event.target.reset();
-
-                // Odeslat notifikační email
-                await fetch('/api/send-notification', {
+                const response = await fetch(REALVISOR_LEAD_URL, {
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'application/json',
+                        'X-API-Key': REALVISOR_API_KEY
                     },
-                    body: JSON.stringify(data)
+                    body: JSON.stringify(payload)
                 });
+
+                if (!response.ok) throw new Error('Chyba serveru');
+
+                this.success = true;
+                event.target.reset();
             } catch (error) {
-                this.error = 'Došlo k chybě při odesílání formuláře. Zkuste to prosím později.';
+                this.error = 'Došlo k chybě při odesílání. Zkuste to prosím později.';
                 console.error('Error:', error);
+            } finally {
+                this.loading = false;
+            }
+        }
+    };
+}
+
+function valuoForm() {
+    return {
+        loading: false,
+        success: false,
+        error: null,
+        form: {
+            firstName: '', lastName: '', email: '', phone: '',
+            address: '', propertyType: 'flat', floorArea: '',
+            rooms: '', rating: '', ownership: ''
+        },
+        async submitValuation() {
+            this.loading = true;
+            this.error = null;
+            try {
+                // 1. Geocode address
+                const geoRes = await fetch(REALVISOR_GEOCODE_URL + '?query=' + encodeURIComponent(this.form.address), {
+                    headers: { 'X-API-Key': REALVISOR_API_KEY }
+                });
+                if (!geoRes.ok) throw new Error('Nepodařilo se ověřit adresu');
+                const geo = await geoRes.json();
+
+                // 2. Create valuation
+                const payload = {
+                    firstName: this.form.firstName,
+                    lastName: this.form.lastName,
+                    email: this.form.email,
+                    phone: this.form.phone,
+                    kind: 'lease',
+                    propertyType: this.form.propertyType,
+                    address: geo.address || this.form.address,
+                    lat: geo.lat,
+                    lng: geo.lng,
+                    city: geo.city || '',
+                    street: geo.street || '',
+                    streetNumber: geo.streetNumber || '',
+                    floorArea: parseInt(this.form.floorArea) || undefined,
+                    rooms: parseInt(this.form.rooms) || undefined,
+                    rating: this.form.rating || undefined,
+                    ownership: this.form.ownership || undefined
+                };
+
+                const valRes = await fetch(REALVISOR_VALUATION_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-API-Key': REALVISOR_API_KEY
+                    },
+                    body: JSON.stringify(payload)
+                });
+                if (!valRes.ok) throw new Error('Nepodařilo se vytvořit ocenění');
+
+                this.success = true;
+            } catch (err) {
+                this.error = err.message || 'Došlo k chybě. Zkuste to prosím později.';
+                console.error('Valuation error:', err);
             } finally {
                 this.loading = false;
             }
