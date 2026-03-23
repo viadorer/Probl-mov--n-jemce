@@ -1,6 +1,6 @@
 {
   "@context": "https://schema.org",
-  "generatedAt": "2026-03-06T21:02:57.358Z",
+  "generatedAt": "2026-03-23T07:03:58.021Z",
   "generatedBy": "Hugo Orchestrator AIO Engine",
   "projectType": "html",
   "schemas": {
@@ -20,7 +20,7 @@
           "name": "Co je cílem stránky Problémový nájemník?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Cílem stránky je poskytnout pronajímatelům rady a právní podporu ohledně výběru nájemníků a řešení problémů, které mohou nastat během pronájmu."
+            "text": "Cílem stránky je poskytnout pronajímatelům rady a podporu ohledně výběru nájemníků a řešení problémů, které mohou nastat během pronájmu."
           }
         },
         {
@@ -28,7 +28,7 @@
           "name": "Pro koho je stránka Problémový nájemník určena?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Stránka je určena pro majitele nemovitostí, kteří pronajímají nebo se chystají pronajímat nemovitost."
+            "text": "Stránka je určena výhradně pro majitele nemovitostí, kteří je pronajímají."
           }
         },
         {
@@ -36,15 +36,15 @@
           "name": "Jaké informace stránka Problémový nájemník nabízí?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Stránka nabízí odborné rady a právní podporu pro pronajímatele, kteří se potýkají s problémovými nájemníky, nebo se chtějí problémům vyhnout."
+            "text": "Stránka nabízí odborné rady a právní podporu pro pronajímatele, aby zajistila klidný pronájem."
           }
         },
         {
           "@type": "Question",
-          "name": "Na co se má pronajímatel zaměřit při výběru nájemníka?",
+          "name": "Na co se zaměřuje úvodní popup okno na stránce?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Stránka poradí, jak správně vybrat nájemníka, aby se pronajímatel vyhnul problémům."
+            "text": "Úvodní popup okno slouží k ověření, zda je uživatel pronajímatel. Pokud uživatel potvrdí, že je pronajímatel, získá přístup ke specializovaným informacím na stránce."
           }
         }
       ]
