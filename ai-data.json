@@ -1,6 +1,6 @@
 {
   "@context": "https://schema.org",
-  "generatedAt": "2026-03-23T07:03:58.021Z",
+  "generatedAt": "2026-03-23T08:03:22.011Z",
   "generatedBy": "Hugo Orchestrator AIO Engine",
   "projectType": "html",
   "schemas": {
@@ -20,7 +20,7 @@
           "name": "Co je cílem stránky Problémový nájemník?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Cílem stránky je poskytnout pronajímatelům rady a podporu ohledně výběru nájemníků a řešení problémů, které mohou nastat během pronájmu."
+            "text": "Stránka Problémový nájemník si klade za cíl poradit pronajímatelům, jak správně vybrat nájemníka a jak postupovat v případě problémů. Nabízí odborné rady a právní podporu pro klidný pronájem."
           }
         },
         {
@@ -28,7 +28,7 @@
           "name": "Pro koho je stránka Problémový nájemník určena?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Stránka je určena výhradně pro majitele nemovitostí, kteří je pronajímají."
+            "text": "Stránka Problémový nájemník je určena výhradně pro pronajímatele nemovitostí."
           }
         },
         {
@@ -36,15 +36,15 @@
           "name": "Jaké informace stránka Problémový nájemník nabízí?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Stránka nabízí odborné rady a právní podporu pro pronajímatele, aby zajistila klidný pronájem."
+            "text": "Stránka Problémový nájemník nabízí rady, jak správně vybrat nájemníka a jak postupovat, když nastanou problémy. Poskytuje odborné rady a právní podporu."
           }
         },
         {
           "@type": "Question",
-          "name": "Na co se zaměřuje úvodní popup okno na stránce?",
+          "name": "Jak mohu získat přístup ke specializovaným informacím na stránce Problémový nájemník?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Úvodní popup okno slouží k ověření, zda je uživatel pronajímatel. Pokud uživatel potvrdí, že je pronajímatel, získá přístup ke specializovaným informacím na stránce."
+            "text": "Přístup ke specializovaným informacím na stránce Problémový nájemník je vyhrazen pouze pro pronajímatele. Uživatel musí potvrdit, že je vlastníkem nemovitosti určené k pronájmu."
           }
         }
       ]
