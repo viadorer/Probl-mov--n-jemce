@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="application/ld+json" src="/ai-data.json"></script>
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Context">
+    <title>Problémový nájemník - Profesionální řešení</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        /* Odstranění šipek u number inputů */
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        input[type="number"] {
+            -moz-appearance: textfield;
+            appearance: textfield; /* Standardní vlastnost pro lepší kompatibilitu */
+        }
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-up.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .gradient-overlay {
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0) 100%);
+        }
+    </style>
+</head>
+<body class="bg-white" x-data="{ showModal: true, isLandlord: null, showBanner: true }" :class="{ 'overflow-hidden': showModal }">
+    <!-- Hlavní obsah stránky - aplikuje se blur efekt, když je aktivní modal -->
+    <div :class="{ 'filter blur-sm': showModal }" class="transition-all duration-300">
+    
+
+    </div><!-- Konec obsahu, který má být rozostřený -->
+    
+    <!-- Popup pro pronajímatele - MIMO div s blur efektem -->
+    <div x-show="showModal" class="fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true" style="display: none;">
+    <!-- Overlay s větším ztemněním -->
+    <div class="fixed inset-0 bg-black bg-opacity-80 backdrop-blur-sm transition-opacity"></div>
+        <div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+            <div class="relative z-10 inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-2xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6 border-2 border-yellow-400" 
+                x-transition:enter="ease-out duration-300" 
+                x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" 
+                x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100">
+                <div>
+                    <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-yellow-200 ring-4 ring-yellow-400 shadow-lg">
+                        <svg class="h-8 w-8 text-yellow-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                        </svg>
+                    </div>
+                    <div class="mt-3 text-center sm:mt-5">
+                        <h3 class="text-xl leading-6 font-bold text-gray-900" id="modal-title">
+                            Určeno pro pronajímatele
+                        </h3>
+                        <div class="mt-2">
+                            <p class="text-sm text-gray-500">
+                                Jste majitel nemovitosti k pronájmu? Tato stránka obsahuje specializované informace určené výhradně pronajímatelům.
+                            </p>
+                            <p class="text-sm text-gray-500 mt-2">
+                                Přístup k těmto informacím je vyhrazen pouze pro pronajímatele. Pokračováním potvrzujete, že jste vlastníkem nemovitosti určené k pronájmu.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-5 sm:mt-6 sm:grid sm:grid-cols-2 sm:gap-3 sm:grid-flow-row-dense">
+                    <button type="button" 
+                            class="w-full inline-flex justify-center rounded-md border border-transparent shadow-lg px-5 py-3 bg-gray-900 text-base font-bold text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 sm:col-start-2 sm:text-sm hover:scale-105 transition-transform"
+                            @click="showModal = false; isLandlord = true; localStorage.setItem('isLandlord', 'true')">
+                        ANO, jsem pronajímatel
+                    </button>
+                    <button type="button" 
+                            class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 sm:mt-0 sm:col-start-1 sm:text-sm"
+                            @click="window.location.href = 'https://www.google.com'">
+                        NE, nejsem pronajímatel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Hero Section -->
+    <div class="relative min-h-screen overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="images/hero-image.jpg" alt="Background" class="w-full h-full object-cover blur-sm">
+        </div>
+
+        <!-- Content -->
+        <div class="relative z-10 pt-32 pb-16 sm:pt-40 sm:pb-20 lg:pt-48 lg:pb-28 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto">
+                <div class="lg:grid lg:grid-cols-12 lg:gap-8">
+                    <div class="sm:text-center lg:text-left lg:col-span-7 bg-white/95 backdrop-blur-sm rounded-3xl p-8 shadow-xl" x-data="{}" x-intersect="$el.querySelectorAll('.fade-in-up').forEach(el => el.classList.add('show'))">
+                        <h1 class="fade-in-up text-5xl md:text-6xl font-bold tracking-tight text-gray-900 mb-8">
+                            <span class="block">Problémového nájemníka</span>
+                            <span class="block mt-2 bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">doma mít nechcete</span>
+                        </h1>
+                        
+                        <p class="fade-in-up mt-3 text-lg text-gray-600 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl max-w-2xl">
+                            Poradíme vám, jak správně vybrat nájemníka a jak postupovat, když už problémy nastaly. Získejte odborné rady a právní podporu pro klidný pronájem.
+                        </p>
+
+                        <div class="fade-in-up mt-8 flex flex-col sm:flex-row sm:items-center sm:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
+                            <a href="#kontakt" class="inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-medium rounded-full text-white bg-gray-900 hover:bg-gray-800 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl">
+                                Teprve budu pronajímat
+                            </a>
+                            <a href="#proc-my" class="inline-flex items-center justify-center px-8 py-4 border-2 border-gray-900 text-base font-medium rounded-full text-gray-900 bg-transparent hover:bg-gray-50 transform hover:scale-105 transition-all duration-200">
+                                Potřebuji vyřešit problém
+                            </a>
+                        </div>
+
+                        <!-- Trust Indicators -->
+                        <div class="fade-in-up mt-12 pt-8 border-t border-gray-200 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:mt-16">
+                            <div class="flex flex-col">
+                                <span class="text-3xl font-bold text-gray-900">98%</span>
+                                <span class="text-sm text-gray-600 mt-1">Úspěšnost případů</span>
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-3xl font-bold text-gray-900">30+</span>
+                                <span class="text-sm text-gray-600 mt-1">Let zkušeností</span>
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-3xl font-bold text-gray-900">2000+</span>
+                                <span class="text-sm text-gray-600 mt-1">Spokojených klientů</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!-- Kalkulačka sekce -->
+<section id="calculator" class="py-24 bg-gray-50" x-data="calculatorData()">
+    <!-- Přidán () pro správné volání funkce Alpine.data -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-center mb-16 space-x-8">
+            <img class="h-28 w-28 rounded-full shadow-lg object-cover" src="images/logo.png" alt="Logo">
+            <div class="text-left max-w-2xl">
+                <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">
+                    Kolik vás může stát problémový nájemník?
+                </h2>
+                <p class="text-xl text-gray-600">
+                    Vypočítejte si potenciální náklady a čas, který strávíte řešením problémů s nájemníkem.
+                    Všechny částky jsou založené na reálných případech.
+                </p>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-xl overflow-hidden max-w-4xl mx-auto">
+            <!-- Vstupní parametry -->
+            <div class="p-8 border-b border-gray-200">
+                <div class="grid gap-8 md:grid-cols-2">
+                    <div class="flex flex-col h-full">
+                        <label class="block text-base font-medium text-gray-700 mb-3">
+                            Hodnota vaší hodiny<br>
+                            (čas strávený řešením problémů)
+                        </label>
+                        <div class="mt-1 relative rounded-lg shadow-sm flex-grow">
+                            <input type="number" 
+                                   x-model="hourlyRate"
+                                   class="block w-full h-14 px-4 text-base border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent transition duration-150 ease-in-out shadow-sm"
+                                   placeholder="300">
+                            <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                                <span class="text-gray-500">Kč/h</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col h-full">
+                        <label class="block text-base font-medium text-gray-700 mb-3">
+                            Měsíční nájemné<br>
+                            (včetně nákladů na energie a služby)
+                        </label>
+                        <div class="mt-1 relative rounded-lg shadow-sm flex-grow">
+                            <input type="number" 
+                                   x-model="monthlyRent"
+                                   class="block w-full h-14 px-4 text-base border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent transition duration-150 ease-in-out shadow-sm"
+                                   placeholder="15000">
+                            <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                                <span class="text-gray-500">Kč</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Výsledky -->
+            <div class="p-8 bg-gray-50">
+                <div class="grid gap-6 md:grid-cols-2">
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">Celkové náklady</h3>
+                        <p class="text-3xl font-bold text-gray-900" id="totalCosts">0 Kč</p>
+                        <p class="text-sm text-gray-500 mt-1">Odhadované celkové náklady včetně vašeho času</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">Strávený čas</h3>
+                        <p class="text-3xl font-bold text-gray-900" id="timeSpent">0 hodin</p>
+                        <p class="text-sm text-gray-500 mt-1">Celkový čas strávený řešením problémů</p>
+                    </div>
+                </div>
+
+                <div class="mt-6 grid gap-6 md:grid-cols-3">
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">Náklady na váš čas</h3>
+                        <p class="text-2xl font-bold text-gray-900" id="timeCosts">0 Kč</p>
+                        <p class="text-sm text-gray-500 mt-1">Hodnota vašeho času</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">Přímé náklady</h3>
+                        <p class="text-2xl font-bold text-gray-900" id="fixedCosts">0 Kč</p>
+                        <p class="text-sm text-gray-500 mt-1">Právní služby, opravy, atd.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">Ušlý zisk</h3>
+                        <p class="text-2xl font-bold text-gray-900" id="lostRent">0 Kč</p>
+                        <p class="text-sm text-gray-500 mt-1">Nezaplacené nájemné</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detail nákladů -->
+            <div class="p-8 border-t border-gray-200">
+                <h3 class="text-lg font-semibold text-gray-900 mb-4">Co vše je zahrnuto v kalkulaci:</h3>
+                <div class="grid gap-6 md:grid-cols-2">
+                    <div>
+                        <h4 class="font-medium text-gray-900 mb-2">Časové náklady:</h4>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li>• Telefonická a osobní komunikace (2-3h měsíčně)</li>
+                            <li>• Návštěvy nemovitosti (4-5h měsíčně)</li>
+                            <li>• Administrativa a dokumentace (3-4h)</li>
+                            <li>• Jednání s právníky (2-3h)</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-gray-900 mb-2">Přímé náklady:</h4>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li>• Právní služby (8-13 000 Kč)</li>
+                            <li>• Opravy, úklid, výmalba (15-35 000 Kč)</li>
+                            <li>• Soudní poplatky (5-10 000 Kč)</li>
+                            <li>• Nové zámky a zabezpečení (2-3 500 Kč)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-12 text-center">
+            <a href="#kontakt" class="inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-medium rounded-full text-white bg-gray-900 hover:bg-gray-800 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl">
+                Zjistit, jak předejít problémům
+            </a>
+        </div>
+    </div>
+</section>
+
+
+<section class="py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-center mb-16 space-x-8">
+            <img class="h-28 w-28 rounded-full shadow-lg object-cover" src="images/vzornynajemce.png" alt="Vzorný nájemce">
+            <div class="text-left max-w-2xl">
+                <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">Aktuálně řešíme</h2>
+                <p class="text-xl text-gray-600">Sledujte aktuální případy, které právě řešíme. Všechny údaje jsou anonymizovány.</p>
+            </div>
+        </div>
+
+        <div class="grid gap-8 md:grid-cols-3">
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+                <div class="p-8">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
+                        <span class="text-base font-medium text-red-500">Právě probíhá</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Neplatič v Praze 6</h3>
+                    <p class="text-gray-600 mb-6">Dlužná částka: 85 000 Kč</p>
+                    <div class="text-sm text-gray-500">Začátek řešení: před 2 dny</div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+                <div class="p-8">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                        <span class="text-base font-medium text-green-500">Úspěšně vyřešeno</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Rušení nočního klidu v Brně</h3>
+                    <p class="text-gray-600 mb-6">Výsledek: vystěhování nájemníka</p>
+                    <div class="text-sm text-gray-500">Vyřešeno za: 14 dní</div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+                <div class="p-8">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-3 h-3 bg-yellow-500 rounded-full animate-pulse"></div>
+                        <span class="text-base font-medium text-yellow-500">V řešení</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Poškození bytu v Plzni</h3>
+                    <p class="text-gray-600 mb-6">Odhadovaná škoda: 150 000 Kč</p>
+                    <div class="text-sm text-gray-500">Ve zpracování: 5 dní</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Moderní pronájem sekce -->
+<section id="moderni-pronajem" class="py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-center mb-16 space-x-8">
+            <img class="h-28 w-28 rounded-full shadow-lg object-cover" src="images/vzornynajemce.png" alt="Logo">
+            <div class="text-left max-w-2xl">
+                <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">
+                    Jak na moderní pronájem v roce 2025?
+                </h2>
+                <p class="text-xl text-gray-600">
+                    Pronajímání nemovitosti vyžaduje profesionální přístup. Připravili jsme pro vás přehled základních kroků.
+                </p>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-xl overflow-hidden max-w-4xl mx-auto">
+            <div class="p-8 space-y-8">
+                <!-- Krok 1 -->
+                <div class="flex items-start space-x-6">
+                    <div class="w-12 h-12 bg-gray-900 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <span class="text-xl font-bold text-white">1</span>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Příprava nemovitosti</h3>
+                        <p class="text-gray-600 mb-4">
+                            Profesionální fotografie, video prohlídka a důkladná dokumentace stavu jsou základem úspěšného pronájmu. 
+                            Investujte čas do kvalitní prezentace - přiláká vám lepší nájemníky.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Krok 2 -->
+                <div class="flex items-start space-x-6">
+                    <div class="w-12 h-12 bg-gray-900 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <span class="text-xl font-bold text-white">2</span>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Prověření nájemníka</h3>
+                        <p class="text-gray-600 mb-4">
+                            Důkladné prověření je klíčové. Vyžádejte si potvrzení o příjmu, reference od předchozích pronajímatelů 
+                            a ověřte si bonitu v registrech dlužníků. Osobní setkání je nenahraditelné.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Krok 3 -->
+                <div class="flex items-start space-x-6">
+                    <div class="w-12 h-12 bg-gray-900 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <span class="text-xl font-bold text-white">3</span>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Právní zajištění</h3>
+                        <p class="text-gray-600 mb-4">
+                            Profesionální nájemní smlouva a předávací protokol jsou vaší pojistkou. Nezapomeňte na notářský zápis 
+                            s doložkou přímé vykonatelnosti a jasně definované podmínky pronájmu.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Krok 4 -->
+                <div class="flex items-start space-x-6">
+                    <div class="w-12 h-12 bg-gray-900 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <span class="text-xl font-bold text-white">4</span>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Profesionální správa</h3>
+                        <p class="text-gray-600 mb-4">
+                            Pravidelná kontrola stavu nemovitosti, včasné řešení oprav a údržby, elektronická evidence plateb. 
+                            Profesionální přístup vám ušetří čas i peníze.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 p-8 border-t border-gray-200">
+                <p class="text-gray-600 text-center">
+                    Chcete se dozvědět více o tom, jak předejít problémům s nájemníky? Spočítejte si potenciální náklady v naší kalkulačce 
+                    a kontaktujte nás pro nezávaznou konzultaci.
+                </p>
+                <div class="mt-8 text-center">
+                    <a href="#kontakt" class="inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-medium rounded-full text-white bg-gray-900 hover:bg-gray-800 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl">
+                        Konzultovat váš případ
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-center mb-16 space-x-8">
+            <img class="h-28 w-28 rounded-full shadow-lg object-cover" src="images/logo.png" alt="Vzorný nájemce">
+            <div class="text-left max-w-2xl">
+                <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">Problémový nájemník v číslech</h2>
+                <p class="text-xl text-gray-600">Statistiky za posledních 30 dní ukazují, jak často se pronajímatelé potýkají s problémy.</p>
+            </div>
+        </div>
+
+        <div class="grid gap-8 md:grid-cols-4">
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+                <div class="p-8">
+                    <div class="text-4xl font-bold text-gray-900 mb-4">47</div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Nových případů</h3>
+                    <p class="text-gray-600">+12% oproti minulému měsíci</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+                <div class="p-8">
+                    <div class="text-4xl font-bold text-gray-900 mb-4">92%</div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Úspěšnost</h3>
+                    <p class="text-gray-600">Průměrná doba řešení: 21 dní</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+                <div class="p-8">
+                    <div class="text-4xl font-bold text-gray-900 mb-4">3.8M</div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Kč zachráněno</h3>
+                    <p class="text-gray-600">Včetně ušlého zisku</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+                <div class="p-8">
+                    <div class="text-4xl font-bold text-gray-900 mb-4">15+</div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Čekajících</h3>
+                    <p class="text-gray-600">Průměrná čekací doba: 2 dny</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+        <!-- Sekce s omezenou kapacitou -->
+        <section id="konzultace" class="py-16 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+                    <div class="p-8 sm:p-12">
+                        <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+                            <div class="lg:w-2/3">
+                                <div class="flex items-center space-x-4 mb-6">
+                                    <div class="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
+                                    <span class="text-red-500 font-medium">Omezená kapacita</span>
+                                </div>
+                                <h2 class="text-3xl font-bold text-gray-900 tracking-tight mb-4">Tento týden přijímáme pouze 10 nových případů</h2>
+                                <p class="text-xl text-gray-700 mb-8">Každému případu se věnujeme s maximální péčí. Proto omezujeme počet nových klientů.</p>
+                                <div class="space-y-4 mb-8">
+                                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Co můžete očekávat:</h3>
+                                    <ul class="space-y-4">
+                                        <li class="flex items-start">
+                                            <svg class="w-6 h-6 text-gray-900 mt-0.5 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                            </svg>
+                                            <span class="text-gray-700 text-base">Odpovíme vám do 24 hodin</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <svg class="w-6 h-6 text-gray-900 mt-0.5 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                            </svg>
+                                            <span class="text-gray-700 text-base">Nabídneme vám termín úvodní konzultace</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <svg class="w-6 h-6 text-gray-900 mt-0.5 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                            </svg>
+                                            <span class="text-gray-700 text-base">Navrhneme konkrétní postup řešení</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="flex items-center space-x-4 mb-8">
+                                    <div class="flex-1 bg-gray-200 h-2 rounded-full overflow-hidden">
+                                        <div class="bg-red-500 h-full rounded-full" style="width: 60%"></div>
+                                    </div>
+                                    <span class="text-gray-600 font-medium">Zbývají: 2 místa</span>
+                                </div>
+                            </div>
+                            <div class="lg:w-1/3">
+                                <div x-data="initContactForm()" class="relative">
+                                    <form @submit.prevent="submitForm" class="space-y-6" :class="{ 'opacity-50': loading }">
+                                        <div class="grid grid-cols-2 gap-4">
+                                            <div>
+                                                <label for="firstName" class="block text-sm font-medium text-gray-700">Jméno</label>
+                                                <input type="text" id="firstName" name="firstName" required :disabled="loading || success"
+                                                       class="mt-1 block w-full px-4 py-3 rounded-lg border-gray-300 shadow-sm focus:ring-2 focus:ring-gray-500 focus:border-transparent">
+                                            </div>
+                                            <div>
+                                                <label for="lastName" class="block text-sm font-medium text-gray-700">Příjmení</label>
+                                                <input type="text" id="lastName" name="lastName" required :disabled="loading || success"
+                                                       class="mt-1 block w-full px-4 py-3 rounded-lg border-gray-300 shadow-sm focus:ring-2 focus:ring-gray-500 focus:border-transparent">
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <label for="email" class="block text-sm font-medium text-gray-700">E-mail</label>
+                                            <input type="email" id="email" name="email" required :disabled="loading || success"
+                                                   class="mt-1 block w-full px-4 py-3 rounded-lg border-gray-300 shadow-sm focus:ring-2 focus:ring-gray-500 focus:border-transparent">
+                                        </div>
+                                        <div>
+                                            <label for="phone" class="block text-sm font-medium text-gray-700">Telefon</label>
+                                            <input type="tel" id="phone" name="phone" required :disabled="loading || success"
+                                                   class="mt-1 block w-full px-4 py-3 rounded-lg border-gray-300 shadow-sm focus:ring-2 focus:ring-gray-500 focus:border-transparent">
+                                        </div>
+                                        <div>
+                                            <label for="problemType" class="block text-sm font-medium text-gray-700">Typ problému</label>
+                                            <select id="problemType" name="problemType" required :disabled="loading || success"
+                                                    class="mt-1 block w-full px-4 py-3 rounded-lg border-gray-300 shadow-sm focus:ring-2 focus:ring-gray-500 focus:border-transparent">
+                                                <option value="" disabled selected>Vyberte typ problému</option>
+                                                <option value="neplati_najem">Neplatí nájem</option>
+                                                <option value="nici_byt">Ničí nemovitost</option>
+                                                <option value="odmita_vystehovat">Odmítá se vystěhovat</option>
+                                                <option value="nelegalni_podnajemnik">Nelegální podnájemník</option>
+                                                <option value="ruseni_sousedu">Rušení sousedů / stížnosti</option>
+                                                <option value="jine">Jiný problém</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label for="duration" class="block text-sm font-medium text-gray-700">Jak dlouho problém trvá?</label>
+                                            <select id="duration" name="duration" :disabled="loading || success"
+                                                    class="mt-1 block w-full px-4 py-3 rounded-lg border-gray-300 shadow-sm focus:ring-2 focus:ring-gray-500 focus:border-transparent">
+                                                <option value="" disabled selected>Vyberte délku trvání</option>
+                                                <option value="mene_mesic">Méně než měsíc</option>
+                                                <option value="1-3_mesice">1–3 měsíce</option>
+                                                <option value="3-6_mesicu">3–6 měsíců</option>
+                                                <option value="6-12_mesicu">6–12 měsíců</option>
+                                                <option value="vice_rok">Více než rok</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label for="propertyType" class="block text-sm font-medium text-gray-700">Typ nemovitosti</label>
+                                            <select id="propertyType" name="propertyType" :disabled="loading || success"
+                                                    class="mt-1 block w-full px-4 py-3 rounded-lg border-gray-300 shadow-sm focus:ring-2 focus:ring-gray-500 focus:border-transparent">
+                                                <option value="" disabled selected>Vyberte typ</option>
+                                                <option value="flat">Byt</option>
+                                                <option value="house">Rodinný dům</option>
+                                                <option value="commercial">Komerční prostor</option>
+                                                <option value="other">Jiné</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label for="address" class="block text-sm font-medium text-gray-700">Adresa nemovitosti</label>
+                                            <input type="text" id="address" name="address" placeholder="Ulice, město" :disabled="loading || success"
+                                                   class="mt-1 block w-full px-4 py-3 rounded-lg border-gray-300 shadow-sm focus:ring-2 focus:ring-gray-500 focus:border-transparent">
+                                        </div>
+                                        <div>
+                                            <label for="message" class="block text-sm font-medium text-gray-700">Stručný popis situace</label>
+                                            <textarea id="message" name="message" rows="3" :disabled="loading || success"
+                                                      placeholder="Popište stručně vaši situaci..."
+                                                      class="mt-1 block w-full px-4 py-3 rounded-lg border-gray-300 shadow-sm focus:ring-2 focus:ring-gray-500 focus:border-transparent"></textarea>
+                                        </div>
+
+                                        <!-- Chybová hláška -->
+                                        <div x-show="error" class="text-red-500 text-sm mt-2" x-text="error"></div>
+
+                                        <!-- Tlačítko -->
+                                        <button type="submit" :disabled="loading || success"
+                                                class="w-full inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-medium rounded-full text-white bg-gray-900 hover:bg-gray-800 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
+                                                :class="{ 'cursor-not-allowed opacity-75': loading || success }">
+                                            <span x-show="!loading && !success">Odeslat poptávku</span>
+                                            <span x-show="loading" class="flex items-center">
+                                                <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                                </svg>
+                                                Odesílám...
+                                            </span>
+                                            <span x-show="success" class="flex items-center">
+                                                <svg class="-ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                                </svg>
+                                                Odeslané
+                                            </span>
+                                        </button>
+                                        <p class="text-xs text-gray-400 text-center mt-2">Vaše údaje jsou v bezpečí. Nikdy je nesdílíme s třetími stranami.</p>
+                                    </form>
+        
+                                    <!-- Úspěšná zpráva -->
+                                    <div x-show="success" 
+                                         x-transition:enter="transition ease-out duration-300"
+                                         x-transition:enter-start="opacity-0 transform scale-90"
+                                         x-transition:enter-end="opacity-100 transform scale-100"
+                                         class="absolute inset-0 flex items-center justify-center bg-white bg-opacity-90 rounded-lg">
+                                        <div class="text-center p-6">
+                                            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                                <svg class="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                                </svg>
+                                            </div>
+                                            <h3 class="text-xl font-bold text-gray-900 mb-2">Děkujeme za vaši poptávku</h3>
+                                            <p class="text-gray-600">Brzy se vám ozveme s dalšími informacemi.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+<script type="module">
+    import calculator from './js/calculator.js';
+    
+    console.log('Kalkulačkový modul načten:', calculator);
+    
+    // Inicializace Alpine.js dat pro kalkulačku
+    document.addEventListener('alpine:init', () => {
+        console.log('Inicializace Alpine.js dat pro kalkulačku...');
+        
+        Alpine.data('calculatorData', () => ({
+            hourlyRate: calculator.baseParams.hourlyRate,
+            monthlyRent: calculator.baseParams.monthlyRent,
+            
+            init() {
+                console.log('Inicializace kalkulačky...');
+                
+                // Sledování změn v Alpine.js proměnných
+                this.$watch('hourlyRate', (value) => {
+                    console.log('Změna hodinové sazby na:', value);
+                    const rate = parseFloat(value) || 0;
+                    calculator.setParams(rate, this.monthlyRent);
+                    this.updateResults();
+                });
+                
+                this.$watch('monthlyRent', (value) => {
+                    console.log('Změna měsíčního nájmu na:', value);
+                    const rent = parseFloat(value) || 0;
+                    calculator.setParams(this.hourlyRate, rent);
+                    this.updateResults();
+                });
+                
+                // Inicializace s výchozími hodnotami
+                this.updateResults();
+                console.log('Kalkulačka inicializována');
+            },
+            
+            updateResults() {
+                try {
+                    console.log('Aktualizace výsledků...');
+                    const results = calculator.calculateTotalCosts();
+                    console.log('Výsledky výpočtu:', results);
+                    calculator.updateUI();
+                } catch (error) {
+                    console.error('Chyba při aktualizaci výsledků:', error);
+                }
+            }
+        }));
+    });
+    
+    // Přímá inicializace pro případ, že Alpine ještě není inicializovaný
+    window.addEventListener('DOMContentLoaded', () => {
+        console.log('DOM načten, kontrola kalkulačky...');
+        
+        try {
+            // Kontrola, zda jsou elementy k dispozici
+            const elements = ['totalCosts', 'timeCosts', 'fixedCosts', 'lostRent', 'timeSpent'];
+            const missingElements = elements.filter(id => !document.getElementById(id));
+            
+            if (missingElements.length === 0) {
+                console.log('Všechny potřebné elementy jsou přítomny');
+                calculator.updateUI();
+            } else {
+                console.error('Chybějící elementy:', missingElements);
+            }
+        } catch (error) {
+            console.error('Chyba při kontrole kalkulačky:', error);
+        }
+    });
+    
+    // Zpřístupníme kalkulačku globálně pro ladění
+    window.calculator = calculator;
+</script>
+
+
+<!-- Valuo - Ocenění nájmu -->
+<section id="oceneni" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-center mb-16 space-x-8">
+            <div class="w-16 h-16 bg-gray-900 rounded-2xl flex items-center justify-center flex-shrink-0">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                </svg>
+            </div>
+            <div class="text-left max-w-2xl">
+                <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">Zjistěte tržní hodnotu nájmu</h2>
+                <p class="text-xl text-gray-600">Bezplatné ocenění vaší nemovitosti. Zjistěte, kolik byste měli inkasovat za nájem a zda váš nájemník platí férovou cenu.</p>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-xl overflow-hidden max-w-3xl mx-auto" x-data="valuoForm()">
+            <div class="p-8 sm:p-12">
+                <form @submit.prevent="submitValuation" :class="{ 'opacity-50 pointer-events-none': loading }">
+                    <div class="grid gap-6 md:grid-cols-2 mb-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Jméno</label>
+                            <input type="text" x-model="form.firstName" required
+                                   class="w-full px-4 py-3 rounded-lg border-gray-300 shadow-sm focus:ring-2 focus:ring-gray-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Příjmení</label>
+                            <input type="text" x-model="form.lastName" required
+                                   class="w-full px-4 py-3 rounded-lg border-gray-300 shadow-sm focus:ring-2 focus:ring-gray-500 focus:border-transparent">
+                        </div>
+                    </div>
+                    <div class="grid gap-6 md:grid-cols-2 mb-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">E-mail</label>
+                            <input type="email" x-model="form.email" required
+                                   class="w-full px-4 py-3 rounded-lg border-gray-300 shadow-sm focus:ring-2 focus:ring-gray-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Telefon</label>
+                            <input type="tel" x-model="form.phone"
+                                   class="w-full px-4 py-3 rounded-lg border-gray-300 shadow-sm focus:ring-2 focus:ring-gray-500 focus:border-transparent">
+                        </div>
+                    </div>
+
+                    <hr class="my-8 border-gray-200">
+                    <h3 class="text-lg font-bold text-gray-900 mb-6">Údaje o nemovitosti</h3>
+
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Adresa nemovitosti</label>
+                        <input type="text" x-model="form.address" required placeholder="např. Korunní 104, Praha"
+                               class="w-full px-4 py-3 rounded-lg border-gray-300 shadow-sm focus:ring-2 focus:ring-gray-500 focus:border-transparent">
+                    </div>
+
+                    <div class="grid gap-6 md:grid-cols-2 mb-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Typ nemovitosti</label>
+                            <select x-model="form.propertyType" required
+                                    class="w-full px-4 py-3 rounded-lg border-gray-300 shadow-sm focus:ring-2 focus:ring-gray-500 focus:border-transparent">
+                                <option value="" disabled>Vyberte typ</option>
+                                <option value="flat">Byt</option>
+                                <option value="house">Rodinný dům</option>
+                                <option value="land">Pozemek</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Užitná plocha (m²)</label>
+                            <input type="number" x-model="form.floorArea" min="1" required placeholder="např. 65"
+                                   class="w-full px-4 py-3 rounded-lg border-gray-300 shadow-sm focus:ring-2 focus:ring-gray-500 focus:border-transparent">
+                        </div>
+                    </div>
+
+                    <div class="grid gap-6 md:grid-cols-3 mb-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Počet pokojů</label>
+                            <select x-model="form.rooms"
+                                    class="w-full px-4 py-3 rounded-lg border-gray-300 shadow-sm focus:ring-2 focus:ring-gray-500 focus:border-transparent">
+                                <option value="">Vyberte</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5+</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Stav</label>
+                            <select x-model="form.rating"
+                                    class="w-full px-4 py-3 rounded-lg border-gray-300 shadow-sm focus:ring-2 focus:ring-gray-500 focus:border-transparent">
+                                <option value="">Vyberte stav</option>
+                                <option value="bad">Špatný</option>
+                                <option value="nothing_much">Nic moc</option>
+                                <option value="good">Dobrý</option>
+                                <option value="very_good">Velmi dobrý</option>
+                                <option value="new">Nový</option>
+                                <option value="excellent">Výborný</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Vlastnictví</label>
+                            <select x-model="form.ownership"
+                                    class="w-full px-4 py-3 rounded-lg border-gray-300 shadow-sm focus:ring-2 focus:ring-gray-500 focus:border-transparent">
+                                <option value="">Vyberte</option>
+                                <option value="private">Osobní</option>
+                                <option value="cooperative">Družstevní</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Status -->
+                    <div x-show="error" class="mb-4 p-4 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm" x-text="error"></div>
+                    <div x-show="success" class="mb-4 p-4 bg-green-50 border border-green-200 rounded-lg text-green-700 text-sm">
+                        Ocenění bylo úspěšně odesláno! Výsledek obdržíte na váš e-mail.
+                    </div>
+
+                    <button type="submit" :disabled="loading || success"
+                            class="w-full inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-medium rounded-full text-white bg-gray-900 hover:bg-gray-800 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
+                            :class="{ 'cursor-not-allowed opacity-75': loading || success }">
+                        <span x-show="!loading && !success">Získat ocenění nájmu zdarma</span>
+                        <span x-show="loading" class="flex items-center">
+                            <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                            Zpracovávám ocenění...
+                        </span>
+                        <span x-show="success">Ocenění odesláno</span>
+                    </button>
+                    <p class="text-xs text-gray-400 text-center mt-3">Výsledek ocenění obdržíte obratem na e-mail. Vaše údaje jsou v bezpečí.</p>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sekce s ebookem -->
+<section id="ebook" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col lg:flex-row items-center justify-between gap-12">
+            <!-- Levá strana - obrázek a popis -->
+            <div class="lg:w-1/2">
+                <img src="images/ebook-cover.jpg" alt="E-book: Kompletní průvodce pronájmem" class="rounded-2xl shadow-2xl mb-8 max-w-md mx-auto">
+                <div class="space-y-6 max-w-xl mx-auto lg:mx-0">
+                    <h2 class="text-3xl font-bold text-gray-900">Stáhněte si zdarma e-book</h2>
+                    <h3 class="text-2xl font-semibold text-gray-700">Kompletní průvodce pronájmem pro rok 2025</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-gray-900 mt-0.5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <span class="text-gray-600">Vzorová nájemní smlouva s komentářem</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-gray-900 mt-0.5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <span class="text-gray-600">Předávací protokol a checklist</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-gray-900 mt-0.5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <span class="text-gray-600">Praktické tipy pro prověření nájemníka</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Pravá strana - formulář -->
+            <div class="lg:w-1/2 w-full max-w-md mx-auto">
+                <div class="bg-white rounded-2xl shadow-xl p-8">
+                    <form id="ebookForm" action="send-ebook.php" method="POST" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Jméno</label>
+                            <input type="text" name="name" id="name" required
+                                class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:ring-2 focus:ring-gray-900 focus:border-gray-900">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">E-mail</label>
+                            <input type="email" name="email" id="email" required
+                                class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:ring-2 focus:ring-gray-900 focus:border-gray-900">
+                        </div>
+                        <div>
+                            <label class="flex items-start space-x-3">
+                                <input type="checkbox" name="gdpr" required
+                                    class="mt-1 h-4 w-4 text-gray-900 focus:ring-gray-900 border-gray-300 rounded">
+                                <span class="text-sm text-gray-600">
+                                    Souhlasím se zpracováním osobních údajů pro účely zaslání e-booku a dalších informací o pronájmu nemovitostí.
+                                </span>
+                            </label>
+                        </div>
+                        <button type="submit"
+                            class="w-full inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-medium rounded-full text-white bg-gray-900 hover:bg-gray-800 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl">
+                            Stáhnout e-book zdarma
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Footer placeholder -->
+<div id="footer-placeholder"></div>
+
+<script>
+const REALVISOR_BASE = 'https://api-production-88cf.up.railway.app/api/v1/public';
+const REALVISOR_LEAD_URL = REALVISOR_BASE + '/api-leads/submit';
+const REALVISOR_VALUATION_URL = REALVISOR_BASE + '/valuations';
+const REALVISOR_GEOCODE_URL = REALVISOR_BASE + '/geocode';
+const REALVISOR_API_KEY = 'rv_live_b1b5b1e9346dfc9ba3bf7ef6bdbc6b43a31254fd8b9484f1';
+
+function initContactForm() {
+    return {
+        loading: false,
+        success: false,
+        error: null,
+        async submitForm(event) {
+            event.preventDefault();
+            this.loading = true;
+            this.error = null;
+
+            const formData = new FormData(event.target);
+            const payload = {
+                firstName: formData.get('firstName'),
+                lastName: formData.get('lastName'),
+                email: formData.get('email'),
+                phone: formData.get('phone'),
+                message: [
+                    'Zdroj: problemovynajemnik.cz',
+                    'Typ problému: ' + (formData.get('problemType') || '-'),
+                    'Délka trvání: ' + (formData.get('duration') || '-'),
+                    'Typ nemovitosti: ' + (formData.get('propertyType') || '-'),
+                    'Adresa: ' + (formData.get('address') || '-'),
+                    'Popis: ' + (formData.get('message') || '-')
+                ].join('\n')
+            };
+
+            try {
+                const response = await fetch(REALVISOR_LEAD_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-API-Key': REALVISOR_API_KEY
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) throw new Error('Chyba serveru');
+
+                this.success = true;
+                event.target.reset();
+            } catch (error) {
+                this.error = 'Došlo k chybě při odesílání. Zkuste to prosím později.';
+                console.error('Error:', error);
+            } finally {
+                this.loading = false;
+            }
+        }
+    };
+}
+
+function valuoForm() {
+    return {
+        loading: false,
+        success: false,
+        error: null,
+        form: {
+            firstName: '', lastName: '', email: '', phone: '',
+            address: '', propertyType: 'flat', floorArea: '',
+            rooms: '', rating: '', ownership: ''
+        },
+        async submitValuation() {
+            this.loading = true;
+            this.error = null;
+            try {
+                // 1. Geocode address
+                const geoRes = await fetch(REALVISOR_GEOCODE_URL + '?query=' + encodeURIComponent(this.form.address), {
+                    headers: { 'X-API-Key': REALVISOR_API_KEY }
+                });
+                if (!geoRes.ok) throw new Error('Nepodařilo se ověřit adresu');
+                const geo = await geoRes.json();
+
+                // 2. Create valuation
+                const payload = {
+                    firstName: this.form.firstName,
+                    lastName: this.form.lastName,
+                    email: this.form.email,
+                    phone: this.form.phone,
+                    kind: 'lease',
+                    propertyType: this.form.propertyType,
+                    address: geo.address || this.form.address,
+                    lat: geo.lat,
+                    lng: geo.lng,
+                    city: geo.city || '',
+                    street: geo.street || '',
+                    streetNumber: geo.streetNumber || '',
+                    floorArea: parseInt(this.form.floorArea) || undefined,
+                    rooms: parseInt(this.form.rooms) || undefined,
+                    rating: this.form.rating || undefined,
+                    ownership: this.form.ownership || undefined
+                };
+
+                const valRes = await fetch(REALVISOR_VALUATION_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-API-Key': REALVISOR_API_KEY
+                    },
+                    body: JSON.stringify(payload)
+                });
+                if (!valRes.ok) throw new Error('Nepodařilo se vytvořit ocenění');
+
+                this.success = true;
+            } catch (err) {
+                this.error = err.message || 'Došlo k chybě. Zkuste to prosím později.';
+                console.error('Valuation error:', err);
+            } finally {
+                this.loading = false;
+            }
+        }
+    };
+}
+
+document.getElementById('ebookForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const submitButton = this.querySelector('button[type="submit"]');
+    const originalButtonText = submitButton.innerHTML;
+    submitButton.innerHTML = 'Odesílám...';
+    submitButton.disabled = true;
+    
+    try {
+        const formData = new FormData(this);
+        const response = await fetch('send-ebook.php', {
+            method: 'POST',
+            body: formData
+        });
+        
+        const result = await response.json();
+        
+        if (result.success) {
+            alert('Skvělé! Zkontrolujte svůj e-mail, poslali jsme vám odkaz ke stažení e-booku.');
+            this.reset();
+        } else {
+            alert(result.error || 'Došlo k chybě při odesílání formuláře. Zkuste to prosím znovu.');
+        }
+    } catch (error) {
+        alert('Došlo k chybě při odesílání formuláře. Zkuste to prosím znovu.');
+    } finally {
+        submitButton.innerHTML = originalButtonText;
+        submitButton.disabled = false;
+    }
+});
+</script>
+<script src="js/main.js"></script>
+</body>
+</html>
