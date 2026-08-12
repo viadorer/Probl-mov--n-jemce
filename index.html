@@ -335,6 +335,43 @@ tailwind.config = {
   </div>
 </section>
 
+<!-- ── ROZCESTÍ: dvě cesty, ale bez blokujícího modalu ──────────────── -->
+<section class="border-b border-line bg-white">
+  <div class="max-w-content mx-auto px-5 py-10">
+    <div class="grid md:grid-cols-2 gap-5">
+
+      <a href="#diagnostika" class="group flex flex-col justify-between p-7 rounded-2xl bg-ink text-paper hover:bg-brandd transition-colors">
+        <div>
+          <div class="inline-flex items-center gap-2 text-[13px] font-extrabold uppercase tracking-wider text-white/60 mb-3">
+            <span class="w-2 h-2 rounded-full bg-red-400"></span>Jste tady správně
+          </div>
+          <div class="text-2xl font-extrabold mb-2">Už mám problémového nájemníka</div>
+          <p class="text-white/70">Neplatí, nevystěhoval se, ničí byt nebo nekomunikuje. Zjistíte, jaké lhůty vám běží a co udělat do 72 hodin.</p>
+        </div>
+        <span class="inline-flex items-center gap-2 font-bold mt-6">
+          Spustit diagnostiku zdarma
+          <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7-7 7M3 12h18"/></svg>
+        </span>
+      </a>
+
+      <a href="prescoring.html" class="group flex flex-col justify-between p-7 rounded-2xl border-2 border-line hover:border-ink transition-colors">
+        <div>
+          <div class="inline-flex items-center gap-2 text-[13px] font-extrabold uppercase tracking-wider text-muted mb-3">
+            <span class="w-2 h-2 rounded-full bg-brand"></span>Ještě není pozdě
+          </div>
+          <div class="text-2xl font-extrabold mb-2">Teprve budu pronajímat</div>
+          <p class="text-muted">Máte zájemce a nechcete se splést. Prověřte jeho bonitu dřív, než podepíšete, a zjistěte, co si ošetřit ve smlouvě.</p>
+        </div>
+        <span class="inline-flex items-center gap-2 font-bold mt-6 text-brand">
+          Prescoring nájemníka zdarma
+          <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7-7 7M3 12h18"/></svg>
+        </span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
 <!-- ── LHŮTY 2026 ───────────────────────────────────────────────────── -->
 <section class="border-b border-line bg-white">
   <div class="max-w-content mx-auto px-5 py-16 lg:py-20">
@@ -413,6 +450,168 @@ tailwind.config = {
     <p class="text-xl font-bold">Proti tomu poměřujte cenu jakéhokoli řešení. Nejdražší varianta je vždycky ta, kde se čeká.</p>
   </div>
 </section>
+
+<!-- ── DNES VY / OD PODPISU MY ──────────────────────────────────────── -->
+<section class="border-b border-line bg-white">
+  <div class="max-w-content mx-auto px-5 py-16 lg:py-20">
+
+    <div class="max-w-2xl mb-10">
+      <h2 class="text-3xl lg:text-4xl font-extrabold tracking-[-0.02em] mb-4">
+        Osmnáct starostí, které přestanou být vaše
+      </h2>
+      <p class="text-lg text-muted leading-relaxed">
+        Vlevo je, co s problémovým nájemníkem děláte dnes. Vpravo, co se s tím stane od podpisu.
+        Projděte si to a spočítejte, kolik z levého sloupce jste dělal za poslední měsíc.
+      </p>
+    </div>
+
+    <!-- Záhlaví sloupců -->
+    <div class="hidden md:grid md:grid-cols-2 gap-x-10 pb-3 border-b-2 border-ink sticky top-16 bg-white z-10">
+      <div class="text-[13px] font-extrabold uppercase tracking-wider text-alert">Dnes to řešíte vy</div>
+      <div class="text-[13px] font-extrabold uppercase tracking-wider text-brand">Od podpisu my</div>
+    </div>
+
+    <!-- 01 Komunikace -->
+    <div class="pt-8 pb-2 text-[13px] font-extrabold uppercase tracking-wider text-muted">Komunikace a klid</div>
+    <div class="divide-y divide-line border-t border-line">
+
+      <div class="grid md:grid-cols-2 gap-x-10 gap-y-2 py-4">
+        <div class="flex gap-2.5 text-muted"><svg class="w-4 h-4 text-alert/70 shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg><span>Skládáte mu zprávy tak, aby to neznělo měkce, ale ani abyste si tím neuškodil</span></div>
+        <div class="flex gap-2.5"><svg class="w-4 h-4 text-brand shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="font-medium">Nepíšete mu vůbec. Komunikaci vedeme my a nereagujeme v afektu</span></div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-x-10 gap-y-2 py-4">
+        <div class="flex gap-2.5 text-muted"><svg class="w-4 h-4 text-alert/70 shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg><span>Patnáctého otevíráte bankovnictví a koukáte, jestli přišla platba</span></div>
+        <div class="flex gap-2.5"><svg class="w-4 h-4 text-brand shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="font-medium">Platby hlídáme my a víme, co se má stát ten den, kdy nepřijdou</span></div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-x-10 gap-y-2 py-4">
+        <div class="flex gap-2.5 text-muted"><svg class="w-4 h-4 text-alert/70 shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg><span>Jezdíte k bytu a přemýšlíte, koho potkáte na chodbě</span></div>
+        <div class="flex gap-2.5"><svg class="w-4 h-4 text-brand shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="font-medium">Na místo jezdíme my, včetně prohlídky stavu bytu</span></div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-x-10 gap-y-2 py-4">
+        <div class="flex gap-2.5 text-muted"><svg class="w-4 h-4 text-alert/70 shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg><span>Odpovídáte sousedům a výboru na stížnosti, které nemůžete ovlivnit</span></div>
+        <div class="flex gap-2.5"><svg class="w-4 h-4 text-brand shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="font-medium">Stížnosti přebíráme a rovnou z nich děláme doklady do spisu</span></div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-x-10 gap-y-2 py-4">
+        <div class="flex gap-2.5 text-muted"><svg class="w-4 h-4 text-alert/70 shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg><span>Tlačí na vás po telefonu, ať mu dáte ještě měsíc, a vy nevíte, jestli povolit</span></div>
+        <div class="flex gap-2.5"><svg class="w-4 h-4 text-brand shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="font-medium">Sliby i nátlak jdou na nás a vyhodnotíme je podle spisu, ne podle nálady</span></div>
+      </div>
+
+    </div>
+
+    <!-- 02 Papíry -->
+    <div class="pt-10 pb-2 text-[13px] font-extrabold uppercase tracking-wider text-muted">Papíry, lhůty a právo</div>
+    <div class="divide-y divide-line border-t border-line">
+
+      <div class="grid md:grid-cols-2 gap-x-10 gap-y-2 py-4">
+        <div class="flex gap-2.5 text-muted"><svg class="w-4 h-4 text-alert/70 shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg><span>Večer čtete diskuze o tom, co je rozkaz k vyklizení a jestli se vás týká</span></div>
+        <div class="flex gap-2.5"><svg class="w-4 h-4 text-brand shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="font-medium">Nemusíte to vědět. My víme, která ze tří lhůt vám běží a kdy vyprší</span></div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-x-10 gap-y-2 py-4">
+        <div class="flex gap-2.5 text-muted"><svg class="w-4 h-4 text-alert/70 shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg><span>Chodíte na poštu, hlídáte dodejky a řešíte, že si zásilku nepřevzal</span></div>
+        <div class="flex gap-2.5"><svg class="w-4 h-4 text-brand shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="font-medium">Doručujeme sami, na správné adresy a s dokladem, který obstojí u soudu</span></div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-x-10 gap-y-2 py-4">
+        <div class="flex gap-2.5 text-muted"><svg class="w-4 h-4 text-alert/70 shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg><span>Obvoláváte advokáty, porovnáváte sazby a máte složit zálohu bez záruky</span></div>
+        <div class="flex gap-2.5"><svg class="w-4 h-4 text-brand shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="font-medium">Advokáta máme. Hlavní část platíte až po předání klíčů</span></div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-x-10 gap-y-2 py-4">
+        <div class="flex gap-2.5 text-muted"><svg class="w-4 h-4 text-alert/70 shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg><span>Nevíte, jestli jste už něco nepokazil tou SMS nebo přijatou částkou</span></div>
+        <div class="flex gap-2.5"><svg class="w-4 h-4 text-brand shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="font-medium">Projdeme, co jste zatím udělal. Co se dá napravit, napravíme</span></div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-x-10 gap-y-2 py-4">
+        <div class="flex gap-2.5 text-muted"><svg class="w-4 h-4 text-alert/70 shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg><span>Skládáte dohromady výpisy, zprávy, fotky a nevíte, co z toho je důkaz</span></div>
+        <div class="flex gap-2.5"><svg class="w-4 h-4 text-brand shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="font-medium">Spis sestavíme za vás a víme, co soud u rozkazu vyžaduje</span></div>
+      </div>
+
+    </div>
+
+    <!-- 03 Soud -->
+    <div class="pt-10 pb-2 text-[13px] font-extrabold uppercase tracking-wider text-muted">Soud a vyklizení</div>
+    <div class="divide-y divide-line border-t border-line">
+
+      <div class="grid md:grid-cols-2 gap-x-10 gap-y-2 py-4">
+        <div class="flex gap-2.5 text-muted"><svg class="w-4 h-4 text-alert/70 shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg><span>Berete si volno v práci na jednání, o kterých nevíte, kolik jich bude</span></div>
+        <div class="flex gap-2.5"><svg class="w-4 h-4 text-brand shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="font-medium">Rozkaz k vyklizení se vydává bez jednání a zastupuje vás advokát</span></div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-x-10 gap-y-2 py-4">
+        <div class="flex gap-2.5 text-muted"><svg class="w-4 h-4 text-alert/70 shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg><span>Sháníte exekutora a domlouváte termín vyklizení</span></div>
+        <div class="flex gap-2.5"><svg class="w-4 h-4 text-brand shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="font-medium">Vyklizení domluvíme, zkoordinujeme a jsme u něj</span></div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-x-10 gap-y-2 py-4">
+        <div class="flex gap-2.5 text-muted"><svg class="w-4 h-4 text-alert/70 shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg><span>Nevíte, kam s jeho věcmi. Vyhodit se nesmí, ale skladovat je nemáte kde</span></div>
+        <div class="flex gap-2.5"><svg class="w-4 h-4 text-brand shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="font-medium">Uskladnění i soupis věcí zařídíme, aby vám z toho nevznikla další žaloba</span></div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-x-10 gap-y-2 py-4">
+        <div class="flex gap-2.5 text-muted"><svg class="w-4 h-4 text-alert/70 shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg><span>Musíte být u předání, obcházet byt a odhadovat, co je běžné opotřebení</span></div>
+        <div class="flex gap-2.5"><svg class="w-4 h-4 text-brand shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="font-medium">Zámky, odečty, protokol a fotodokumentace jsou na nás</span></div>
+      </div>
+
+    </div>
+
+    <!-- 04 Potom -->
+    <div class="pt-10 pb-2 text-[13px] font-extrabold uppercase tracking-wider text-muted">A co bude potom</div>
+    <div class="divide-y divide-line border-t border-line">
+
+      <div class="grid md:grid-cols-2 gap-x-10 gap-y-2 py-4">
+        <div class="flex gap-2.5 text-muted"><svg class="w-4 h-4 text-alert/70 shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg><span>Sháníte řemeslníky a čekáte na cenové nabídky, byt zatím stojí prázdný</span></div>
+        <div class="flex gap-2.5"><svg class="w-4 h-4 text-brand shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="font-medium">Soupis oprav, nabídka a koordinace řemeslníků, ať nestojí déle, než musí</span></div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-x-10 gap-y-2 py-4">
+        <div class="flex gap-2.5 text-muted"><svg class="w-4 h-4 text-alert/70 shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg><span>Řešíte přepisy energií, nedoplatky a vyúčtování, které nemáte z čeho pokrýt</span></div>
+        <div class="flex gap-2.5"><svg class="w-4 h-4 text-brand shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="font-medium">Odečty, přepisy i dluh na službách vyčíslíme a uplatníme</span></div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-x-10 gap-y-2 py-4">
+        <div class="flex gap-2.5 text-muted"><svg class="w-4 h-4 text-alert/70 shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg><span>Musíte hned shánět dalšího nájemníka a doufat, že tenhle bude lepší</span></div>
+        <div class="flex gap-2.5"><svg class="w-4 h-4 text-brand shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="font-medium">Nemusíte. A až budete, prověříme ho, aby se tohle neopakovalo</span></div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-x-10 gap-y-2 py-4">
+        <div class="flex gap-2.5 text-muted"><svg class="w-4 h-4 text-alert/70 shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg><span>Mluvíte o tom doma každý večer a nemůžete kvůli tomu spát</span></div>
+        <div class="flex gap-2.5"><svg class="w-4 h-4 text-brand shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="font-medium">Přestanete. Tohle klienti zmiňují častěji než peníze</span></div>
+      </div>
+
+    </div>
+
+    <!-- Co zůstane na vás -->
+    <div class="mt-14 p-8 rounded-2xl bg-ink text-paper">
+      <h3 class="text-2xl font-extrabold mb-2">A co zůstane na vás</h3>
+      <p class="text-white/70 mb-7 max-w-2xl">Nebudeme tvrdit, že nic. Jsou tři věci, které za vás udělat nemůžeme. Jinou práci od vás nechceme.</p>
+      <div class="grid sm:grid-cols-3 gap-6">
+        <div>
+          <div class="text-3xl font-extrabold num mb-2">1</div>
+          <div class="font-bold mb-1">Dodat, co máte</div>
+          <p class="text-white/60 text-[15px]">Smlouvu, výpisy plateb a komunikaci s nájemníkem. Jednou, na začátku.</p>
+        </div>
+        <div>
+          <div class="text-3xl font-extrabold num mb-2">2</div>
+          <div class="font-bold mb-1">Podepsat plnou moc</div>
+          <p class="text-white/60 text-[15px]">Bez ní za vás nemůžeme jednat. Připravíme ji a vysvětlíme, co přesně pokrývá.</p>
+        </div>
+        <div>
+          <div class="text-3xl font-extrabold num mb-2">3</div>
+          <div class="font-bold mb-1">Rozhodnout dvakrát</div>
+          <p class="text-white/60 text-[15px]">Jestli přijmout případnou dohodu s nájemníkem a jestli si byt necháte, nebo ho prodáte.</p>
+        </div>
+      </div>
+      <p class="text-white/50 text-sm mt-7">Všechno ostatní z levého sloupce přechází na nás.</p>
+    </div>
+
+  </div>
+</section>
+
 
 <!-- ── NABÍDKA ──────────────────────────────────────────────────────── -->
 <section class="border-b border-line bg-white">
