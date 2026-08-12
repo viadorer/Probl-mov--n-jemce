@@ -62,6 +62,28 @@ tailwind.config = {
   html{scroll-behavior:smooth}
   body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
   .num{font-variant-numeric:tabular-nums;letter-spacing:-0.02em}
+
+  /* ── PLACEHOLDERY PRO FOTO A VIDEO ──────────────────────────────────
+     Dočasné boxy se zadáním, co se má nafotit nebo natočit.
+     Až budeš mít materiál, celý blok .ph nahraď <img> nebo <video>.
+     Šrafovaný rám je záměrný, aby se placeholder nedal omylem vypustit ven. */
+  .ph{position:relative;border:2px dashed #CBD5E1;border-radius:1rem;background:
+      repeating-linear-gradient(45deg,#F8FAFC,#F8FAFC 10px,#F1F5F9 10px,#F1F5F9 20px);
+      padding:1.5rem;display:flex;flex-direction:column;justify-content:center}
+  .ph-dark{border-color:rgba(255,255,255,.25);background:
+      repeating-linear-gradient(45deg,rgba(255,255,255,.04),rgba(255,255,255,.04) 10px,rgba(255,255,255,.08) 10px,rgba(255,255,255,.08) 20px)}
+  .ph-tag{display:inline-flex;align-items:center;gap:.4rem;align-self:flex-start;
+      font-size:.6875rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+      padding:.25rem .6rem;border-radius:999px;background:#1D3FD6;color:#fff;margin-bottom:.75rem}
+  .ph-tag-video{background:#B91C1C}
+  .ph-title{font-weight:800;font-size:1rem;margin-bottom:.35rem}
+  .ph-brief{font-size:.875rem;line-height:1.55;color:#64748B}
+  .ph-why{font-size:.8125rem;line-height:1.5;margin-top:.6rem;padding-top:.6rem;border-top:1px solid #E2E8F0}
+  .ph-dark .ph-brief{color:rgba(255,255,255,.6)}
+  .ph-dark .ph-why{border-top-color:rgba(255,255,255,.15)}
+  .ph-16x9{aspect-ratio:16/9}
+  .ph-4x3{aspect-ratio:4/3}
+  .ph-1x1{aspect-ratio:1/1}
 </style>
 </head>
 
@@ -118,6 +140,20 @@ tailwind.config = {
           <span>Nechcete čekat vůbec? Byt odkoupíme i s nájemníkem uvnitř.</span>
         </li>
       </ul>
+
+      <!-- VIDEO 1 -->
+      <div class="ph ph-16x9 mb-8">
+        <span class="ph-tag ph-tag-video">Video · 60 až 90 sekund</span>
+        <div class="ph-title">David mluví přímo do kamery</div>
+        <p class="ph-brief">
+          Bez střihu, bez hudby, bez animovaného loga. Sedíš u stolu, za tebou kancelář, ne bílá stěna.
+          Text zhruba: „Pokud vám nájemník neplatí nebo se odmítá vystěhovat, tady je jediná věc, kterou musíte
+          udělat tenhle týden.“ Pak řekneš tu tříměsíční lhůtu a skončíš tím, že diagnostika je zdarma.
+          Mluv pomalu a nedívej se do scénáře.
+        </p>
+        <p class="ph-why"><strong>Proč to prodává:</strong> člověk v krizi kupuje člověka, ne službu. Tohle je jediné
+          místo na stránce, kde uvidí, komu bude volat. Vlastní tvář v hero sekci zvedá konverzi víc než jakýkoli text.</p>
+      </div>
 
       <div class="flex flex-wrap items-center gap-x-8 gap-y-3 pt-6 border-t border-line text-sm text-muted">
         <div><span class="text-ink font-extrabold text-lg num">30</span> let na trhu s nemovitostmi</div>
@@ -321,6 +357,20 @@ tailwind.config = {
         <p class="text-muted leading-relaxed">Tolik má nájemník na odpor. Podaný odpor rozkaz ruší, proto musí být návrh neprůstřelný od prvního dne.</p>
       </div>
     </div>
+
+    <!-- FOTO 1 -->
+    <div class="ph ph-16x9 mt-8">
+      <span class="ph-tag">Foto</span>
+      <div class="ph-title">Skutečný rozkaz k vyklizení nebo výzva s dodejkou</div>
+      <p class="ph-brief">
+        Vyfoť anonymizovaný dokument na stole, seshora, denní světlo. Jména a adresy začerni nebo rozostři,
+        ale nech čitelnou hlavičku soudu, datum a razítko. Vedle polož obálku s dodejkou.
+        Žádná stocková fotka kladívka ani vah spravedlnosti.
+      </p>
+      <p class="ph-why"><strong>Proč to prodává:</strong> většina majitelů rozkaz k vyklizení nikdy neviděla a neví,
+        jestli existuje. Fotka reálného dokumentu z konkrétního případu udělá z abstraktního slibu hmatatelnou věc
+        a zároveň dokazuje, že to fakt děláte, ne jen píšete.</p>
+    </div>
   </div>
 </section>
 
@@ -345,6 +395,19 @@ tailwind.config = {
         <div class="text-5xl font-extrabold num mb-2 text-red-400">800 000</div>
         <div class="text-white/60">Kč je horní hranice, kam se případ dostane po roce a půl i s opravami a prostojem.</div>
       </div>
+    </div>
+
+    <!-- FOTO 2 -->
+    <div class="ph ph-dark ph-16x9 mb-10">
+      <span class="ph-tag ph-tag-video">Foto · dvojice před a po</span>
+      <div class="ph-title text-white">Byt po nájemníkovi, který přestal platit</div>
+      <p class="ph-brief">
+        Dvě fotky vedle sebe ze stejného úhlu: stav při předání nájemníkovi a stav při vyklizení.
+        Nepotřebuješ zdemolovaný byt, naopak. Nejsilnější je běžný neuklizený byt s plesnivým rohem,
+        vytrhanou zásuvkou a hromadou věcí, protože v tom se majitel pozná. Bez lidí, bez filtrů.
+      </p>
+      <p class="ph-why"><strong>Proč to prodává:</strong> čísla nad tím jsou abstrakce. Fotka je moment, kdy si
+        člověk představí svůj byt a spočítá si, že rekonstrukce bude dražší než cokoli, co mu nabídneš.</p>
     </div>
 
     <p class="text-xl font-bold">Proti tomu poměřujte cenu jakéhokoli řešení. Nejdražší varianta je vždycky ta, kde se čeká.</p>
@@ -382,6 +445,19 @@ tailwind.config = {
             <svg class="w-5 h-5 text-brand shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
             <div><span class="font-bold">Vyčíslení a vymáhání dluhu</span><p class="text-muted text-[15px] mt-0.5">Dlužné nájemné, škody a náklady sečteme a uplatníme. Nezůstane to jen u vyklizení.</p></div>
           </div>
+        </div>
+
+        <!-- FOTO 3 -->
+        <div class="ph ph-4x3 mt-8">
+          <span class="ph-tag">Foto</span>
+          <div class="ph-title">Listinná složka jednoho případu, rozložená na stole</div>
+          <p class="ph-brief">
+            Nafoť seshora rozložené papíry: nájemní smlouva, výzva, výpověď, dodejky, předávací protokol,
+            fotodokumentace bytu, návrh k soudu. Klidně dvacet listů přes celý stůl.
+            Anonymizuj jména, ale ať je vidět objem. Vedle položené propisky a desky.
+          </p>
+          <p class="ph-why"><strong>Proč to prodává:</strong> tohle je vizuální ospravedlnění ceny. Dokud vidí jen
+            odrážky, cena zní vysoko. Když uvidí, kolik papírů by musel sesbírat a doručit sám, cena zní levně.</p>
         </div>
 
         <div class="mt-8 p-6 rounded-2xl bg-paper border border-line">
@@ -440,6 +516,21 @@ tailwind.config = {
         </p>
         <a href="prescoring.html" class="inline-flex px-7 py-4 rounded-lg bg-ink text-paper font-extrabold hover:bg-brandd transition-colors">Spustit prescoring zdarma</a>
       </div>
+      <div class="space-y-5">
+      <!-- FOTO 4 -->
+      <div class="ph ph-4x3">
+        <span class="ph-tag">Screenshot</span>
+        <div class="ph-title">Skutečný výstup prescoringu</div>
+        <p class="ph-brief">
+          Snímek výsledkové obrazovky s velkým skóre, pásmem a rozpadem rizik. Ideálně případ,
+          který dopadl špatně, třeba 34 bodů a čtyři rizikové faktory. Vyfoť to i na mobilu v ruce,
+          protože většina lidí to bude otevírat v telefonu.
+        </p>
+        <p class="ph-why"><strong>Proč to prodává:</strong> nikdo nekliká na nástroj, o kterém neví, jak vypadá.
+          Náhled výstupu je nejlevnější způsob, jak zvednout prokliky do prescoringu, a zároveň ukazuje,
+          že to není další formulář na sběr e-mailů, ale skutečná analýza.</p>
+      </div>
+
       <div class="rounded-2xl bg-white border border-line p-8">
         <div class="text-[13px] font-extrabold uppercase tracking-wider text-muted mb-4">Co vyhodnocuje</div>
         <ul class="space-y-3 text-[15px]">
@@ -449,6 +540,7 @@ tailwind.config = {
           <li class="flex gap-3"><span class="text-brand font-bold">04</span><span>Insolvenční rejstřík, evidence exekucí a reference z předchozích nájmů</span></li>
           <li class="flex gap-3"><span class="text-brand font-bold">05</span><span>Kvalitu ručitele a to, jestli spolubydlící podepíší jako solidární dlužníci</span></li>
         </ul>
+      </div>
       </div>
     </div>
   </div>
@@ -461,7 +553,14 @@ tailwind.config = {
       <h2 class="text-3xl lg:text-4xl font-extrabold tracking-[-0.02em] mb-8">Kdo případ povede</h2>
 
       <div class="grid sm:grid-cols-[auto,1fr] gap-6 items-start p-6 rounded-2xl border border-line bg-white mb-6">
-        <div class="w-20 h-20 rounded-xl bg-line grid place-items-center text-muted text-sm shrink-0">foto</div>
+        <!-- FOTO 5 -->
+        <div class="ph ph-1x1 w-40 shrink-0 !p-3">
+          <span class="ph-tag !mb-1.5 !text-[10px]">Portrét</span>
+          <p class="ph-brief !text-[11px] !leading-snug">
+            David, pas nahoru, neutrální pozadí, denní světlo z okna. Ne oblek s kravatou,
+            ale ani tričko. Pohled do objektivu, mírný úsměv. Žádný korporátní ateliér.
+          </p>
+        </div>
         <div>
           <div class="text-xl font-extrabold">David Choc</div>
           <div class="text-muted mb-3">30 let na trhu s nemovitostmi, specializace na pronájmy a správu</div>
@@ -471,10 +570,86 @@ tailwind.config = {
 
       <div class="p-6 rounded-2xl border border-line bg-white">
         <div class="font-extrabold mb-2">Právní část zajišťuje advokátní kancelář</div>
-        <p class="text-muted leading-relaxed">Sepis podání, právní úkony a zastoupení u soudu zajišťuje spolupracující advokátní kancelář. Naší rolí je vedení případu, dokumentace, komunikace s nájemníkem a koordinace celého procesu.</p>
+        <p class="text-muted leading-relaxed mb-5">Sepis podání, právní úkony a zastoupení u soudu zajišťuje spolupracující advokátní kancelář. Naší rolí je vedení případu, dokumentace, komunikace s nájemníkem a koordinace celého procesu.</p>
+
+        <!-- FOTO 6 -->
+        <div class="ph">
+          <span class="ph-tag">Foto nebo logo</span>
+          <div class="ph-title">Advokát, se kterým spolupracujete</div>
+          <p class="ph-brief">
+            Portrét advokáta se jménem a číslem zápisu v ČAK, nebo aspoň logo kanceláře.
+            Nejlepší varianta je společná fotka vás dvou, klidně v kanceláři u stolu.
+          </p>
+          <p class="ph-why"><strong>Proč to prodává:</strong> „spolupracující advokátní kancelář" bez jména
+            zní jako výmluva. Konkrétní jméno a tvář je zároveň splnění zákonné povinnosti i nejsilnější
+            odpověď na námitku „proč vy a ne rovnou právník".</p>
+        </div>
         <!-- DOPLNIT: konkrétní název advokátní kanceláře. Bez něj stránku nespouštět (zákon o advokacii 85/1996 Sb.). -->
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ── PŘÍPADY A REFERENCE ──────────────────────────────────────────── -->
+<section class="border-b border-line bg-paper">
+  <div class="max-w-content mx-auto px-5 py-16 lg:py-20">
+    <div class="max-w-2xl mb-10">
+      <h2 class="text-3xl lg:text-4xl font-extrabold tracking-[-0.02em] mb-4">Jak to dopadlo jinde</h2>
+      <p class="text-lg text-muted leading-relaxed">Tři případy z poslední doby. Jména a adresy neuvádíme, čísla ano.</p>
+    </div>
+
+    <!-- VIDEO 2 -->
+    <div class="ph ph-16x9 mb-6">
+      <span class="ph-tag ph-tag-video">Video · 2 až 3 minuty</span>
+      <div class="ph-title">Reference klienta, kterému jste byt vrátili</div>
+      <p class="ph-brief">
+        Natoč skutečného majitele, ideálně v tom bytě, o který šlo. Neptej se, jestli je spokojený.
+        Zeptej se na tři věci a nech ho mluvit: jak dlouho to řešil sám, co ho to stálo,
+        a v jakém okamžiku si řekl, že to sám nezvládne. Když nechce ukázat obličej, natoč ruce a byt
+        a nech jen hlas. Titulky povinně, většina to pustí bez zvuku.
+      </p>
+      <p class="ph-why"><strong>Proč to prodává:</strong> tohle je jediná věc na celé stránce, kterou o vás
+        neříkáte vy. Video-reference konvertuje řádově líp než psaná citace, protože se nedá vymyslet.
+        Kdyby měl vzniknout jen jeden materiál z celého seznamu, ať je to tenhle.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-5">
+      <div class="ph ph-4x3">
+        <span class="ph-tag">Foto · případ 1</span>
+        <div class="ph-title">Neplatič, dluh přes tři nájmy</div>
+        <p class="ph-brief">
+          Fotka bytu po vyklizení, už uklizeného a připraveného k pronájmu. Vedle ní na stránce poběží
+          čísla: doba řešení, dlužná částka, kolik se vrátilo.
+        </p>
+        <p class="ph-why"><strong>Proč:</strong> ukazuje konec příběhu. Člověk v krizi potřebuje vidět,
+          že tenhle stav má konec a jak ten konec vypadá.</p>
+      </div>
+      <div class="ph ph-4x3">
+        <span class="ph-tag">Foto · případ 2</span>
+        <div class="ph-title">Nájemník, který se odmítal vystěhovat</div>
+        <p class="ph-brief">
+          Předání klíčů, detail ruky s klíči nad předávacím protokolem. Datum na protokolu nech čitelné,
+          jména začerni.
+        </p>
+        <p class="ph-why"><strong>Proč:</strong> klíče jsou vysněný výsledek celé nabídky. Vizuál, který
+          přesně sedí na hlavní slib „váš byt zpátky".</p>
+      </div>
+      <div class="ph ph-4x3">
+        <span class="ph-tag">Foto · případ 3</span>
+        <div class="ph-title">Majitel, který nechtěl čekat, a byt prodal</div>
+        <p class="ph-brief">
+          Fotka podpisu kupní smlouvy nebo jen dvou lidí u stolu při jednání. Nemá to vypadat jako
+          bankovní reklama, klidně mobilem.
+        </p>
+        <p class="ph-why"><strong>Proč:</strong> odkup je vaše největší odlišení od advokátů. Bez obrázku
+          zůstane jen odrážkou v ceníku a nikdo si nevšimne, že jde o samostatné řešení.</p>
+      </div>
+    </div>
+
+    <p class="text-sm text-muted mt-6">
+      Než budou fotky a čísla z reálných případů, tuhle sekci nepouštěj ven. Vymyšlená případovka je
+      jediná věc, která tenhle typ webu spolehlivě zabije.
+    </p>
   </div>
 </section>
 
