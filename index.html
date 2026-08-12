@@ -11,6 +11,7 @@
 <meta property="og:title" content="Problémový nájemník? Váš byt zpátky bez návštěvy soudu">
 <meta property="og:description" content="Diagnostika případu zdarma. Zjistěte, jaké lhůty vám běží a jak dlouho potrvá získat byt zpátky.">
 <meta property="og:url" content="https://www.problemovynajemnik.cz/">
+<meta property="og:image" content="https://www.problemovynajemnik.cz/images/hero-image.jpg">
 <meta property="og:locale" content="cs_CZ">
 <link rel="icon" href="images/logo.png">
 
@@ -19,26 +20,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <script src="https://cdn.tailwindcss.com"></script>
-<script>
-tailwind.config = {
-  theme: {
-    extend: {
-      colors: {
-        ink:    '#0F172A',
-        muted:  '#64748B',
-        line:   '#E7E5E4',
-        paper:  '#FAFAF9',
-        brand:  '#1D3FD6',
-        brandd: '#152FA3',
-        alert:  '#B91C1C',
-        warn:   '#B45309',
-      },
-      fontFamily: { sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'] },
-      maxWidth: { content: '1180px' },
-    }
-  }
-}
-</script>
 <script defer src="https://unpkg.com/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
 <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 <script src="js/diagnostika.js"></script>
@@ -62,181 +43,225 @@ tailwind.config = {
   html{scroll-behavior:smooth}
   body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
   .num{font-variant-numeric:tabular-nums;letter-spacing:-0.02em}
+  .card{box-shadow:0 1px 3px rgba(15,23,42,.04),0 8px 24px -12px rgba(15,23,42,.10)}
+  .card-lg{box-shadow:0 4px 12px rgba(15,23,42,.05),0 24px 48px -12px rgba(15,23,42,.15)}
 
-  /* ── PLACEHOLDERY PRO FOTO A VIDEO ──────────────────────────────────
-     Dočasné boxy se zadáním, co se má nafotit nebo natočit.
-     Až budeš mít materiál, celý blok .ph nahraď <img> nebo <video>.
-     Šrafovaný rám je záměrný, aby se placeholder nedal omylem vypustit ven. */
-  .ph{position:relative;border:2px dashed #CBD5E1;border-radius:1rem;background:
-      repeating-linear-gradient(45deg,#F8FAFC,#F8FAFC 10px,#F1F5F9 10px,#F1F5F9 20px);
-      padding:1.5rem;display:flex;flex-direction:column;justify-content:center}
-  .ph-dark{border-color:rgba(255,255,255,.25);background:
-      repeating-linear-gradient(45deg,rgba(255,255,255,.04),rgba(255,255,255,.04) 10px,rgba(255,255,255,.08) 10px,rgba(255,255,255,.08) 20px)}
-  .ph-tag{display:inline-flex;align-items:center;gap:.4rem;align-self:flex-start;
-      font-size:.6875rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
-      padding:.25rem .6rem;border-radius:999px;background:#1D3FD6;color:#fff;margin-bottom:.75rem}
-  .ph-tag-video{background:#B91C1C}
-  .ph-title{font-weight:800;font-size:1rem;margin-bottom:.35rem}
-  .ph-brief{font-size:.875rem;line-height:1.55;color:#64748B}
-  .ph-why{font-size:.8125rem;line-height:1.5;margin-top:.6rem;padding-top:.6rem;border-top:1px solid #E2E8F0}
+  /* Placeholdery pro foto a video. Až budeš mít materiál, nahraď celý blok .ph. */
+  .ph{border:2px dashed #D1D5DB;border-radius:1.5rem;background:#F9FAFB;padding:1.75rem;
+      display:flex;flex-direction:column;justify-content:center}
+  .ph-dark{border-color:rgba(255,255,255,.22);background:rgba(255,255,255,.04)}
+  .ph-tag{display:inline-flex;align-self:flex-start;font-size:.6875rem;font-weight:800;
+      letter-spacing:.08em;text-transform:uppercase;padding:.3rem .7rem;border-radius:999px;
+      background:#111827;color:#fff;margin-bottom:.85rem}
+  .ph-tag-video{background:#DC2626}
+  .ph-title{font-weight:800;margin-bottom:.35rem}
+  .ph-brief{font-size:.875rem;line-height:1.55;color:#6B7280}
+  .ph-why{font-size:.8125rem;line-height:1.5;margin-top:.7rem;padding-top:.7rem;border-top:1px solid #E5E7EB}
   .ph-dark .ph-brief{color:rgba(255,255,255,.6)}
   .ph-dark .ph-why{border-top-color:rgba(255,255,255,.15)}
   .ph-16x9{aspect-ratio:16/9}
   .ph-4x3{aspect-ratio:4/3}
-  .ph-1x1{aspect-ratio:1/1}
 </style>
 </head>
 
-<body class="bg-paper text-ink antialiased">
+<body class="bg-white text-gray-900">
 
-<!-- ── HLAVIČKA: bez navigace, jen značka a telefon ─────────────────── -->
-<header class="sticky top-0 z-40 bg-paper/90 backdrop-blur border-b border-line">
-  <div class="max-w-content mx-auto px-5 h-16 flex items-center justify-between">
+<!-- ── NAVIGACE ─────────────────────────────────────────────────────── -->
+<nav class="bg-white/85 backdrop-blur-md sticky top-0 z-40 border-b border-gray-100">
+  <div class="max-w-7xl mx-auto px-6 flex justify-between items-center h-20">
     <a href="/" class="flex items-center gap-3">
-      <img src="images/logo.png" alt="Problémový nájemník" class="h-9 w-9 rounded-full object-cover">
-      <span class="font-bold tracking-tight">Problémový nájemník</span>
+      <img src="images/logo.png" class="h-11 w-11 rounded-full shadow-md object-cover" alt="Problémový nájemník">
+      <span class="text-xl font-bold tracking-tight">Problémový nájemník</span>
     </a>
-    <div class="flex items-center gap-4">
-      <span class="hidden sm:block text-sm text-muted">Po–Pá 8:00–17:00</span>
-      <a href="tel:+420603834921" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-ink text-paper text-sm font-bold hover:bg-brandd transition-colors">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-        <span class="hidden sm:inline">603 834 921</span>
-        <span class="sm:hidden">Zavolat</span>
+    <div class="flex items-center gap-8">
+      <div class="hidden lg:flex items-center gap-8 text-sm font-medium text-gray-600">
+        <a href="#starosti" class="hover:text-gray-900 transition-colors">Co za vás převezmeme</a>
+        <a href="#program" class="hover:text-gray-900 transition-colors">Ceník a garance</a>
+        <a href="prescoring.html" class="hover:text-gray-900 transition-colors">Prescoring</a>
+        <a href="blog.html" class="hover:text-gray-900 transition-colors">Blog</a>
+      </div>
+      <a href="tel:+420603834921" class="px-5 py-2.5 rounded-full bg-gray-900 text-white text-sm font-semibold hover:bg-gray-800 transition-colors">
+        <span class="hidden sm:inline">603 834 921</span><span class="sm:hidden">Zavolat</span>
       </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── HERO ─────────────────────────────────────────────────────────── -->
+<header class="relative">
+  <img src="images/hero-image.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" fetchpriority="high">
+  <div class="absolute inset-0" style="background:linear-gradient(to right,rgba(255,255,255,.94) 0%,rgba(255,255,255,.8) 44%,rgba(255,255,255,.05) 80%)"></div>
+
+  <div class="relative max-w-7xl mx-auto px-6 py-14 lg:py-20">
+    <div class="bg-white/95 backdrop-blur rounded-[2rem] p-8 sm:p-10 lg:p-12 max-w-2xl card-lg">
+
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-amber-700 text-[13px] font-semibold mb-6">
+        <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+        Od 1. 1. 2026 běží nové lhůty
+      </div>
+
+      <h1 class="text-4xl sm:text-5xl lg:text-[54px] font-extrabold leading-[1.05] tracking-tight mb-5">
+        Váš byt zpátky.<br>Bez jediné návštěvy soudu.
+      </h1>
+
+      <p class="text-lg text-gray-600 leading-relaxed mb-8">
+        Převezmeme případ problémového nájemníka od první výzvy až po předání klíčů.
+        Osmnáct starostí, které dnes řešíte vy, přejde na nás.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-3 mb-9">
+        <a href="#diagnostika" class="px-7 py-4 rounded-full bg-gray-900 text-white font-semibold text-center hover:bg-gray-800 transition-colors">
+          Potřebuji vyřešit problém
+        </a>
+        <a href="prescoring.html" class="px-7 py-4 rounded-full border-2 border-gray-200 font-semibold text-center hover:border-gray-900 transition-colors">
+          Teprve budu pronajímat
+        </a>
+      </div>
+
+      <div class="grid grid-cols-3 gap-6 pt-8 border-t border-gray-100">
+        <div>
+          <div class="text-2xl sm:text-3xl font-extrabold num">2–5</div>
+          <div class="text-sm text-gray-500 mt-0.5">měsíců do vyklizení</div>
+        </div>
+        <div>
+          <div class="text-2xl sm:text-3xl font-extrabold num">180</div>
+          <div class="text-sm text-gray-500 mt-0.5">minut a ozveme se</div>
+        </div>
+        <div>
+          <div class="text-2xl sm:text-3xl font-extrabold num">30</div>
+          <div class="text-sm text-gray-500 mt-0.5">let na trhu</div>
+        </div>
+      </div>
     </div>
   </div>
 </header>
 
-<!-- ── HERO + DIAGNOSTIKA NAD OHYBEM ────────────────────────────────── -->
-<section class="border-b border-line">
-  <div class="max-w-content mx-auto px-5 py-10 lg:py-16 grid lg:grid-cols-[1fr,minmax(0,520px)] gap-10 lg:gap-14 items-start">
-
-    <div class="lg:pt-6">
-      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-warn/30 bg-warn/5 text-warn text-[13px] font-bold mb-6">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v4m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>
-        Od 1. 1. 2026 běží nové lhůty
-      </div>
-
-      <h1 class="text-[38px] leading-[1.08] sm:text-[52px] lg:text-[58px] font-extrabold tracking-[-0.03em] mb-5">
-        Váš byt zpátky.<br>Bez jediné návštěvy soudu.
-      </h1>
-
-      <p class="text-lg sm:text-xl text-muted leading-relaxed mb-8 max-w-xl">
-        Převezmeme případ problémového nájemníka od první výzvy až po předání klíčů.
-        <span class="text-ink font-bold">Nedopadne to, vracíme peníze do koruny.</span>
+<!-- ── LHŮTY 2026 ───────────────────────────────────────────────────── -->
+<section class="bg-gray-50 py-20 lg:py-24">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-2xl mb-12">
+      <h2 class="text-3xl lg:text-4xl font-extrabold tracking-tight mb-4">
+        Od ledna 2026 máte rychlejší cestu ven. Ale jen na pár měsíců.
+      </h2>
+      <p class="text-lg text-gray-600 leading-relaxed">
+        Novela občanského soudního řádu zavedla rozkaz k vyklizení: zkrácené řízení bez jednání, obdoba
+        platebního rozkazu. Byt se dá získat zpět v řádu měsíců místo let. Má to ale tři lhůty, které se dají propásnout.
       </p>
+    </div>
 
-      <ul class="space-y-3 mb-8">
-        <li class="flex items-start gap-3">
-          <svg class="w-5 h-5 text-brand shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-          <span>S nájemníkem od převzetí případu jednáme my. Nemusíte se s ním vidět ani slyšet.</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <svg class="w-5 h-5 text-brand shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-          <span>Ozveme se do 180 minut, první výzva odchází do 24 hodin od podpisu podkladů.</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <svg class="w-5 h-5 text-brand shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-          <span>Nechcete čekat vůbec? Byt odkoupíme i s nájemníkem uvnitř.</span>
-        </li>
-      </ul>
-
-      <!-- VIDEO 1 -->
-      <div class="ph ph-16x9 mb-8">
-        <span class="ph-tag ph-tag-video">Video · 60 až 90 sekund</span>
-        <div class="ph-title">David mluví přímo do kamery</div>
-        <p class="ph-brief">
-          Bez střihu, bez hudby, bez animovaného loga. Sedíš u stolu, za tebou kancelář, ne bílá stěna.
-          Text zhruba: „Pokud vám nájemník neplatí nebo se odmítá vystěhovat, tady je jediná věc, kterou musíte
-          udělat tenhle týden.“ Pak řekneš tu tříměsíční lhůtu a skončíš tím, že diagnostika je zdarma.
-          Mluv pomalu a nedívej se do scénáře.
-        </p>
-        <p class="ph-why"><strong>Proč to prodává:</strong> člověk v krizi kupuje člověka, ne službu. Tohle je jediné
-          místo na stránce, kde uvidí, komu bude volat. Vlastní tvář v hero sekci zvedá konverzi víc než jakýkoli text.</p>
+    <div class="grid md:grid-cols-3 gap-6 mb-10">
+      <div class="bg-white rounded-3xl p-8 card">
+        <div class="text-4xl font-extrabold num mb-3">3 měsíce</div>
+        <p class="text-gray-600 leading-relaxed">Po skončení nájmu musíte nájemníka písemně vyzvat k vyklizení. Když to nestihnete, nájem se obnovuje a začínáte znovu.</p>
       </div>
-
-      <div class="flex flex-wrap items-center gap-x-8 gap-y-3 pt-6 border-t border-line text-sm text-muted">
-        <div><span class="text-ink font-extrabold text-lg num">30</span> let na trhu s nemovitostmi</div>
-        <div>Právní úkony zajišťuje <span class="text-ink font-bold">spolupracující advokátní kancelář</span></div>
+      <div class="bg-white rounded-3xl p-8 card">
+        <div class="text-4xl font-extrabold num mb-3">14 dní</div>
+        <p class="text-gray-600 leading-relaxed">Výzva musí být doručena nejméně 14 dní před podáním návrhu k soudu, do bytu nebo do datové schránky.</p>
+      </div>
+      <div class="bg-white rounded-3xl p-8 card">
+        <div class="text-4xl font-extrabold num mb-3">15 dní</div>
+        <p class="text-gray-600 leading-relaxed">Tolik má nájemník na odpor. Podaný odpor rozkaz ruší, proto musí být návrh neprůstřelný od prvního dne.</p>
       </div>
     </div>
 
-    <!-- DIAGNOSTIKA -->
-    <div id="diagnostika" x-data="diagnostika()" x-cloak class="lg:sticky lg:top-24">
+    <!-- FOTO 1 -->
+    <div class="ph ph-16x9">
+      <span class="ph-tag">Foto</span>
+      <div class="ph-title">Skutečný rozkaz k vyklizení nebo výzva s dodejkou</div>
+      <p class="ph-brief">Anonymizovaný dokument na stole, seshora, denní světlo. Jména začerni, ale nech čitelnou hlavičku soudu, datum a razítko. Vedle obálka s dodejkou. Žádná stocková fotka kladívka.</p>
+      <p class="ph-why"><strong>Proč to prodává:</strong> většina majitelů rozkaz nikdy neviděla a neví, jestli existuje. Fotka reálného dokumentu z konkrétního případu z abstraktního slibu udělá hmatatelnou věc.</p>
+    </div>
+  </div>
+</section>
 
-      <!-- Otázky -->
-      <div x-show="screen === 'quiz'" class="bg-white rounded-2xl border border-line shadow-[0_1px_3px_rgba(15,23,42,0.04),0_12px_32px_-12px_rgba(15,23,42,0.12)] overflow-hidden">
-        <div class="px-6 pt-6 pb-4 border-b border-line">
-          <div class="flex items-center justify-between mb-3">
-            <span class="text-[13px] font-bold uppercase tracking-wider text-brand">Diagnostika případu</span>
-            <span class="text-[13px] text-muted num" x-text="'Krok ' + (index + 1) + ' z ' + steps.length"></span>
-          </div>
-          <div class="h-1.5 bg-line rounded-full overflow-hidden">
-            <div class="h-full bg-brand transition-all duration-300" :style="'width:' + progress + '%'"></div>
-          </div>
+<!-- ── DIAGNOSTIKA ──────────────────────────────────────────────────── -->
+<section id="diagnostika" class="bg-white py-20 lg:py-24">
+  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-[1fr,minmax(0,540px)] gap-12 lg:gap-16 items-start">
+
+    <div class="lg:pt-4">
+      <h2 class="text-3xl lg:text-4xl font-extrabold tracking-tight mb-4">
+        Zjistěte za dvě minuty, co vám běží a co udělat teď
+      </h2>
+      <p class="text-lg text-gray-600 leading-relaxed mb-8">
+        Šest otázek. Na konci uvidíte svou situaci, lhůty, které vám běží, odhad délky řešení
+        a konkrétní krok, který musíte udělat do 72 hodin.
+      </p>
+
+      <!-- VIDEO 1 -->
+      <div class="ph ph-16x9">
+        <span class="ph-tag ph-tag-video">Video · 60 až 90 sekund</span>
+        <div class="ph-title">David mluví přímo do kamery</div>
+        <p class="ph-brief">
+          Bez střihu a bez hudby. Sedíš u stolu, za tebou kancelář. Zhruba: „Pokud vám nájemník neplatí
+          nebo se odmítá vystěhovat, tady je jediná věc, kterou musíte udělat tenhle týden.“ Pak řekneš
+          tříměsíční lhůtu a skončíš tím, že diagnostika je zdarma.
+        </p>
+        <p class="ph-why"><strong>Proč to prodává:</strong> člověk v krizi kupuje člověka, ne službu. Je to jediné místo, kde uvidí, komu bude volat.</p>
+      </div>
+    </div>
+
+    <!-- Průvodce -->
+    <div x-data="diagnostika()" x-cloak>
+
+      <div x-show="screen === 'quiz'" class="bg-gray-50 rounded-3xl p-7 sm:p-8 card">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-[13px] font-bold uppercase tracking-wider text-gray-400">Diagnostika případu</span>
+          <span class="text-[13px] text-gray-400 num" x-text="'Krok ' + (index + 1) + ' z ' + steps.length"></span>
+        </div>
+        <div class="h-1.5 bg-gray-200 rounded-full overflow-hidden mb-7">
+          <div class="h-full bg-gray-900 rounded-full transition-all duration-300" :style="'width:' + progress + '%'"></div>
         </div>
 
-        <div class="p-6">
-          <h2 class="text-xl font-bold mb-1.5" x-text="step.question"></h2>
-          <p class="text-sm text-muted mb-5" x-show="step.hint" x-text="step.hint"></p>
+        <h3 class="text-xl font-bold mb-1.5" x-text="step.question"></h3>
+        <p class="text-sm text-gray-500 mb-5" x-show="step.hint" x-text="step.hint"></p>
 
-          <div class="space-y-2.5">
-            <template x-for="opt in step.options" :key="opt.value">
-              <button @click="pick(opt.value)"
-                class="w-full text-left px-4 py-3.5 rounded-xl border-2 border-line hover:border-brand hover:bg-brand/[0.03] transition-all group">
-                <div class="flex items-start gap-3">
-                  <span class="w-5 h-5 rounded-full border-2 border-line group-hover:border-brand shrink-0 mt-0.5 transition-colors"></span>
-                  <span>
-                    <span class="block font-semibold leading-snug" x-text="opt.label"></span>
-                    <span class="block text-sm text-muted mt-0.5" x-show="opt.note" x-text="opt.note"></span>
-                  </span>
-                </div>
-              </button>
-            </template>
-          </div>
-
-          <button x-show="index > 0" @click="back()" class="mt-5 text-sm text-muted hover:text-ink transition-colors">← Zpět</button>
+        <div class="space-y-2.5">
+          <template x-for="opt in step.options" :key="opt.value">
+            <button @click="pick(opt.value)"
+              class="w-full text-left p-4 rounded-2xl bg-white border-2 border-gray-100 hover:border-gray-900 transition-colors">
+              <span class="block font-semibold leading-snug" x-text="opt.label"></span>
+              <span class="block text-sm text-gray-500 mt-0.5" x-show="opt.note" x-text="opt.note"></span>
+            </button>
+          </template>
         </div>
 
-        <div class="px-6 py-4 bg-paper border-t border-line text-[13px] text-muted">
-          Zdarma a bez závazku. Na konci uvidíte lhůty, které vám běží, i odhad délky řešení.
+        <div class="flex items-center justify-between mt-6">
+          <button x-show="index > 0" @click="back()" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">← Zpět</button>
+          <span class="text-[13px] text-gray-400 ml-auto">Zdarma a bez závazku</span>
         </div>
       </div>
 
-      <!-- Volný výsledek + brána na kontakt -->
+      <!-- Volný výsledek + brána -->
       <template x-if="result && screen === 'preview'">
-      <div class="bg-white rounded-2xl border border-line shadow-[0_1px_3px_rgba(15,23,42,0.04),0_12px_32px_-12px_rgba(15,23,42,0.12)] overflow-hidden">
-        <div class="px-6 py-5 border-b border-line" :class="result.severity === 'critical' ? 'bg-alert/[0.04]' : 'bg-warn/[0.04]'">
+      <div class="bg-gray-50 rounded-3xl overflow-hidden card">
+        <div class="p-7 sm:p-8 pb-6" :class="result.severity === 'critical' ? 'bg-red-50' : 'bg-amber-50'">
           <div class="inline-flex items-center gap-2 text-[13px] font-extrabold uppercase tracking-wider mb-2"
-               :class="result.severity === 'critical' ? 'text-alert' : 'text-warn'">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v4m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>
+               :class="result.severity === 'critical' ? 'text-red-600' : 'text-amber-700'">
+            <span class="w-1.5 h-1.5 rounded-full" :class="result.severity === 'critical' ? 'bg-red-500' : 'bg-amber-500'"></span>
             <span x-text="result.severity === 'critical' ? 'Běží vám lhůty' : 'Řešit hned'"></span>
           </div>
-          <h2 class="text-xl font-bold" x-text="result.title"></h2>
+          <h3 class="text-xl font-bold" x-text="result.title"></h3>
         </div>
 
-        <div class="p-6">
-          <p class="text-muted leading-relaxed mb-6" x-text="result.summary"></p>
+        <div class="p-7 sm:p-8">
+          <p class="text-gray-600 leading-relaxed mb-6" x-text="result.summary"></p>
 
           <div class="grid grid-cols-2 gap-3 mb-6">
-            <div class="p-4 rounded-xl bg-paper border border-line">
-              <div class="text-[13px] text-muted mb-1">Odhad délky</div>
+            <div class="p-4 rounded-2xl bg-white">
+              <div class="text-[13px] text-gray-500 mb-1">Odhad délky</div>
               <div class="font-extrabold num" x-text="result.estMonths"></div>
             </div>
-            <div class="p-4 rounded-xl bg-alert/[0.04] border border-alert/20">
-              <div class="text-[13px] text-muted mb-1">Ztráta bez zásahu</div>
-              <div class="font-extrabold text-alert num" x-text="result.estLoss"></div>
+            <div class="p-4 rounded-2xl bg-white">
+              <div class="text-[13px] text-gray-500 mb-1">Ztráta bez zásahu</div>
+              <div class="font-extrabold text-red-600 num" x-text="result.estLoss"></div>
             </div>
           </div>
 
           <div class="space-y-2.5 mb-6">
             <template x-for="d in result.deadlines" :key="d.label">
-              <div class="flex items-start gap-3 p-3.5 rounded-xl border border-line">
-                <svg class="w-5 h-5 text-warn shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" d="M12 7v5l3 2"/></svg>
-                <div>
-                  <div class="font-bold text-[15px]" x-text="d.label"></div>
-                  <div class="text-sm text-muted" x-text="d.text"></div>
-                </div>
+              <div class="p-4 rounded-2xl bg-white">
+                <div class="font-bold text-[15px] mb-0.5" x-text="d.label"></div>
+                <div class="text-sm text-gray-500" x-text="d.text"></div>
               </div>
             </template>
           </div>
@@ -246,58 +271,55 @@ tailwind.config = {
               <div class="text-sm font-bold mb-2">Co vám cestu komplikuje</div>
               <ul class="space-y-1.5">
                 <template x-for="b in result.blockers" :key="b">
-                  <li class="text-sm text-muted flex gap-2"><span class="text-warn">•</span><span x-text="b"></span></li>
+                  <li class="text-sm text-gray-500 flex gap-2"><span class="text-amber-500">•</span><span x-text="b"></span></li>
                 </template>
               </ul>
             </div>
           </template>
 
-          <div class="p-5 rounded-xl bg-ink text-paper">
-            <div class="font-extrabold text-lg mb-1">Zbývá postup krok za krokem a první krok do 72 hodin</div>
-            <p class="text-sm text-white/70 mb-4">Pošleme vám ho i s rozpočtem a ozveme se do 180 minut. Zdarma, i když se nakonec rozhodnete jinak.</p>
+          <div class="p-6 rounded-2xl bg-gray-900 text-white">
+            <div class="font-extrabold text-lg mb-1.5">Zbývá postup krok za krokem a první krok do 72 hodin</div>
+            <p class="text-sm text-white/70 mb-5">Pošleme vám ho i s rozpočtem a ozveme se do 180 minut. Zdarma, i když se nakonec rozhodnete jinak.</p>
 
             <div class="space-y-2.5">
               <input x-model="contact.name" type="text" placeholder="Jméno a příjmení"
-                class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 placeholder-white/50 text-white focus:outline-none focus:border-white/60 transition-colors">
+                class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 placeholder-white/50 text-white focus:outline-none focus:border-white/60 transition-colors">
               <input x-model="contact.phone" type="tel" placeholder="Telefon"
-                class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 placeholder-white/50 text-white focus:outline-none focus:border-white/60 transition-colors">
+                class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 placeholder-white/50 text-white focus:outline-none focus:border-white/60 transition-colors">
               <input x-model="contact.email" type="email" placeholder="E-mail (nepovinné)"
-                class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 placeholder-white/50 text-white focus:outline-none focus:border-white/60 transition-colors">
-
+                class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 placeholder-white/50 text-white focus:outline-none focus:border-white/60 transition-colors">
               <label class="flex items-start gap-2.5 text-[13px] text-white/70 cursor-pointer pt-1">
-                <input x-model="consent" type="checkbox" class="mt-0.5 w-4 h-4 rounded">
+                <input type="checkbox" x-model="consent" class="mt-0.5 w-4 h-4 rounded">
                 <span>Souhlasím se zpracováním osobních údajů za účelem vyřízení poptávky.</span>
               </label>
-
               <p x-show="error" x-text="error" class="text-sm text-red-300"></p>
-
               <button @click="submit()" :disabled="sending"
-                class="w-full px-5 py-3.5 rounded-lg bg-white text-ink font-extrabold hover:bg-white/90 transition-colors disabled:opacity-50">
+                class="w-full px-6 py-4 rounded-full bg-white text-gray-900 font-bold hover:bg-gray-100 transition-colors disabled:opacity-50">
                 <span x-text="sending ? 'Odesílám…' : 'Zobrazit celý postup'"></span>
               </button>
               <p class="text-[12px] text-white/50 text-center">Žádné automatické hovory. Ozve se člověk, který případ povede.</p>
             </div>
           </div>
 
-          <button @click="back()" class="mt-5 text-sm text-muted hover:text-ink transition-colors">← Upravit odpovědi</button>
+          <button @click="back()" class="mt-6 text-sm text-gray-500 hover:text-gray-900 transition-colors">← Upravit odpovědi</button>
         </div>
       </div>
       </template>
 
       <!-- Odemčený výsledek -->
       <template x-if="result && screen === 'result'">
-      <div class="bg-white rounded-2xl border border-line shadow-[0_1px_3px_rgba(15,23,42,0.04),0_12px_32px_-12px_rgba(15,23,42,0.12)] overflow-hidden">
-        <div class="px-6 py-5 bg-brand/[0.05] border-b border-line">
-          <div class="inline-flex items-center gap-2 text-[13px] font-extrabold uppercase tracking-wider text-brand mb-2">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+      <div class="bg-gray-50 rounded-3xl overflow-hidden card">
+        <div class="p-7 sm:p-8 pb-6 bg-emerald-50">
+          <div class="inline-flex items-center gap-2 text-[13px] font-extrabold uppercase tracking-wider text-emerald-700 mb-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
             Máme to, ozveme se do 180 minut
           </div>
-          <h2 class="text-xl font-bold" x-text="result.title"></h2>
+          <h3 class="text-xl font-bold" x-text="result.title"></h3>
         </div>
 
-        <div class="p-6">
-          <div class="p-5 rounded-xl border-2 border-brand/30 bg-brand/[0.03] mb-6">
-            <div class="text-[13px] font-extrabold uppercase tracking-wider text-brand mb-2">Co udělat do 72 hodin</div>
+        <div class="p-7 sm:p-8">
+          <div class="p-6 rounded-2xl bg-white mb-6">
+            <div class="text-[13px] font-extrabold uppercase tracking-wider text-gray-400 mb-2">Co udělat do 72 hodin</div>
             <p class="leading-relaxed" x-text="result.firstStep"></p>
           </div>
 
@@ -305,28 +327,28 @@ tailwind.config = {
           <ol class="space-y-3 mb-6">
             <template x-for="(r, i) in result.route" :key="r">
               <li class="flex gap-3">
-                <span class="w-6 h-6 rounded-full bg-ink text-paper text-[13px] font-bold grid place-items-center shrink-0" x-text="i + 1"></span>
-                <span class="text-muted text-[15px] leading-relaxed" x-text="r"></span>
+                <span class="w-6 h-6 rounded-full bg-gray-900 text-white text-[13px] font-bold grid place-items-center shrink-0" x-text="i + 1"></span>
+                <span class="text-gray-600 text-[15px] leading-relaxed" x-text="r"></span>
               </li>
             </template>
           </ol>
 
           <div class="grid grid-cols-2 gap-3 mb-6">
-            <div class="p-4 rounded-xl bg-paper border border-line">
-              <div class="text-[13px] text-muted mb-1">Orientační náklady</div>
+            <div class="p-4 rounded-2xl bg-white">
+              <div class="text-[13px] text-gray-500 mb-1">Orientační náklady</div>
               <div class="font-extrabold num" x-text="result.estCost"></div>
             </div>
-            <div class="p-4 rounded-xl bg-alert/[0.04] border border-alert/20">
-              <div class="text-[13px] text-muted mb-1">Ztráta bez zásahu</div>
-              <div class="font-extrabold text-alert num" x-text="result.estLoss"></div>
+            <div class="p-4 rounded-2xl bg-white">
+              <div class="text-[13px] text-gray-500 mb-1">Ztráta bez zásahu</div>
+              <div class="font-extrabold text-red-600 num" x-text="result.estLoss"></div>
             </div>
           </div>
 
-          <a href="tel:+420603834921" class="w-full px-5 py-3.5 rounded-lg bg-ink text-paper font-extrabold hover:bg-brandd transition-colors flex items-center justify-center gap-2">
+          <a href="tel:+420603834921" class="w-full px-6 py-4 rounded-full bg-gray-900 text-white font-bold hover:bg-gray-800 transition-colors flex items-center justify-center">
             Nechci čekat, volám: 603 834 921
           </a>
 
-          <p class="text-[12px] text-muted mt-5">Výstup je orientační a nenahrazuje právní poradenství. Právní úkony a zastoupení u soudu zajišťuje spolupracující advokátní kancelář.</p>
+          <p class="text-[12px] text-gray-400 mt-5">Výstup je orientační a nenahrazuje právní poradenství. Právní úkony a zastoupení u soudu zajišťuje spolupracující advokátní kancelář.</p>
         </div>
       </div>
       </template>
@@ -335,102 +357,26 @@ tailwind.config = {
   </div>
 </section>
 
-<!-- ── ROZCESTÍ: dvě cesty, ale bez blokujícího modalu ──────────────── -->
-<section class="border-b border-line bg-white">
-  <div class="max-w-content mx-auto px-5 py-10">
-    <div class="grid md:grid-cols-2 gap-5">
-
-      <a href="#diagnostika" class="group flex flex-col justify-between p-7 rounded-2xl bg-ink text-paper hover:bg-brandd transition-colors">
-        <div>
-          <div class="inline-flex items-center gap-2 text-[13px] font-extrabold uppercase tracking-wider text-white/60 mb-3">
-            <span class="w-2 h-2 rounded-full bg-red-400"></span>Jste tady správně
-          </div>
-          <div class="text-2xl font-extrabold mb-2">Už mám problémového nájemníka</div>
-          <p class="text-white/70">Neplatí, nevystěhoval se, ničí byt nebo nekomunikuje. Zjistíte, jaké lhůty vám běží a co udělat do 72 hodin.</p>
-        </div>
-        <span class="inline-flex items-center gap-2 font-bold mt-6">
-          Spustit diagnostiku zdarma
-          <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7-7 7M3 12h18"/></svg>
-        </span>
-      </a>
-
-      <a href="prescoring.html" class="group flex flex-col justify-between p-7 rounded-2xl border-2 border-line hover:border-ink transition-colors">
-        <div>
-          <div class="inline-flex items-center gap-2 text-[13px] font-extrabold uppercase tracking-wider text-muted mb-3">
-            <span class="w-2 h-2 rounded-full bg-brand"></span>Ještě není pozdě
-          </div>
-          <div class="text-2xl font-extrabold mb-2">Teprve budu pronajímat</div>
-          <p class="text-muted">Máte zájemce a nechcete se splést. Prověřte jeho bonitu dřív, než podepíšete, a zjistěte, co si ošetřit ve smlouvě.</p>
-        </div>
-        <span class="inline-flex items-center gap-2 font-bold mt-6 text-brand">
-          Prescoring nájemníka zdarma
-          <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7-7 7M3 12h18"/></svg>
-        </span>
-      </a>
-
-    </div>
-  </div>
-</section>
-
-<!-- ── LHŮTY 2026 ───────────────────────────────────────────────────── -->
-<section class="border-b border-line bg-white">
-  <div class="max-w-content mx-auto px-5 py-16 lg:py-20">
-    <div class="max-w-2xl mb-10">
-      <h2 class="text-3xl lg:text-4xl font-extrabold tracking-[-0.02em] mb-4">Od ledna 2026 máte rychlejší cestu ven. Ale jen na pár měsíců.</h2>
-      <p class="text-lg text-muted leading-relaxed">Novela občanského soudního řádu zavedla rozkaz k vyklizení: zkrácené řízení bez jednání, obdoba platebního rozkazu. Byt se dá získat zpět v řádu měsíců místo let. Má to ale tři lhůty, které se dají propásnout.</p>
-    </div>
-
-    <div class="grid md:grid-cols-3 gap-5">
-      <div class="p-6 rounded-2xl border border-line">
-        <div class="text-4xl font-extrabold num mb-3">3 měsíce</div>
-        <p class="text-muted leading-relaxed">Po skončení nájmu musíte nájemníka písemně vyzvat k vyklizení. Když to nestihnete, nájem se obnovuje a začínáte znovu.</p>
-      </div>
-      <div class="p-6 rounded-2xl border border-line">
-        <div class="text-4xl font-extrabold num mb-3">14 dní</div>
-        <p class="text-muted leading-relaxed">Výzva musí být doručena nejméně 14 dní před podáním návrhu k soudu, do bytu nebo do datové schránky.</p>
-      </div>
-      <div class="p-6 rounded-2xl border border-line">
-        <div class="text-4xl font-extrabold num mb-3">15 dní</div>
-        <p class="text-muted leading-relaxed">Tolik má nájemník na odpor. Podaný odpor rozkaz ruší, proto musí být návrh neprůstřelný od prvního dne.</p>
-      </div>
-    </div>
-
-    <!-- FOTO 1 -->
-    <div class="ph ph-16x9 mt-8">
-      <span class="ph-tag">Foto</span>
-      <div class="ph-title">Skutečný rozkaz k vyklizení nebo výzva s dodejkou</div>
-      <p class="ph-brief">
-        Vyfoť anonymizovaný dokument na stole, seshora, denní světlo. Jména a adresy začerni nebo rozostři,
-        ale nech čitelnou hlavičku soudu, datum a razítko. Vedle polož obálku s dodejkou.
-        Žádná stocková fotka kladívka ani vah spravedlnosti.
-      </p>
-      <p class="ph-why"><strong>Proč to prodává:</strong> většina majitelů rozkaz k vyklizení nikdy neviděla a neví,
-        jestli existuje. Fotka reálného dokumentu z konkrétního případu udělá z abstraktního slibu hmatatelnou věc
-        a zároveň dokazuje, že to fakt děláte, ne jen píšete.</p>
-    </div>
-  </div>
-</section>
-
 <!-- ── CENA ČEKÁNÍ ──────────────────────────────────────────────────── -->
-<section class="border-b border-line bg-ink text-paper">
-  <div class="max-w-content mx-auto px-5 py-16 lg:py-20">
+<section class="bg-gray-900 text-white py-20 lg:py-24">
+  <div class="max-w-7xl mx-auto px-6">
     <div class="max-w-2xl mb-12">
-      <h2 class="text-3xl lg:text-4xl font-extrabold tracking-[-0.02em] mb-4">Každý měsíc čekání platíte vy</h2>
+      <h2 class="text-3xl lg:text-4xl font-extrabold tracking-tight mb-4">Každý měsíc čekání platíte vy</h2>
       <p class="text-lg text-white/60 leading-relaxed">Orientační průběh případu, který se neřeší. Počítáno pro byt s nájemným 18 000 Kč měsíčně.</p>
     </div>
 
-    <div class="grid sm:grid-cols-3 gap-8 mb-10">
-      <div>
-        <div class="text-5xl font-extrabold num mb-2">54 000</div>
-        <div class="text-white/60">Kč po třech měsících. Tady vzniká nárok na výpověď bez výpovědní doby, o kterém většina majitelů neví.</div>
+    <div class="grid sm:grid-cols-3 gap-6 mb-10">
+      <div class="bg-white/5 rounded-3xl p-8">
+        <div class="text-4xl font-extrabold num mb-2">54 000</div>
+        <div class="text-white/60 leading-relaxed">Kč po třech měsících. Tady vzniká nárok na výpověď bez výpovědní doby, o kterém většina majitelů neví.</div>
       </div>
-      <div>
-        <div class="text-5xl font-extrabold num mb-2">266 000</div>
-        <div class="text-white/60">Kč po roce, včetně nákladů řízení. Nájemník ve vašem bytě dál bydlí zdarma.</div>
+      <div class="bg-white/5 rounded-3xl p-8">
+        <div class="text-4xl font-extrabold num mb-2">266 000</div>
+        <div class="text-white/60 leading-relaxed">Kč po roce, včetně nákladů řízení. Nájemník ve vašem bytě dál bydlí zdarma.</div>
       </div>
-      <div>
-        <div class="text-5xl font-extrabold num mb-2 text-red-400">800 000</div>
-        <div class="text-white/60">Kč je horní hranice, kam se případ dostane po roce a půl i s opravami a prostojem.</div>
+      <div class="bg-white/5 rounded-3xl p-8">
+        <div class="text-4xl font-extrabold num mb-2 text-red-400">800 000</div>
+        <div class="text-white/60 leading-relaxed">Kč je horní hranice, kam se případ dostane po roce a půl i s opravami a prostojem.</div>
       </div>
     </div>
 
@@ -438,259 +384,229 @@ tailwind.config = {
     <div class="ph ph-dark ph-16x9 mb-10">
       <span class="ph-tag ph-tag-video">Foto · dvojice před a po</span>
       <div class="ph-title text-white">Byt po nájemníkovi, který přestal platit</div>
-      <p class="ph-brief">
-        Dvě fotky vedle sebe ze stejného úhlu: stav při předání nájemníkovi a stav při vyklizení.
-        Nepotřebuješ zdemolovaný byt, naopak. Nejsilnější je běžný neuklizený byt s plesnivým rohem,
-        vytrhanou zásuvkou a hromadou věcí, protože v tom se majitel pozná. Bez lidí, bez filtrů.
-      </p>
-      <p class="ph-why"><strong>Proč to prodává:</strong> čísla nad tím jsou abstrakce. Fotka je moment, kdy si
-        člověk představí svůj byt a spočítá si, že rekonstrukce bude dražší než cokoli, co mu nabídneš.</p>
+      <p class="ph-brief">Dvě fotky vedle sebe ze stejného úhlu: stav při předání a stav při vyklizení. Nepotřebuješ zdemolovaný byt, naopak. Nejsilnější je běžný neuklizený byt s plesnivým rohem a hromadou věcí, protože v tom se majitel pozná.</p>
+      <p class="ph-why"><strong>Proč to prodává:</strong> čísla nad tím jsou abstrakce. Fotka je moment, kdy si člověk představí svůj byt a spočítá, že rekonstrukce bude dražší než cokoli, co mu nabídneš.</p>
     </div>
 
     <p class="text-xl font-bold">Proti tomu poměřujte cenu jakéhokoli řešení. Nejdražší varianta je vždycky ta, kde se čeká.</p>
   </div>
 </section>
 
-<!-- ── DNES VY / OD PODPISU MY ──────────────────────────────────────── -->
-<section class="border-b border-line bg-white">
-  <div class="max-w-content mx-auto px-5 py-16 lg:py-20">
-
-    <div class="max-w-2xl mb-10">
-      <h2 class="text-3xl lg:text-4xl font-extrabold tracking-[-0.02em] mb-4">
-        Osmnáct starostí, které přestanou být vaše
-      </h2>
-      <p class="text-lg text-muted leading-relaxed">
-        Vlevo je, co s problémovým nájemníkem děláte dnes. Vpravo, co se s tím stane od podpisu.
-        Projděte si to a spočítejte, kolik z levého sloupce jste dělal za poslední měsíc.
+<!-- ── OSMNÁCT STAROSTÍ ─────────────────────────────────────────────── -->
+<section id="starosti" class="bg-gray-50 py-20 lg:py-24">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-2xl mb-12">
+      <h2 class="text-3xl lg:text-4xl font-extrabold tracking-tight mb-4">Osmnáct starostí, které přestanou být vaše</h2>
+      <p class="text-lg text-gray-600 leading-relaxed">
+        Vlevo je váš dnešek, vpravo den po podpisu. Projděte si to a spočítejte,
+        kolik z levé strany jste dělal za poslední měsíc.
       </p>
     </div>
 
-    <!-- Záhlaví sloupců -->
-    <div class="hidden md:grid md:grid-cols-2 gap-x-10 pb-3 border-b-2 border-ink sticky top-16 bg-white z-10">
-      <div class="text-[13px] font-extrabold uppercase tracking-wider text-alert">Dnes to řešíte vy</div>
-      <div class="text-[13px] font-extrabold uppercase tracking-wider text-brand">Od podpisu my</div>
-    </div>
+    <div class="grid lg:grid-cols-2 gap-6">
 
-    <!-- 01 Komunikace -->
-    <div class="pt-8 pb-2 text-[13px] font-extrabold uppercase tracking-wider text-muted">Komunikace a klid</div>
-    <div class="divide-y divide-line border-t border-line">
-
-      <div class="grid md:grid-cols-2 gap-x-10 gap-y-2 py-4">
-        <div class="flex gap-2.5 text-muted"><svg class="w-4 h-4 text-alert/70 shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg><span>Skládáte mu zprávy tak, aby to neznělo měkce, ale ani abyste si tím neuškodil</span></div>
-        <div class="flex gap-2.5"><svg class="w-4 h-4 text-brand shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="font-medium">Nepíšete mu vůbec. Komunikaci vedeme my a nereagujeme v afektu</span></div>
+      <!-- 01 -->
+      <div class="bg-white rounded-3xl p-8 card">
+        <div class="text-[13px] font-extrabold uppercase tracking-wider text-gray-400 mb-6">01 · Komunikace a klid</div>
+        <div class="space-y-5">
+          <div>
+            <div class="flex gap-2.5 text-gray-400 text-[15px] mb-2"><span class="text-red-400 font-bold">✕</span><span>Skládáte mu zprávy tak, aby to neznělo měkce, ale ani abyste si tím neuškodil</span></div>
+            <div class="flex gap-2.5 font-medium"><span class="text-emerald-500 font-bold">✓</span><span>Nepíšete mu vůbec. Komunikaci vedeme my a nereagujeme v afektu</span></div>
+          </div>
+          <div class="border-t border-gray-100 pt-5">
+            <div class="flex gap-2.5 text-gray-400 text-[15px] mb-2"><span class="text-red-400 font-bold">✕</span><span>Patnáctého otevíráte bankovnictví a koukáte, jestli přišla platba</span></div>
+            <div class="flex gap-2.5 font-medium"><span class="text-emerald-500 font-bold">✓</span><span>Platby hlídáme my a víme, co se má stát ten den, kdy nepřijdou</span></div>
+          </div>
+          <div class="border-t border-gray-100 pt-5">
+            <div class="flex gap-2.5 text-gray-400 text-[15px] mb-2"><span class="text-red-400 font-bold">✕</span><span>Jezdíte k bytu a přemýšlíte, koho potkáte na chodbě</span></div>
+            <div class="flex gap-2.5 font-medium"><span class="text-emerald-500 font-bold">✓</span><span>Na místo jezdíme my, včetně prohlídky stavu bytu</span></div>
+          </div>
+          <div class="border-t border-gray-100 pt-5">
+            <div class="flex gap-2.5 text-gray-400 text-[15px] mb-2"><span class="text-red-400 font-bold">✕</span><span>Odpovídáte sousedům a výboru na stížnosti, které nemůžete ovlivnit</span></div>
+            <div class="flex gap-2.5 font-medium"><span class="text-emerald-500 font-bold">✓</span><span>Stížnosti přebíráme a rovnou z nich děláme doklady do spisu</span></div>
+          </div>
+          <div class="border-t border-gray-100 pt-5">
+            <div class="flex gap-2.5 text-gray-400 text-[15px] mb-2"><span class="text-red-400 font-bold">✕</span><span>Tlačí na vás po telefonu, ať mu dáte ještě měsíc, a vy nevíte, jestli povolit</span></div>
+            <div class="flex gap-2.5 font-medium"><span class="text-emerald-500 font-bold">✓</span><span>Sliby i nátlak jdou na nás a vyhodnotíme je podle spisu, ne podle nálady</span></div>
+          </div>
+        </div>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-x-10 gap-y-2 py-4">
-        <div class="flex gap-2.5 text-muted"><svg class="w-4 h-4 text-alert/70 shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg><span>Patnáctého otevíráte bankovnictví a koukáte, jestli přišla platba</span></div>
-        <div class="flex gap-2.5"><svg class="w-4 h-4 text-brand shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="font-medium">Platby hlídáme my a víme, co se má stát ten den, kdy nepřijdou</span></div>
+      <!-- 02 -->
+      <div class="bg-white rounded-3xl p-8 card">
+        <div class="text-[13px] font-extrabold uppercase tracking-wider text-gray-400 mb-6">02 · Papíry, lhůty a právo</div>
+        <div class="space-y-5">
+          <div>
+            <div class="flex gap-2.5 text-gray-400 text-[15px] mb-2"><span class="text-red-400 font-bold">✕</span><span>Večer čtete diskuze o tom, co je rozkaz k vyklizení a jestli se vás týká</span></div>
+            <div class="flex gap-2.5 font-medium"><span class="text-emerald-500 font-bold">✓</span><span>Nemusíte to vědět. My víme, která ze tří lhůt vám běží a kdy vyprší</span></div>
+          </div>
+          <div class="border-t border-gray-100 pt-5">
+            <div class="flex gap-2.5 text-gray-400 text-[15px] mb-2"><span class="text-red-400 font-bold">✕</span><span>Chodíte na poštu, hlídáte dodejky a řešíte, že si zásilku nepřevzal</span></div>
+            <div class="flex gap-2.5 font-medium"><span class="text-emerald-500 font-bold">✓</span><span>Doručujeme sami, na správné adresy a s dokladem, který obstojí u soudu</span></div>
+          </div>
+          <div class="border-t border-gray-100 pt-5">
+            <div class="flex gap-2.5 text-gray-400 text-[15px] mb-2"><span class="text-red-400 font-bold">✕</span><span>Obvoláváte advokáty, porovnáváte sazby a máte složit zálohu bez záruky</span></div>
+            <div class="flex gap-2.5 font-medium"><span class="text-emerald-500 font-bold">✓</span><span>Advokáta máme. Hlavní část platíte až po předání klíčů</span></div>
+          </div>
+          <div class="border-t border-gray-100 pt-5">
+            <div class="flex gap-2.5 text-gray-400 text-[15px] mb-2"><span class="text-red-400 font-bold">✕</span><span>Nevíte, jestli jste už něco nepokazil tou SMS nebo přijatou částkou</span></div>
+            <div class="flex gap-2.5 font-medium"><span class="text-emerald-500 font-bold">✓</span><span>Projdeme, co jste zatím udělal. Co se dá napravit, napravíme</span></div>
+          </div>
+          <div class="border-t border-gray-100 pt-5">
+            <div class="flex gap-2.5 text-gray-400 text-[15px] mb-2"><span class="text-red-400 font-bold">✕</span><span>Skládáte dohromady výpisy, zprávy a fotky a nevíte, co z toho je důkaz</span></div>
+            <div class="flex gap-2.5 font-medium"><span class="text-emerald-500 font-bold">✓</span><span>Spis sestavíme za vás a víme, co soud u rozkazu vyžaduje</span></div>
+          </div>
+        </div>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-x-10 gap-y-2 py-4">
-        <div class="flex gap-2.5 text-muted"><svg class="w-4 h-4 text-alert/70 shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg><span>Jezdíte k bytu a přemýšlíte, koho potkáte na chodbě</span></div>
-        <div class="flex gap-2.5"><svg class="w-4 h-4 text-brand shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="font-medium">Na místo jezdíme my, včetně prohlídky stavu bytu</span></div>
+      <!-- 03 -->
+      <div class="bg-white rounded-3xl p-8 card">
+        <div class="text-[13px] font-extrabold uppercase tracking-wider text-gray-400 mb-6">03 · Soud a vyklizení</div>
+        <div class="space-y-5">
+          <div>
+            <div class="flex gap-2.5 text-gray-400 text-[15px] mb-2"><span class="text-red-400 font-bold">✕</span><span>Berete si volno v práci na jednání, o kterých nevíte, kolik jich bude</span></div>
+            <div class="flex gap-2.5 font-medium"><span class="text-emerald-500 font-bold">✓</span><span>Rozkaz k vyklizení se vydává bez jednání a zastupuje vás advokát</span></div>
+          </div>
+          <div class="border-t border-gray-100 pt-5">
+            <div class="flex gap-2.5 text-gray-400 text-[15px] mb-2"><span class="text-red-400 font-bold">✕</span><span>Sháníte exekutora a domlouváte termín vyklizení</span></div>
+            <div class="flex gap-2.5 font-medium"><span class="text-emerald-500 font-bold">✓</span><span>Vyklizení domluvíme, zkoordinujeme a jsme u něj</span></div>
+          </div>
+          <div class="border-t border-gray-100 pt-5">
+            <div class="flex gap-2.5 text-gray-400 text-[15px] mb-2"><span class="text-red-400 font-bold">✕</span><span>Nevíte, kam s jeho věcmi. Vyhodit se nesmí, ale skladovat je nemáte kde</span></div>
+            <div class="flex gap-2.5 font-medium"><span class="text-emerald-500 font-bold">✓</span><span>Uskladnění i soupis věcí zařídíme, aby vám z toho nevznikla další žaloba</span></div>
+          </div>
+          <div class="border-t border-gray-100 pt-5">
+            <div class="flex gap-2.5 text-gray-400 text-[15px] mb-2"><span class="text-red-400 font-bold">✕</span><span>Musíte být u předání a odhadovat, co je ještě běžné opotřebení</span></div>
+            <div class="flex gap-2.5 font-medium"><span class="text-emerald-500 font-bold">✓</span><span>Zámky, odečty, protokol a fotodokumentace jsou na nás</span></div>
+          </div>
+        </div>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-x-10 gap-y-2 py-4">
-        <div class="flex gap-2.5 text-muted"><svg class="w-4 h-4 text-alert/70 shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg><span>Odpovídáte sousedům a výboru na stížnosti, které nemůžete ovlivnit</span></div>
-        <div class="flex gap-2.5"><svg class="w-4 h-4 text-brand shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="font-medium">Stížnosti přebíráme a rovnou z nich děláme doklady do spisu</span></div>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-x-10 gap-y-2 py-4">
-        <div class="flex gap-2.5 text-muted"><svg class="w-4 h-4 text-alert/70 shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg><span>Tlačí na vás po telefonu, ať mu dáte ještě měsíc, a vy nevíte, jestli povolit</span></div>
-        <div class="flex gap-2.5"><svg class="w-4 h-4 text-brand shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="font-medium">Sliby i nátlak jdou na nás a vyhodnotíme je podle spisu, ne podle nálady</span></div>
-      </div>
-
-    </div>
-
-    <!-- 02 Papíry -->
-    <div class="pt-10 pb-2 text-[13px] font-extrabold uppercase tracking-wider text-muted">Papíry, lhůty a právo</div>
-    <div class="divide-y divide-line border-t border-line">
-
-      <div class="grid md:grid-cols-2 gap-x-10 gap-y-2 py-4">
-        <div class="flex gap-2.5 text-muted"><svg class="w-4 h-4 text-alert/70 shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg><span>Večer čtete diskuze o tom, co je rozkaz k vyklizení a jestli se vás týká</span></div>
-        <div class="flex gap-2.5"><svg class="w-4 h-4 text-brand shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="font-medium">Nemusíte to vědět. My víme, která ze tří lhůt vám běží a kdy vyprší</span></div>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-x-10 gap-y-2 py-4">
-        <div class="flex gap-2.5 text-muted"><svg class="w-4 h-4 text-alert/70 shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg><span>Chodíte na poštu, hlídáte dodejky a řešíte, že si zásilku nepřevzal</span></div>
-        <div class="flex gap-2.5"><svg class="w-4 h-4 text-brand shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="font-medium">Doručujeme sami, na správné adresy a s dokladem, který obstojí u soudu</span></div>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-x-10 gap-y-2 py-4">
-        <div class="flex gap-2.5 text-muted"><svg class="w-4 h-4 text-alert/70 shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg><span>Obvoláváte advokáty, porovnáváte sazby a máte složit zálohu bez záruky</span></div>
-        <div class="flex gap-2.5"><svg class="w-4 h-4 text-brand shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="font-medium">Advokáta máme. Hlavní část platíte až po předání klíčů</span></div>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-x-10 gap-y-2 py-4">
-        <div class="flex gap-2.5 text-muted"><svg class="w-4 h-4 text-alert/70 shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg><span>Nevíte, jestli jste už něco nepokazil tou SMS nebo přijatou částkou</span></div>
-        <div class="flex gap-2.5"><svg class="w-4 h-4 text-brand shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="font-medium">Projdeme, co jste zatím udělal. Co se dá napravit, napravíme</span></div>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-x-10 gap-y-2 py-4">
-        <div class="flex gap-2.5 text-muted"><svg class="w-4 h-4 text-alert/70 shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg><span>Skládáte dohromady výpisy, zprávy, fotky a nevíte, co z toho je důkaz</span></div>
-        <div class="flex gap-2.5"><svg class="w-4 h-4 text-brand shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="font-medium">Spis sestavíme za vás a víme, co soud u rozkazu vyžaduje</span></div>
-      </div>
-
-    </div>
-
-    <!-- 03 Soud -->
-    <div class="pt-10 pb-2 text-[13px] font-extrabold uppercase tracking-wider text-muted">Soud a vyklizení</div>
-    <div class="divide-y divide-line border-t border-line">
-
-      <div class="grid md:grid-cols-2 gap-x-10 gap-y-2 py-4">
-        <div class="flex gap-2.5 text-muted"><svg class="w-4 h-4 text-alert/70 shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg><span>Berete si volno v práci na jednání, o kterých nevíte, kolik jich bude</span></div>
-        <div class="flex gap-2.5"><svg class="w-4 h-4 text-brand shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="font-medium">Rozkaz k vyklizení se vydává bez jednání a zastupuje vás advokát</span></div>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-x-10 gap-y-2 py-4">
-        <div class="flex gap-2.5 text-muted"><svg class="w-4 h-4 text-alert/70 shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg><span>Sháníte exekutora a domlouváte termín vyklizení</span></div>
-        <div class="flex gap-2.5"><svg class="w-4 h-4 text-brand shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="font-medium">Vyklizení domluvíme, zkoordinujeme a jsme u něj</span></div>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-x-10 gap-y-2 py-4">
-        <div class="flex gap-2.5 text-muted"><svg class="w-4 h-4 text-alert/70 shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg><span>Nevíte, kam s jeho věcmi. Vyhodit se nesmí, ale skladovat je nemáte kde</span></div>
-        <div class="flex gap-2.5"><svg class="w-4 h-4 text-brand shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="font-medium">Uskladnění i soupis věcí zařídíme, aby vám z toho nevznikla další žaloba</span></div>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-x-10 gap-y-2 py-4">
-        <div class="flex gap-2.5 text-muted"><svg class="w-4 h-4 text-alert/70 shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg><span>Musíte být u předání, obcházet byt a odhadovat, co je běžné opotřebení</span></div>
-        <div class="flex gap-2.5"><svg class="w-4 h-4 text-brand shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="font-medium">Zámky, odečty, protokol a fotodokumentace jsou na nás</span></div>
-      </div>
-
-    </div>
-
-    <!-- 04 Potom -->
-    <div class="pt-10 pb-2 text-[13px] font-extrabold uppercase tracking-wider text-muted">A co bude potom</div>
-    <div class="divide-y divide-line border-t border-line">
-
-      <div class="grid md:grid-cols-2 gap-x-10 gap-y-2 py-4">
-        <div class="flex gap-2.5 text-muted"><svg class="w-4 h-4 text-alert/70 shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg><span>Sháníte řemeslníky a čekáte na cenové nabídky, byt zatím stojí prázdný</span></div>
-        <div class="flex gap-2.5"><svg class="w-4 h-4 text-brand shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="font-medium">Soupis oprav, nabídka a koordinace řemeslníků, ať nestojí déle, než musí</span></div>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-x-10 gap-y-2 py-4">
-        <div class="flex gap-2.5 text-muted"><svg class="w-4 h-4 text-alert/70 shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg><span>Řešíte přepisy energií, nedoplatky a vyúčtování, které nemáte z čeho pokrýt</span></div>
-        <div class="flex gap-2.5"><svg class="w-4 h-4 text-brand shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="font-medium">Odečty, přepisy i dluh na službách vyčíslíme a uplatníme</span></div>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-x-10 gap-y-2 py-4">
-        <div class="flex gap-2.5 text-muted"><svg class="w-4 h-4 text-alert/70 shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg><span>Musíte hned shánět dalšího nájemníka a doufat, že tenhle bude lepší</span></div>
-        <div class="flex gap-2.5"><svg class="w-4 h-4 text-brand shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="font-medium">Nemusíte. A až budete, prověříme ho, aby se tohle neopakovalo</span></div>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-x-10 gap-y-2 py-4">
-        <div class="flex gap-2.5 text-muted"><svg class="w-4 h-4 text-alert/70 shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg><span>Mluvíte o tom doma každý večer a nemůžete kvůli tomu spát</span></div>
-        <div class="flex gap-2.5"><svg class="w-4 h-4 text-brand shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="font-medium">Přestanete. Tohle klienti zmiňují častěji než peníze</span></div>
+      <!-- 04 -->
+      <div class="bg-white rounded-3xl p-8 card">
+        <div class="text-[13px] font-extrabold uppercase tracking-wider text-gray-400 mb-6">04 · A co bude potom</div>
+        <div class="space-y-5">
+          <div>
+            <div class="flex gap-2.5 text-gray-400 text-[15px] mb-2"><span class="text-red-400 font-bold">✕</span><span>Sháníte řemeslníky a čekáte na nabídky, byt zatím stojí prázdný</span></div>
+            <div class="flex gap-2.5 font-medium"><span class="text-emerald-500 font-bold">✓</span><span>Soupis oprav, nabídka a koordinace řemeslníků, ať nestojí déle, než musí</span></div>
+          </div>
+          <div class="border-t border-gray-100 pt-5">
+            <div class="flex gap-2.5 text-gray-400 text-[15px] mb-2"><span class="text-red-400 font-bold">✕</span><span>Řešíte přepisy energií a vyúčtování, které nemáte z čeho pokrýt</span></div>
+            <div class="flex gap-2.5 font-medium"><span class="text-emerald-500 font-bold">✓</span><span>Odečty, přepisy i dluh na službách vyčíslíme a uplatníme</span></div>
+          </div>
+          <div class="border-t border-gray-100 pt-5">
+            <div class="flex gap-2.5 text-gray-400 text-[15px] mb-2"><span class="text-red-400 font-bold">✕</span><span>Musíte hned shánět dalšího nájemníka a doufat, že tenhle bude lepší</span></div>
+            <div class="flex gap-2.5 font-medium"><span class="text-emerald-500 font-bold">✓</span><span>Nemusíte. A až budete, prověříme ho, aby se tohle neopakovalo</span></div>
+          </div>
+          <div class="border-t border-gray-100 pt-5">
+            <div class="flex gap-2.5 text-gray-400 text-[15px] mb-2"><span class="text-red-400 font-bold">✕</span><span>Mluvíte o tom doma každý večer a nemůžete kvůli tomu spát</span></div>
+            <div class="flex gap-2.5 font-medium"><span class="text-emerald-500 font-bold">✓</span><span>Přestanete. Tohle klienti zmiňují častěji než peníze</span></div>
+          </div>
+        </div>
       </div>
 
     </div>
 
     <!-- Co zůstane na vás -->
-    <div class="mt-14 p-8 rounded-2xl bg-ink text-paper">
+    <div class="mt-6 bg-gray-900 text-white rounded-3xl p-8 lg:p-10">
       <h3 class="text-2xl font-extrabold mb-2">A co zůstane na vás</h3>
-      <p class="text-white/70 mb-7 max-w-2xl">Nebudeme tvrdit, že nic. Jsou tři věci, které za vás udělat nemůžeme. Jinou práci od vás nechceme.</p>
-      <div class="grid sm:grid-cols-3 gap-6">
+      <p class="text-white/70 mb-8 max-w-2xl">Nebudeme tvrdit, že nic. Jsou tři věci, které za vás udělat nemůžeme. Jinou práci od vás nechceme.</p>
+      <div class="grid sm:grid-cols-3 gap-8">
         <div>
           <div class="text-3xl font-extrabold num mb-2">1</div>
           <div class="font-bold mb-1">Dodat, co máte</div>
-          <p class="text-white/60 text-[15px]">Smlouvu, výpisy plateb a komunikaci s nájemníkem. Jednou, na začátku.</p>
+          <p class="text-white/60 text-[15px] leading-relaxed">Smlouvu, výpisy plateb a komunikaci s nájemníkem. Jednou, na začátku.</p>
         </div>
         <div>
           <div class="text-3xl font-extrabold num mb-2">2</div>
           <div class="font-bold mb-1">Podepsat plnou moc</div>
-          <p class="text-white/60 text-[15px]">Bez ní za vás nemůžeme jednat. Připravíme ji a vysvětlíme, co přesně pokrývá.</p>
+          <p class="text-white/60 text-[15px] leading-relaxed">Bez ní za vás nemůžeme jednat. Připravíme ji a vysvětlíme, co přesně pokrývá.</p>
         </div>
         <div>
           <div class="text-3xl font-extrabold num mb-2">3</div>
           <div class="font-bold mb-1">Rozhodnout dvakrát</div>
-          <p class="text-white/60 text-[15px]">Jestli přijmout případnou dohodu s nájemníkem a jestli si byt necháte, nebo ho prodáte.</p>
+          <p class="text-white/60 text-[15px] leading-relaxed">Jestli přijmout případnou dohodu a jestli si byt necháte, nebo ho prodáte.</p>
         </div>
       </div>
-      <p class="text-white/50 text-sm mt-7">Všechno ostatní z levého sloupce přechází na nás.</p>
     </div>
-
   </div>
 </section>
 
-
-<!-- ── NABÍDKA ──────────────────────────────────────────────────────── -->
-<section class="border-b border-line bg-white">
-  <div class="max-w-content mx-auto px-5 py-16 lg:py-20">
-    <div class="grid lg:grid-cols-[1fr,minmax(0,440px)] gap-12">
+<!-- ── PROGRAM KLÍČE ZPĚT ───────────────────────────────────────────── -->
+<section id="program" class="bg-white py-20 lg:py-24">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid lg:grid-cols-[1fr,minmax(0,420px)] gap-10 lg:gap-14">
 
       <div>
-        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand/10 text-brand text-[13px] font-extrabold uppercase tracking-wider mb-5">Program Klíče zpět</div>
-        <h2 class="text-3xl lg:text-4xl font-extrabold tracking-[-0.02em] mb-4">Případ převezmeme celý. Vy podepisujete.</h2>
-        <p class="text-lg text-muted leading-relaxed mb-8">Od první výzvy až po předání vyklizeného bytu. Tohle všechno je v ceně.</p>
+        <div class="inline-flex items-center px-3.5 py-1.5 rounded-full bg-gray-900 text-white text-[13px] font-bold uppercase tracking-wider mb-5">Program Klíče zpět</div>
+        <h2 class="text-3xl lg:text-4xl font-extrabold tracking-tight mb-4">Případ převezmeme celý. Vy podepisujete.</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-8">Od první výzvy až po předání vyklizeného bytu. Tohle všechno je v ceně.</p>
 
-        <div class="space-y-4">
-          <div class="flex gap-3.5 pb-4 border-b border-line">
-            <svg class="w-5 h-5 text-brand shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-            <div><span class="font-bold">Právní diagnostika a písemný plán</span><p class="text-muted text-[15px] mt-0.5">Rozbor smlouvy, plateb a komunikace. Časová osa a rozpočet do tří pracovních dnů, žádné účtování po hodinách.</p></div>
+        <div class="space-y-5">
+          <div class="pb-5 border-b border-gray-100">
+            <div class="font-bold mb-1">Právní diagnostika a písemný plán</div>
+            <p class="text-gray-600">Rozbor smlouvy, plateb a komunikace. Časová osa a rozpočet do tří pracovních dnů, žádné účtování po hodinách.</p>
           </div>
-          <div class="flex gap-3.5 pb-4 border-b border-line">
-            <svg class="w-5 h-5 text-brand shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-            <div><span class="font-bold">Kompletní listinná složka</span><p class="text-muted text-[15px] mt-0.5">Výzva, výpověď, doklady o doručení, protokoly a fotodokumentace. První listina odchází do 24 hodin od podpisu podkladů.</p></div>
+          <div class="pb-5 border-b border-gray-100">
+            <div class="font-bold mb-1">Kompletní listinná složka</div>
+            <p class="text-gray-600">Výzva, výpověď, doklady o doručení, protokoly a fotodokumentace. První listina odchází do 24 hodin od podpisu podkladů.</p>
           </div>
-          <div class="flex gap-3.5 pb-4 border-b border-line">
-            <svg class="w-5 h-5 text-brand shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-            <div><span class="font-bold">Komunikaci s nájemníkem přebíráme</span><p class="text-muted text-[15px] mt-0.5">Telefonáty, e-maily i osobní jednání vedeme my. Vy se s ním nemusíte vidět ani slyšet.</p></div>
+          <div class="pb-5 border-b border-gray-100">
+            <div class="font-bold mb-1">Komunikaci s nájemníkem přebíráme</div>
+            <p class="text-gray-600">Telefonáty, e-maily i osobní jednání vedeme my. Vy se s ním nemusíte vidět ani slyšet.</p>
           </div>
-          <div class="flex gap-3.5 pb-4 border-b border-line">
-            <svg class="w-5 h-5 text-brand shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-            <div><span class="font-bold">Návrh na rozkaz k vyklizení a koordinace vyklizení</span><p class="text-muted text-[15px] mt-0.5">Podání ve spolupráci s advokátní kanceláří včetně reakce na odpor. Exekutor, stěhování, výměna zámků, převzetí bytu.</p></div>
+          <div class="pb-5 border-b border-gray-100">
+            <div class="font-bold mb-1">Návrh na rozkaz k vyklizení a koordinace vyklizení</div>
+            <p class="text-gray-600">Podání ve spolupráci s advokátní kanceláří včetně reakce na odpor. Exekutor, stěhování, výměna zámků, převzetí bytu.</p>
           </div>
-          <div class="flex gap-3.5">
-            <svg class="w-5 h-5 text-brand shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-            <div><span class="font-bold">Vyčíslení a vymáhání dluhu</span><p class="text-muted text-[15px] mt-0.5">Dlužné nájemné, škody a náklady sečteme a uplatníme. Nezůstane to jen u vyklizení.</p></div>
+          <div>
+            <div class="font-bold mb-1">Vyčíslení a vymáhání dluhu</div>
+            <p class="text-gray-600">Dlužné nájemné, škody a náklady sečteme a uplatníme. Nezůstane to jen u vyklizení.</p>
           </div>
+        </div>
+
+        <div class="mt-8 bg-gray-50 rounded-3xl p-8">
+          <div class="font-extrabold mb-5">A k tomu, protože nechceme, abyste to řešil znovu</div>
+          <ul class="space-y-3.5">
+            <li><span class="font-bold">Prověření dalšího nájemníka zdarma.</span> <span class="text-gray-600">Insolvenční rejstřík, evidence exekucí, ověření příjmu, reference.</span></li>
+            <li><span class="font-bold">Nájemní smlouva připravená na rok 2026.</span> <span class="text-gray-600">Splňuje podmínky pro rozkaz k vyklizení včetně doručování do datové schránky.</span></li>
+            <li><span class="font-bold">Dvanáct měsíců hlídání plateb.</span> <span class="text-gray-600">Při prvním zpoždění jednáme hned. Právě tam vzniká další průšvih.</span></li>
+          </ul>
         </div>
 
         <!-- FOTO 3 -->
-        <div class="ph ph-4x3 mt-8">
+        <div class="ph ph-4x3 mt-6">
           <span class="ph-tag">Foto</span>
           <div class="ph-title">Listinná složka jednoho případu, rozložená na stole</div>
-          <p class="ph-brief">
-            Nafoť seshora rozložené papíry: nájemní smlouva, výzva, výpověď, dodejky, předávací protokol,
-            fotodokumentace bytu, návrh k soudu. Klidně dvacet listů přes celý stůl.
-            Anonymizuj jména, ale ať je vidět objem. Vedle položené propisky a desky.
-          </p>
-          <p class="ph-why"><strong>Proč to prodává:</strong> tohle je vizuální ospravedlnění ceny. Dokud vidí jen
-            odrážky, cena zní vysoko. Když uvidí, kolik papírů by musel sesbírat a doručit sám, cena zní levně.</p>
-        </div>
-
-        <div class="mt-8 p-6 rounded-2xl bg-paper border border-line">
-          <div class="font-extrabold mb-4">A k tomu, protože nechceme, abyste to řešil znovu</div>
-          <ul class="space-y-2.5 text-[15px]">
-            <li class="flex gap-3"><span class="text-brand font-bold">+</span><span><span class="font-bold">Prověření dalšího nájemníka zdarma.</span> <span class="text-muted">Insolvenční rejstřík, evidence exekucí, ověření příjmu, reference.</span></span></li>
-            <li class="flex gap-3"><span class="text-brand font-bold">+</span><span><span class="font-bold">Nájemní smlouva připravená na rok 2026.</span> <span class="text-muted">Splňuje podmínky pro rozkaz k vyklizení včetně doručování do datové schránky.</span></span></li>
-            <li class="flex gap-3"><span class="text-brand font-bold">+</span><span><span class="font-bold">Dvanáct měsíců hlídání plateb.</span> <span class="text-muted">Při prvním zpoždění jednáme hned. Právě tam vzniká další průšvih.</span></span></li>
-          </ul>
+          <p class="ph-brief">Seshora rozložené papíry: smlouva, výzva, výpověď, dodejky, protokol, fotodokumentace, návrh k soudu. Klidně dvacet listů přes celý stůl. Anonymizuj jména, ale ať je vidět objem.</p>
+          <p class="ph-why"><strong>Proč to prodává:</strong> vizuální ospravedlnění ceny. Dokud vidí jen odrážky, cena zní vysoko. Když uvidí, kolik papírů by musel obstarat sám, zní levně.</p>
         </div>
       </div>
 
-      <div class="lg:sticky lg:top-24 h-fit">
-        <div class="rounded-2xl border-2 border-ink overflow-hidden">
-          <div class="p-6 border-b border-line">
-            <div class="text-[13px] text-muted mb-1">Na začátku zaplatíte</div>
+      <!-- Cena a garance -->
+      <div class="lg:sticky lg:top-28 h-fit">
+        <div class="bg-white rounded-3xl overflow-hidden card-lg border border-gray-100">
+          <div class="p-8 border-b border-gray-100">
+            <div class="text-[13px] text-gray-500 mb-1">Na začátku zaplatíte</div>
             <div class="text-4xl font-extrabold num mb-3">9 900 Kč</div>
-            <p class="text-[15px] text-muted leading-relaxed">Aktivační poplatek. Odečítá se od konečné odměny, takže při úspěchu nezaplatíte navíc ani korunu. Když případ nedopadne, vracíme ho celý.</p>
+            <p class="text-gray-600 leading-relaxed">Aktivační poplatek. Odečítá se od konečné odměny, takže při úspěchu nezaplatíte navíc ani korunu. Když případ nedopadne, vracíme ho celý.</p>
           </div>
-          <div class="p-6 border-b border-line bg-paper">
-            <div class="text-[13px] text-muted mb-1">Až po předání klíčů</div>
+          <div class="p-8 bg-gray-50 border-b border-gray-100">
+            <div class="text-[13px] text-gray-500 mb-1">Až po předání klíčů</div>
             <div class="text-lg font-bold mb-2">Odměna za výsledek</div>
-            <p class="text-[15px] text-muted leading-relaxed">Konkrétní částku uvidíte v písemném plánu dřív, než cokoli podepíšete. Splatná je až po předání vyklizeného bytu.</p>
+            <p class="text-gray-600 leading-relaxed">Konkrétní částku uvidíte v písemném plánu dřív, než cokoli podepíšete.</p>
           </div>
-          <div class="p-6">
-            <div class="font-extrabold mb-4">Riziko neseme my</div>
-            <ul class="space-y-3 text-[15px]">
-              <li class="flex gap-3"><svg class="w-5 h-5 text-brand shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span><span class="font-bold">Nedopadne to, vracíme peníze.</span> <span class="text-muted">Neplatíte za snahu, platíte za klíče.</span></span></li>
-              <li class="flex gap-3"><svg class="w-5 h-5 text-brand shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span><span class="font-bold">Beznadějný případ řekneme rovnou.</span> <span class="text-muted">Co nedává smysl, nebereme a neúčtujeme.</span></span></li>
-              <li class="flex gap-3"><svg class="w-5 h-5 text-brand shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span><span class="font-bold">Nechcete čekat? Byt odkoupíme.</span> <span class="text-muted">I s nájemníkem uvnitř. Problém přechází na nás.</span></span></li>
+          <div class="p-8">
+            <div class="font-extrabold mb-5">Riziko neseme my</div>
+            <ul class="space-y-4">
+              <li><span class="font-bold">Nedopadne to, vracíme peníze.</span> <span class="text-gray-600">Neplatíte za snahu, platíte za klíče.</span></li>
+              <li><span class="font-bold">Beznadějný případ řekneme rovnou.</span> <span class="text-gray-600">Co nedává smysl, nebereme a neúčtujeme.</span></li>
+              <li><span class="font-bold">Nechcete čekat? Byt odkoupíme.</span> <span class="text-gray-600">I s nájemníkem uvnitř. Problém přechází na nás.</span></li>
             </ul>
-
-            <a href="#diagnostika" class="mt-6 w-full px-5 py-3.5 rounded-lg bg-ink text-paper font-extrabold hover:bg-brandd transition-colors flex items-center justify-center gap-2">Zjistit, jak by to vypadalo u mě</a>
-            <p class="text-[13px] text-muted text-center mt-3">Bereme 6 nových případů měsíčně.</p>
+            <a href="#diagnostika" class="mt-7 w-full px-6 py-4 rounded-full bg-gray-900 text-white font-bold hover:bg-gray-800 transition-colors flex items-center justify-center">
+              Zjistit, jak by to vypadalo u mě
+            </a>
+            <p class="text-[13px] text-gray-400 text-center mt-3">Bereme 6 nových případů měsíčně.</p>
           </div>
         </div>
       </div>
@@ -700,101 +616,35 @@ tailwind.config = {
 </section>
 
 <!-- ── PRESCORING ───────────────────────────────────────────────────── -->
-<section class="border-b border-line bg-paper">
-  <div class="max-w-content mx-auto px-5 py-16 lg:py-20">
-    <div class="grid lg:grid-cols-2 gap-10 items-center">
-      <div>
-        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand/10 text-brand text-[13px] font-extrabold uppercase tracking-wider mb-5">Zdarma</div>
-        <h2 class="text-3xl lg:text-4xl font-extrabold tracking-[-0.02em] mb-4">Prescoring nájemníka</h2>
-        <p class="text-lg text-muted leading-relaxed mb-6">
-          Bodový model, který používáme u vlastních klientů. Zadáte, co o zájemci víte, a dostanete skóre od 0 do 100,
-          seznam rizikových faktorů a konkrétní pojistky, které patří do smlouvy právě u tohohle člověka.
-        </p>
-        <p class="text-muted mb-8">
-          Většina případů, které řešíme, se dala zastavit tady. Ne u soudu, ale u stolu před podpisem.
-        </p>
-        <a href="prescoring.html" class="inline-flex px-7 py-4 rounded-lg bg-ink text-paper font-extrabold hover:bg-brandd transition-colors">Spustit prescoring zdarma</a>
-      </div>
-      <div class="space-y-5">
-      <!-- FOTO 4 -->
-      <div class="ph ph-4x3">
-        <span class="ph-tag">Screenshot</span>
-        <div class="ph-title">Skutečný výstup prescoringu</div>
-        <p class="ph-brief">
-          Snímek výsledkové obrazovky s velkým skóre, pásmem a rozpadem rizik. Ideálně případ,
-          který dopadl špatně, třeba 34 bodů a čtyři rizikové faktory. Vyfoť to i na mobilu v ruce,
-          protože většina lidí to bude otevírat v telefonu.
-        </p>
-        <p class="ph-why"><strong>Proč to prodává:</strong> nikdo nekliká na nástroj, o kterém neví, jak vypadá.
-          Náhled výstupu je nejlevnější způsob, jak zvednout prokliky do prescoringu, a zároveň ukazuje,
-          že to není další formulář na sběr e-mailů, ale skutečná analýza.</p>
-      </div>
+<section class="bg-gray-50 py-20 lg:py-24">
+  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+    <div>
+      <div class="inline-flex items-center px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-[13px] font-bold uppercase tracking-wider mb-5">Zdarma</div>
+      <h2 class="text-3xl lg:text-4xl font-extrabold tracking-tight mb-4">Prescoring nájemníka</h2>
+      <p class="text-lg text-gray-600 leading-relaxed mb-4">
+        Bodový model, který používáme u vlastních klientů. Zadáte, co o zájemci víte, a dostanete skóre
+        od 0 do 100, seznam rizikových faktorů a konkrétní pojistky do smlouvy právě u tohohle člověka.
+      </p>
+      <p class="text-gray-600 mb-8">Většina případů, které řešíme, se dala zastavit tady. Ne u soudu, ale u stolu před podpisem.</p>
+      <a href="prescoring.html" class="inline-flex px-7 py-4 rounded-full bg-gray-900 text-white font-semibold hover:bg-gray-800 transition-colors">Spustit prescoring zdarma</a>
+    </div>
 
-      <div class="rounded-2xl bg-white border border-line p-8">
-        <div class="text-[13px] font-extrabold uppercase tracking-wider text-muted mb-4">Co vyhodnocuje</div>
-        <ul class="space-y-3 text-[15px]">
-          <li class="flex gap-3"><span class="text-brand font-bold">01</span><span>Poměr nájmu k příjmu a disponibilní příjem po všech závazcích</span></li>
-          <li class="flex gap-3"><span class="text-brand font-bold">02</span><span>Typ a stabilita příjmu, délka zaměstnání, zkušební doba, sezónnost</span></li>
-          <li class="flex gap-3"><span class="text-brand font-bold">03</span><span>Zadlužení, finanční rezerva a historie problémů s platbami</span></li>
-          <li class="flex gap-3"><span class="text-brand font-bold">04</span><span>Insolvenční rejstřík, evidence exekucí a reference z předchozích nájmů</span></li>
-          <li class="flex gap-3"><span class="text-brand font-bold">05</span><span>Kvalitu ručitele a to, jestli spolubydlící podepíší jako solidární dlužníci</span></li>
-        </ul>
-      </div>
-      </div>
+    <!-- FOTO 4 -->
+    <div class="ph ph-4x3">
+      <span class="ph-tag">Screenshot</span>
+      <div class="ph-title">Skutečný výstup prescoringu</div>
+      <p class="ph-brief">Snímek výsledku s velkým skóre, pásmem a rozpadem rizik. Ideálně případ, který dopadl špatně. Vyfoť to i na mobilu v ruce, většina lidí to otevře v telefonu.</p>
+      <p class="ph-why"><strong>Proč to prodává:</strong> nikdo neklikne na nástroj, o kterém neví, jak vypadá. Náhled výstupu zvedne prokliky a ukáže, že to není další formulář na sběr e-mailů.</p>
     </div>
   </div>
 </section>
 
-<!-- ── DŮVĚRA ───────────────────────────────────────────────────────── -->
-<section class="border-b border-line">
-  <div class="max-w-content mx-auto px-5 py-16 lg:py-20">
-    <div class="max-w-3xl">
-      <h2 class="text-3xl lg:text-4xl font-extrabold tracking-[-0.02em] mb-8">Kdo případ povede</h2>
-
-      <div class="grid sm:grid-cols-[auto,1fr] gap-6 items-start p-6 rounded-2xl border border-line bg-white mb-6">
-        <!-- FOTO 5 -->
-        <div class="ph ph-1x1 w-40 shrink-0 !p-3">
-          <span class="ph-tag !mb-1.5 !text-[10px]">Portrét</span>
-          <p class="ph-brief !text-[11px] !leading-snug">
-            David, pas nahoru, neutrální pozadí, denní světlo z okna. Ne oblek s kravatou,
-            ale ani tričko. Pohled do objektivu, mírný úsměv. Žádný korporátní ateliér.
-          </p>
-        </div>
-        <div>
-          <div class="text-xl font-extrabold">David Choc</div>
-          <div class="text-muted mb-3">30 let na trhu s nemovitostmi, specializace na pronájmy a správu</div>
-          <p class="text-muted leading-relaxed">Případ vede jeden konkrétní člověk od prvního hovoru až po předání klíčů. Nebudete pokaždé vysvětlovat všechno znovu někomu jinému.</p>
-        </div>
-      </div>
-
-      <div class="p-6 rounded-2xl border border-line bg-white">
-        <div class="font-extrabold mb-2">Právní část zajišťuje advokátní kancelář</div>
-        <p class="text-muted leading-relaxed mb-5">Sepis podání, právní úkony a zastoupení u soudu zajišťuje spolupracující advokátní kancelář. Naší rolí je vedení případu, dokumentace, komunikace s nájemníkem a koordinace celého procesu.</p>
-
-        <!-- FOTO 6 -->
-        <div class="ph">
-          <span class="ph-tag">Foto nebo logo</span>
-          <div class="ph-title">Advokát, se kterým spolupracujete</div>
-          <p class="ph-brief">
-            Portrét advokáta se jménem a číslem zápisu v ČAK, nebo aspoň logo kanceláře.
-            Nejlepší varianta je společná fotka vás dvou, klidně v kanceláři u stolu.
-          </p>
-          <p class="ph-why"><strong>Proč to prodává:</strong> „spolupracující advokátní kancelář" bez jména
-            zní jako výmluva. Konkrétní jméno a tvář je zároveň splnění zákonné povinnosti i nejsilnější
-            odpověď na námitku „proč vy a ne rovnou právník".</p>
-        </div>
-        <!-- DOPLNIT: konkrétní název advokátní kanceláře. Bez něj stránku nespouštět (zákon o advokacii 85/1996 Sb.). -->
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── PŘÍPADY A REFERENCE ──────────────────────────────────────────── -->
-<section class="border-b border-line bg-paper">
-  <div class="max-w-content mx-auto px-5 py-16 lg:py-20">
+<!-- ── PŘÍPADY ──────────────────────────────────────────────────────── -->
+<section class="bg-white py-20 lg:py-24">
+  <div class="max-w-7xl mx-auto px-6">
     <div class="max-w-2xl mb-10">
-      <h2 class="text-3xl lg:text-4xl font-extrabold tracking-[-0.02em] mb-4">Jak to dopadlo jinde</h2>
-      <p class="text-lg text-muted leading-relaxed">Tři případy z poslední doby. Jména a adresy neuvádíme, čísla ano.</p>
+      <h2 class="text-3xl lg:text-4xl font-extrabold tracking-tight mb-4">Jak to dopadlo jinde</h2>
+      <p class="text-lg text-gray-600">Tři případy z poslední doby. Jména a adresy neuvádíme, čísla ano.</p>
     </div>
 
     <!-- VIDEO 2 -->
@@ -803,110 +653,122 @@ tailwind.config = {
       <div class="ph-title">Reference klienta, kterému jste byt vrátili</div>
       <p class="ph-brief">
         Natoč skutečného majitele, ideálně v tom bytě, o který šlo. Neptej se, jestli je spokojený.
-        Zeptej se na tři věci a nech ho mluvit: jak dlouho to řešil sám, co ho to stálo,
-        a v jakém okamžiku si řekl, že to sám nezvládne. Když nechce ukázat obličej, natoč ruce a byt
-        a nech jen hlas. Titulky povinně, většina to pustí bez zvuku.
+        Zeptej se na tři věci: jak dlouho to řešil sám, co ho to stálo, a v jakém okamžiku si řekl,
+        že to sám nezvládne. Titulky povinně, většina to pustí bez zvuku.
       </p>
-      <p class="ph-why"><strong>Proč to prodává:</strong> tohle je jediná věc na celé stránce, kterou o vás
-        neříkáte vy. Video-reference konvertuje řádově líp než psaná citace, protože se nedá vymyslet.
-        Kdyby měl vzniknout jen jeden materiál z celého seznamu, ať je to tenhle.</p>
+      <p class="ph-why"><strong>Proč to prodává:</strong> jediná věc na stránce, kterou o vás neříkáte vy. Kdyby měl vzniknout jen jeden materiál z celého seznamu, ať je to tenhle.</p>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-5">
+    <div class="grid md:grid-cols-3 gap-6">
       <div class="ph ph-4x3">
         <span class="ph-tag">Foto · případ 1</span>
         <div class="ph-title">Neplatič, dluh přes tři nájmy</div>
-        <p class="ph-brief">
-          Fotka bytu po vyklizení, už uklizeného a připraveného k pronájmu. Vedle ní na stránce poběží
-          čísla: doba řešení, dlužná částka, kolik se vrátilo.
-        </p>
-        <p class="ph-why"><strong>Proč:</strong> ukazuje konec příběhu. Člověk v krizi potřebuje vidět,
-          že tenhle stav má konec a jak ten konec vypadá.</p>
+        <p class="ph-brief">Byt po vyklizení, uklizený a připravený k pronájmu. Vedle poběží čísla: doba řešení, dlužná částka, kolik se vrátilo.</p>
       </div>
       <div class="ph ph-4x3">
         <span class="ph-tag">Foto · případ 2</span>
         <div class="ph-title">Nájemník, který se odmítal vystěhovat</div>
-        <p class="ph-brief">
-          Předání klíčů, detail ruky s klíči nad předávacím protokolem. Datum na protokolu nech čitelné,
-          jména začerni.
-        </p>
-        <p class="ph-why"><strong>Proč:</strong> klíče jsou vysněný výsledek celé nabídky. Vizuál, který
-          přesně sedí na hlavní slib „váš byt zpátky".</p>
+        <p class="ph-brief">Předání klíčů, detail ruky s klíči nad předávacím protokolem. Datum nech čitelné, jména začerni.</p>
       </div>
       <div class="ph ph-4x3">
         <span class="ph-tag">Foto · případ 3</span>
-        <div class="ph-title">Majitel, který nechtěl čekat, a byt prodal</div>
-        <p class="ph-brief">
-          Fotka podpisu kupní smlouvy nebo jen dvou lidí u stolu při jednání. Nemá to vypadat jako
-          bankovní reklama, klidně mobilem.
-        </p>
-        <p class="ph-why"><strong>Proč:</strong> odkup je vaše největší odlišení od advokátů. Bez obrázku
-          zůstane jen odrážkou v ceníku a nikdo si nevšimne, že jde o samostatné řešení.</p>
+        <div class="ph-title">Majitel, který byt raději prodal</div>
+        <p class="ph-brief">Podpis kupní smlouvy nebo dva lidi u stolu při jednání. Nemá to vypadat jako bankovní reklama, klidně mobilem.</p>
       </div>
     </div>
 
-    <p class="text-sm text-muted mt-6">
-      Než budou fotky a čísla z reálných případů, tuhle sekci nepouštěj ven. Vymyšlená případovka je
-      jediná věc, která tenhle typ webu spolehlivě zabije.
+    <p class="text-sm text-gray-500 mt-6">
+      Než budou fotky a čísla z reálných případů, tuhle sekci nepouštěj ven. Vymyšlená případovka je jediná věc, která tenhle typ webu spolehlivě zabije.
     </p>
   </div>
 </section>
 
-<!-- ── FAQ ──────────────────────────────────────────────────────────── -->
-<section class="border-b border-line bg-white" x-data="{ open: 0 }">
-  <div class="max-w-content mx-auto px-5 py-16 lg:py-20">
+<!-- ── DŮVĚRA ───────────────────────────────────────────────────────── -->
+<section class="bg-gray-50 py-20 lg:py-24">
+  <div class="max-w-7xl mx-auto px-6">
     <div class="max-w-3xl">
-      <h2 class="text-3xl lg:text-4xl font-extrabold tracking-[-0.02em] mb-10">Na co se ptají nejčastěji</h2>
+      <h2 class="text-3xl lg:text-4xl font-extrabold tracking-tight mb-8">Kdo případ povede</h2>
 
-      <div class="divide-y divide-line border-y border-line">
-        <template x-for="(f, i) in [
-          { q: 'Kolik to celé stojí?', a: 'Aktivační poplatek 9 900 Kč, který se odečítá od konečné odměny a při neúspěchu se vrací celý. Odměna za výsledek se určuje podle rozsahu případu a uvidíte ji v písemném plánu dřív, než cokoli podepíšete. Splatná je až po předání vyklizeného bytu.' },
-          { q: 'Proč vy a ne advokát?', a: 'Advokát vám vyhraje spor a účtuje si za hodiny bez ohledu na výsledek. My vedeme celý případ včetně komunikace s nájemníkem, dokumentace, koordinace vyklizení a přípravy bytu na další pronájem. Právní úkony zajišťuje spolupracující advokátní kancelář, ale vy máte jeden kontakt a jednu odpovědnost.' },
-          { q: 'Jak dlouho to bude trvat?', a: 'U případů, kde nájem už skončil a máte písemnou smlouvu, se díky rozkazu k vyklizení bavíme obvykle o dvou až pěti měsících. Bez písemné smlouvy to může být rok i víc. Konkrétní odhad dostanete v písemném plánu.' },
-          { q: 'Nemám písemnou smlouvu. Je to ztracené?', a: 'Není, ale je to nejdražší varianta. Rozkaz k vyklizení vyžaduje listinné doložení nájmu, takže cesta vede přes běžnou žalobu. O to důležitější je začít hned a zajistit důkazy, dokud existují.' },
-          { q: 'Co když nájemník podá odpor?', a: 'Odpor podaný do 15 dnů rozkaz ruší a pokračuje se běžným řízením. Proto je příprava vedená tak, aby byl návrh doložený od prvního dne. Reakce na odpor je součástí programu, nedoúčtováváme ji.' },
-          { q: 'Musím se s nájemníkem potkat?', a: 'Ne. Od převzetí případu vedeme veškerou komunikaci my. Naopak doporučujeme, abyste s ním sám nejednal, protože slib daný v afektu dokáže případ zkomplikovat.' },
-          { q: 'Dostanu zpátky dlužné nájemné?', a: 'Vyčíslíme a uplatníme dlužné nájemné, škody i náklady. Reálná návratnost závisí na majetkových poměrech nájemníka, což vám řekneme rovnou po prověření, ne až na konci. Prioritou je nejdřív získat byt zpátky, protože ztráta roste každý měsíc.' },
-          { q: 'Nechci to řešit vůbec. Můžete byt koupit?', a: 'Ano. Nemovitost oceníme a odkoupíme i s nájemníkem uvnitř. Cena odpovídá stavu a obsazenosti, ale máte hotovo v řádu týdnů a problém přechází na nás.' }
-        ])" :key="i">
-          <div>
-            <button @click="open = open === i ? null : i" class="w-full flex items-start justify-between gap-4 py-5 text-left">
-              <span class="font-bold text-lg" x-text="f.q"></span>
-              <svg class="w-5 h-5 text-muted shrink-0 mt-1 transition-transform" :class="open === i && 'rotate-180'" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-            </button>
-            <p x-show="open === i" x-collapse class="text-muted leading-relaxed pb-5 pr-8" x-text="f.a"></p>
-          </div>
-        </template>
+      <div class="bg-white rounded-3xl p-8 card mb-6 grid sm:grid-cols-[auto,1fr] gap-7 items-start">
+        <div class="ph w-40 !p-4" style="aspect-ratio:1/1">
+          <span class="ph-tag !mb-1.5 !text-[10px]">Portrét</span>
+          <p class="ph-brief !text-[11px] !leading-snug">David, pas nahoru, neutrální pozadí, denní světlo. Ne oblek s kravatou, ale ani tričko. Pohled do objektivu.</p>
+        </div>
+        <div>
+          <div class="text-xl font-extrabold">David Choc</div>
+          <div class="text-gray-500 mb-3">30 let na trhu s nemovitostmi, specializace na pronájmy a správu</div>
+          <p class="text-gray-600 leading-relaxed">Případ vede jeden konkrétní člověk od prvního hovoru až po předání klíčů. Nebudete pokaždé vysvětlovat všechno znovu někomu jinému.</p>
+        </div>
       </div>
 
-      <p class="text-[13px] text-muted mt-8">Informace na této stránce jsou orientační a nenahrazují právní poradenství. Konkrétní kroky ve vašem případě konzultujeme s advokátem.</p>
+      <div class="bg-white rounded-3xl p-8 card">
+        <div class="font-extrabold mb-2">Právní část zajišťuje advokátní kancelář</div>
+        <p class="text-gray-600 leading-relaxed mb-6">Sepis podání, právní úkony a zastoupení u soudu zajišťuje spolupracující advokátní kancelář. Naší rolí je vedení případu, dokumentace, komunikace s nájemníkem a koordinace celého procesu.</p>
+        <!-- DOPLNIT: konkrétní název advokátní kanceláře. Bez něj stránku nespouštět (zákon o advokacii 85/1996 Sb.). -->
+        <div class="ph">
+          <span class="ph-tag">Foto nebo logo</span>
+          <div class="ph-title">Advokát, se kterým spolupracujete</div>
+          <p class="ph-brief">Portrét advokáta se jménem a číslem zápisu v ČAK, nebo aspoň logo kanceláře. Nejlepší je společná fotka vás dvou v kanceláři.</p>
+          <p class="ph-why"><strong>Proč to prodává:</strong> „spolupracující advokátní kancelář" bez jména zní jako výmluva. Konkrétní jméno je zároveň splnění zákonné povinnosti i odpověď na námitku „proč vy a ne rovnou právník".</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- ── FAQ ──────────────────────────────────────────────────────────── -->
+<section class="bg-white py-20 lg:py-24" x-data="{ open: 0 }">
+  <div class="max-w-3xl mx-auto px-6">
+    <h2 class="text-3xl lg:text-4xl font-extrabold tracking-tight mb-10">Na co se ptají nejčastěji</h2>
+
+    <div class="space-y-3">
+      <template x-for="(f, i) in [
+        { q: 'Kolik to celé stojí?', a: 'Aktivační poplatek 9 900 Kč, který se odečítá od konečné odměny a při neúspěchu se vrací celý. Odměna za výsledek se určuje podle rozsahu případu a uvidíte ji v písemném plánu dřív, než cokoli podepíšete. Splatná je až po předání vyklizeného bytu.' },
+        { q: 'Proč vy a ne advokát?', a: 'Advokát vám vyhraje spor a účtuje si za hodiny bez ohledu na výsledek. My vedeme celý případ včetně komunikace s nájemníkem, dokumentace, koordinace vyklizení a přípravy bytu na další pronájem. Právní úkony zajišťuje spolupracující advokátní kancelář, ale vy máte jeden kontakt a jednu odpovědnost.' },
+        { q: 'Jak dlouho to bude trvat?', a: 'U případů, kde nájem už skončil a máte písemnou smlouvu, se díky rozkazu k vyklizení bavíme obvykle o dvou až pěti měsících. Bez písemné smlouvy to může být rok i víc. Konkrétní odhad dostanete v písemném plánu.' },
+        { q: 'Nemám písemnou smlouvu. Je to ztracené?', a: 'Není, ale je to nejdražší varianta. Rozkaz k vyklizení vyžaduje listinné doložení nájmu, takže cesta vede přes běžnou žalobu. O to důležitější je začít hned a zajistit důkazy, dokud existují.' },
+        { q: 'Co když nájemník podá odpor?', a: 'Odpor podaný do 15 dnů rozkaz ruší a pokračuje se běžným řízením. Proto je příprava vedená tak, aby byl návrh doložený od prvního dne. Reakce na odpor je součástí programu, nedoúčtováváme ji.' },
+        { q: 'Musím se s nájemníkem potkat?', a: 'Ne. Od převzetí případu vedeme veškerou komunikaci my. Naopak doporučujeme, abyste s ním sám nejednal, protože slib daný v afektu dokáže případ zkomplikovat.' },
+        { q: 'Dostanu zpátky dlužné nájemné?', a: 'Vyčíslíme a uplatníme dlužné nájemné, škody i náklady. Reálná návratnost závisí na majetkových poměrech nájemníka, což vám řekneme rovnou po prověření, ne až na konci. Prioritou je nejdřív získat byt zpátky, protože ztráta roste každý měsíc.' },
+        { q: 'Nechci to řešit vůbec. Můžete byt koupit?', a: 'Ano. Nemovitost oceníme a odkoupíme i s nájemníkem uvnitř. Cena odpovídá stavu a obsazenosti, ale máte hotovo v řádu týdnů a problém přechází na nás.' }
+      ])" :key="i">
+        <div class="bg-gray-50 rounded-2xl overflow-hidden">
+          <button @click="open = open === i ? null : i" class="w-full flex items-start justify-between gap-4 p-5 text-left">
+            <span class="font-bold text-lg" x-text="f.q"></span>
+            <span class="text-gray-400 text-xl leading-none transition-transform shrink-0 mt-1" :class="open === i && 'rotate-45'">+</span>
+          </button>
+          <p x-show="open === i" x-collapse class="text-gray-600 leading-relaxed px-5 pb-5" x-text="f.a"></p>
+        </div>
+      </template>
+    </div>
+
+    <p class="text-[13px] text-gray-500 mt-8">Informace na této stránce jsou orientační a nenahrazují právní poradenství. Konkrétní kroky ve vašem případě konzultujeme s advokátem.</p>
+  </div>
+</section>
+
 <!-- ── ZÁVĚREČNÉ CTA ────────────────────────────────────────────────── -->
-<section class="bg-paper">
-  <div class="max-w-content mx-auto px-5 py-16 lg:py-20 text-center">
-    <h2 class="text-3xl lg:text-4xl font-extrabold tracking-[-0.02em] mb-4 max-w-2xl mx-auto">Každý měsíc, který uplyne, zaplatíte vy</h2>
-    <p class="text-lg text-muted mb-8 max-w-xl mx-auto">Diagnostika trvá dvě minuty a je zdarma. Když z toho nic nebude, aspoň budete vědět, na čem jste.</p>
+<section class="bg-gray-50 py-20 lg:py-24">
+  <div class="max-w-3xl mx-auto px-6 text-center">
+    <h2 class="text-3xl lg:text-4xl font-extrabold tracking-tight mb-4">Každý měsíc, který uplyne, zaplatíte vy</h2>
+    <p class="text-lg text-gray-600 mb-8">Diagnostika trvá dvě minuty a je zdarma. Když z toho nic nebude, aspoň budete vědět, na čem jste.</p>
     <div class="flex flex-col sm:flex-row gap-3 justify-center">
-      <a href="#diagnostika" class="px-7 py-4 rounded-lg bg-ink text-paper font-extrabold hover:bg-brandd transition-colors">Spustit diagnostiku</a>
-      <a href="tel:+420603834921" class="px-7 py-4 rounded-lg border-2 border-line font-extrabold hover:border-ink transition-colors">603 834 921</a>
+      <a href="#diagnostika" class="px-8 py-4 rounded-full bg-gray-900 text-white font-semibold hover:bg-gray-800 transition-colors">Spustit diagnostiku</a>
+      <a href="tel:+420603834921" class="px-8 py-4 rounded-full border-2 border-gray-200 font-semibold hover:border-gray-900 transition-colors">603 834 921</a>
     </div>
   </div>
 </section>
 
 <!-- ── PATIČKA ──────────────────────────────────────────────────────── -->
-<footer class="bg-ink text-paper">
-  <div class="max-w-content mx-auto px-5 py-12">
-    <div class="grid sm:grid-cols-3 gap-8 mb-10">
+<footer class="bg-gray-900 text-white py-14">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid sm:grid-cols-3 gap-10 mb-10">
       <div>
         <div class="font-extrabold mb-3">Problémový nájemník</div>
-        <p class="text-white/60 text-[15px] leading-relaxed">Vedení případů problémových nájemníků od výzvy po předání klíčů. Právní úkony zajišťuje spolupracující advokátní kancelář.</p>
+        <p class="text-white/60 leading-relaxed">Vedení případů problémových nájemníků od výzvy po předání klíčů. Právní úkony zajišťuje spolupracující advokátní kancelář.</p>
       </div>
       <div>
         <div class="font-extrabold mb-3">Kontakt</div>
-        <ul class="space-y-1.5 text-[15px] text-white/60">
+        <ul class="space-y-1.5 text-white/60">
           <li><a href="tel:+420603834921" class="hover:text-white transition-colors">+420 603 834 921</a></li>
           <li><a href="mailto:info@ptf.cz" class="hover:text-white transition-colors">info@ptf.cz</a></li>
           <li>Po–Pá 8:00–17:00</li>
@@ -914,7 +776,7 @@ tailwind.config = {
       </div>
       <div>
         <div class="font-extrabold mb-3">Další</div>
-        <ul class="space-y-1.5 text-[15px] text-white/60">
+        <ul class="space-y-1.5 text-white/60">
           <li><a href="prescoring.html" class="hover:text-white transition-colors">Prescoring nájemníka zdarma</a></li>
           <li><a href="budu-pronajimat.html" class="hover:text-white transition-colors">Teprve budu pronajímat</a></li>
           <li><a href="blog.html" class="hover:text-white transition-colors">Blog</a></li>
@@ -933,9 +795,9 @@ tailwind.config = {
 </footer>
 
 <!-- ── STICKY CTA NA MOBILU ─────────────────────────────────────────── -->
-<div class="lg:hidden fixed bottom-0 inset-x-0 z-40 bg-white border-t border-line p-3 flex gap-2.5">
-  <a href="tel:+420603834921" class="flex-1 py-3 rounded-lg border-2 border-line font-extrabold text-center">Zavolat</a>
-  <a href="#diagnostika" class="flex-[1.4] py-3 rounded-lg bg-ink text-paper font-extrabold text-center">Spustit diagnostiku</a>
+<div class="lg:hidden fixed bottom-0 inset-x-0 z-40 bg-white border-t border-gray-200 p-3 flex gap-2.5">
+  <a href="tel:+420603834921" class="flex-1 py-3.5 rounded-full border-2 border-gray-200 font-bold text-center">Zavolat</a>
+  <a href="#diagnostika" class="flex-[1.4] py-3.5 rounded-full bg-gray-900 text-white font-bold text-center">Spustit diagnostiku</a>
 </div>
 <div class="lg:hidden h-20"></div>
 

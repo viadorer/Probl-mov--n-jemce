@@ -390,15 +390,29 @@ function scoreTenant(i) {
   };
 }
 
+/**
+ * Kroky průvodce. Formulář se neukazuje jako zeď políček, ale po čtyřech
+ * krocích, a skóre se přepočítává živě při každé změně.
+ */
+const PRESCORING_STEPS = [
+  { key: 'zaklad',  title: 'Nemovitost a nájemník', note: 'Bez nájemného a příjmu nejde spočítat nic. Zbytek můžete nechat prázdný.' },
+  { key: 'prijmy',  title: 'Příjmy domácnosti',     note: 'Zajímá nás, z čeho se nájem platí a jak je ten zdroj jistý.' },
+  { key: 'zavazky', title: 'Závazky a rezerva',     note: 'Co z příjmu odchází dřív, než dojde na nájem.' },
+  { key: 'zajisteni', title: 'Zajištění a prověření', note: 'Tady se skóre nejčastěji láme. Neověřený zájemce nemůže vyjít jako nízké riziko.' },
+];
+
 /** Alpine komponenta. Skóre a pásmo zdarma, rozpad a doporučení za e-mail. */
 function prescoring() {
   return {
+    steps: PRESCORING_STEPS,
+    stepIndex: 0,
     screen: 'form', // form | preview | full
     sending: false,
     error: '',
     email: '',
     consent: false,
     result: null,
+    live: null,
     form: {
       monthlyRent: '', age: '', familyMembers: '', employmentType: 'permanent',
       employmentLength: '', previousRental: '',
@@ -416,6 +430,54 @@ function prescoring() {
     get ready() {
       return NUM(this.form.monthlyRent) > 0 && NUM(this.form.mainIncome) > 0;
     },
+    get step() {
+      return this.steps[this.stepIndex];
+    },
+    get progress() {
+      return Math.round(((this.stepIndex + 1) / this.steps.length) * 100);
+    },
+    get isLast() {
+      return this.stepIndex === this.steps.length - 1;
+    },
+
+    /** Kolik z klíčových ověření je hotových. Řídí ukazatel spolehlivosti. */
+    get coverage() {
+      const f = this.form;
+      let done = 0;
+      if (f.creditRegistry && f.creditRegistry !== 'not_checked') done++;
+      if (f.incomeProof && f.incomeProof !== 'unconfirmed') done++;
+      if (f.previousRental) done++;
+      return { done, total: 3 };
+    },
+
+    /** Přepočet skóre při každé změně, aby ukazatel žil. */
+    recalc() {
+      this.live = this.ready ? scoreTenant(this.form) : null;
+    },
+
+    next() {
+      if (this.stepIndex === 0 && !this.ready) {
+        this.error = 'Vyplňte alespoň měsíční nájemné a hlavní příjem nájemníka.';
+        return;
+      }
+      this.error = '';
+      if (this.isLast) return this.calculate();
+      this.stepIndex++;
+      this.toTop();
+    },
+
+    prev() {
+      if (this.stepIndex > 0) { this.stepIndex--; this.toTop(); }
+    },
+
+    goTo(i) {
+      if (i <= this.stepIndex || this.ready) { this.stepIndex = i; this.toTop(); }
+    },
+
+    toTop() {
+      const el = document.getElementById('pruvodce');
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    },
 
     calculate() {
       if (!this.ready) {
@@ -425,10 +487,7 @@ function prescoring() {
       this.error = '';
       this.result = scoreTenant(this.form);
       this.screen = 'preview';
-      this.$nextTick(() => {
-        const el = document.getElementById('vysledek');
-        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      });
+      this.$nextTick(() => this.toTop());
     },
 
     async unlock() {
@@ -468,8 +527,10 @@ function prescoring() {
 
     reset() {
       this.screen = 'form';
+      this.stepIndex = 0;
       this.result = null;
       this.error = '';
+      this.toTop();
     },
   };
 }

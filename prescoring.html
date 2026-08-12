@@ -19,13 +19,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <script src="https://cdn.tailwindcss.com"></script>
-<script>
-tailwind.config = { theme: { extend: {
-  colors: { ink:'#0F172A', muted:'#64748B', line:'#E7E5E4', paper:'#FAFAF9', brand:'#1D3FD6', brandd:'#152FA3', alert:'#B91C1C', warn:'#B45309', ok:'#15803D' },
-  fontFamily: { sans: ['Plus Jakarta Sans','system-ui','sans-serif'] },
-  maxWidth: { content: '1180px' },
-}}}
-</script>
 <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 <script src="js/prescoring.js"></script>
 <script>window.LEAD_ENDPOINT = null;</script>
@@ -43,66 +36,110 @@ tailwind.config = { theme: { extend: {
   html{scroll-behavior:smooth}
   body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
   .num{font-variant-numeric:tabular-nums;letter-spacing:-0.02em}
-  .fld{width:100%;padding:.7rem .9rem;border:2px solid #E7E5E4;border-radius:.6rem;background:#fff;transition:border-color .15s}
-  .fld:focus{outline:none;border-color:#1D3FD6}
-  .lbl{display:block;font-size:.875rem;font-weight:600;margin-bottom:.35rem}
-  .grp{background:#fff;border:1px solid #E7E5E4;border-radius:1rem;padding:1.5rem}
-  .chk{display:flex;gap:.65rem;align-items:flex-start;cursor:pointer;font-size:.9375rem}
+  .card{box-shadow:0 1px 3px rgba(15,23,42,.04),0 8px 24px -12px rgba(15,23,42,.10)}
+  .card-lg{box-shadow:0 4px 12px rgba(15,23,42,.05),0 24px 48px -12px rgba(15,23,42,.15)}
+  .fld{width:100%;padding:.8rem 1rem;border:2px solid #F3F4F6;border-radius:1rem;background:#fff;
+       font-size:.9375rem;transition:border-color .15s}
+  .fld:focus{outline:none;border-color:#111827}
+  .lbl{display:block;font-size:.875rem;font-weight:600;margin-bottom:.4rem}
+  .hint{font-size:.8125rem;color:#9CA3AF;margin-top:.35rem}
+  .chk{display:flex;gap:.7rem;align-items:flex-start;cursor:pointer;font-size:.9375rem;
+       padding:.85rem 1rem;border:2px solid #F3F4F6;border-radius:1rem;transition:border-color .15s}
+  .chk:hover{border-color:#D1D5DB}
+  .chk input:checked ~ span{font-weight:600}
+  /* Ciferník skóre */
+  .gauge{transform:rotate(-90deg)}
+  .gauge circle{transition:stroke-dashoffset .6s cubic-bezier(.22,1,.36,1),stroke .3s}
 </style>
 </head>
 
-<body class="bg-paper text-ink antialiased">
+<body class="bg-white text-gray-900">
 
-<header class="sticky top-0 z-40 bg-paper/90 backdrop-blur border-b border-line">
-  <div class="max-w-content mx-auto px-5 h-16 flex items-center justify-between">
+<nav class="bg-white/85 backdrop-blur-md sticky top-0 z-40 border-b border-gray-100">
+  <div class="max-w-7xl mx-auto px-6 flex justify-between items-center h-20">
     <a href="/" class="flex items-center gap-3">
-      <img src="images/logo.png" alt="Problémový nájemník" class="h-9 w-9 rounded-full object-cover">
-      <span class="font-bold tracking-tight">Problémový nájemník</span>
+      <img src="images/logo.png" class="h-11 w-11 rounded-full shadow-md object-cover" alt="Problémový nájemník">
+      <span class="text-xl font-bold tracking-tight">Problémový nájemník</span>
     </a>
-    <a href="tel:+420603834921" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-ink text-paper text-sm font-bold hover:bg-brandd transition-colors">
-      <span class="hidden sm:inline">603 834 921</span><span class="sm:hidden">Zavolat</span>
-    </a>
+    <div class="flex items-center gap-8">
+      <a href="index.html" class="hidden lg:block text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Už mám problém</a>
+      <a href="tel:+420603834921" class="px-5 py-2.5 rounded-full bg-gray-900 text-white text-sm font-semibold hover:bg-gray-800 transition-colors">
+        <span class="hidden sm:inline">603 834 921</span><span class="sm:hidden">Zavolat</span>
+      </a>
+    </div>
   </div>
-</header>
+</nav>
 
-<div x-data="prescoring()" x-cloak>
+<div x-data="prescoring()" x-init="recalc()" x-cloak>
 
 <!-- ── HERO ─────────────────────────────────────────────────────────── -->
-<section class="border-b border-line">
-  <div class="max-w-content mx-auto px-5 py-12 lg:py-16">
+<header class="bg-gray-50 border-b border-gray-100">
+  <div class="max-w-7xl mx-auto px-6 py-14 lg:py-16">
     <div class="max-w-3xl">
-      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand/10 text-brand text-[13px] font-extrabold uppercase tracking-wider mb-5">Prescoring nájemníka</div>
-      <h1 class="text-[36px] leading-[1.1] sm:text-[48px] font-extrabold tracking-[-0.03em] mb-5">
+      <div class="inline-flex items-center px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-[13px] font-bold uppercase tracking-wider mb-5">Zdarma · bez registrace</div>
+      <h1 class="text-4xl lg:text-[52px] font-extrabold leading-[1.05] tracking-tight mb-5">
         Zjistěte, koho si pouštíte do bytu.<br>Než podepíšete.
       </h1>
-      <p class="text-lg sm:text-xl text-muted leading-relaxed mb-6">
-        Stejný bodový model, jaký používáme u vlastních klientů. Dostanete skóre od 0 do 100, seznam rizikových faktorů
-        a konkrétní pojistky, které patří do smlouvy právě u tohoto nájemníka.
-        <span class="text-ink font-bold">Zdarma, výsledek hned.</span>
+      <p class="text-lg text-gray-600 leading-relaxed mb-3">
+        Stejný bodový model, jaký používáme u vlastních klientů. Skóre od 0 do 100, seznam rizikových
+        faktorů a konkrétní pojistky, které patří do smlouvy právě u tohoto nájemníka.
       </p>
-      <p class="text-muted">
-        Vyplňte, co o zájemci víte. Co nevíte, nechte prázdné — model s tím počítá a chybějící údaj sám vyhodnotí jako riziko.
+      <p class="text-gray-600">
+        Co o zájemci nevíte, nechte prázdné. Model s tím počítá a chybějící ověření sám vyhodnotí jako riziko.
       </p>
     </div>
   </div>
-</section>
+</header>
 
-<!-- ── FORMULÁŘ ─────────────────────────────────────────────────────── -->
-<section x-show="screen === 'form'" class="bg-paper">
-  <div class="max-w-content mx-auto px-5 py-12">
-    <div class="grid lg:grid-cols-2 gap-5">
+<!-- ── PRŮVODCE ─────────────────────────────────────────────────────── -->
+<section id="pruvodce" class="py-12 lg:py-16">
+  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-[minmax(0,1fr),380px] gap-8 lg:gap-12 items-start">
 
-      <!-- Nemovitost a nájemník -->
-      <div class="grp">
-        <h2 class="text-lg font-extrabold mb-5">Nemovitost a nájemník</h2>
-        <div class="grid sm:grid-cols-2 gap-4">
-          <div><label class="lbl">Měsíční nájemné (Kč)</label><input type="number" class="fld" placeholder="18 000" x-model="form.monthlyRent"></div>
-          <div><label class="lbl">Věk nájemníka</label><input type="number" class="fld" placeholder="35" x-model="form.age"></div>
-          <div><label class="lbl">Počet osob v domácnosti</label><input type="number" class="fld" placeholder="2" x-model="form.familyMembers"></div>
-          <div><label class="lbl">Délka současného zaměstnání (měsíce)</label><input type="number" class="fld" placeholder="24" x-model="form.employmentLength"></div>
+    <!-- Levý sloupec: kroky -->
+    <div x-show="screen === 'form'">
+
+      <!-- Navigace kroků -->
+      <div class="flex flex-wrap gap-2 mb-7">
+        <template x-for="(s, i) in steps" :key="s.key">
+          <button @click="goTo(i)"
+            class="px-4 py-2 rounded-full text-sm font-semibold transition-colors"
+            :class="i === stepIndex ? 'bg-gray-900 text-white' : (i < stepIndex ? 'bg-gray-100 text-gray-700 hover:bg-gray-200' : 'bg-gray-50 text-gray-400')">
+            <span class="num" x-text="(i+1) + '. '"></span><span x-text="s.title"></span>
+          </button>
+        </template>
+      </div>
+
+      <div class="bg-white rounded-3xl p-7 sm:p-9 card border border-gray-100">
+        <div class="h-1.5 bg-gray-100 rounded-full overflow-hidden mb-7">
+          <div class="h-full bg-gray-900 rounded-full transition-all duration-500" :style="'width:' + progress + '%'"></div>
+        </div>
+
+        <h2 class="text-2xl font-extrabold mb-1.5" x-text="step.title"></h2>
+        <p class="text-gray-500 mb-7" x-text="step.note"></p>
+
+        <!-- KROK 1 -->
+        <div x-show="step.key === 'zaklad'" class="grid sm:grid-cols-2 gap-5">
+          <div>
+            <label class="lbl">Měsíční nájemné (Kč)</label>
+            <input type="number" class="fld" placeholder="18 000" x-model="form.monthlyRent" @input="recalc()">
+            <p class="hint">Včetně záloh na služby, tedy co má reálně platit.</p>
+          </div>
+          <div>
+            <label class="lbl">Věk nájemníka</label>
+            <input type="number" class="fld" placeholder="35" x-model="form.age" @input="recalc()">
+          </div>
+          <div>
+            <label class="lbl">Počet osob v domácnosti</label>
+            <input type="number" class="fld" placeholder="2" x-model="form.familyMembers" @input="recalc()">
+          </div>
+          <div>
+            <label class="lbl">Délka současného zaměstnání (měsíce)</label>
+            <input type="number" class="fld" placeholder="24" x-model="form.employmentLength" @input="recalc()">
+            <p class="hint">Pod šest měsíců je to samo o sobě riziko.</p>
+          </div>
           <div>
             <label class="lbl">Typ zaměstnání</label>
-            <select class="fld" x-model="form.employmentType">
+            <select class="fld" x-model="form.employmentType" @change="recalc()">
               <option value="permanent">Hlavní pracovní poměr</option>
               <option value="contract">DPP nebo DPČ</option>
               <option value="selfemployed">OSVČ</option>
@@ -113,28 +150,41 @@ tailwind.config = { theme: { extend: {
           </div>
           <div>
             <label class="lbl">Zkušenosti s pronájmem</label>
-            <select class="fld" x-model="form.previousRental">
-              <option value="">Nevím</option>
+            <select class="fld" x-model="form.previousRental" @change="recalc()">
+              <option value="">Nevím / neptal jsem se</option>
               <option value="positive">Doložené dobré reference</option>
               <option value="none">První nájem</option>
               <option value="negative">Negativní zkušenost</option>
             </select>
+            <p class="hint">Když kontakt na předchozího pronajímatele odmítá dát, je to samo o sobě odpověď.</p>
           </div>
         </div>
-      </div>
 
-      <!-- Příjmy -->
-      <div class="grp">
-        <h2 class="text-lg font-extrabold mb-5">Příjmy domácnosti</h2>
-        <div class="grid sm:grid-cols-2 gap-4">
-          <div><label class="lbl">Hlavní příjem (čistý, Kč)</label><input type="number" class="fld" placeholder="38 000" x-model="form.mainIncome"></div>
-          <div><label class="lbl">Příjem partnera (Kč)</label><input type="number" class="fld" placeholder="0" x-model="form.partnerIncome"></div>
-          <div><label class="lbl">Dodatečné příjmy (Kč)</label><input type="number" class="fld" placeholder="0" x-model="form.additionalIncome"></div>
-          <div><label class="lbl">Příjmy spolubydlících (Kč)</label><input type="number" class="fld" placeholder="0" x-model="form.otherResidentsIncome"></div>
-          <div><label class="lbl">Sociální dávky (Kč)</label><input type="number" class="fld" placeholder="0" x-model="form.socialBenefits"></div>
+        <!-- KROK 2 -->
+        <div x-show="step.key === 'prijmy'" class="grid sm:grid-cols-2 gap-5">
+          <div>
+            <label class="lbl">Hlavní příjem (čistý, Kč)</label>
+            <input type="number" class="fld" placeholder="38 000" x-model="form.mainIncome" @input="recalc()">
+          </div>
+          <div>
+            <label class="lbl">Příjem partnera (Kč)</label>
+            <input type="number" class="fld" placeholder="0" x-model="form.partnerIncome" @input="recalc()">
+          </div>
+          <div>
+            <label class="lbl">Dodatečné příjmy (Kč)</label>
+            <input type="number" class="fld" placeholder="0" x-model="form.additionalIncome" @input="recalc()">
+          </div>
+          <div>
+            <label class="lbl">Příjmy spolubydlících (Kč)</label>
+            <input type="number" class="fld" placeholder="0" x-model="form.otherResidentsIncome" @input="recalc()">
+          </div>
+          <div>
+            <label class="lbl">Sociální dávky (Kč)</label>
+            <input type="number" class="fld" placeholder="0" x-model="form.socialBenefits" @input="recalc()">
+          </div>
           <div>
             <label class="lbl">Stabilita příjmů</label>
-            <select class="fld" x-model="form.incomeStability">
+            <select class="fld" x-model="form.incomeStability" @change="recalc()">
               <option value="stable">Stabilní</option>
               <option value="growing">Rostoucí</option>
               <option value="variable">Proměnlivé</option>
@@ -143,208 +193,255 @@ tailwind.config = { theme: { extend: {
           </div>
           <div class="sm:col-span-2">
             <label class="lbl">Doložení příjmů</label>
-            <select class="fld" x-model="form.incomeProof">
+            <select class="fld" x-model="form.incomeProof" @change="recalc()">
               <option value="employer">Potvrzení zaměstnavatele</option>
               <option value="bank_statements">Jen výpisy z účtu</option>
-              <option value="unconfirmed">Nedoloženo</option>
+              <option value="unconfirmed">Nedoloženo, jen tvrzení</option>
             </select>
           </div>
+          <div class="sm:col-span-2 grid sm:grid-cols-3 gap-3">
+            <label class="chk"><input type="checkbox" class="mt-0.5 w-4 h-4" x-model="form.seasonalWork" @change="recalc()"><span>Sezónní práce</span></label>
+            <label class="chk"><input type="checkbox" class="mt-0.5 w-4 h-4" x-model="form.probationPeriod" @change="recalc()"><span>Ve zkušební době</span></label>
+            <label class="chk"><input type="checkbox" class="mt-0.5 w-4 h-4" x-model="form.allResidentsSigned" @change="recalc()"><span>Všichni podepíší</span></label>
+          </div>
         </div>
-        <div class="mt-5 space-y-2.5">
-          <label class="chk"><input type="checkbox" class="mt-0.5 w-4 h-4" x-model="form.seasonalWork"><span>Sezónní práce (stavebnictví, cestovní ruch)</span></label>
-          <label class="chk"><input type="checkbox" class="mt-0.5 w-4 h-4" x-model="form.probationPeriod"><span>Je ve zkušební době</span></label>
-          <label class="chk"><input type="checkbox" class="mt-0.5 w-4 h-4" x-model="form.allResidentsSigned"><span>Všichni spolubydlící podepíší smlouvu</span></label>
-        </div>
-      </div>
 
-      <!-- Závazky -->
-      <div class="grp">
-        <h2 class="text-lg font-extrabold mb-5">Závazky a rezerva</h2>
-        <div class="grid sm:grid-cols-2 gap-4">
-          <div><label class="lbl">Splátky úvěrů (Kč)</label><input type="number" class="fld" placeholder="0" x-model="form.loanPayments"></div>
-          <div><label class="lbl">Kreditní karty (Kč)</label><input type="number" class="fld" placeholder="0" x-model="form.creditCards"></div>
-          <div><label class="lbl">Výživné (Kč)</label><input type="number" class="fld" placeholder="0" x-model="form.alimony"></div>
-          <div><label class="lbl">Pojištění (Kč)</label><input type="number" class="fld" placeholder="0" x-model="form.insurance"></div>
-          <div><label class="lbl">Jiné nájmy (Kč)</label><input type="number" class="fld" placeholder="0" x-model="form.otherRents"></div>
-          <div><label class="lbl">Životní náklady (Kč)</label><input type="number" class="fld" placeholder="15 000" x-model="form.livingExpenses"></div>
-          <div><label class="lbl">Finanční rezerva (Kč)</label><input type="number" class="fld" placeholder="50 000" x-model="form.financialReserve"></div>
+        <!-- KROK 3 -->
+        <div x-show="step.key === 'zavazky'" class="grid sm:grid-cols-2 gap-5">
+          <div><label class="lbl">Splátky úvěrů (Kč)</label><input type="number" class="fld" placeholder="0" x-model="form.loanPayments" @input="recalc()"></div>
+          <div><label class="lbl">Kreditní karty (Kč)</label><input type="number" class="fld" placeholder="0" x-model="form.creditCards" @input="recalc()"></div>
+          <div><label class="lbl">Výživné (Kč)</label><input type="number" class="fld" placeholder="0" x-model="form.alimony" @input="recalc()"></div>
+          <div><label class="lbl">Pojištění (Kč)</label><input type="number" class="fld" placeholder="0" x-model="form.insurance" @input="recalc()"></div>
+          <div><label class="lbl">Jiné nájmy (Kč)</label><input type="number" class="fld" placeholder="0" x-model="form.otherRents" @input="recalc()"></div>
+          <div>
+            <label class="lbl">Životní náklady (Kč)</label>
+            <input type="number" class="fld" placeholder="15 000" x-model="form.livingExpenses" @input="recalc()">
+            <p class="hint">Jídlo, doprava, telefon. Odhad stačí.</p>
+          </div>
+          <div>
+            <label class="lbl">Finanční rezerva (Kč)</label>
+            <input type="number" class="fld" placeholder="50 000" x-model="form.financialReserve" @input="recalc()">
+            <p class="hint">Rezerva pod jeden nájem je varovný signál.</p>
+          </div>
           <div>
             <label class="lbl">Historie dluhů</label>
-            <select class="fld" x-model="form.debtHistory">
+            <select class="fld" x-model="form.debtHistory" @change="recalc()">
               <option value="clean">Bez problémů</option>
               <option value="minor">Drobné problémy</option>
               <option value="major">Vážné problémy</option>
               <option value="bankruptcy">Insolvence nebo exekuce</option>
             </select>
           </div>
-          <div class="sm:col-span-2">
+        </div>
+
+        <!-- KROK 4 -->
+        <div x-show="step.key === 'zajisteni'" class="space-y-6">
+          <div>
             <label class="lbl">Kontrola v rejstřících</label>
-            <select class="fld" x-model="form.creditRegistry">
+            <select class="fld" x-model="form.creditRegistry" @change="recalc()">
               <option value="not_checked">Neprověřeno</option>
               <option value="isir_clean">Insolvenční rejstřík čistý</option>
               <option value="execution_not_found">Evidence exekucí čistá</option>
               <option value="execution_found">Nalezena exekuce</option>
               <option value="insolvency">Nalezena insolvence</option>
             </select>
+            <p class="hint">Insolvenční rejstřík i centrální evidenci exekucí si můžete ověřit sám. Prověření zájemce děláme i za vás.</p>
+          </div>
+
+          <label class="chk"><input type="checkbox" class="mt-0.5 w-4 h-4" x-model="form.hasExecution" @change="recalc()"><span>Má aktivní exekuci</span></label>
+
+          <div class="pt-2 border-t border-gray-100">
+            <label class="chk mb-5"><input type="checkbox" class="mt-0.5 w-4 h-4" x-model="form.hasGuarantor" @change="recalc()"><span class="font-semibold">Nájemník má ručitele</span></label>
+
+            <div class="grid sm:grid-cols-2 gap-5" :class="!form.hasGuarantor && 'opacity-40 pointer-events-none'">
+              <div><label class="lbl">Měsíční příjem ručitele (Kč)</label><input type="number" class="fld" placeholder="45 000" x-model="form.guarantorIncome" @input="recalc()"></div>
+              <div>
+                <label class="lbl">Zaměstnání ručitele</label>
+                <select class="fld" x-model="form.guarantorEmployment" @change="recalc()">
+                  <option value="stable">Stabilní zaměstnání</option>
+                  <option value="property_owner">Vlastník nemovitosti</option>
+                  <option value="selfemployed">OSVČ</option>
+                  <option value="other">Jiné</option>
+                </select>
+              </div>
+              <div>
+                <label class="lbl">Zadlužení ručitele</label>
+                <select class="fld" x-model="form.guarantorDebt" @change="recalc()">
+                  <option value="none">Žádné</option>
+                  <option value="medium">Střední</option>
+                  <option value="high">Vysoké</option>
+                </select>
+              </div>
+              <div>
+                <label class="lbl">Vztah k nájemníkovi</label>
+                <select class="fld" x-model="form.guarantorRelation" @change="recalc()">
+                  <option value="family">Rodina</option>
+                  <option value="friend">Známý</option>
+                  <option value="other">Jiný</option>
+                </select>
+              </div>
+            </div>
           </div>
         </div>
-        <label class="chk mt-5"><input type="checkbox" class="mt-0.5 w-4 h-4" x-model="form.hasExecution"><span>Má aktivní exekuci</span></label>
-      </div>
 
-      <!-- Ručitel -->
-      <div class="grp">
-        <h2 class="text-lg font-extrabold mb-5">Ručitel</h2>
-        <label class="chk mb-5"><input type="checkbox" class="mt-0.5 w-4 h-4" x-model="form.hasGuarantor"><span class="font-semibold">Nájemník má ručitele</span></label>
+        <p x-show="error" x-text="error" class="text-sm text-red-600 font-semibold mt-6"></p>
 
-        <div class="grid sm:grid-cols-2 gap-4" :class="!form.hasGuarantor && 'opacity-40 pointer-events-none'">
-          <div><label class="lbl">Měsíční příjem ručitele (Kč)</label><input type="number" class="fld" placeholder="45 000" x-model="form.guarantorIncome"></div>
-          <div>
-            <label class="lbl">Zaměstnání ručitele</label>
-            <select class="fld" x-model="form.guarantorEmployment">
-              <option value="stable">Stabilní zaměstnání</option>
-              <option value="property_owner">Vlastník nemovitosti</option>
-              <option value="selfemployed">OSVČ</option>
-              <option value="other">Jiné</option>
-            </select>
-          </div>
-          <div>
-            <label class="lbl">Zadlužení ručitele</label>
-            <select class="fld" x-model="form.guarantorDebt">
-              <option value="none">Žádné</option>
-              <option value="medium">Střední</option>
-              <option value="high">Vysoké</option>
-            </select>
-          </div>
-          <div>
-            <label class="lbl">Vztah k nájemníkovi</label>
-            <select class="fld" x-model="form.guarantorRelation">
-              <option value="family">Rodina</option>
-              <option value="friend">Známý</option>
-              <option value="other">Jiný</option>
-            </select>
-          </div>
+        <div class="flex items-center gap-3 mt-8 pt-7 border-t border-gray-100">
+          <button x-show="stepIndex > 0" @click="prev()" class="px-6 py-3.5 rounded-full border-2 border-gray-200 font-semibold hover:border-gray-900 transition-colors">Zpět</button>
+          <button @click="next()" class="px-7 py-3.5 rounded-full bg-gray-900 text-white font-semibold hover:bg-gray-800 transition-colors ml-auto">
+            <span x-text="isLast ? 'Zobrazit výsledek' : 'Pokračovat'"></span>
+          </button>
         </div>
       </div>
-
     </div>
 
-    <div class="mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-      <button @click="calculate()" class="px-8 py-4 rounded-lg bg-ink text-paper font-extrabold hover:bg-brandd transition-colors">Spočítat bonitu</button>
-      <p class="text-sm text-muted" x-show="!error">Nic neodesíláme. Výpočet běží u vás v prohlížeči.</p>
-      <p class="text-sm text-alert font-semibold" x-show="error" x-text="error"></p>
-    </div>
-  </div>
-</section>
+    <!-- Levý sloupec: výsledek -->
+    <div x-show="screen !== 'form'" class="space-y-6">
 
-<!-- ── VÝSLEDEK ─────────────────────────────────────────────────────── -->
-<template x-if="result && (screen === 'preview' || screen === 'full')">
-<section id="vysledek" class="bg-paper">
-  <div class="max-w-content mx-auto px-5 py-12">
-    <div class="grid lg:grid-cols-[minmax(0,380px),1fr] gap-6 items-start">
-
-      <!-- Skóre -->
-      <div class="rounded-2xl border-2 overflow-hidden bg-white lg:sticky lg:top-24"
-           :class="{'border-ok': result.band==='low', 'border-warn': result.band==='medium', 'border-alert': result.band==='high'||result.band==='critical'}">
-        <div class="p-8 text-center border-b border-line">
-          <div class="text-[13px] font-extrabold uppercase tracking-wider text-muted mb-3">Bonita nájemníka</div>
-          <div class="text-7xl font-extrabold num mb-2"
-               :class="{'text-ok': result.band==='low', 'text-warn': result.band==='medium', 'text-alert': result.band==='high'||result.band==='critical'}"
-               x-text="result.score"></div>
-          <div class="text-lg font-bold mb-3" x-text="result.bandLabel"></div>
-          <p class="text-[15px] text-muted leading-relaxed" x-text="result.bandNote"></p>
-        </div>
-        <div class="p-6 space-y-3 text-[15px]">
-          <div class="flex justify-between"><span class="text-muted">Nájem k příjmu</span><span class="font-bold num" x-text="result.metrics.rentToIncomeRatio + ' %'"></span></div>
-          <div class="flex justify-between"><span class="text-muted">Disponibilní příjem</span><span class="font-bold num" x-text="result.metrics.disposableIncome.toLocaleString('cs-CZ') + ' Kč'"></span></div>
-          <div class="flex justify-between"><span class="text-muted">Rezerva v nájmech</span><span class="font-bold num" x-text="result.metrics.reserveMonths + '×'"></span></div>
-          <div class="flex justify-between"><span class="text-muted">Zadlužení k příjmu</span><span class="font-bold num" x-text="result.metrics.debtToIncomeRatio + ' %'"></span></div>
-        </div>
-        <div class="px-6 pb-6">
-          <button @click="reset()" class="text-sm text-muted hover:text-ink transition-colors">← Upravit údaje</button>
-        </div>
-      </div>
-
-      <div>
-        <!-- Zamčeno -->
-        <div x-show="screen === 'preview'" class="rounded-2xl bg-ink text-paper p-8">
+      <!-- Zamčeno -->
+      <template x-if="result && screen === 'preview'">
+        <div class="bg-gray-900 text-white rounded-3xl p-8 lg:p-10">
           <div class="text-2xl font-extrabold mb-2">
             Našli jsme <span x-text="result.riskFactors.length"></span> rizikových faktorů
             a <span x-text="result.recommendations.length"></span> konkrétních doporučení
           </div>
-          <p class="text-white/70 mb-6">Rozpad ukazuje, co přesně tohle skóre srazilo dolů, a co si u tohohle nájemníka ošetřit ve smlouvě, aby vás to nestálo peníze. Pošleme vám ho na e-mail a hned ho i zobrazíme.</p>
+          <p class="text-white/70 mb-7">
+            Rozpad ukazuje, co přesně tohle skóre srazilo dolů, a co si u tohohle nájemníka ošetřit ve
+            smlouvě, aby vás to nestálo peníze. Pošleme vám ho na e-mail a hned ho i zobrazíme.
+          </p>
 
           <div class="space-y-3 max-w-md">
             <input type="email" placeholder="vas@email.cz" x-model="email"
-              class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 placeholder-white/50 text-white focus:outline-none focus:border-white/60">
+              class="w-full px-4 py-3.5 rounded-xl bg-white/10 border border-white/20 placeholder-white/50 text-white focus:outline-none focus:border-white/60">
             <label class="flex items-start gap-2.5 text-[13px] text-white/70 cursor-pointer">
               <input type="checkbox" class="mt-0.5 w-4 h-4" x-model="consent">
               <span>Souhlasím se zpracováním osobních údajů za účelem zaslání výsledku.</span>
             </label>
             <p x-show="error" x-text="error" class="text-sm text-red-300"></p>
             <button @click="unlock()" :disabled="sending"
-              class="w-full px-5 py-3.5 rounded-lg bg-white text-ink font-extrabold hover:bg-white/90 transition-colors disabled:opacity-50">
+              class="w-full px-6 py-4 rounded-full bg-white text-gray-900 font-bold hover:bg-gray-100 transition-colors disabled:opacity-50">
               <span x-text="sending ? 'Odesílám…' : 'Zobrazit rozpad a doporučení'"></span>
             </button>
-            <p class="text-[12px] text-white/50">Údaje o nájemníkovi si neukládáme k jeho osobě. Slouží jen k výpočtu a k tomu, abychom vám uměli poradit.</p>
+            <p class="text-[12px] text-white/50">Údaje o nájemníkovi si neukládáme k jeho osobě. Slouží jen k výpočtu.</p>
           </div>
         </div>
+      </template>
 
-        <!-- Odemčeno -->
-        <div x-show="screen === 'full'" class="space-y-5">
-          <div class="rounded-2xl bg-white border border-line p-6" x-show="result.riskFactors.length">
-            <h2 class="text-lg font-extrabold mb-4">Co skóre srazilo dolů</h2>
-            <ul class="space-y-2.5">
+      <!-- Odemčeno -->
+      <template x-if="result && screen === 'full'">
+        <div class="space-y-6">
+          <div class="bg-white rounded-3xl p-8 card border border-gray-100" x-show="result.riskFactors.length">
+            <h2 class="text-xl font-extrabold mb-5">Co skóre srazilo dolů</h2>
+            <ul class="space-y-3">
               <template x-for="r in result.riskFactors" :key="r">
-                <li class="flex gap-3 text-[15px]">
-                  <svg class="w-5 h-5 text-alert shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v4m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>
-                  <span x-text="r"></span>
-                </li>
+                <li class="flex gap-3"><span class="text-red-400 font-bold shrink-0">✕</span><span x-text="r"></span></li>
               </template>
             </ul>
           </div>
 
-          <div class="rounded-2xl bg-white border border-line p-6">
-            <h2 class="text-lg font-extrabold mb-4">Co si u tohohle nájemníka ošetřit</h2>
-            <ul class="space-y-2.5">
+          <div class="bg-white rounded-3xl p-8 card border border-gray-100">
+            <h2 class="text-xl font-extrabold mb-5">Co si u tohohle nájemníka ošetřit</h2>
+            <ul class="space-y-3">
               <template x-for="r in result.recommendations" :key="r">
-                <li class="flex gap-3 text-[15px]">
-                  <svg class="w-5 h-5 text-brand shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                  <span x-text="r"></span>
-                </li>
+                <li class="flex gap-3"><span class="text-emerald-500 font-bold shrink-0">✓</span><span x-text="r"></span></li>
               </template>
             </ul>
           </div>
 
-          <div class="rounded-2xl bg-ink text-paper p-8">
-            <h2 class="text-xl font-extrabold mb-2">Skóre vám řekne riziko. Nezbaví vás ho.</h2>
-            <p class="text-white/70 mb-6">Prověříme zájemce v insolvenčním rejstříku a v evidenci exekucí, ověříme příjem, zavoláme předchozímu pronajímateli a připravíme smlouvu, která obstojí u soudu. A pokud už problémového nájemníka v bytě máte, řešíme i to.</p>
+          <div class="bg-gray-900 text-white rounded-3xl p-8 lg:p-10">
+            <h2 class="text-2xl font-extrabold mb-2">Skóre vám řekne riziko. Nezbaví vás ho.</h2>
+            <p class="text-white/70 mb-7">Prověříme zájemce v insolvenčním rejstříku a evidenci exekucí, ověříme příjem, zavoláme předchozímu pronajímateli a připravíme smlouvu, která obstojí u soudu. A pokud už problémového nájemníka v bytě máte, řešíme i to.</p>
             <div class="flex flex-col sm:flex-row gap-3">
-              <a href="tel:+420603834921" class="px-6 py-3.5 rounded-lg bg-white text-ink font-extrabold text-center hover:bg-white/90 transition-colors">603 834 921</a>
-              <a href="index.html#diagnostika" class="px-6 py-3.5 rounded-lg border border-white/30 font-extrabold text-center hover:bg-white/10 transition-colors">Už mám problém, chci diagnostiku</a>
+              <a href="tel:+420603834921" class="px-7 py-4 rounded-full bg-white text-gray-900 font-bold text-center hover:bg-gray-100 transition-colors">603 834 921</a>
+              <a href="index.html#diagnostika" class="px-7 py-4 rounded-full border-2 border-white/25 font-bold text-center hover:bg-white/10 transition-colors">Už mám problém</a>
             </div>
           </div>
 
-          <p class="text-[13px] text-muted">Výsledek je orientační pomůcka, nikoli rozhodnutí, a nenahrazuje právní ani finanční poradenství. Při zpracování údajů o zájemcích o nájem postupujte v souladu s GDPR a uchovávejte jen to, co skutečně potřebujete.</p>
+          <p class="text-[13px] text-gray-500">Výsledek je orientační pomůcka, nikoli rozhodnutí, a nenahrazuje právní ani finanční poradenství. Při zpracování údajů o zájemcích postupujte v souladu s GDPR a uchovávejte jen to, co potřebujete.</p>
+        </div>
+      </template>
+    </div>
+
+    <!-- Pravý sloupec: živé skóre -->
+    <aside class="lg:sticky lg:top-28">
+      <div class="bg-white rounded-3xl card-lg border border-gray-100 overflow-hidden">
+
+        <div class="p-8 text-center">
+          <div class="text-[13px] font-bold uppercase tracking-wider text-gray-400 mb-5">
+            <span x-show="screen === 'form'">Průběžné skóre</span>
+            <span x-show="screen !== 'form'">Bonita nájemníka</span>
+          </div>
+
+          <div class="relative w-[168px] h-[168px] mx-auto mb-5">
+            <svg class="gauge w-full h-full" viewBox="0 0 120 120">
+              <circle cx="60" cy="60" r="52" fill="none" stroke="#F3F4F6" stroke-width="12"/>
+              <circle cx="60" cy="60" r="52" fill="none" stroke-width="12" stroke-linecap="round"
+                stroke-dasharray="326.7"
+                :stroke-dashoffset="326.7 - (326.7 * ((result || live) ? (result || live).score : 0) / 100)"
+                :stroke="!(result || live) ? '#E5E7EB' : ((result || live).band === 'low' ? '#059669' : ((result || live).band === 'medium' ? '#D97706' : '#DC2626'))"/>
+            </svg>
+            <div class="absolute inset-0 grid place-items-center">
+              <div>
+                <div class="text-5xl font-extrabold num" x-text="(result || live) ? (result || live).score : '–'"></div>
+                <div class="text-[13px] text-gray-400">ze 100</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-lg font-bold mb-2" x-text="(result || live) ? (result || live).bandLabel : 'Zatím nemám dost údajů'"></div>
+          <p class="text-[15px] text-gray-500 leading-relaxed" x-text="(result || live) ? (result || live).bandNote : 'Vyplňte nájemné a hlavní příjem a skóre se rozjede.'"></p>
+        </div>
+
+        <!-- Metriky -->
+        <div class="px-8 pb-6 space-y-3" x-show="result || live">
+          <div class="flex justify-between text-[15px]"><span class="text-gray-500">Nájem k příjmu</span><span class="font-bold num" x-text="((result || live)?.metrics.rentToIncomeRatio ?? 0) + ' %'"></span></div>
+          <div class="flex justify-between text-[15px]"><span class="text-gray-500">Zbyde po závazcích</span><span class="font-bold num" x-text="(((result || live)?.metrics.disposableIncome ?? 0)).toLocaleString('cs-CZ') + ' Kč'"></span></div>
+          <div class="flex justify-between text-[15px]"><span class="text-gray-500">Rezerva v nájmech</span><span class="font-bold num" x-text="((result || live)?.metrics.reserveMonths ?? 0) + '×'"></span></div>
+          <div class="flex justify-between text-[15px]"><span class="text-gray-500">Zadlužení k příjmu</span><span class="font-bold num" x-text="((result || live)?.metrics.debtToIncomeRatio ?? 0) + ' %'"></span></div>
+        </div>
+
+        <!-- Spolehlivost -->
+        <div class="px-8 py-6 bg-gray-50 border-t border-gray-100">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-[13px] font-bold uppercase tracking-wider text-gray-400">Spolehlivost výsledku</span>
+            <span class="text-[13px] font-bold num" x-text="coverage.done + '/' + coverage.total"></span>
+          </div>
+          <div class="flex gap-1.5 mb-3">
+            <template x-for="i in coverage.total" :key="i">
+              <div class="h-1.5 flex-1 rounded-full" :class="i <= coverage.done ? 'bg-emerald-500' : 'bg-gray-200'"></div>
+            </template>
+          </div>
+          <p class="text-[13px] text-gray-500 leading-relaxed" x-show="coverage.done < coverage.total">
+            Dokud nejsou ověřené rejstříky, doložený příjem a reference, výsledek nemůže vyjít jako nízké riziko. Je to odhad na základě tvrzení zájemce.
+          </p>
+          <p class="text-[13px] text-emerald-700 font-semibold" x-show="coverage.done === coverage.total">
+            Všechna klíčová ověření jsou hotová. Skóre stojí na doložených údajích.
+          </p>
+        </div>
+
+        <div class="px-8 py-5 border-t border-gray-100" x-show="screen !== 'form'">
+          <button @click="reset()" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">← Upravit údaje</button>
         </div>
       </div>
 
-    </div>
+      <p class="text-[13px] text-gray-400 mt-4 px-2">Výpočet běží u vás v prohlížeči. Nic se neodesílá, dokud sám nechcete.</p>
+    </aside>
+
   </div>
 </section>
-</template>
 
 </div>
 
-<footer class="bg-ink text-paper">
-  <div class="max-w-content mx-auto px-5 py-12">
-    <div class="grid sm:grid-cols-3 gap-8 mb-10">
+<footer class="bg-gray-900 text-white py-14 mt-8">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid sm:grid-cols-3 gap-10 mb-10">
       <div>
         <div class="font-extrabold mb-3">Problémový nájemník</div>
-        <p class="text-white/60 text-[15px] leading-relaxed">Vedení případů problémových nájemníků od výzvy po předání klíčů. Právní úkony zajišťuje spolupracující advokátní kancelář.</p>
+        <p class="text-white/60 leading-relaxed">Vedení případů problémových nájemníků od výzvy po předání klíčů. Právní úkony zajišťuje spolupracující advokátní kancelář.</p>
       </div>
       <div>
         <div class="font-extrabold mb-3">Kontakt</div>
-        <ul class="space-y-1.5 text-[15px] text-white/60">
+        <ul class="space-y-1.5 text-white/60">
           <li><a href="tel:+420603834921" class="hover:text-white transition-colors">+420 603 834 921</a></li>
           <li><a href="mailto:info@ptf.cz" class="hover:text-white transition-colors">info@ptf.cz</a></li>
           <li>Po–Pá 8:00–17:00</li>
@@ -352,7 +449,7 @@ tailwind.config = { theme: { extend: {
       </div>
       <div>
         <div class="font-extrabold mb-3">Další</div>
-        <ul class="space-y-1.5 text-[15px] text-white/60">
+        <ul class="space-y-1.5 text-white/60">
           <li><a href="index.html" class="hover:text-white transition-colors">Mám problémového nájemníka</a></li>
           <li><a href="budu-pronajimat.html" class="hover:text-white transition-colors">Teprve budu pronajímat</a></li>
           <li><a href="blog.html" class="hover:text-white transition-colors">Blog</a></li>
