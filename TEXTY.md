@@ -50,17 +50,23 @@ v dočasných placeholderech místo fotek a z webu zmizí, až fotky vzniknou.
 - **[A3.5]** *odstavec:* Nájemník ve vašem bytě celou tu dobu bydlí a vy platíte hypotéku ze svého.
 - **[A3.6]** *text:* Rozkaz k vyklizení od ledna 2026 2–5 měsíců
 - **[A3.7]** *odstavec:* Zkrácené řízení bez jednání. Ale jen když jsou papíry v pořádku a lhůty se nepropásnou.
-- **[A3.8]** *odstavec:* Délka pruhů odpovídá skutečnému poměru měsíců. Rozdíl mezi oběma cestami je řádově rok života.
+- **[A3.8]** *odstavec:* Délka pruhů odpovídá poměru uvedených měsíců. Jde o obvyklou délku obou řízení, ne o zaručenou lhůtu — konkrétní případ může trvat déle podle vytížení soudu i podle toho, jak se nájemník brání. Rozdíl mezi oběma cestami je ale řádově rok života.
 - **[A3.9]** *text:* 3 měsíce
 - **[A3.10]** *odstavec:* Po skončení nájmu musíte nájemníka písemně vyzvat k vyklizení. Když to nestihnete, nájem se obnovuje a začínáte znovu.
 - **[A3.11]** *text:* 14 dní
 - **[A3.12]** *odstavec:* Výzva musí být doručena nejméně 14 dní před podáním návrhu k soudu, do bytu nebo do datové schránky.
 - **[A3.13]** *text:* 15 dní
 - **[A3.14]** *odstavec:* Tolik má nájemník na odpor. Podaný odpor rozkaz ruší, proto musí být návrh neprůstřelný od prvního dne.
-- **[A3.15]** *text:* Foto
-- **[A3.16]** *text:* Skutečný rozkaz k vyklizení nebo výzva s dodejkou
-- **[A3.17]** *odstavec:* *(zadání pro fotografa)* Anonymizovaný dokument na stole, seshora, denní světlo. Jména začerni, ale nech čitelnou hlavičku soudu, datum a razítko. Vedle obálka s dodejkou. Žádná stocková fotka kladívka.
-- **[A3.18]** *odstavec:* *(zadání pro fotografa)* Proč to prodává: většina majitelů rozkaz nikdy neviděla a neví, jestli existuje. Fotka reálného dokumentu z konkrétního případu z abstraktního slibu udělá hmatatelnou věc.
+- **[A3.15]** *text:* Co musí být doložené
+- **[A3.16]** *odstavec:* Písemná nájemní smlouva
+- **[A3.17]** *odstavec:* Doklad o skončení nájmu, tedy uplynutí doby, dohoda nebo platná výpověď
+- **[A3.18]** *odstavec:* Doklad o doručení výzvy k vyklizení
+- **[A3.19]** *odstavec:* Doklad o vlastnictví, typicky výpis z katastru nemovitostí
+- **[A3.20]** *odstavec:* Chybí vám něco z toho? Právě proto začínáme diagnostikou. Co se dá doplnit, doplníme, a co se doplnit nedá, řekneme vám rovnou.
+- **[A3.21]** *text:* Foto
+- **[A3.22]** *text:* Skutečný rozkaz k vyklizení nebo výzva s dodejkou
+- **[A3.23]** *odstavec:* *(zadání pro fotografa)* Anonymizovaný dokument na stole, seshora, denní světlo. Jména začerni, ale nech čitelnou hlavičku soudu, datum a razítko. Vedle obálka s dodejkou. Žádná stocková fotka kladívka.
+- **[A3.24]** *odstavec:* *(zadání pro fotografa)* Proč to prodává: většina majitelů rozkaz nikdy neviděla a neví, jestli existuje. Fotka reálného dokumentu z konkrétního případu z abstraktního slibu udělá hmatatelnou věc.
 
 ### A4. DIAGNOSTIKA
 
