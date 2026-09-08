@@ -19,6 +19,7 @@ const TRIAGE_STEPS = [
       { value: 'damage', label: 'Ničí byt nebo obtěžuje sousedy', note: 'Škody, hluk, stížnosti ostatních' },
       { value: 'unreachable', label: 'Nekomunikuje a nepřebírá poštu', note: 'Nezvedá telefon, zásilky se vracejí' },
       { value: 'subletting', label: 'Bydlí tam někdo jiný, než kdo podepsal', note: 'Podnájem bez souhlasu' },
+      { value: 'early', label: 'Zatím platí, ale pozdě, nebo mi něco nesedí', note: 'Opakované zpoždění, vyhýbá se kontaktu, drobné dluhy na službách' },
     ],
   },
   {
@@ -119,23 +120,40 @@ function evaluateTriage(a) {
   if (a.term === 'fixed_running') {
     blockers.push('Doba určitá ještě běží, konec nájmu musí založit výpověď z konkrétního důvodu.');
   }
-  if (a.notice === 'none' || a.notice === 'unsure') {
+  if (stage !== 'early' && (a.notice === 'none' || a.notice === 'unsure')) {
     blockers.push('Zatím chybí doložitelná písemná výzva, bez které soud návrh nepřijme.');
+  }
+  if (stage === 'early' && a.notice === 'none') {
+    blockers.push('Zatím jste nic neposlal písemně, takže o zpoždění neexistuje jediný doklad.');
+  }
+  if (stage === 'early') {
+    leverage.push('Jste ve fázi, kde má výběr ještě smysl. Většina případů, které řešíme, se dala zastavit tady.');
   }
   if (a.duration === 'gt6') {
     blockers.push('Případ běží přes půl roku, ztráta už je značná a každý měsíc ji zvyšuje.');
   }
 
-  if (stage === 'ended_stays' || a.term === 'fixed_ended') {
+  if (stage === 'early') {
     deadlines.push({
-      label: '3 měsíce od skončení nájmu',
-      text: 'Do této lhůty musí odejít písemná výzva k vyklizení. Jinak se nájem obnovuje a rychlá cesta padá.',
+      label: 'Dluh ve výši tří nájmů',
+      text: 'Za touhle hranicí vzniká nárok na výpověď bez výpovědní doby. Pod ní máte nástrojů podstatně míň, proto se rozhoduje teď.',
+    });
+    deadlines.push({
+      label: 'Jistota kryje nejvýš tři nájmy',
+      text: 'Zákonné maximum je trojnásobek nájemného. Jakmile ho dluh přeroste, jde ztráta plně z vaší kapsy.',
+    });
+  } else {
+    if (stage === 'ended_stays' || a.term === 'fixed_ended') {
+      deadlines.push({
+        label: '3 měsíce od skončení nájmu',
+        text: 'Do této lhůty musí odejít písemná výzva k vyklizení. Jinak se nájem obnovuje a rychlá cesta padá.',
+      });
+    }
+    deadlines.push({
+      label: '14 dní před podáním návrhu',
+      text: 'Výzva musí být doručena do bytu nebo do datové schránky nejméně 14 dní předem.',
     });
   }
-  deadlines.push({
-    label: '14 dní před podáním návrhu',
-    text: 'Výzva musí být doručena do bytu nebo do datové schránky nejméně 14 dní předem.',
-  });
 
   let severity = 'high';
   let title = '';
@@ -146,7 +164,23 @@ function evaluateTriage(a) {
   let route = [];
   let firstStep = '';
 
-  if (noContract) {
+  if (stage === 'early') {
+    severity = 'high';
+    title = 'Zatím se to dá zastavit';
+    summary = 'Jste v jediné fázi, kde máte na výběr. Opakované zpoždění samo o sobě právní problém není, ale je to nejspolehlivější předzvěst toho, který přijde. Jestli z toho bude nepříjemnost za jeden nájem, nebo spor za dvě stě tisíc, se rozhoduje v příštích týdnech. A nerozhoduje o tom nájemník, ale jestli od téhle chvíle jde všechno písemně.';
+    estMonths = '1 měsíc';
+    estLoss = LOSS_LOW;
+    estCost = COST_FAST;
+    route = [
+      'Zkontrolovat, co smlouva umožňuje: úrok z prodlení, smluvní pokutu, výši jistoty a ujednání o doručování.',
+      'Poslat písemnou upomínku s konkrétním datem splatnosti, i kdyby šlo o pár dní a pár tisíc.',
+      'Založit evidenci plateb: kdy měla přijít, kdy přišla, kolik chybí. Bez ní se dluh později nedá vyčíslit.',
+      'Ověřit, jestli má nájemník datovou schránku. Rozhoduje to o rychlosti doručování, až bude potřeba.',
+      'Zdokumentovat stav bytu při nejbližší prohlídce, dokud je přístup bez konfliktu.',
+      'Nastavit si předem hranici: kolik zpoždění ještě tolerujete a co uděláte, až ji překročí.',
+    ];
+    firstStep = 'Pošlete písemnou upomínku i kvůli malé částce a uschovejte doklad o odeslání. Ne kvůli těm penězům, ale proto, že tím začíná spis. Majitelé, kteří to udělali včas, mají případ hotový za měsíce. Ti, kdo čekali na domluvu, za roky.';
+  } else if (noContract) {
     severity = 'critical';
     title = 'Nájem bez písemné smlouvy';
     summary = 'Nejdražší varianta, jaká existuje. Rychlý rozkaz k vyklizení vyžaduje listinné doložení nájmu, takže vaše cesta vede přes běžnou žalobu. Rozhoduje se to teď, protože důkazy o existenci nájmu s časem mizí.';
@@ -267,6 +301,10 @@ function evaluateTriage(a) {
   if (unsureContract && estCost === COST_FAST) {
     estCost = COST_STANDARD;
   }
+  if (stage === 'early' && noContract) {
+    estCost = COST_STANDARD;
+    estLoss = LOSS_MID;
+  }
 
   return { severity, title, summary, estMonths, estLoss, estCost, deadlines, leverage, blockers, route, firstStep };
 }
@@ -282,6 +320,7 @@ function diagnostika() {
     contact: { name: '', phone: '', email: '' },
     consent: false,
     sending: false,
+    sent: false,
     error: '',
 
     get step() {
@@ -348,11 +387,13 @@ function diagnostika() {
 
       try {
         if (window.LEAD_ENDPOINT) {
-          await fetch(window.LEAD_ENDPOINT, {
+          const res = await fetch(window.LEAD_ENDPOINT, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload),
           });
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          this.sent = true;
         } else {
           console.warn('LEAD_ENDPOINT není nastavený, lead se neodeslal.', payload);
         }
@@ -363,6 +404,59 @@ function diagnostika() {
       } finally {
         this.sending = false;
       }
+    },
+  };
+}
+
+
+/**
+ * Kalkulačka tříměsíční lhůty na výzvu k vyklizení.
+ * Orientační: rozhoduje den, kdy nájem skutečně skončil.
+ */
+function lhuta() {
+  return {
+    konec: '',
+
+    get out() {
+      if (!this.konec) return null;
+      const konec = new Date(this.konec + 'T00:00:00');
+      if (isNaN(konec.getTime())) return null;
+
+      const dnes = new Date();
+      dnes.setHours(0, 0, 0, 0);
+
+      if (konec > dnes) {
+        return {
+          tone: 'ok',
+          head: 'Nájem ještě neskončil',
+          text: 'Lhůta začne běžet až dnem skončení nájmu. Připravte si výzvu dopředu, ať odejde hned první den — tím si necháte celé tři měsíce jako rezervu, ne jako termín.',
+        };
+      }
+
+      const limit = new Date(konec);
+      limit.setMonth(limit.getMonth() + 3);
+      const datum = limit.toLocaleDateString('cs-CZ');
+      const dnu = Math.round((limit - dnes) / 86400000);
+
+      if (dnu > 30) {
+        return {
+          tone: 'ok',
+          head: dnu + ' dní',
+          text: 'Tolik zbývá do ' + datum + ', kdy se tříměsíční lhůta zavírá. Do té doby musí být výzva k vyklizení odeslaná i doručená. Času je dost, ale doručování se umí protáhnout.',
+        };
+      }
+      if (dnu > 0) {
+        return {
+          tone: 'warn',
+          head: dnu + ' dní',
+          text: 'Lhůta se zavírá ' + datum + '. Výzva musí odejít teď. Počítejte s tím, že k podání návrhu musí být doručená ještě nejméně 14 dní předem — a nájemník si zásilku nemusí vyzvednout napoprvé.',
+        };
+      }
+      return {
+        tone: 'bad',
+        head: 'Lhůta uplynula',
+        text: 'Tříměsíční lhůta skončila ' + datum + ', tedy před ' + Math.abs(dnu) + ' dny. Nájem se mohl obnovit a rychlá cesta přes rozkaz k vyklizení padá. Neznamená to, že je konec, ale postup je od téhle chvíle jiný a dražší. Ověřte si to co nejdřív.',
+      };
     },
   };
 }

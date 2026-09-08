@@ -24,8 +24,16 @@
 <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 <script src="js/diagnostika.js"></script>
 <script>
-  /* Endpoint pro odesílání leadů. DOPLNIT před spuštěním.
-     Dokud je null, lead se pouze zaloguje do konzole a nikam neodejde. */
+  /* ── SBĚR LEADŮ ────────────────────────────────────────────────────
+     Dokud je null, formuláře nic neodesílají a stránka to návštěvníkovi
+     ani netvrdí. Jakmile sem doplníš URL, potvrzení začne slibovat
+     kontakt do 180 minut.
+
+     Pozor: web běží na GitHub Pages, který NEVYKONÁVÁ PHP. Vlastní
+     skript na téhle doméně nepoběží, endpoint musí být externí, např.
+     Formspree, webhook do Make nebo Google Apps Script.
+
+     Očekává POST s JSON tělem a odpověď 2xx. */
   window.LEAD_ENDPOINT = null;
 </script>
 
@@ -61,6 +69,11 @@
   .ph-dark .ph-why{border-top-color:rgba(255,255,255,.15)}
   .ph-16x9{aspect-ratio:16/9}
   .ph-4x3{aspect-ratio:4/3}
+
+  /* Placeholdery jsou skryté před návštěvníkem, zadání pro fotografa zůstává v kódu.
+     Až budeš mít materiál, nahraď konkrétní blok .ph obrázkem. Tohle pravidlo smaž
+     teprve tehdy, až budou hotové všechny. */
+  .ph{display:none!important}
 </style>
 </head>
 
@@ -77,6 +90,7 @@
       <div class="hidden lg:flex items-center gap-8 text-sm font-medium text-gray-600">
         <a href="#starosti" class="hover:text-gray-900 transition-colors">Co za vás převezmeme</a>
         <a href="#program" class="hover:text-gray-900 transition-colors">Ceník a garance</a>
+        <a href="#odkup" class="hover:text-gray-900 transition-colors">Odkup bytu</a>
         <a href="prescoring.html" class="hover:text-gray-900 transition-colors">Prescoring</a>
         <a href="blog.html" class="hover:text-gray-900 transition-colors">Blog</a>
       </div>
@@ -113,7 +127,7 @@
         <a href="#diagnostika" class="px-7 py-4 rounded-full bg-gray-900 text-white font-semibold text-center hover:bg-gray-800 transition-colors">
           Potřebuji vyřešit problém
         </a>
-        <a href="#program" class="px-7 py-4 rounded-full border-2 border-gray-200 font-semibold text-center hover:border-gray-900 transition-colors">
+        <a href="#odkup" class="px-7 py-4 rounded-full border-2 border-gray-200 font-semibold text-center hover:border-gray-900 transition-colors">
           Odkoupíme byt i s nájemníkem
         </a>
       </div>
@@ -199,6 +213,34 @@
         <div class="text-4xl font-extrabold num mb-3">15 dní</div>
         <p class="text-gray-600 leading-relaxed">Tolik má nájemník na odpor. Podaný odpor rozkaz ruší, proto musí být návrh neprůstřelný od prvního dne.</p>
       </div>
+    </div>
+
+    <div class="bg-white rounded-3xl p-8 lg:p-10 card mb-6" x-data="lhuta()" x-cloak>
+      <div class="text-[13px] font-extrabold uppercase tracking-wider text-gray-400 mb-2">Kalkulačka lhůty</div>
+      <h3 class="text-2xl font-extrabold tracking-tight mb-1.5">Kolik vám zbývá na výzvu k vyklizení</h3>
+      <p class="text-gray-600 leading-relaxed mb-6 max-w-xl">Zadejte datum, kdy nájem skončil. Spočítáme, kolik dní zbývá, než se tříměsíční lhůta zavře a nájem se začne obnovovat.</p>
+
+      <label class="block text-sm font-semibold mb-2" for="lhuta-konec">Datum skončení nájmu</label>
+      <input id="lhuta-konec" type="date" x-model="konec"
+        class="w-full sm:max-w-xs px-4 py-3.5 rounded-xl border-2 border-gray-200 focus:border-gray-900 focus:outline-none transition-colors">
+
+      <template x-if="out">
+        <div class="mt-6 p-6 sm:p-7 rounded-2xl"
+             :class="out.tone === 'bad' ? 'bg-red-50' : (out.tone === 'warn' ? 'bg-amber-50' : 'bg-emerald-50')">
+          <div class="text-3xl sm:text-4xl font-extrabold num mb-2"
+               :class="out.tone === 'bad' ? 'text-red-600' : (out.tone === 'warn' ? 'text-amber-700' : 'text-emerald-700')"
+               x-text="out.head"></div>
+          <p class="text-gray-700 leading-relaxed mb-5" x-text="out.text"></p>
+          <a href="#diagnostika" class="inline-flex px-6 py-3.5 rounded-full bg-gray-900 text-white font-semibold hover:bg-gray-800 transition-colors">
+            Zjistit, co s tím teď udělat
+          </a>
+        </div>
+      </template>
+
+      <p class="text-sm text-gray-500 mt-6 pt-5 border-t border-gray-100">
+        Výpočet je orientační. Rozhoduje den, kdy nájem skutečně skončil, a u výpovědi to nemusí být
+        datum, které máte v hlavě. Přesné datum ověříme v diagnostice.
+      </p>
     </div>
 
     <div class="bg-white rounded-3xl p-8 card mb-10">
@@ -317,6 +359,17 @@
             </template>
           </div>
 
+          <template x-if="result.leverage.length">
+            <div class="mb-6">
+              <div class="text-sm font-bold mb-2">Co hraje pro vás</div>
+              <ul class="space-y-1.5">
+                <template x-for="l in result.leverage" :key="l">
+                  <li class="text-sm text-gray-600 flex gap-2"><span class="text-emerald-500">✓</span><span x-text="l"></span></li>
+                </template>
+              </ul>
+            </div>
+          </template>
+
           <template x-if="result.blockers.length">
             <div class="mb-6">
               <div class="text-sm font-bold mb-2">Co vám cestu komplikuje</div>
@@ -330,7 +383,7 @@
 
           <div class="p-6 rounded-2xl bg-gray-900 text-white">
             <div class="font-extrabold text-lg mb-1.5">Zbývá postup krok za krokem a první krok do 72 hodin</div>
-            <p class="text-sm text-white/70 mb-5">Pošleme vám ho i s rozpočtem a ozveme se do 180 minut. Zdarma, i když se nakonec rozhodnete jinak.</p>
+            <p class="text-sm text-white/70 mb-5" x-text="window.LEAD_ENDPOINT ? 'Pošleme vám ho i s rozpočtem a ozveme se do 180 minut. Zdarma, i když se nakonec rozhodnete jinak.' : 'Zobrazíme vám ho hned. Zdarma, i když se nakonec rozhodnete jinak.'"></p>
 
             <div class="space-y-2.5">
               <input x-model="contact.name" type="text" placeholder="Jméno a příjmení"
@@ -360,10 +413,11 @@
       <!-- Odemčený výsledek -->
       <template x-if="result && screen === 'result'">
       <div class="bg-gray-50 rounded-3xl overflow-hidden card">
-        <div class="p-7 sm:p-8 pb-6 bg-emerald-50">
-          <div class="inline-flex items-center gap-2 text-[13px] font-extrabold uppercase tracking-wider text-emerald-700 mb-2">
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-            Máme to, ozveme se do 180 minut
+        <div class="p-7 sm:p-8 pb-6" :class="sent ? 'bg-emerald-50' : 'bg-amber-50'">
+          <div class="inline-flex items-center gap-2 text-[13px] font-extrabold uppercase tracking-wider mb-2"
+               :class="sent ? 'text-emerald-700' : 'text-amber-700'">
+            <span class="w-1.5 h-1.5 rounded-full" :class="sent ? 'bg-emerald-500' : 'bg-amber-500'"></span>
+            <span x-text="sent ? 'Máme to, ozveme se do 180 minut' : 'Postup máte níž. Zavolejte nám, ať se do toho pustíme'"></span>
           </div>
           <h3 class="text-xl font-bold" x-text="result.title"></h3>
         </div>
@@ -439,6 +493,7 @@
       <p class="ph-why"><strong>Proč to prodává:</strong> čísla nad tím jsou abstrakce. Fotka je moment, kdy si člověk představí svůj byt a spočítá, že rekonstrukce bude dražší než cokoli, co mu nabídneš.</p>
     </div>
 
+    <p class="text-lg text-white/60 leading-relaxed mb-5 max-w-2xl">A to jsou pořád jenom peníze. Když se klientů ptáme po předání klíčů, co pro ně bylo nejhorší, o dluhu skoro nemluví. Mluví o tom, že do vlastního bytu nemohli, že se báli zvednout telefon a že to doma probírali každý večer.</p>
     <p class="text-xl font-bold">Proti tomu poměřujte cenu jakéhokoli řešení. Nejdražší varianta je vždycky ta, kde se čeká.</p>
   </div>
 </section>
@@ -617,12 +672,28 @@
         </div>
 
         <div class="mt-8 bg-gray-50 rounded-3xl p-8">
-          <div class="font-extrabold mb-5">A k tomu, protože nechceme, abyste to řešil znovu</div>
-          <ul class="space-y-3.5">
-            <li><span class="font-bold">Prověření dalšího nájemníka zdarma.</span> <span class="text-gray-600">Insolvenční rejstřík, evidence exekucí, ověření příjmu, reference.</span></li>
-            <li><span class="font-bold">Nájemní smlouva připravená na rok 2026.</span> <span class="text-gray-600">Splňuje podmínky pro rozkaz k vyklizení včetně doručování do datové schránky.</span></li>
-            <li><span class="font-bold">Dvanáct měsíců hlídání plateb.</span> <span class="text-gray-600">Při prvním zpoždění jednáme hned. Právě tam vzniká další průšvih.</span></li>
-          </ul>
+          <div class="font-extrabold mb-1">A k tomu, protože nechceme, abyste to řešil znovu</div>
+          <p class="text-gray-500 mb-6">Tři služby, které jinak prodáváme samostatně. V programu je nedoplácíte.</p>
+
+          <div class="space-y-3.5">
+            <div class="flex items-baseline justify-between gap-6 pb-3.5 border-b border-gray-200">
+              <div><span class="font-bold">Prověření dalšího nájemníka.</span> <span class="text-gray-600">Insolvenční rejstřík, evidence exekucí, ověření příjmu, reference.</span></div>
+              <div class="num text-gray-400 line-through shrink-0">3 900 Kč</div>
+            </div>
+            <div class="flex items-baseline justify-between gap-6 pb-3.5 border-b border-gray-200">
+              <div><span class="font-bold">Nájemní smlouva připravená na rok 2026.</span> <span class="text-gray-600">Splňuje podmínky pro rozkaz k vyklizení včetně doručování do datové schránky.</span></div>
+              <div class="num text-gray-400 line-through shrink-0">4 900 Kč</div>
+            </div>
+            <div class="flex items-baseline justify-between gap-6 pb-3.5 border-b border-gray-200">
+              <div><span class="font-bold">Dvanáct měsíců hlídání plateb.</span> <span class="text-gray-600">Při prvním zpoždění jednáme hned. Právě tam vzniká další průšvih.</span></div>
+              <div class="num text-gray-400 line-through shrink-0">8 280 Kč</div>
+            </div>
+          </div>
+
+          <div class="flex items-baseline justify-between gap-6 pt-5 mt-4 border-t-2 border-gray-900">
+            <div class="font-extrabold">Hodnota, kterou nedoplácíte</div>
+            <div class="num font-extrabold text-xl">17 080 Kč</div>
+          </div>
         </div>
 
         <!-- FOTO 3 -->
@@ -640,19 +711,30 @@
           <div class="p-8 border-b border-gray-100">
             <div class="text-[13px] text-gray-500 mb-1">Na začátku zaplatíte</div>
             <div class="text-4xl font-extrabold num mb-3">9 900 Kč</div>
-            <p class="text-gray-600 leading-relaxed">Aktivační poplatek. Odečítá se od konečné odměny, takže při úspěchu nezaplatíte navíc ani korunu. Když případ nedopadne, vracíme ho celý.</p>
+            <p class="text-gray-600 leading-relaxed">Aktivační poplatek. Převezmeme případ, založíme spis a připravíme plnou moc. Odečítá se od konečné odměny. Když případ nevezmeme nebo nedopadne, vracíme ho celý.</p>
           </div>
+
+          <!-- ROZHODNOUT PŘED NASAZENÍM: strop 45 000 Kč vychází z návrhu v CENIK.md
+               a je podmíněný pevnými cenami od advokátní kanceláře. Bez potvrzení
+               vlastní kalkulace tuhle kartu nenasazovat. -->
           <div class="p-8 bg-gray-50 border-b border-gray-100">
+            <div class="text-[13px] text-gray-500 mb-1">Během případu, nejvýš</div>
+            <div class="text-4xl font-extrabold num mb-3">45 000 Kč</div>
+            <p class="text-gray-600 leading-relaxed">Strop na všech úkonech dohromady, ať případ trvá jakkoli dlouho a kolik jich bude potřeba. Nad tuhle částku jde práce na nás. Poplatky soudu, exekutora a řemeslníků se přeúčtovávají v prokázané výši a uvádíme je zvlášť, ať je vidět, co je naše práce a co cizí faktura.</p>
+          </div>
+
+          <div class="p-8 border-b border-gray-100">
             <div class="text-[13px] text-gray-500 mb-1">Až po předání klíčů</div>
             <div class="text-lg font-bold mb-2">Odměna za výsledek</div>
-            <p class="text-gray-600 leading-relaxed">Konkrétní částku uvidíte v písemném plánu dřív, než cokoli podepíšete.</p>
+            <p class="text-gray-600 leading-relaxed">Konkrétní částku uvidíte v písemném plánu dřív, než cokoli podepíšete. Bez výsledku nevzniká.</p>
           </div>
           <div class="p-8">
             <div class="font-extrabold mb-5">Riziko neseme my</div>
             <ul class="space-y-4">
-              <li><span class="font-bold">Nedopadne to, vracíme peníze.</span> <span class="text-gray-600">Neplatíte za snahu, platíte za klíče.</span></li>
+              <li><span class="font-bold">Za výsledek platíte, jen když výsledek je.</span> <span class="text-gray-600">Nezískáme byt zpátky, odměnu neúčtujeme a aktivační poplatek vracíme.</span></li>
+              <li><span class="font-bold">Účet má strop.</span> <span class="text-gray-600">Nekonečná hodinovka, kterou znáte od advokátů, tady nehrozí.</span></li>
               <li><span class="font-bold">Beznadějný případ řekneme rovnou.</span> <span class="text-gray-600">Co nedává smysl, nebereme a neúčtujeme.</span></li>
-              <li><span class="font-bold">Nechcete čekat? Byt odkoupíme.</span> <span class="text-gray-600">I s nájemníkem uvnitř. Problém přechází na nás.</span></li>
+              <li><span class="font-bold">Nechcete čekat? <a href="#odkup" class="underline underline-offset-2 hover:no-underline">Byt odkoupíme.</a></span> <span class="text-gray-600">I s nájemníkem uvnitř. Problém přechází na nás.</span></li>
             </ul>
             <a href="#diagnostika" class="mt-7 w-full px-6 py-4 rounded-full bg-gray-900 text-white font-bold hover:bg-gray-800 transition-colors flex items-center justify-center">
               Zjistit, jak by to vypadalo u mě
@@ -663,6 +745,57 @@
       </div>
 
     </div>
+  </div>
+</section>
+
+<!-- ── ODKUP ────────────────────────────────────────────────────────── -->
+<section id="odkup" class="bg-gray-900 text-white py-20 lg:py-24">
+  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-[1fr,minmax(0,420px)] gap-10 lg:gap-14">
+
+    <div>
+      <div class="inline-flex items-center px-3.5 py-1.5 rounded-full bg-white text-gray-900 text-[13px] font-bold uppercase tracking-wider mb-5">Druhá cesta</div>
+      <h2 class="text-3xl lg:text-4xl font-extrabold tracking-tight mb-4">Nechcete to řešit vůbec? Byt odkoupíme i s nájemníkem uvnitř.</h2>
+      <p class="text-lg text-white/60 leading-relaxed mb-9">
+        Někdo chce klíče zpátky. Někdo už jenom chce mít pokoj. Tohle je pro druhou skupinu.
+        Nemovitost oceníme a odkoupíme ve stavu, v jakém je, i s člověkem uvnitř.
+        Vyklizení, soud i vymáhání dluhu přecházejí na nás — vy podepíšete kupní smlouvu a končíte.
+      </p>
+
+      <div class="space-y-5">
+        <div class="pb-5 border-b border-white/10">
+          <div class="font-bold mb-1">Kdy to dává smysl</div>
+          <p class="text-white/60 leading-relaxed">Když nemáte písemnou smlouvu a čeká vás běžná žaloba. Když případ běží přes rok. Nebo když si spočítáte, že rekonstrukce po vyklizení bude dražší než rozdíl v ceně.</p>
+        </div>
+        <div class="pb-5 border-b border-white/10">
+          <div class="font-bold mb-1">Za kolik</div>
+          <p class="text-white/60 leading-relaxed">Cena odpovídá stavu bytu a tomu, že je obsazený. Nebudeme předstírat, že dostanete tržní cenu prázdné nemovitosti. Dostanete ale číslo předem a hotovo v řádu týdnů, ne let.</p>
+        </div>
+        <div>
+          <div class="font-bold mb-1">Co k tomu potřebujeme</div>
+          <p class="text-white/60 leading-relaxed">Adresu a dispozici, v jakém stavu je nájem a jestli je na bytě zástava nebo exekuce. Víc na začátek ne.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Odkup vede přes PTF Reality. Až bude mít vlastní příjem poptávek,
+         přesměruj tlačítka sem: je to jiný člověk a jiná zakázka než vyklizení. -->
+    <div class="lg:sticky lg:top-28 h-fit">
+      <div class="bg-white text-gray-900 rounded-3xl p-8 card-lg">
+        <div class="text-[13px] text-gray-500 mb-1">Nezávazně a bez poplatku</div>
+        <div class="text-2xl font-extrabold mb-3">Chci nabídku na odkup</div>
+        <p class="text-gray-600 leading-relaxed mb-7">Ozveme se s cenovým rozpětím. Diagnostiku případu k tomu nepotřebujete — tahle cesta jde mimo ni.</p>
+
+        <a href="tel:+420603834921" class="w-full px-6 py-4 rounded-full bg-gray-900 text-white font-bold hover:bg-gray-800 transition-colors flex items-center justify-center mb-3">
+          Zavolat: 603 834 921
+        </a>
+        <a href="mailto:info@ptf.cz?subject=Odkup%20bytu%20s%20n%C3%A1jemn%C3%ADkem&amp;body=Adresa%20a%20dispozice%3A%0AStav%20n%C3%A1jmu%20(dluh%2C%20smlouva%2C%20jak%20dlouho%20to%20trv%C3%A1)%3A%0AZ%C3%A1stava%20nebo%20exekuce%20na%20bytu%3A%0ATelefon%3A%0A"
+           class="w-full px-6 py-4 rounded-full border-2 border-gray-200 font-bold hover:border-gray-900 transition-colors flex items-center justify-center">
+          Napsat e-mailem
+        </a>
+        <p class="text-[13px] text-gray-400 mt-4 text-center">V e-mailu máte předvyplněné, co potřebujeme vědět.</p>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -691,7 +824,9 @@
 </section>
 
 <!-- ── PŘÍPADY ──────────────────────────────────────────────────────── -->
-<section class="bg-white py-20 lg:py-24">
+<!-- VYPNUTO: zapnout, až budou reálné fotky a čísla ze skutečných případů.
+     Smaž style="display:none" a placeholdery nahraď materiálem. -->
+<section class="bg-white py-20 lg:py-24" style="display:none">
   <div class="max-w-7xl mx-auto px-6">
     <div class="max-w-2xl mb-10">
       <h2 class="text-3xl lg:text-4xl font-extrabold tracking-tight mb-4">Jak to dopadlo jinde</h2>
@@ -774,14 +909,14 @@
 
     <div class="space-y-3">
       <template x-for="(f, i) in [
-        { q: 'Kolik to celé stojí?', a: 'Aktivační poplatek 9 900 Kč, který se odečítá od konečné odměny a při neúspěchu se vrací celý. Odměna za výsledek se určuje podle rozsahu případu a uvidíte ji v písemném plánu dřív, než cokoli podepíšete. Splatná je až po předání vyklizeného bytu.' },
+        { q: 'Kolik to celé stojí?', a: 'Tři složky. Aktivační poplatek 9 900 Kč na začátku, který se odečítá od konečné odměny a při neúspěchu se vrací. Úkony během případu, na kterých máte strop 45 000 Kč bez ohledu na to, jak dlouho to potrvá. A odměna za výsledek, splatná až po předání vyklizeného bytu — konkrétní částku uvidíte v písemném plánu dřív, než cokoli podepíšete. Poplatky soudu, exekutora a řemeslníků se přeúčtovávají zvlášť v prokázané výši.' },
         { q: 'Proč vy a ne advokát?', a: 'Advokát vám vyhraje spor a účtuje si za hodiny bez ohledu na výsledek. My vedeme celý případ včetně komunikace s nájemníkem, dokumentace, koordinace vyklizení a přípravy bytu na další pronájem. Právní úkony zajišťuje spolupracující advokátní kancelář, ale vy máte jeden kontakt a jednu odpovědnost.' },
         { q: 'Jak dlouho to bude trvat?', a: 'U případů, kde nájem už skončil a máte písemnou smlouvu, se díky rozkazu k vyklizení bavíme obvykle o dvou až pěti měsících. Bez písemné smlouvy to může být rok i víc. Konkrétní odhad dostanete v písemném plánu.' },
         { q: 'Nemám písemnou smlouvu. Je to ztracené?', a: 'Není, ale je to nejdražší varianta. Rozkaz k vyklizení vyžaduje listinné doložení nájmu, takže cesta vede přes běžnou žalobu. O to důležitější je začít hned a zajistit důkazy, dokud existují.' },
         { q: 'Co když nájemník podá odpor?', a: 'Odpor podaný do 15 dnů rozkaz ruší a pokračuje se běžným řízením. Proto je příprava vedená tak, aby byl návrh doložený od prvního dne. Reakce na odpor je součástí programu, nedoúčtováváme ji.' },
         { q: 'Musím se s nájemníkem potkat?', a: 'Ne. Od převzetí případu vedeme veškerou komunikaci my. Naopak doporučujeme, abyste s ním sám nejednal, protože slib daný v afektu dokáže případ zkomplikovat.' },
         { q: 'Dostanu zpátky dlužné nájemné?', a: 'Vyčíslíme a uplatníme dlužné nájemné, škody i náklady. Reálná návratnost závisí na majetkových poměrech nájemníka, což vám řekneme rovnou po prověření, ne až na konci. Prioritou je nejdřív získat byt zpátky, protože ztráta roste každý měsíc.' },
-        { q: 'Nechci to řešit vůbec. Můžete byt koupit?', a: 'Ano. Nemovitost oceníme a odkoupíme i s nájemníkem uvnitř. Cena odpovídá stavu a obsazenosti, ale máte hotovo v řádu týdnů a problém přechází na nás.' }
+        { q: 'Nechci to řešit vůbec. Můžete byt koupit?', a: 'Ano, a je to samostatná cesta, ne varianta programu. Nemovitost oceníme a odkoupíme i s nájemníkem uvnitř. Cena odpovídá stavu a obsazenosti, ale máte hotovo v řádu týdnů a vyklizení, soud i dluh přecházejí na nás.' }
       ]" :key="i">
         <div class="bg-gray-50 rounded-2xl overflow-hidden">
           <button @click="open = open === i ? null : i" class="w-full flex items-start justify-between gap-4 p-5 text-left">

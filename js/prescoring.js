@@ -411,6 +411,7 @@ function prescoring() {
     error: '',
     email: '',
     consent: false,
+    sent: false,
     result: null,
     live: null,
     form: {
@@ -509,11 +510,13 @@ function prescoring() {
 
       try {
         if (window.LEAD_ENDPOINT) {
-          await fetch(window.LEAD_ENDPOINT, {
+          const res = await fetch(window.LEAD_ENDPOINT, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload),
           });
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          this.sent = true;
         } else {
           console.warn('LEAD_ENDPOINT není nastavený, výsledek se neodeslal.', payload);
         }
