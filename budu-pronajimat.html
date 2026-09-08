@@ -13,6 +13,11 @@
         gtag('config', 'G-6YFF3XYT5Z');
     </script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      /* Stejný endpoint jako na hlavní stránce. Dokud je null, formulář
+         neodesílá a stránka to netvrdí — nabídne telefon. */
+      window.LEAD_ENDPOINT = null;
+    </script>
     <script defer src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -861,39 +866,23 @@
                 <div class="bg-white text-gray-900 rounded-xl p-8 mb-10 max-w-2xl mx-auto shadow-2xl fade-in-up" x-intersect:enter="$el.classList.add('show')">
                     <h3 class="text-2xl font-bold mb-6">Rezervujte si místo ještě dnes</h3>
                     
-                    <div class="flex justify-center items-center space-x-4 mb-6">
-                        <div class="text-center">
-                            <span class="block text-4xl font-bold text-blue-600 mb-1">5</span>
-                            <span class="text-gray-600 text-sm">dní</span>
-                        </div>
-                        <div class="text-gray-400">:</div>
-                        <div class="text-center">
-                            <span class="block text-4xl font-bold text-blue-600 mb-1">12</span>
-                            <span class="text-gray-600 text-sm">hodin</span>
-                        </div>
-                        <div class="text-gray-400">:</div>
-                        <div class="text-center">
-                            <span class="block text-4xl font-bold text-blue-600 mb-1">36</span>
-                            <span class="text-gray-600 text-sm">minut</span>
-                        </div>
-                    </div>
+                    <p class="text-gray-700 mb-6">Bereme omezený počet nových klientů měsíčně, abychom stihli každému dát čas, který potřebuje. Až bude kapacita plná, řekneme vám to rovnou a domluvíme termín.</p>
                     
-                    <p class="text-gray-700 mb-6">Zbývá pouze <span class="font-bold text-red-600">8 míst</span> pro nové klienty v tomto měsíci.</p>
-                    
-                    <form class="space-y-4">
+                    <div x-data="poptavka()">
+                      <form class="space-y-4" @submit.prevent="odeslat()" x-show="!hotovo">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
-                                <input type="text" placeholder="Vaše jméno" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <input type="text" placeholder="Vaše jméno" x-model="f.jmeno" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
                             </div>
                             <div>
-                                <input type="email" placeholder="Váš e-mail" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <input type="email" placeholder="Váš e-mail" x-model="f.email" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
                             </div>
                         </div>
                         <div>
-                            <input type="tel" placeholder="Telefonní číslo" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <input type="tel" placeholder="Telefonní číslo" x-model="f.telefon" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
                         </div>
                         <div>
-                            <select class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white">
+                            <select x-model="f.typ" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white">
                                 <option value="">Typ nemovitosti k pronájmu</option>
                                 <option value="byt">Byt</option>
                                 <option value="dum">Rodinný dům</option>
@@ -901,12 +890,24 @@
                                 <option value="jine">Jiné</option>
                             </select>
                         </div>
-                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 shadow-md hover:shadow-lg">
-                            Získat konzultaci zdarma
+                        <label class="flex items-start gap-2.5 text-sm text-gray-600 cursor-pointer text-left">
+                            <input type="checkbox" x-model="f.souhlas" class="mt-1 w-4 h-4">
+                            <span>Souhlasím se zpracováním osobních údajů za účelem vyřízení poptávky.</span>
+                        </label>
+                        <p x-show="chyba" x-text="chyba" class="text-sm text-red-600 font-semibold"></p>
+                        <button type="submit" :disabled="odesilam" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 shadow-md hover:shadow-lg disabled:opacity-50">
+                            <span x-text="odesilam ? 'Odesílám…' : 'Získat konzultaci zdarma'"></span>
                         </button>
-                    </form>
-                    
-                    <p class="text-sm text-gray-600 mt-4">Odpovíme vám do 24 hodin v pracovní dny</p>
+                      </form>
+
+                      <div x-show="hotovo" x-cloak class="text-left bg-green-50 border border-green-200 rounded-lg p-6">
+                        <div class="font-bold text-lg mb-2">Máme to. Ozveme se do 24 hodin v pracovní dny.</div>
+                        <p class="text-gray-700">Nechcete čekat? Zavolejte rovnou na <a href="tel:+420603834921" class="font-bold underline">603 834 921</a>.</p>
+                      </div>
+
+                      <p class="text-sm text-gray-600 mt-4" x-show="!hotovo"
+                         x-text="window.LEAD_ENDPOINT ? 'Odpovíme vám do 24 hodin v pracovní dny' : 'Nejrychleji se domluvíme po telefonu: 603 834 921'"></p>
+                    </div>
                 </div>
                 
                 <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-8">
@@ -1046,9 +1047,51 @@
             );
         }
 
+        // Poptávkový formulář. Odesílá na window.LEAD_ENDPOINT; dokud není
+        // nastavený, nasměruje člověka na telefon místo falešného potvrzení.
+        function poptavka() {
+            return {
+                f: { jmeno: '', email: '', telefon: '', typ: '', souhlas: false },
+                odesilam: false,
+                hotovo: false,
+                chyba: '',
+
+                async odeslat() {
+                    if (!this.f.jmeno.trim() || !this.f.telefon.trim() || !this.f.souhlas) {
+                        this.chyba = 'Vyplňte prosím jméno, telefon a potvrďte souhlas.';
+                        return;
+                    }
+                    if (!window.LEAD_ENDPOINT) {
+                        this.chyba = 'Odesílání formuláře zatím není v provozu. Zavolejte prosím na 603 834 921, ozveme se hned.';
+                        return;
+                    }
+                    this.odesilam = true;
+                    this.chyba = '';
+                    try {
+                        const res = await fetch(window.LEAD_ENDPOINT, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                ...this.f,
+                                source: 'problemovynajemnik.cz/budu-pronajimat',
+                                url: window.location.href,
+                            }),
+                        });
+                        if (!res.ok) throw new Error('HTTP ' + res.status);
+                        this.hotovo = true;
+                    } catch (e) {
+                        this.chyba = 'Odeslání se nepodařilo. Zavolejte prosím na 603 834 921.';
+                    } finally {
+                        this.odesilam = false;
+                    }
+                },
+            };
+        }
+
         // CSS efekt pro třídu show
         document.head.insertAdjacentHTML('beforeend', `
             <style>
+                [x-cloak]{display:none!important}
                 .fade-in-up.show, .fade-in-right.show, .fade-in-left.show {
                     opacity: 1;
                     transform: translate(0, 0);
