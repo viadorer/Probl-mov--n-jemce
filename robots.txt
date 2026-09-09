@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Fragmenty, které se načítají do stránek přes fetch. Samy o sobě
+# nejsou stránka a v indexu nemají co dělat.
+Disallow: /header.html
+Disallow: /footer.html
+
+# Stará homepage. Zůstává kvůli kalkulačce nákladů, ale duplikuje
+# obsah nové úvodní stránky.
+Disallow: /index-puvodni.html
+
+Sitemap: https://www.problemovynajemnik.cz/sitemap.xml
