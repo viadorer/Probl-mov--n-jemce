@@ -21,19 +21,7 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 <script src="js/prescoring.js"></script>
-<script>
-  /* ── SBĚR LEADŮ ────────────────────────────────────────────────────
-     Dokud je null, formuláře nic neodesílají a stránka to návštěvníkovi
-     ani netvrdí. Jakmile sem doplníš URL, potvrzení začne slibovat
-     kontakt do 180 minut.
-
-     Pozor: web běží na GitHub Pages, který NEVYKONÁVÁ PHP. Vlastní
-     skript na téhle doméně nepoběží, endpoint musí být externí, např.
-     Formspree, webhook do Make nebo Google Apps Script.
-
-     Očekává POST s JSON tělem a odpověď 2xx. */
-  window.LEAD_ENDPOINT = null;
-</script>
+<script src="js/leady.js"></script>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YFF3XYT5Z"></script>
 <script>
@@ -319,13 +307,17 @@
           </div>
           <p class="text-white/70 mb-7">
             Rozpad ukazuje, co přesně tohle skóre srazilo dolů, a co si u tohohle nájemníka ošetřit ve
-            smlouvě, aby vás to nestálo peníze.
-            <span x-text="window.LEAD_ENDPOINT ? 'Pošleme vám ho na e-mail a hned ho i zobrazíme.' : 'Hned ho zobrazíme.'"></span>
+            smlouvě, aby vás to nestálo peníze. Hned ho zobrazíme.
           </p>
 
           <div class="space-y-3 max-w-md">
+            <input type="text" placeholder="Jméno a příjmení" x-model="jmeno"
+              class="w-full px-4 py-3.5 rounded-xl bg-white/10 border border-white/20 placeholder-white/50 text-white focus:outline-none focus:border-white/60">
             <input type="email" placeholder="vas@email.cz" x-model="email"
               class="w-full px-4 py-3.5 rounded-xl bg-white/10 border border-white/20 placeholder-white/50 text-white focus:outline-none focus:border-white/60">
+            <div class="absolute -left-[9999px]" aria-hidden="true">
+              <input type="text" tabindex="-1" autocomplete="off" x-model="hp.website">
+            </div>
             <label class="flex items-start gap-2.5 text-[13px] text-white/70 cursor-pointer">
               <input type="checkbox" class="mt-0.5 w-4 h-4" x-model="consent">
               <span>Souhlasím se zpracováním osobních údajů za účelem zaslání výsledku.</span>
@@ -450,7 +442,7 @@
     <div class="grid sm:grid-cols-3 gap-10 mb-10">
       <div>
         <div class="font-extrabold mb-3">Problémový nájemník</div>
-        <p class="text-white/60 leading-relaxed">Vedení případů problémových nájemníků od výzvy po předání klíčů. Právní úkony zajišťuje spolupracující advokátní kancelář.</p>
+        <p class="text-white/60 leading-relaxed">Vedení případů problémových nájemníků od výzvy po předání klíčů. Právní úkony zajišťuje advokátka Zuzana Schneider Valentová.</p>
       </div>
       <div>
         <div class="font-extrabold mb-3">Kontakt</div>

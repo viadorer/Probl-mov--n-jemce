@@ -168,7 +168,7 @@ je pravděpodobně na webu skrytý.
 - **[A7.8]** *text:* Komunikaci s nájemníkem přebíráme
 - **[A7.9]** *odstavec:* Telefonáty, e-maily i osobní jednání vedeme my. Vy se s ním nemusíte vidět ani slyšet.
 - **[A7.10]** *text:* Návrh na rozkaz k vyklizení a koordinace vyklizení
-- **[A7.11]** *odstavec:* Podání ve spolupráci s advokátní kanceláří včetně reakce na odpor. Exekutor, stěhování, výměna zámků, převzetí bytu.
+- **[A7.11]** *odstavec:* Podání ve spolupráci s naší advokátkou včetně reakce na odpor. Exekutor, stěhování, výměna zámků, převzetí bytu.
 - **[A7.12]** *text:* Vyčíslení a vymáhání dluhu
 - **[A7.13]** *odstavec:* Dlužné nájemné, škody a náklady sečteme a uplatníme. Nezůstane to jen u vyklizení.
 - **[A7.14]** *text:* A k tomu, protože nechceme, abyste to řešil znovu
@@ -188,19 +188,15 @@ je pravděpodobně na webu skrytý.
 - **[A7.28]** *text:* Na začátku zaplatíte
 - **[A7.29]** *text:* 9 900 Kč
 - **[A7.30]** *odstavec:* Aktivační poplatek. Převezmeme případ, založíme spis a připravíme plnou moc. Odečítá se od konečné odměny. Když případ nevezmeme nebo nedopadne, vracíme ho celý.
-- **[A7.31]** *text:* Během případu, nejvýš
-- **[A7.32]** *text:* 45 000 Kč
-- **[A7.33]** *odstavec:* Strop na všech úkonech dohromady, ať případ trvá jakkoli dlouho a kolik jich bude potřeba. Nad tuhle částku jde práce na nás. Poplatky soudu, exekutora a řemeslníků se přeúčtovávají v prokázané výši a uvádíme je zvlášť, ať je vidět, co je naše práce a co cizí faktura.
-- **[A7.34]** *text:* Až po předání klíčů
-- **[A7.35]** *text:* Odměna za výsledek
-- **[A7.36]** *odstavec:* Konkrétní částku uvidíte v písemném plánu dřív, než cokoli podepíšete. Bez výsledku nevzniká.
-- **[A7.37]** *text:* Riziko neseme my
-- **[A7.38]** *odrážka:* Za výsledek platíte, jen když výsledek je. Nezískáme byt zpátky, odměnu neúčtujeme a aktivační poplatek vracíme.
-- **[A7.39]** *odrážka:* Účet má strop. Nekonečná hodinovka, kterou znáte od advokátů, tady nehrozí.
-- **[A7.40]** *odrážka:* Beznadějný případ řekneme rovnou. Co nedává smysl, nebereme a neúčtujeme.
-- **[A7.41]** *odrážka:* Nechcete čekat? Byt odkoupíme. I s nájemníkem uvnitř. Problém přechází na nás.
-- **[A7.42]** *odkaz:* Zjistit, jak by to vypadalo u mě
-- **[A7.43]** *odstavec:* Bereme 6 nových případů měsíčně.
+- **[A7.31]** *text:* Až po předání klíčů
+- **[A7.32]** *text:* Odměna za výsledek
+- **[A7.33]** *odstavec:* Konkrétní částku uvidíte v písemném plánu dřív, než cokoli podepíšete. Bez výsledku nevzniká.
+- **[A7.34]** *text:* Riziko neseme my
+- **[A7.35]** *odrážka:* Nedopadne to, vracíme peníze. Neplatíte za snahu, platíte za klíče.
+- **[A7.36]** *odrážka:* Beznadějný případ řekneme rovnou. Co nedává smysl, nebereme a neúčtujeme.
+- **[A7.37]** *odrážka:* Nechcete čekat? Byt odkoupíme. I s nájemníkem uvnitř. Problém přechází na nás.
+- **[A7.38]** *odkaz:* Zjistit, jak by to vypadalo u mě
+- **[A7.39]** *odstavec:* Bereme 6 nových případů měsíčně.
 
 ### A8. ODKUP
 
@@ -236,8 +232,8 @@ je pravděpodobně na webu skrytý.
 - **[A10.3]** *text:* David Choc
 - **[A10.4]** *text:* 30 let na trhu s nemovitostmi, specializace na pronájmy a správu
 - **[A10.5]** *odstavec:* Případ vede jeden konkrétní člověk od prvního hovoru až po předání klíčů. Nebudete pokaždé vysvětlovat všechno znovu někomu jinému.
-- **[A10.6]** *text:* Právní část zajišťuje advokátní kancelář
-- **[A10.7]** *odstavec:* Sepis podání, právní úkony a zastoupení u soudu zajišťuje spolupracující advokátní kancelář. Naší rolí je vedení případu, dokumentace, komunikace s nájemníkem a koordinace celého procesu.
+- **[A10.6]** *text:* Právní část zajišťuje advokátka Zuzana Schneider Valentová
+- **[A10.7]** *odstavec:* Sepis podání, právní úkony a zastoupení u soudu zajišťuje advokátka Zuzana Schneider Valentová. Naší rolí je vedení případu, dokumentace, komunikace s nájemníkem a koordinace celého procesu — vy máte jeden kontakt a nemusíte řešit, co komu poslat.
 - **[A10.8]** *zadání pro fotografa (skryté):* Foto nebo logo Advokát, se kterým spolupracujete Portrét advokáta se jménem a číslem zápisu v ČAK, nebo aspoň logo kanceláře. Nejlepší je společná fotka vás dvou v kanceláři. Proč to prodává: „spolupracující advokátní kancelář" bez jména zní jako výmluva. Konkrétní jméno je zároveň splnění zákonné povinnosti i odpověď na námitku „proč vy a ne rovnou právník".
 
 ### A11. ZAKÁZANÁ ŘEŠENÍ
@@ -280,7 +276,7 @@ je pravděpodobně na webu skrytý.
 ### A14. PATIČKA
 
 - **[A14.1]** *text:* Problémový nájemník
-- **[A14.2]** *odstavec:* Vedení případů problémových nájemníků od výzvy po předání klíčů. Právní úkony zajišťuje spolupracující advokátní kancelář.
+- **[A14.2]** *odstavec:* Vedení případů problémových nájemníků od výzvy po předání klíčů. Právní úkony zajišťuje advokátka Zuzana Schneider Valentová.
 - **[A14.3]** *text:* Kontakt
 - **[A14.4]** *odrážka:* +420 603 834 921
 - **[A14.5]** *odrážka:* info@ptf.cz
@@ -386,7 +382,7 @@ je pravděpodobně na webu skrytý.
 - **[B2.72]** *volba:* Známý
 - **[B2.73]** *volba:* Jiný
 - **[B2.74]** *tlačítko:* Zpět
-- **[B2.75]** *text:* Našli jsme rizikových faktorů a konkrétních doporučení Rozpad ukazuje, co přesně tohle skóre srazilo dolů, a co si u tohohle nájemníka ošetřit ve smlouvě, aby vás to nestálo peníze. vas@email.cz Souhlasím se zpracováním osobních údajů za účelem zaslání výsledku. Údaje o nájemníkovi si neukládáme k jeho osobě. Slouží jen k výpočtu. Co skóre srazilo dolů ✕ Co si u tohohle nájemníka ošetřit ✓ Skóre vám řekne riziko. Nezbaví vás ho. Prověříme zájemce v insolvenčním rejstříku a evidenci exekucí, ověříme příjem, zavoláme předchozímu pronajímateli a připravíme smlouvu, která obstojí u soudu. A pokud už problémového nájemníka v bytě máte, řešíme i to. 603 834 921 Už mám problém Výsledek je orientační pomůcka, nikoli rozhodnutí, a nenahrazuje právní ani finanční poradenství. Při zpracování údajů o zájemcích postupujte v souladu s GDPR a uchovávejte jen to, co potřebujete.
+- **[B2.75]** *text:* Našli jsme rizikových faktorů a konkrétních doporučení Rozpad ukazuje, co přesně tohle skóre srazilo dolů, a co si u tohohle nájemníka ošetřit ve smlouvě, aby vás to nestálo peníze. Hned ho zobrazíme. Jméno a příjmení vas@email.cz Souhlasím se zpracováním osobních údajů za účelem zaslání výsledku. Údaje o nájemníkovi si neukládáme k jeho osobě. Slouží jen k výpočtu. Co skóre srazilo dolů ✕ Co si u tohohle nájemníka ošetřit ✓ Skóre vám řekne riziko. Nezbaví vás ho. Prověříme zájemce v insolvenčním rejstříku a evidenci exekucí, ověříme příjem, zavoláme předchozímu pronajímateli a připravíme smlouvu, která obstojí u soudu. A pokud už problémového nájemníka v bytě máte, řešíme i to. 603 834 921 Už mám problém Výsledek je orientační pomůcka, nikoli rozhodnutí, a nenahrazuje právní ani finanční poradenství. Při zpracování údajů o zájemcích postupujte v souladu s GDPR a uchovávejte jen to, co potřebujete.
 - **[B2.76]** *text:* Průběžné skóre
 - **[B2.77]** *text:* Bonita nájemníka
 - **[B2.78]** *text:* ze 100
@@ -400,7 +396,7 @@ je pravděpodobně na webu skrytý.
 - **[B2.86]** *tlačítko:* ← Upravit údaje
 - **[B2.87]** *odstavec:* Výpočet běží u vás v prohlížeči. Nic se neodesílá, dokud sám nechcete.
 - **[B2.88]** *text:* Problémový nájemník
-- **[B2.89]** *odstavec:* Vedení případů problémových nájemníků od výzvy po předání klíčů. Právní úkony zajišťuje spolupracující advokátní kancelář.
+- **[B2.89]** *odstavec:* Vedení případů problémových nájemníků od výzvy po předání klíčů. Právní úkony zajišťuje advokátka Zuzana Schneider Valentová.
 - **[B2.90]** *text:* Kontakt
 - **[B2.91]** *odrážka:* +420 603 834 921
 - **[B2.92]** *odrážka:* info@ptf.cz
@@ -557,17 +553,18 @@ je pravděpodobně na webu skrytý.
 - **[C1.136]** *popisek:* Souhlasím se zpracováním osobních údajů za účelem vyřízení poptávky.
 - **[C1.137]** *text:* Máme to. Ozveme se do 24 hodin v pracovní dny.
 - **[C1.138]** *odstavec:* Nechcete čekat? Zavolejte rovnou na 603 834 921 .
-- **[C1.139]** *text:* Bez závazků
-- **[C1.140]** *text:* 100% garance spokojenosti
-- **[C1.141]** *text:* Odborná podpora
-- **[C1.142]** *nadpis H2:* Zdarma e-book pro nové pronajímatele
-- **[C1.143]** *odstavec:* Získejte komplexní průvodce úspěšným pronájmem nemovitosti. Více než 50 stran praktických tipů, rad a vzorových dokumentů.
-- **[C1.144]** *odrážka:* Jak stanovit optimální nájemné
-- **[C1.145]** *odrážka:* Checklist pro prověření nájemníků
-- **[C1.146]** *odrážka:* Vzorové dokumenty a formuláře
-- **[C1.147]** *odrážka:* Daňové tipy pro pronajímatele
-- **[C1.148]** *odrážka:* Řešení nejčastějších problémů
-- **[C1.149]** *odstavec:* Náš tip: "Díky našemu e-booku budete mít kompletní přehled o tom, jak pronájem nemovitosti zvládnout bez problémů."
+- **[C1.139]** *odstavec:* Odpovíme vám do 24 hodin v pracovní dny. Nejrychleji se domluvíme na 603 834 921.
+- **[C1.140]** *text:* Bez závazků
+- **[C1.141]** *text:* 100% garance spokojenosti
+- **[C1.142]** *text:* Odborná podpora
+- **[C1.143]** *nadpis H2:* Zdarma e-book pro nové pronajímatele
+- **[C1.144]** *odstavec:* Získejte komplexní průvodce úspěšným pronájmem nemovitosti. Více než 50 stran praktických tipů, rad a vzorových dokumentů.
+- **[C1.145]** *odrážka:* Jak stanovit optimální nájemné
+- **[C1.146]** *odrážka:* Checklist pro prověření nájemníků
+- **[C1.147]** *odrážka:* Vzorové dokumenty a formuláře
+- **[C1.148]** *odrážka:* Daňové tipy pro pronajímatele
+- **[C1.149]** *odrážka:* Řešení nejčastějších problémů
+- **[C1.150]** *odstavec:* Náš tip: "Díky našemu e-booku budete mít kompletní přehled o tom, jak pronájem nemovitosti zvládnout bez problémů."
 
 
 ## D) PRŮVODCE DIAGNOSTIKOU — `js/diagnostika.js`

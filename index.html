@@ -23,19 +23,7 @@
 <script defer src="https://unpkg.com/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
 <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 <script src="js/diagnostika.js"></script>
-<script>
-  /* ── SBĚR LEADŮ ────────────────────────────────────────────────────
-     Dokud je null, formuláře nic neodesílají a stránka to návštěvníkovi
-     ani netvrdí. Jakmile sem doplníš URL, potvrzení začne slibovat
-     kontakt do 180 minut.
-
-     Pozor: web běží na GitHub Pages, který NEVYKONÁVÁ PHP. Vlastní
-     skript na téhle doméně nepoběží, endpoint musí být externí, např.
-     Formspree, webhook do Make nebo Google Apps Script.
-
-     Očekává POST s JSON tělem a odpověď 2xx. */
-  window.LEAD_ENDPOINT = null;
-</script>
+<script src="js/leady.js"></script>
 
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YFF3XYT5Z"></script>
@@ -389,7 +377,11 @@
 
           <div class="p-6 rounded-2xl bg-gray-900 text-white">
             <div class="font-extrabold text-lg mb-1.5">Zbývá postup krok za krokem a první krok do 72 hodin</div>
-            <p class="text-sm text-white/70 mb-5" x-text="window.LEAD_ENDPOINT ? 'Pošleme vám ho i s rozpočtem a ozveme se do 180 minut. Zdarma, i když se nakonec rozhodnete jinak.' : 'Zobrazíme vám ho hned. Zdarma, i když se nakonec rozhodnete jinak.'"></p>
+            <p class="text-sm text-white/70 mb-5">Zobrazíme vám ho hned a ozveme se do 180 minut. Zdarma, i když se nakonec rozhodnete jinak.</p>
+
+            <div class="absolute -left-[9999px]" aria-hidden="true">
+              <input type="text" tabindex="-1" autocomplete="off" x-model="hp.website">
+            </div>
 
             <div class="space-y-2.5">
               <input x-model="contact.name" type="text" placeholder="Jméno a příjmení"
@@ -459,7 +451,7 @@
             Nechci čekat, volám: 603 834 921
           </a>
 
-          <p class="text-[12px] text-gray-400 mt-5">Výstup je orientační a nenahrazuje právní poradenství. Právní úkony a zastoupení u soudu zajišťuje spolupracující advokátní kancelář.</p>
+          <p class="text-[12px] text-gray-400 mt-5">Výstup je orientační a nenahrazuje právní poradenství. Právní úkony a zastoupení u soudu zajišťuje advokátka Zuzana Schneider Valentová.</p>
         </div>
       </div>
       </template>
@@ -669,7 +661,7 @@
           </div>
           <div class="pb-5 border-b border-gray-100">
             <div class="font-bold mb-1">Návrh na rozkaz k vyklizení a koordinace vyklizení</div>
-            <p class="text-gray-600">Podání ve spolupráci s advokátní kanceláří včetně reakce na odpor. Exekutor, stěhování, výměna zámků, převzetí bytu.</p>
+            <p class="text-gray-600">Podání ve spolupráci s naší advokátkou včetně reakce na odpor. Exekutor, stěhování, výměna zámků, převzetí bytu.</p>
           </div>
           <div>
             <div class="font-bold mb-1">Vyčíslení a vymáhání dluhu</div>
@@ -720,16 +712,7 @@
             <p class="text-gray-600 leading-relaxed">Aktivační poplatek. Převezmeme případ, založíme spis a připravíme plnou moc. Odečítá se od konečné odměny. Když případ nevezmeme nebo nedopadne, vracíme ho celý.</p>
           </div>
 
-          <!-- ROZHODNOUT PŘED NASAZENÍM: strop 45 000 Kč vychází z návrhu v CENIK.md
-               a je podmíněný pevnými cenami od advokátní kanceláře. Bez potvrzení
-               vlastní kalkulace tuhle kartu nenasazovat. -->
           <div class="p-8 bg-gray-50 border-b border-gray-100">
-            <div class="text-[13px] text-gray-500 mb-1">Během případu, nejvýš</div>
-            <div class="text-4xl font-extrabold num mb-3">45 000 Kč</div>
-            <p class="text-gray-600 leading-relaxed">Strop na všech úkonech dohromady, ať případ trvá jakkoli dlouho a kolik jich bude potřeba. Nad tuhle částku jde práce na nás. Poplatky soudu, exekutora a řemeslníků se přeúčtovávají v prokázané výši a uvádíme je zvlášť, ať je vidět, co je naše práce a co cizí faktura.</p>
-          </div>
-
-          <div class="p-8 border-b border-gray-100">
             <div class="text-[13px] text-gray-500 mb-1">Až po předání klíčů</div>
             <div class="text-lg font-bold mb-2">Odměna za výsledek</div>
             <p class="text-gray-600 leading-relaxed">Konkrétní částku uvidíte v písemném plánu dřív, než cokoli podepíšete. Bez výsledku nevzniká.</p>
@@ -737,8 +720,7 @@
           <div class="p-8">
             <div class="font-extrabold mb-5">Riziko neseme my</div>
             <ul class="space-y-4">
-              <li><span class="font-bold">Za výsledek platíte, jen když výsledek je.</span> <span class="text-gray-600">Nezískáme byt zpátky, odměnu neúčtujeme a aktivační poplatek vracíme.</span></li>
-              <li><span class="font-bold">Účet má strop.</span> <span class="text-gray-600">Nekonečná hodinovka, kterou znáte od advokátů, tady nehrozí.</span></li>
+              <li><span class="font-bold">Nedopadne to, vracíme peníze.</span> <span class="text-gray-600">Neplatíte za snahu, platíte za klíče.</span></li>
               <li><span class="font-bold">Beznadějný případ řekneme rovnou.</span> <span class="text-gray-600">Co nedává smysl, nebereme a neúčtujeme.</span></li>
               <li><span class="font-bold">Nechcete čekat? <a href="#odkup" class="underline underline-offset-2 hover:no-underline">Byt odkoupíme.</a></span> <span class="text-gray-600">I s nájemníkem uvnitř. Problém přechází na nás.</span></li>
             </ul>
@@ -894,9 +876,9 @@
       </div>
 
       <div class="bg-white rounded-3xl p-8 card">
-        <div class="font-extrabold mb-2">Právní část zajišťuje advokátní kancelář</div>
-        <p class="text-gray-600 leading-relaxed mb-6">Sepis podání, právní úkony a zastoupení u soudu zajišťuje spolupracující advokátní kancelář. Naší rolí je vedení případu, dokumentace, komunikace s nájemníkem a koordinace celého procesu.</p>
-        <!-- DOPLNIT: konkrétní název advokátní kanceláře. Bez něj stránku nespouštět (zákon o advokacii 85/1996 Sb.). -->
+        <div class="font-extrabold mb-2">Právní část zajišťuje advokátka Zuzana Schneider Valentová</div>
+        <p class="text-gray-600 leading-relaxed mb-6">Sepis podání, právní úkony a zastoupení u soudu zajišťuje advokátka Zuzana Schneider Valentová. Naší rolí je vedení případu, dokumentace, komunikace s nájemníkem a koordinace celého procesu — vy máte jeden kontakt a nemusíte řešit, co komu poslat.</p>
+        <!-- DOPLNIT: titul a číslo zápisu v ČAK u Zuzany Schneider Valentové. -->
         <div class="ph">
           <span class="ph-tag">Foto nebo logo</span>
           <div class="ph-title">Advokát, se kterým spolupracujete</div>
@@ -994,8 +976,8 @@
 
     <div class="space-y-3">
       <template x-for="(f, i) in [
-        { q: 'Kolik to celé stojí?', a: 'Tři složky. Aktivační poplatek 9 900 Kč na začátku, který se odečítá od konečné odměny a při neúspěchu se vrací. Úkony během případu, na kterých máte strop 45 000 Kč bez ohledu na to, jak dlouho to potrvá. A odměna za výsledek, splatná až po předání vyklizeného bytu — konkrétní částku uvidíte v písemném plánu dřív, než cokoli podepíšete. Poplatky soudu, exekutora a řemeslníků se přeúčtovávají zvlášť v prokázané výši.' },
-        { q: 'Proč vy a ne advokát?', a: 'Advokát vám vyhraje spor a účtuje si za hodiny bez ohledu na výsledek. My vedeme celý případ včetně komunikace s nájemníkem, dokumentace, koordinace vyklizení a přípravy bytu na další pronájem. Právní úkony zajišťuje spolupracující advokátní kancelář, ale vy máte jeden kontakt a jednu odpovědnost.' },
+        { q: 'Kolik to celé stojí?', a: 'Aktivační poplatek 9 900 Kč, který se odečítá od konečné odměny a při neúspěchu se vrací celý. Odměna za výsledek se určuje podle rozsahu případu a uvidíte ji v písemném plánu dřív, než cokoli podepíšete. Splatná je až po předání vyklizeného bytu. Poplatky soudu, exekutora a řemeslníků se přeúčtovávají zvlášť v prokázané výši, ať je vidět, co je naše práce a co cizí faktura.' },
+        { q: 'Proč vy a ne advokát?', a: 'Advokát vám vyhraje spor a účtuje si za hodiny bez ohledu na výsledek. My vedeme celý případ včetně komunikace s nájemníkem, dokumentace, koordinace vyklizení a přípravy bytu na další pronájem. Právní úkony zajišťuje advokátka Zuzana Schneider Valentová, ale vy máte jeden kontakt a jednu odpovědnost.' },
         { q: 'Jak dlouho to bude trvat?', a: 'U případů, kde nájem už skončil a máte písemnou smlouvu, se díky rozkazu k vyklizení bavíme obvykle o dvou až pěti měsících. Bez písemné smlouvy to může být rok i víc. Konkrétní odhad dostanete v písemném plánu.' },
         { q: 'Nemám písemnou smlouvu. Je to ztracené?', a: 'Není, ale je to nejdražší varianta. Rozkaz k vyklizení vyžaduje listinné doložení nájmu, takže cesta vede přes běžnou žalobu. O to důležitější je začít hned a zajistit důkazy, dokud existují.' },
         { q: 'Co když nájemník podá odpor?', a: 'Odpor podaný do 15 dnů rozkaz ruší a pokračuje se běžným řízením. Proto je příprava vedená tak, aby byl návrh doložený od prvního dne. Reakce na odpor je součástí programu, nedoúčtováváme ji.' },
@@ -1035,7 +1017,7 @@
     <div class="grid sm:grid-cols-3 gap-10 mb-10">
       <div>
         <div class="font-extrabold mb-3">Problémový nájemník</div>
-        <p class="text-white/60 leading-relaxed">Vedení případů problémových nájemníků od výzvy po předání klíčů. Právní úkony zajišťuje spolupracující advokátní kancelář.</p>
+        <p class="text-white/60 leading-relaxed">Vedení případů problémových nájemníků od výzvy po předání klíčů. Právní úkony zajišťuje advokátka Zuzana Schneider Valentová.</p>
       </div>
       <div>
         <div class="font-extrabold mb-3">Kontakt</div>

@@ -322,6 +322,7 @@ function diagnostika() {
     sending: false,
     sent: false,
     error: '',
+    hp: honeypot(),
 
     get step() {
       return this.steps[this.index];
@@ -371,39 +372,35 @@ function diagnostika() {
       this.sending = true;
       this.error = '';
 
-      const payload = {
-        ...this.contact,
-        consent: this.consent,
-        answers: this.answers,
-        result: {
-          title: this.result.title,
-          severity: this.result.severity,
-          estMonths: this.result.estMonths,
-          estLoss: this.result.estLoss,
+      const r = await odeslatLead({
+        name: this.contact.name,
+        email: this.contact.email,
+        phone: this.contact.phone,
+        message: 'Diagnostika případu: ' + this.result.title + '. Odhad délky: ' + this.result.estMonths + '.',
+        source: 'problem_tenant_triage',
+        gdpr_consent: this.consent,
+        ...this.hp.payload(),
+        metadata: {
+          triage_answers: this.answers,
+          triage_result: {
+            title: this.result.title,
+            severity: this.result.severity,
+            est_months: this.result.estMonths,
+            est_loss: this.result.estLoss,
+            blockers: this.result.blockers,
+          },
+          completed_at: new Date().toISOString(),
         },
-        source: 'problemovynajemnik.cz/diagnostika',
-        url: window.location.href,
-      };
+      });
 
-      try {
-        if (window.LEAD_ENDPOINT) {
-          const res = await fetch(window.LEAD_ENDPOINT, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload),
-          });
-          if (!res.ok) throw new Error('HTTP ' + res.status);
-          this.sent = true;
-        } else {
-          console.warn('LEAD_ENDPOINT není nastavený, lead se neodeslal.', payload);
-        }
-        this.screen = 'result';
-        this.$nextTick(() => this.scrollToTop());
-      } catch (e) {
-        this.error = 'Odeslání se nepodařilo. Zavolejte nám prosím napřímo.';
-      } finally {
-        this.sending = false;
-      }
+      this.sent = r.ulozeno;
+      this.sending = false;
+
+      // Postup ukážeme i tehdy, když se lead nepodařilo uložit — člověk si
+      // ho zasloužil odpověďmi. Jen mu neslíbíme, že se ozveme.
+      if (!r.ulozeno && r.chyba) this.error = r.chyba + ' Zavolejte nám prosím na 603 834 921.';
+      this.screen = 'result';
+      this.$nextTick(() => this.scrollToTop());
     },
   };
 }

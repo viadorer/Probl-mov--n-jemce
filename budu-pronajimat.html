@@ -13,11 +13,7 @@
         gtag('config', 'G-6YFF3XYT5Z');
     </script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      /* Stejný endpoint jako na hlavní stránce. Dokud je null, formulář
-         neodesílá a stránka to netvrdí — nabídne telefon. */
-      window.LEAD_ENDPOINT = null;
-    </script>
+    <script src="js/leady.js"></script>
     <script defer src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -894,6 +890,9 @@
                             <input type="checkbox" x-model="f.souhlas" class="mt-1 w-4 h-4">
                             <span>Souhlasím se zpracováním osobních údajů za účelem vyřízení poptávky.</span>
                         </label>
+                        <div class="absolute -left-[9999px]" aria-hidden="true">
+                            <input type="text" tabindex="-1" autocomplete="off" x-model="hp.website">
+                        </div>
                         <p x-show="chyba" x-text="chyba" class="text-sm text-red-600 font-semibold"></p>
                         <button type="submit" :disabled="odesilam" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 shadow-md hover:shadow-lg disabled:opacity-50">
                             <span x-text="odesilam ? 'Odesílám…' : 'Získat konzultaci zdarma'"></span>
@@ -905,8 +904,7 @@
                         <p class="text-gray-700">Nechcete čekat? Zavolejte rovnou na <a href="tel:+420603834921" class="font-bold underline">603 834 921</a>.</p>
                       </div>
 
-                      <p class="text-sm text-gray-600 mt-4" x-show="!hotovo"
-                         x-text="window.LEAD_ENDPOINT ? 'Odpovíme vám do 24 hodin v pracovní dny' : 'Nejrychleji se domluvíme po telefonu: 603 834 921'"></p>
+                      <p class="text-sm text-gray-600 mt-4" x-show="!hotovo">Odpovíme vám do 24 hodin v pracovní dny. Nejrychleji se domluvíme na 603 834 921.</p>
                     </div>
                 </div>
                 
@@ -1055,34 +1053,32 @@
                 odesilam: false,
                 hotovo: false,
                 chyba: '',
+                hp: honeypot(),
 
                 async odeslat() {
                     if (!this.f.jmeno.trim() || !this.f.telefon.trim() || !this.f.souhlas) {
                         this.chyba = 'Vyplňte prosím jméno, telefon a potvrďte souhlas.';
                         return;
                     }
-                    if (!window.LEAD_ENDPOINT) {
-                        this.chyba = 'Odesílání formuláře zatím není v provozu. Zavolejte prosím na 603 834 921, ozveme se hned.';
-                        return;
-                    }
                     this.odesilam = true;
                     this.chyba = '';
-                    try {
-                        const res = await fetch(window.LEAD_ENDPOINT, {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify({
-                                ...this.f,
-                                source: 'problemovynajemnik.cz/budu-pronajimat',
-                                url: window.location.href,
-                            }),
-                        });
-                        if (!res.ok) throw new Error('HTTP ' + res.status);
+
+                    const r = await odeslatLead({
+                        name: this.f.jmeno,
+                        email: this.f.email,
+                        phone: this.f.telefon,
+                        message: 'Poptávka správy pronájmu' + (this.f.typ ? ' — ' + this.f.typ : '') + '.',
+                        source: 'budu_pronajimat_landing',
+                        gdpr_consent: this.f.souhlas,
+                        ...this.hp.payload(),
+                        metadata: { typ_nemovitosti: this.f.typ || null },
+                    });
+
+                    this.odesilam = false;
+                    if (r.ulozeno) {
                         this.hotovo = true;
-                    } catch (e) {
-                        this.chyba = 'Odeslání se nepodařilo. Zavolejte prosím na 603 834 921.';
-                    } finally {
-                        this.odesilam = false;
+                    } else {
+                        this.chyba = (r.chyba || 'Odeslání se nepodařilo.') + ' Zavolejte prosím na 603 834 921.';
                     }
                 },
             };

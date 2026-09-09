@@ -409,9 +409,11 @@ function prescoring() {
     screen: 'form', // form | preview | full
     sending: false,
     error: '',
+    jmeno: '',
     email: '',
     consent: false,
     sent: false,
+    hp: honeypot(),
     result: null,
     live: null,
     form: {
@@ -492,40 +494,33 @@ function prescoring() {
     },
 
     async unlock() {
-      if (!this.email.trim() || !this.consent) {
-        this.error = 'Vyplňte e-mail a potvrďte souhlas.';
+      if (!this.jmeno.trim() || !this.email.trim() || !this.consent) {
+        this.error = 'Vyplňte jméno, e-mail a potvrďte souhlas.';
         return;
       }
       this.sending = true;
       this.error = '';
 
-      const payload = {
+      const r = await odeslatLead({
+        name: this.jmeno,
         email: this.email,
-        consent: this.consent,
-        form: this.form,
-        result: this.result,
-        source: 'problemovynajemnik.cz/prescoring',
-        url: window.location.href,
-      };
+        message: 'Prescoring nájemníka: skóre ' + (this.result && this.result.score) + ' ze 100.',
+        source: 'prescoring_landing',
+        gdpr_consent: this.consent,
+        ...this.hp.payload(),
+        metadata: {
+          prescoring_form: this.form,
+          prescoring_result: this.result,
+          completed_at: new Date().toISOString(),
+        },
+      });
 
-      try {
-        if (window.LEAD_ENDPOINT) {
-          const res = await fetch(window.LEAD_ENDPOINT, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload),
-          });
-          if (!res.ok) throw new Error('HTTP ' + res.status);
-          this.sent = true;
-        } else {
-          console.warn('LEAD_ENDPOINT není nastavený, výsledek se neodeslal.', payload);
-        }
-        this.screen = 'full';
-      } catch (e) {
-        this.error = 'Odeslání se nepodařilo. Zkuste to prosím znovu.';
-      } finally {
-        this.sending = false;
-      }
+      this.sent = r.ulozeno;
+      this.sending = false;
+
+      // Rozpad ukážeme i při neúspěšném odeslání, jen neslíbíme e-mail.
+      if (!r.ulozeno && r.chyba) this.error = r.chyba;
+      this.screen = 'full';
     },
 
     reset() {
