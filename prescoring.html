@@ -81,7 +81,7 @@
         Zjistěte, koho si pouštíte do bytu.<br>Než podepíšete.
       </h1>
       <p class="text-lg text-gray-600 leading-relaxed mb-3">
-        Stejný bodový model, jaký používáme u vlastních klientů. Skóre od 0 do 100, seznam rizikových
+        Orientační bodový model. Skóre od 0 do 100, seznam rizikových
         faktorů a konkrétní pojistky, které patří do smlouvy právě u tohoto nájemníka.
       </p>
       <p class="text-gray-600">
@@ -123,10 +123,6 @@
             <label class="lbl">Měsíční nájemné (Kč)</label>
             <input type="number" class="fld" placeholder="18 000" x-model="form.monthlyRent" @input="recalc()">
             <p class="hint">Včetně záloh na služby, tedy co má reálně platit.</p>
-          </div>
-          <div>
-            <label class="lbl">Věk nájemníka</label>
-            <input type="number" class="fld" placeholder="35" x-model="form.age" @input="recalc()">
           </div>
           <div>
             <label class="lbl">Počet osob v domácnosti</label>
@@ -320,14 +316,14 @@
             </div>
             <label class="flex items-start gap-2.5 text-[13px] text-white/70 cursor-pointer">
               <input type="checkbox" class="mt-0.5 w-4 h-4" x-model="consent">
-              <span>Souhlasím se zpracováním osobních údajů za účelem zaslání výsledku.</span>
+              <span>Souhlasím se zpracováním osobních údajů, aby mi PTF reality zobrazila výsledek a ozvala se s nabídkou prověření nájemníka a pronájmu.</span>
             </label>
             <p x-show="error" x-text="error" class="text-sm text-red-300"></p>
             <button @click="unlock()" :disabled="sending"
               class="w-full px-6 py-4 rounded-full bg-white text-gray-900 font-bold hover:bg-gray-100 transition-colors disabled:opacity-50">
               <span x-text="sending ? 'Odesílám…' : 'Zobrazit rozpad a doporučení'"></span>
             </button>
-            <p class="text-[12px] text-white/50">Údaje o nájemníkovi si neukládáme k jeho osobě. Slouží jen k výpočtu.</p>
+            <p class="text-[12px] text-white/50">Údaje o zájemci zadáváte bez jména. Uložíme je spolu s výsledkem k vašemu dotazu.</p>
           </div>
         </div>
       </template>

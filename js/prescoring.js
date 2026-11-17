@@ -243,16 +243,7 @@ function scoreTenant(i) {
     recommendations.push('Doporučujeme důkladnou kontrolu všech dokumentů a vyšší jistotu');
   }
 
-  // Věk
-  const age = NUM(i.age);
-  if (!EMPTY(i.age) && age < 25 && !EMPTY(i.employmentLength) && employmentLength < 12) {
-    riskFactors.push('Mladý věk s krátkou pracovní historií');
-    recommendations.push('Zvážit ručitele nebo rodiče jako spolupodepsané');
-  }
-  if (!EMPTY(i.age) && age > 65 && employmentType === 'pensioner' && totalIncome < 18000) {
-    riskFactors.push('Senior s nízkým důchodem');
-    recommendations.push('Ověřit stabilitu důchodu a případné příjmy z investic');
-  }
+  // Věk se záměrně nehodnotí: hodnocení podle věku je diskriminační (zákon 198/2009).
 
   // Disponibilní příjem nestačí na nájem
   if (monthlyRent > 0 && totalIncome > 0 && disposableIncome < monthlyRent) {
@@ -417,7 +408,7 @@ function prescoring() {
     result: null,
     live: null,
     form: {
-      monthlyRent: '', age: '', familyMembers: '', employmentType: 'permanent',
+      monthlyRent: '', familyMembers: '', employmentType: 'permanent',
       employmentLength: '', previousRental: '',
       mainIncome: '', additionalIncome: '', partnerIncome: '', otherResidentsIncome: '',
       socialBenefits: '', incomeStability: 'stable', incomeProof: 'employer',

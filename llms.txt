@@ -16,9 +16,9 @@
 - Vzorec: Náklady vs prevence: Témata: Náklady problému (soud 20-60k, škoda 30-80k, vakance 6-12 měsíců, čas správy). Náklady prevence (prověření 500-2000 Kč, kvalitní smlouva 3-5k, fotodokumentace 0 Kč). Rozdíl. ROI prevence. Orie...
 
 ## Data a statistiky
-- Statistiky problémových nájemníků: Témata: 8-12 % přestane platit. 15 % majitelů zažilo škodu nad 50 tis. Průměrná vakance 1,5 měs/rok. Soudní vystěhování 6-12 měsíců. Právní náklady 20-60 tis. Škoda 30-80 tis. 40 % bez předávacího pro...
+- Statistiky problémových nájemníků: Témata: Neplatičů je necelá 3 % nájmů (MMR). 15 % majitelů zažilo škodu nad 50 tis. Průměrná vakance 1,5 měs/rok. Od 1. 1. 2026 rozkaz k vyklizení: obvykle 2-5 měsíců, když nájemník nepodá odpor; běžná žaloba průměrně kolem roku. Právní náklady 20-60 tis. Škoda 30-80 tis. 40 % bez předávacího pro...
 - Náklady vlastní správy: Témata: Kalkulace 2+kk Praha, nájem 20k/měs, 3 roky. Hrubý příjem 720k. Vakance -90k. Neplatič -40k. Čas správy -108k. Reálný čistý 482k. Orientační kalkulace.
-- Právní lhůty: Témata: Výpovědní lhůta 3 měsíce. Výpověď pro neplacení po 3 měsících dluhu. Soudní vystěhování 6-12 měsíců. Kauce max 3 měsíce (standardně 2). Drobné opravy do 100 Kč/měs nebo 1000 Kč/rok.
+- Právní lhůty: Témata: Výpovědní lhůta 3 měsíce. Výpověď pro neplacení po 3 měsících dluhu. Od 1. 1. 2026 rozkaz k vyklizení: obvykle 2-5 měsíců, když nájemník nepodá odpor; běžná žaloba průměrně kolem roku. Kauce max 3 měsíce (standardně 2). Drobné opravy podle nařízení vlády 308/2015: do 1 000 Kč za jednu opravu, ročně nejvýš 100 Kč za m² podlahové plochy.
 - Nejčastější chyby majitelů: Témata: Žádná fotodokumentace. Smlouva z internetu. Nedostatečné prověření. Nízká kauce. Žádný protokol. Opravy bez dokumentace. Reakce na dluh pozdě (3+ měsíce).
 - Nájemní trh ČR 2026: Témata: 1,2 mil. domácností v nájmu (28 %). Průměrný nájem 2+kk: Praha 24k, Brno 18k, Ostrava 12k, Plzeň 14k. Růst 5-8 % ročně. BTR roste. Regulace posiluje ochranu nájemníků.
 
@@ -30,7 +30,7 @@
 - Kdo platí opravy: Témata: Nájemník - drobné (do 100 Kč/měs nebo 1000 Kč/rok). Závady způsobené nájemníkem - vždy nájemník. Větší opravy - majitel. Havárie - majitel zajišťuje, nájemník hlásí. Vždy písemný souhlas.
 - Jak funguje kauce: Témata: Max 3 měsíce (standardně 2). Pokrytí dluhu/škod. Vrácení do 1 měsíce. Kauce zpravidla nestačí pokrýt průměrnou škodu (30-80 tis). Vždy fotodokumentace.
 - Když nájemník odmítá odejít: Témata: Písemná výzva. Doporučený dopis. Soudní žaloba 6-12 měsíců. NESMÍ - vyměnit zámky, odstřihnout energie, vyhazovat věci (trestné). Vždy advokát.
-- Kdy svěřit správu firmě: Témata: Více nemovitostí. Bydlíte daleko. Zažili problémového nájemníka. Nemáte čas. Stres převažuje nad příjmem. Modely: správcovská firma (8-15 %, nezaručuje příjem) nebo garantovaný nájem (nižší, a...
+- Kdy svěřit správu firmě: Témata: Více nemovitostí. Bydlíte daleko. Zažili problémového nájemníka. Nemáte čas. Stres převažuje nad příjmem. Modely: správcovská firma (8-15 %, nezaručuje příjem) nebo jistý nájem (nižší, a...
 
 ## Obecné informace
 - Fáze a tón obsahu: Témata: PREVENCE (klidný, praktický). AKTIVNÍ PROBLÉM (přímý, akční). POUČENÍ Z CHYBY (empatický, s čísly). PRÁVNÍ UVĚDOMĚNÍ (věcný, odvážný). Fáze určuje tón, ne obsah.
@@ -54,13 +54,13 @@
 - Varovné signály: Témata: Okamžité zamítnutí - odmítnutí prověření, odmítnutí registrů, naléhání na rychlý podpis, jen hotovost, nejasný důvod odchodu, negativní reference. Zvýšená opatrnost - krátké zaměstnání, příjem...
 
 ## Služby
-- Kdy zmínit garantovaný nájem: Témata: POUZE pokud obsah vede k delegování. Formulace - "model kde riziko nese správce, pevná platba každý měsíc". NIKDY přímý odkaz, jméno firmy, URL. Vždy jako JEDNA Z MOŽNOSTÍ. Odkaz patří do foll...
+- Kdy zmínit jistý nájem: Témata: POUZE pokud obsah vede k delegování. Formulace - "model kde riziko nese správce, pevná platba každý měsíc". NIKDY přímý odkaz, jméno firmy, URL. Vždy jako JEDNA Z MOŽNOSTÍ. Odkaz patří do foll...
 - Vzorný nájemce — prevence problémů: Většina problémů s nájemníky vzniká špatným výběrem nebo nedostatečnou smlouvou. Vzorný nájemce řeší oboje — prověření nájemníka, profesionální smlouva, předávací protokol, kompletní správa. Garantova...
 - Vzorný nájemce — řešení aktivního problému: Už máte problémového nájemníka? Vzorný nájemce pomůže i v této fázi — právní podpora, komunikace s nájemníkem, správa celého procesu výpovědi a předání. Po vyřešení problému převezme správu pronájmu, ...
 - odhad.online — správné nastavení nájmu: Příliš nízký nájem přitahuje problémové nájemníky. Příliš vysoký odradí ty spolehlivé. Správná cena je základ prevence. Na odhad.online zadáte adresu a dostanete orientační tržní nájem na základě reál...
 
 ## Klíčové výhody
-- Odvaha říkat pravdu: Témata: Vystěhování trvá 6-12 měsíců. Bez fotek škodu neprokážete. Smlouva z internetu nechrání. Vlastní správa stojí víc než si myslíte. Kauce nestačí. Říkáme i nepříjemné věci.
+- Odvaha říkat pravdu: Témata: Vyklizení přes soud trvá měsíce, zaručit lhůtu nelze. Bez fotek škodu neprokážete. Smlouva z internetu nechrání. Vlastní správa stojí víc než si myslíte. Kauce nestačí. Říkáme i nepříjemné věci.
 - Neutrální průvodce: Témata: Neprodáváme žádný produkt v obsahu. Pomáháme rozhodnout se informovaně. Ať si nechají správu nebo ji svěří - mají vědět co dělají. Empatický, věcný, odvážný.
 
 ## FAQ
@@ -71,4 +71,4 @@
 - Kdo platí opravy Témata: Nájemník - drobné (do 100 Kč/měs nebo 1000 Kč/rok). Závady způsobené nájemníkem - vždy nájemník. Větší opravy - majitel. Havárie - majitel zajišťuje, nájemník hlásí. Vždy písemný souhlas.
 - Jak funguje kauce Témata: Max 3 měsíce (standardně 2). Pokrytí dluhu/škod. Vrácení do 1 měsíce. Kauce zpravidla nestačí pokrýt průměrnou škodu (30-80 tis). Vždy fotodokumentace.
 - Když nájemník odmítá odejít Témata: Písemná výzva. Doporučený dopis. Soudní žaloba 6-12 měsíců. NESMÍ - vyměnit zámky, odstřihnout energie, vyhazovat věci (trestné). Vždy advokát.
-- Kdy svěřit správu firmě Témata: Více nemovitostí. Bydlíte daleko. Zažili problémového nájemníka. Nemáte čas. Stres převažuje nad příjmem. Modely: správcovská firma (8-15 %, nezaručuje příjem) nebo garantovaný nájem (nižší, ale pevný).
+- Kdy svěřit správu firmě Témata: Více nemovitostí. Bydlíte daleko. Zažili problémového nájemníka. Nemáte čas. Stres převažuje nad příjmem. Modely: správcovská firma (8-15 %, nezaručuje příjem) nebo jistý nájem (nižší, ale pevný).

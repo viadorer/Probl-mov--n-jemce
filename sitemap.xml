@@ -4,7 +4,7 @@
   generátor by byl dražší než úprava tohohle souboru.
 
   Nepatří sem: header.html a footer.html (fragmenty načítané fetchem),
-  index-puvodni.html (stará homepage, duplikuje úvodní stránku) a
+  index-puvodni.html (přesměrování na úvod) a
   detail.html (článek se vybírá query parametrem ?post=, samotná
   stránka je bez něj prázdná).
 -->

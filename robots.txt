@@ -6,8 +6,7 @@ Allow: /
 Disallow: /header.html
 Disallow: /footer.html
 
-# Stará homepage. Zůstává kvůli kalkulačce nákladů, ale duplikuje
-# obsah nové úvodní stránky.
-Disallow: /index-puvodni.html
+# index-puvodni.html je přesměrování na úvod; neblokovat, ať ho
+# vyhledávač uvidí a starou stránku z indexu vyřadí.
 
 Sitemap: https://www.problemovynajemnik.cz/sitemap.xml

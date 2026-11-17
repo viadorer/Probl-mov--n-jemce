@@ -27,8 +27,8 @@ je pravděpodobně na webu skrytý.
 
 - **[A1.1]** *odkaz:* Problémový nájemník
 - **[A1.2]** *odkaz:* Co za vás převezmeme
-- **[A1.3]** *odkaz:* Ceník a garance
-- **[A1.4]** *odkaz:* Odkup bytu
+- **[A1.3]** *odkaz:* Ceník
+- **[A1.4]** *odkaz:* Prodej s nájemníkem
 - **[A1.5]** *odkaz:* Prescoring
 - **[A1.6]** *odkaz:* Blog
 - **[A1.7]** *odkaz:* 603 834 921 Zavolat
@@ -36,18 +36,18 @@ je pravděpodobně na webu skrytý.
 ### A2. HERO
 
 - **[A2.1]** *text:* Od 1. 1. 2026 běží nové lhůty
-- **[A2.2]** *nadpis H1:* Váš byt zpátky. Bez jediné návštěvy soudu.
+- **[A2.2]** *nadpis H1:* Váš byt zpátky. Bez toho, abyste to táhli sám.
 - **[A2.3]** *odstavec:* Převezmeme případ problémového nájemníka od první výzvy až po předání klíčů. Osmnáct starostí, které dnes řešíte vy, přejde na nás.
 - **[A2.4]** *odkaz:* Potřebuji vyřešit problém
-- **[A2.5]** *odkaz:* Odkoupíme byt i s nájemníkem
+- **[A2.5]** *odkaz:* Prodat byt i s nájemníkem
 - **[A2.6]** *odstavec:* Nechcete proklikávat formulář? Zavolejte: 603 834 921 · Po–Pá 8:00–17:00
 - **[A2.7]** *odstavec:* Teprve se chystáte pronajímat? Prověřte si zájemce zdarma .
 - **[A2.8]** *text:* 2–5
-- **[A2.9]** *text:* měsíců do vyklizení
+- **[A2.9]** *text:* měsíců obvykle k rozkazu
 - **[A2.10]** *text:* 180
-- **[A2.11]** *text:* minut a ozveme se
+- **[A2.11]** *text:* minut na odpověď v pracovní době
 - **[A2.12]** *text:* 30
-- **[A2.13]** *text:* let na trhu
+- **[A2.13]** *text:* let Davida Choce v realitách
 
 ### A3. LHŮTY 2026
 
@@ -59,10 +59,10 @@ je pravděpodobně na webu skrytý.
 - **[A3.6]** *odstavec:* Nájemník ve vašem bytě celou tu dobu bydlí a vy platíte hypotéku ze svého.
 - **[A3.7]** *text:* Rozkaz k vyklizení od ledna 2026
 - **[A3.8]** *text:* 2–5 měsíců
-- **[A3.9]** *odstavec:* Zkrácené řízení bez jednání. Ale jen když jsou papíry v pořádku a lhůty se nepropásnou.
+- **[A3.9]** *odstavec:* Zkrácené řízení bez jednání. Ale jen když jsou papíry v pořádku, lhůty se nepropásnou a nájemník nepodá odpor.
 - **[A3.10]** *odstavec:* Délka pruhů odpovídá poměru uvedených měsíců. Jde o obvyklou délku obou řízení, ne o zaručenou lhůtu — konkrétní případ může trvat déle podle vytížení soudu i podle toho, jak se nájemník brání. Rozdíl mezi oběma cestami je ale řádově rok života.
 - **[A3.11]** *text:* 3 měsíce
-- **[A3.12]** *odstavec:* Po skončení nájmu musíte nájemníka písemně vyzvat k vyklizení. Když to nestihnete, nájem se obnovuje a začínáte znovu.
+- **[A3.12]** *odstavec:* U nájmu na dobu určitou: když do 3 měsíců po skončení nevyzvete nájemníka písemně k vyklizení, nájem se obnovuje a začínáte znovu.
 - **[A3.13]** *text:* 14 dní
 - **[A3.14]** *odstavec:* Výzva musí být doručena nejméně 14 dní před podáním návrhu k soudu, do bytu nebo do datové schránky.
 - **[A3.15]** *text:* 15 dní
@@ -100,7 +100,7 @@ je pravděpodobně na webu skrytý.
 - **[A5.7]** *text:* 800 000
 - **[A5.8]** *text:* Kč je horní hranice, kam se případ dostane po roce a půl i s opravami a prostojem.
 - **[A5.9]** *zadání pro fotografa (skryté):* Foto · dvojice před a po Byt po nájemníkovi, který přestal platit Dvě fotky vedle sebe ze stejného úhlu: stav při předání a stav při vyklizení. Nepotřebuješ zdemolovaný byt, naopak. Nejsilnější je běžný neuklizený byt s plesnivým rohem a hromadou věcí, protože v tom se majitel pozná. Proč to prodává: čísla nad tím jsou abstrakce. Fotka je moment, kdy si člověk představí svůj byt a spočítá, že rekonstrukce bude dražší než cokoli, co mu nabídneš.
-- **[A5.10]** *odstavec:* A to jsou pořád jenom peníze. Když se klientů ptáme po předání klíčů, co pro ně bylo nejhorší, o dluhu skoro nemluví. Mluví o tom, že do vlastního bytu nemohli, že se báli zvednout telefon a že to doma probírali každý večer.
+- **[A5.10]** *odstavec:* A to jsou pořád jenom peníze. Nejhorší často není dluh. Je to, že do vlastního bytu nemůžete, bojíte se zvednout telefon a doma to probíráte každý večer.
 - **[A5.11]** *odstavec:* Proti tomu poměřujte cenu jakéhokoli řešení. Nejdražší varianta je vždycky ta, kde se čeká.
 
 ### A6. OSMNÁCT STAROSTÍ
@@ -113,7 +113,7 @@ je pravděpodobně na webu skrytý.
 - **[A6.6]** *text:* Patnáctého otevíráte bankovnictví a koukáte, jestli přišla platba
 - **[A6.7]** *text:* Platby hlídáme my a víme, co se má stát ten den, kdy nepřijdou
 - **[A6.8]** *text:* Jezdíte k bytu a přemýšlíte, koho potkáte na chodbě
-- **[A6.9]** *text:* Na místo jezdíme my, včetně prohlídky stavu bytu
+- **[A6.9]** *text:* Na místo jezdíme my. Do bytu jen po dohodě s nájemníkem, jinak až při vyklizení
 - **[A6.10]** *text:* Odpovídáte sousedům a výboru na stížnosti, které nemůžete ovlivnit
 - **[A6.11]** *text:* Stížnosti přebíráme a rovnou z nich děláme doklady do spisu
 - **[A6.12]** *text:* Tlačí na vás po telefonu, ať mu dáte ještě měsíc, a vy nevíte, jestli povolit
@@ -124,18 +124,18 @@ je pravděpodobně na webu skrytý.
 - **[A6.17]** *text:* Chodíte na poštu, hlídáte dodejky a řešíte, že si zásilku nepřevzal
 - **[A6.18]** *text:* Doručujeme sami, na správné adresy a s dokladem, který obstojí u soudu
 - **[A6.19]** *text:* Obvoláváte advokáty, porovnáváte sazby a máte složit zálohu bez záruky
-- **[A6.20]** *text:* Advokáta máme. Hlavní část platíte až po předání klíčů
+- **[A6.20]** *text:* Advokátku máme. Rozpočet znáte předem a naše odměna je až po předání klíčů
 - **[A6.21]** *text:* Nevíte, jestli jste už něco nepokazil tou SMS nebo přijatou částkou
-- **[A6.22]** *text:* Projdeme, co jste zatím udělal. Co se dá napravit, napravíme
+- **[A6.22]** *text:* S advokátkou projdeme, co jste zatím udělal. Co se dá napravit, napravíme
 - **[A6.23]** *text:* Skládáte dohromady výpisy, zprávy a fotky a nevíte, co z toho je důkaz
 - **[A6.24]** *text:* Spis sestavíme za vás a víme, co soud u rozkazu vyžaduje
 - **[A6.25]** *text:* 03 · Soud a vyklizení
 - **[A6.26]** *text:* Berete si volno v práci na jednání, o kterých nevíte, kolik jich bude
-- **[A6.27]** *text:* Rozkaz k vyklizení se vydává bez jednání a zastupuje vás advokát
+- **[A6.27]** *text:* Rozkaz k vyklizení se vydává bez jednání a zastupuje vás advokátka. Když nájemník podá odpor, jednání bude, ale nejdete na něj sám
 - **[A6.28]** *text:* Sháníte exekutora a domlouváte termín vyklizení
 - **[A6.29]** *text:* Vyklizení domluvíme, zkoordinujeme a jsme u něj
 - **[A6.30]** *text:* Nevíte, kam s jeho věcmi. Vyhodit se nesmí, ale skladovat je nemáte kde
-- **[A6.31]** *text:* Uskladnění i soupis věcí zařídíme, aby vám z toho nevznikla další žaloba
+- **[A6.31]** *text:* Při vyklizení jsme s exekutorem a hlídáme soupis i úschovu věcí, aby vám z toho nevznikla další žaloba
 - **[A6.32]** *text:* Musíte být u předání a odhadovat, co je ještě běžné opotřebení
 - **[A6.33]** *text:* Zámky, odečty, protokol a fotodokumentace jsou na nás
 - **[A6.34]** *text:* 04 · A co bude potom
@@ -144,9 +144,9 @@ je pravděpodobně na webu skrytý.
 - **[A6.37]** *text:* Řešíte přepisy energií a vyúčtování, které nemáte z čeho pokrýt
 - **[A6.38]** *text:* Odečty, přepisy i dluh na službách vyčíslíme a uplatníme
 - **[A6.39]** *text:* Musíte hned shánět dalšího nájemníka a doufat, že tenhle bude lepší
-- **[A6.40]** *text:* Nemusíte. A až budete, prověříme ho, aby se tohle neopakovalo
+- **[A6.40]** *text:* Nemusíte. A až budete chtít, byt vám pronajmeme s prověřeným nájemníkem, případně ho budeme i spravovat
 - **[A6.41]** *text:* Mluvíte o tom doma každý večer a nemůžete kvůli tomu spát
-- **[A6.42]** *text:* Přestanete. Tohle klienti zmiňují častěji než peníze
+- **[A6.42]** *text:* Přestanete. Případ vedeme my, vy se dozvíte, co je nového
 - **[A6.43]** *nadpis H3:* A co zůstane na vás
 - **[A6.44]** *odstavec:* Nebudeme tvrdit, že nic. Jsou tři věci, které za vás udělat nemůžeme. Jinou práci od vás nechceme.
 - **[A6.45]** *text:* Dodat, co máte
@@ -160,23 +160,23 @@ je pravděpodobně na webu skrytý.
 
 - **[A7.1]** *text:* Program Klíče zpět
 - **[A7.2]** *nadpis H2:* Případ převezmeme celý. Vy podepisujete.
-- **[A7.3]** *odstavec:* Od první výzvy až po předání vyklizeného bytu. Tohle všechno je v ceně.
-- **[A7.4]** *text:* Právní diagnostika a písemný plán
-- **[A7.5]** *odstavec:* Rozbor smlouvy, plateb a komunikace. Časová osa a rozpočet do tří pracovních dnů, žádné účtování po hodinách.
+- **[A7.3]** *odstavec:* Od první výzvy až po předání vyklizeného bytu. Právní úkony dělá advokátka, všechno ostatní my.
+- **[A7.4]** *text:* Diagnostika a písemný plán
+- **[A7.5]** *odstavec:* Projdeme smlouvu, platby a komunikaci. Časová osa a rozpočet předem, žádné účtování po hodinách.
 - **[A7.6]** *text:* Kompletní listinná složka
-- **[A7.7]** *odstavec:* Výzva, výpověď, doklady o doručení, protokoly a fotodokumentace. První listina odchází do 24 hodin od podpisu podkladů.
+- **[A7.7]** *odstavec:* Výzvu a výpověď připraví advokátka. My sesbíráme podklady, zajistíme doručení s dokladem, protokoly a fotodokumentaci.
 - **[A7.8]** *text:* Komunikaci s nájemníkem přebíráme
 - **[A7.9]** *odstavec:* Telefonáty, e-maily i osobní jednání vedeme my. Vy se s ním nemusíte vidět ani slyšet.
 - **[A7.10]** *text:* Návrh na rozkaz k vyklizení a koordinace vyklizení
-- **[A7.11]** *odstavec:* Podání ve spolupráci s naší advokátkou včetně reakce na odpor. Exekutor, stěhování, výměna zámků, převzetí bytu.
+- **[A7.11]** *odstavec:* Návrh podává a u soudu vás zastupuje advokátka na základě vaší smlouvy s ní. My koordinujeme vyklizení: exekutor, stěhování, výměna zámků, převzetí bytu.
 - **[A7.12]** *text:* Vyčíslení a vymáhání dluhu
-- **[A7.13]** *odstavec:* Dlužné nájemné, škody a náklady sečteme a uplatníme. Nezůstane to jen u vyklizení.
+- **[A7.13]** *odstavec:* Dlužné nájemné, škody a náklady sečteme a advokátka je uplatní. Kolik se reálně vymůže, záleží na majetku nájemníka.
 - **[A7.14]** *text:* A k tomu, protože nechceme, abyste to řešil znovu
 - **[A7.15]** *odstavec:* Tři služby, které jinak prodáváme samostatně. V programu je nedoplácíte.
 - **[A7.16]** *text:* Prověření dalšího nájemníka.
 - **[A7.17]** *text:* Insolvenční rejstřík, evidence exekucí, ověření příjmu, reference.
 - **[A7.18]** *text:* 3 900 Kč
-- **[A7.19]** *text:* Nájemní smlouva připravená na rok 2026.
+- **[A7.19]** *text:* Nájemní smlouva od advokátky, připravená na rok 2026.
 - **[A7.20]** *text:* Splňuje podmínky pro rozkaz k vyklizení včetně doručování do datové schránky.
 - **[A7.21]** *text:* 4 900 Kč
 - **[A7.22]** *text:* Dvanáct měsíců hlídání plateb.
@@ -187,31 +187,30 @@ je pravděpodobně na webu skrytý.
 - **[A7.27]** *zadání pro fotografa (skryté):* Foto Listinná složka jednoho případu, rozložená na stole Seshora rozložené papíry: smlouva, výzva, výpověď, dodejky, protokol, fotodokumentace, návrh k soudu. Klidně dvacet listů přes celý stůl. Anonymizuj jména, ale ať je vidět objem. Proč to prodává: vizuální ospravedlnění ceny. Dokud vidí jen odrážky, cena zní vysoko. Když uvidí, kolik papírů by musel obstarat sám, zní levně.
 - **[A7.28]** *text:* Na začátku zaplatíte
 - **[A7.29]** *text:* 9 900 Kč
-- **[A7.30]** *odstavec:* Aktivační poplatek. Převezmeme případ, založíme spis a připravíme plnou moc. Odečítá se od konečné odměny. Když případ nevezmeme nebo nedopadne, vracíme ho celý.
+- **[A7.30]** *odstavec:* Aktivační poplatek. Převezmeme případ, založíme spis a připravíme plnou moc. Odečítá se od konečné odměny. Když případ nevezmeme nebo byt nezískáme zpátky, vracíme ho celý.
 - **[A7.31]** *text:* Až po předání klíčů
 - **[A7.32]** *text:* Odměna za výsledek
 - **[A7.33]** *odstavec:* Konkrétní částku uvidíte v písemném plánu dřív, než cokoli podepíšete. Bez výsledku nevzniká.
-- **[A7.34]** *text:* Riziko neseme my
-- **[A7.35]** *odrážka:* Nedopadne to, vracíme peníze. Neplatíte za snahu, platíte za klíče.
+- **[A7.34]** *text:* Za výsledek platíte, jen když výsledek je
+- **[A7.35]** *odrážka:* Nedopadne to, odměnu neplatíte. Aktivační poplatek vracíme. Zůstávají jen poplatky soudu a exekutora a služby advokátky podle smlouvy s ní.
 - **[A7.36]** *odrážka:* Beznadějný případ řekneme rovnou. Co nedává smysl, nebereme a neúčtujeme.
-- **[A7.37]** *odrážka:* Nechcete čekat? Byt odkoupíme. I s nájemníkem uvnitř. Problém přechází na nás.
+- **[A7.37]** *odrážka:* Nechcete čekat? Byt se dá prodat. I s nájemníkem uvnitř, investorovi, který s tím počítá.
 - **[A7.38]** *odkaz:* Zjistit, jak by to vypadalo u mě
-- **[A7.39]** *odstavec:* Bereme 6 nových případů měsíčně.
 
 ### A8. ODKUP
 
 - **[A8.1]** *text:* Druhá cesta
-- **[A8.2]** *nadpis H2:* Nechcete to řešit vůbec? Byt odkoupíme i s nájemníkem uvnitř.
-- **[A8.3]** *odstavec:* Někdo chce klíče zpátky. Někdo už jenom chce mít pokoj. Tohle je pro druhou skupinu. Nemovitost oceníme a odkoupíme ve stavu, v jakém je, i s člověkem uvnitř. Vyklizení, soud i vymáhání dluhu přecházejí na nás — vy podepíšete kupní smlouvu a končíte.
+- **[A8.2]** *nadpis H2:* Nechcete to řešit vůbec? Byt se dá prodat i s nájemníkem uvnitř.
+- **[A8.3]** *odstavec:* Někdo chce klíče zpátky. Někdo už jenom chce mít pokoj. Tohle je pro druhou skupinu. Byt oceníme a nabídneme investorům, kteří kupují obsazené byty a vyklizení si řeší sami. Vy podepíšete kupní smlouvu a končíte. Dluh nájemníka vám zůstává, pokud se s kupcem nedohodnete na jeho postoupení.
 - **[A8.4]** *text:* Kdy to dává smysl
 - **[A8.5]** *odstavec:* Když nemáte písemnou smlouvu a čeká vás běžná žaloba. Když případ běží přes rok. Nebo když si spočítáte, že rekonstrukce po vyklizení bude dražší než rozdíl v ceně.
 - **[A8.6]** *text:* Za kolik
-- **[A8.7]** *odstavec:* Cena odpovídá stavu bytu a tomu, že je obsazený. Nebudeme předstírat, že dostanete tržní cenu prázdné nemovitosti. Dostanete ale číslo předem a hotovo v řádu týdnů, ne let.
+- **[A8.7]** *odstavec:* Cena odpovídá stavu bytu a tomu, že je obsazený. Nebudeme předstírat, že dostanete tržní cenu prázdné nemovitosti. Odhad ceny dostanete předem a prodej je otázka měsíců, ne let soudu.
 - **[A8.8]** *text:* Co k tomu potřebujeme
 - **[A8.9]** *odstavec:* Adresu a dispozici, v jakém stavu je nájem a jestli je na bytě zástava nebo exekuce. Víc na začátek ne.
 - **[A8.10]** *text:* Nezávazně a bez poplatku
-- **[A8.11]** *text:* Chci nabídku na odkup
-- **[A8.12]** *odstavec:* Ozveme se s cenovým rozpětím. Diagnostiku případu k tomu nepotřebujete — tahle cesta jde mimo ni.
+- **[A8.11]** *text:* Chci byt prodat i s nájemníkem
+- **[A8.12]** *odstavec:* Ozveme se s odhadem ceny. Diagnostiku případu k tomu nepotřebujete — tahle cesta jde mimo ni.
 - **[A8.13]** *odkaz:* Zavolat: 603 834 921
 - **[A8.14]** *odkaz:* Napsat e-mailem
 - **[A8.15]** *odstavec:* V e-mailu máte předvyplněné, co potřebujeme vědět.
@@ -220,8 +219,8 @@ je pravděpodobně na webu skrytý.
 
 - **[A9.1]** *text:* Zdarma
 - **[A9.2]** *nadpis H2:* Prescoring nájemníka
-- **[A9.3]** *odstavec:* Bodový model, který používáme u vlastních klientů. Zadáte, co o zájemci víte, a dostanete skóre od 0 do 100, seznam rizikových faktorů a konkrétní pojistky do smlouvy právě u tohohle člověka.
-- **[A9.4]** *odstavec:* Většina případů, které řešíme, se dala zastavit tady. Ne u soudu, ale u stolu před podpisem.
+- **[A9.3]** *odstavec:* Orientační bodový model. Zadáte, co o zájemci víte, a dostanete skóre od 0 do 100, seznam rizikových faktorů a konkrétní pojistky do smlouvy právě u tohohle člověka.
+- **[A9.4]** *odstavec:* Spousta problémů se dá zastavit tady. Ne u soudu, ale u stolu před podpisem.
 - **[A9.5]** *odkaz:* Spustit prescoring zdarma
 - **[A9.6]** *zadání pro fotografa (skryté):* Screenshot Skutečný výstup prescoringu Snímek výsledku s velkým skóre, pásmem a rozpadem rizik. Ideálně případ, který dopadl špatně. Vyfoť to i na mobilu v ruce, většina lidí to otevře v telefonu. Proč to prodává: nikdo neklikne na nástroj, o kterém neví, jak vypadá. Náhled výstupu zvedne prokliky a ukáže, že to není další formulář na sběr e-mailů.
 
@@ -230,7 +229,7 @@ je pravděpodobně na webu skrytý.
 - **[A10.1]** *nadpis H2:* Kdo případ povede
 - **[A10.2]** *zadání pro fotografa (skryté):* Portrét David, pas nahoru, neutrální pozadí, denní světlo. Ne oblek s kravatou, ale ani tričko. Pohled do objektivu.
 - **[A10.3]** *text:* David Choc
-- **[A10.4]** *text:* 30 let na trhu s nemovitostmi, specializace na pronájmy a správu
+- **[A10.4]** *text:* 30 let v realitách, PTF reality, specializace na pronájmy a správu
 - **[A10.5]** *odstavec:* Případ vede jeden konkrétní člověk od prvního hovoru až po předání klíčů. Nebudete pokaždé vysvětlovat všechno znovu někomu jinému.
 - **[A10.6]** *text:* Právní část zajišťuje advokátka Zuzana Schneider Valentová
 - **[A10.7]** *odstavec:* Sepis podání, právní úkony a zastoupení u soudu zajišťuje advokátka Zuzana Schneider Valentová. Naší rolí je vedení případu, dokumentace, komunikace s nájemníkem a koordinace celého procesu — vy máte jeden kontakt a nemusíte řešit, co komu poslat.
@@ -257,7 +256,7 @@ je pravděpodobně na webu skrytý.
 - **[A11.17]** *text:* Co z toho bývá
 - **[A11.18]** *odstavec:* Odpovědnost za škodu na věcech, jejichž hodnotu si určí on. Proto se u řádného vyklizení dělá soupis a věci jdou do úschovy.
 - **[A11.19]** *nadpis H3:* Legální cesta existuje a od ledna 2026 trvá měsíce, ne roky
-- **[A11.20]** *odstavec:* Důvod, proč lidé sahají po zkratkách, je ten, že řádná cesta bývala nekonečná. To se změnilo. Rozkaz k vyklizení se vydává bez jednání a běžný případ se dá zvládnout za dva až pět měsíců — pokud jsou papíry v pořádku a lhůty se nepropásnou.
+- **[A11.20]** *odstavec:* Důvod, proč lidé sahají po zkratkách, je ten, že řádná cesta bývala nekonečná. To se změnilo. Rozkaz k vyklizení se vydává bez jednání a rozhodnutí může přijít za dva až pět měsíců — pokud jsou papíry v pořádku, lhůty se nepropásnou a nájemník nepodá odpor.
 - **[A11.21]** *odkaz:* Zjistit, jak dlouho by to trvalo u mě
 - **[A11.22]** *odkaz:* 603 834 921
 
@@ -285,11 +284,10 @@ je pravděpodobně na webu skrytý.
 - **[A14.8]** *odrážka:* Prescoring nájemníka zdarma
 - **[A14.9]** *odrážka:* Teprve budu pronajímat
 - **[A14.10]** *odrážka:* Blog
-- **[A14.11]** *odrážka:* Kalkulačka nákladů
-- **[A14.12]** *text:* © 2026 problemovynajemnik.cz
-- **[A14.13]** *odkaz:* Ochrana osobních údajů
-- **[A14.14]** *odkaz:* Cookies
-- **[A14.15]** *odkaz:* Obchodní podmínky
+- **[A14.11]** *text:* © 2026 problemovynajemnik.cz
+- **[A14.12]** *odkaz:* Ochrana osobních údajů
+- **[A14.13]** *odkaz:* Cookies
+- **[A14.14]** *odkaz:* Obchodní podmínky
 
 ### A15. STICKY CTA NA MOBILU
 
@@ -303,112 +301,111 @@ je pravděpodobně na webu skrytý.
 
 - **[B1.1]** *text:* Zdarma · bez registrace
 - **[B1.2]** *nadpis H1:* Zjistěte, koho si pouštíte do bytu. Než podepíšete.
-- **[B1.3]** *odstavec:* Stejný bodový model, jaký používáme u vlastních klientů. Skóre od 0 do 100, seznam rizikových faktorů a konkrétní pojistky, které patří do smlouvy právě u tohoto nájemníka.
+- **[B1.3]** *odstavec:* Orientační bodový model. Skóre od 0 do 100, seznam rizikových faktorů a konkrétní pojistky, které patří do smlouvy právě u tohoto nájemníka.
 - **[B1.4]** *odstavec:* Co o zájemci nevíte, nechte prázdné. Model s tím počítá a chybějící ověření sám vyhodnotí jako riziko.
 
 ### B2. PRŮVODCE
 
 - **[B2.1]** *popisek:* Měsíční nájemné (Kč)
 - **[B2.2]** *odstavec:* Včetně záloh na služby, tedy co má reálně platit.
-- **[B2.3]** *popisek:* Věk nájemníka
-- **[B2.4]** *popisek:* Počet osob v domácnosti
-- **[B2.5]** *popisek:* Délka současného zaměstnání (měsíce)
-- **[B2.6]** *odstavec:* Pod šest měsíců je to samo o sobě riziko.
-- **[B2.7]** *popisek:* Typ zaměstnání
-- **[B2.8]** *volba:* Hlavní pracovní poměr
-- **[B2.9]** *volba:* DPP nebo DPČ
-- **[B2.10]** *volba:* OSVČ
-- **[B2.11]** *volba:* Student
-- **[B2.12]** *volba:* Důchodce
-- **[B2.13]** *volba:* Bez zaměstnání
-- **[B2.14]** *popisek:* Zkušenosti s pronájmem
-- **[B2.15]** *volba:* Nevím / neptal jsem se
-- **[B2.16]** *volba:* Doložené dobré reference
-- **[B2.17]** *volba:* První nájem
-- **[B2.18]** *volba:* Negativní zkušenost
-- **[B2.19]** *odstavec:* Když kontakt na předchozího pronajímatele odmítá dát, je to samo o sobě odpověď.
-- **[B2.20]** *popisek:* Hlavní příjem (čistý, Kč)
-- **[B2.21]** *popisek:* Příjem partnera (Kč)
-- **[B2.22]** *popisek:* Dodatečné příjmy (Kč)
-- **[B2.23]** *popisek:* Příjmy spolubydlících (Kč)
-- **[B2.24]** *popisek:* Sociální dávky (Kč)
-- **[B2.25]** *popisek:* Stabilita příjmů
-- **[B2.26]** *volba:* Stabilní
-- **[B2.27]** *volba:* Rostoucí
-- **[B2.28]** *volba:* Proměnlivé
-- **[B2.29]** *volba:* Klesající
-- **[B2.30]** *popisek:* Doložení příjmů
-- **[B2.31]** *volba:* Potvrzení zaměstnavatele
-- **[B2.32]** *volba:* Jen výpisy z účtu
-- **[B2.33]** *volba:* Nedoloženo, jen tvrzení
-- **[B2.34]** *popisek:* Sezónní práce
-- **[B2.35]** *popisek:* Ve zkušební době
-- **[B2.36]** *popisek:* Všichni podepíší
-- **[B2.37]** *popisek:* Splátky úvěrů (Kč)
-- **[B2.38]** *popisek:* Kreditní karty (Kč)
-- **[B2.39]** *popisek:* Výživné (Kč)
-- **[B2.40]** *popisek:* Pojištění (Kč)
-- **[B2.41]** *popisek:* Jiné nájmy (Kč)
-- **[B2.42]** *popisek:* Životní náklady (Kč)
-- **[B2.43]** *odstavec:* Jídlo, doprava, telefon. Odhad stačí.
-- **[B2.44]** *popisek:* Finanční rezerva (Kč)
-- **[B2.45]** *odstavec:* Rezerva pod jeden nájem je varovný signál.
-- **[B2.46]** *popisek:* Historie dluhů
-- **[B2.47]** *volba:* Bez problémů
-- **[B2.48]** *volba:* Drobné problémy
-- **[B2.49]** *volba:* Vážné problémy
-- **[B2.50]** *volba:* Insolvence nebo exekuce
-- **[B2.51]** *popisek:* Kontrola v rejstřících
-- **[B2.52]** *volba:* Neprověřeno
-- **[B2.53]** *volba:* Insolvenční rejstřík čistý
-- **[B2.54]** *volba:* Evidence exekucí čistá
-- **[B2.55]** *volba:* Nalezena exekuce
-- **[B2.56]** *volba:* Nalezena insolvence
-- **[B2.57]** *odstavec:* Insolvenční rejstřík i centrální evidenci exekucí si můžete ověřit sám. Prověření zájemce děláme i za vás.
-- **[B2.58]** *popisek:* Má aktivní exekuci
-- **[B2.59]** *popisek:* Nájemník má ručitele
-- **[B2.60]** *popisek:* Měsíční příjem ručitele (Kč)
-- **[B2.61]** *popisek:* Zaměstnání ručitele
-- **[B2.62]** *volba:* Stabilní zaměstnání
-- **[B2.63]** *volba:* Vlastník nemovitosti
-- **[B2.64]** *volba:* OSVČ
-- **[B2.65]** *volba:* Jiné
-- **[B2.66]** *popisek:* Zadlužení ručitele
-- **[B2.67]** *volba:* Žádné
-- **[B2.68]** *volba:* Střední
-- **[B2.69]** *volba:* Vysoké
-- **[B2.70]** *popisek:* Vztah k nájemníkovi
-- **[B2.71]** *volba:* Rodina
-- **[B2.72]** *volba:* Známý
-- **[B2.73]** *volba:* Jiný
-- **[B2.74]** *tlačítko:* Zpět
-- **[B2.75]** *text:* Našli jsme rizikových faktorů a konkrétních doporučení Rozpad ukazuje, co přesně tohle skóre srazilo dolů, a co si u tohohle nájemníka ošetřit ve smlouvě, aby vás to nestálo peníze. Hned ho zobrazíme. Jméno a příjmení vas@email.cz Souhlasím se zpracováním osobních údajů za účelem zaslání výsledku. Údaje o nájemníkovi si neukládáme k jeho osobě. Slouží jen k výpočtu. Co skóre srazilo dolů ✕ Co si u tohohle nájemníka ošetřit ✓ Skóre vám řekne riziko. Nezbaví vás ho. Prověříme zájemce v insolvenčním rejstříku a evidenci exekucí, ověříme příjem, zavoláme předchozímu pronajímateli a připravíme smlouvu, která obstojí u soudu. A pokud už problémového nájemníka v bytě máte, řešíme i to. 603 834 921 Už mám problém Výsledek je orientační pomůcka, nikoli rozhodnutí, a nenahrazuje právní ani finanční poradenství. Při zpracování údajů o zájemcích postupujte v souladu s GDPR a uchovávejte jen to, co potřebujete.
-- **[B2.76]** *text:* Průběžné skóre
-- **[B2.77]** *text:* Bonita nájemníka
-- **[B2.78]** *text:* ze 100
-- **[B2.79]** *text:* Nájem k příjmu
-- **[B2.80]** *text:* Zbyde po závazcích
-- **[B2.81]** *text:* Rezerva v nájmech
-- **[B2.82]** *text:* Zadlužení k příjmu
-- **[B2.83]** *text:* Spolehlivost výsledku
-- **[B2.84]** *odstavec:* Dokud nejsou ověřené rejstříky, doložený příjem a reference, výsledek nemůže vyjít jako nízké riziko. Je to odhad na základě tvrzení zájemce.
-- **[B2.85]** *odstavec:* Všechna klíčová ověření jsou hotová. Skóre stojí na doložených údajích.
-- **[B2.86]** *tlačítko:* ← Upravit údaje
-- **[B2.87]** *odstavec:* Výpočet běží u vás v prohlížeči. Nic se neodesílá, dokud sám nechcete.
-- **[B2.88]** *text:* Problémový nájemník
-- **[B2.89]** *odstavec:* Vedení případů problémových nájemníků od výzvy po předání klíčů. Právní úkony zajišťuje advokátka Zuzana Schneider Valentová.
-- **[B2.90]** *text:* Kontakt
-- **[B2.91]** *odrážka:* +420 603 834 921
-- **[B2.92]** *odrážka:* info@ptf.cz
-- **[B2.93]** *odrážka:* Po–Pá 8:00–17:00
-- **[B2.94]** *text:* Další
-- **[B2.95]** *odrážka:* Mám problémového nájemníka
-- **[B2.96]** *odrážka:* Teprve budu pronajímat
-- **[B2.97]** *odrážka:* Blog
-- **[B2.98]** *text:* © 2026 problemovynajemnik.cz
-- **[B2.99]** *odkaz:* Ochrana osobních údajů
-- **[B2.100]** *odkaz:* Cookies
-- **[B2.101]** *odkaz:* Obchodní podmínky
+- **[B2.3]** *popisek:* Počet osob v domácnosti
+- **[B2.4]** *popisek:* Délka současného zaměstnání (měsíce)
+- **[B2.5]** *odstavec:* Pod šest měsíců je to samo o sobě riziko.
+- **[B2.6]** *popisek:* Typ zaměstnání
+- **[B2.7]** *volba:* Hlavní pracovní poměr
+- **[B2.8]** *volba:* DPP nebo DPČ
+- **[B2.9]** *volba:* OSVČ
+- **[B2.10]** *volba:* Student
+- **[B2.11]** *volba:* Důchodce
+- **[B2.12]** *volba:* Bez zaměstnání
+- **[B2.13]** *popisek:* Zkušenosti s pronájmem
+- **[B2.14]** *volba:* Nevím / neptal jsem se
+- **[B2.15]** *volba:* Doložené dobré reference
+- **[B2.16]** *volba:* První nájem
+- **[B2.17]** *volba:* Negativní zkušenost
+- **[B2.18]** *odstavec:* Když kontakt na předchozího pronajímatele odmítá dát, je to samo o sobě odpověď.
+- **[B2.19]** *popisek:* Hlavní příjem (čistý, Kč)
+- **[B2.20]** *popisek:* Příjem partnera (Kč)
+- **[B2.21]** *popisek:* Dodatečné příjmy (Kč)
+- **[B2.22]** *popisek:* Příjmy spolubydlících (Kč)
+- **[B2.23]** *popisek:* Sociální dávky (Kč)
+- **[B2.24]** *popisek:* Stabilita příjmů
+- **[B2.25]** *volba:* Stabilní
+- **[B2.26]** *volba:* Rostoucí
+- **[B2.27]** *volba:* Proměnlivé
+- **[B2.28]** *volba:* Klesající
+- **[B2.29]** *popisek:* Doložení příjmů
+- **[B2.30]** *volba:* Potvrzení zaměstnavatele
+- **[B2.31]** *volba:* Jen výpisy z účtu
+- **[B2.32]** *volba:* Nedoloženo, jen tvrzení
+- **[B2.33]** *popisek:* Sezónní práce
+- **[B2.34]** *popisek:* Ve zkušební době
+- **[B2.35]** *popisek:* Všichni podepíší
+- **[B2.36]** *popisek:* Splátky úvěrů (Kč)
+- **[B2.37]** *popisek:* Kreditní karty (Kč)
+- **[B2.38]** *popisek:* Výživné (Kč)
+- **[B2.39]** *popisek:* Pojištění (Kč)
+- **[B2.40]** *popisek:* Jiné nájmy (Kč)
+- **[B2.41]** *popisek:* Životní náklady (Kč)
+- **[B2.42]** *odstavec:* Jídlo, doprava, telefon. Odhad stačí.
+- **[B2.43]** *popisek:* Finanční rezerva (Kč)
+- **[B2.44]** *odstavec:* Rezerva pod jeden nájem je varovný signál.
+- **[B2.45]** *popisek:* Historie dluhů
+- **[B2.46]** *volba:* Bez problémů
+- **[B2.47]** *volba:* Drobné problémy
+- **[B2.48]** *volba:* Vážné problémy
+- **[B2.49]** *volba:* Insolvence nebo exekuce
+- **[B2.50]** *popisek:* Kontrola v rejstřících
+- **[B2.51]** *volba:* Neprověřeno
+- **[B2.52]** *volba:* Insolvenční rejstřík čistý
+- **[B2.53]** *volba:* Evidence exekucí čistá
+- **[B2.54]** *volba:* Nalezena exekuce
+- **[B2.55]** *volba:* Nalezena insolvence
+- **[B2.56]** *odstavec:* Insolvenční rejstřík i centrální evidenci exekucí si můžete ověřit sám. Prověření zájemce děláme i za vás.
+- **[B2.57]** *popisek:* Má aktivní exekuci
+- **[B2.58]** *popisek:* Nájemník má ručitele
+- **[B2.59]** *popisek:* Měsíční příjem ručitele (Kč)
+- **[B2.60]** *popisek:* Zaměstnání ručitele
+- **[B2.61]** *volba:* Stabilní zaměstnání
+- **[B2.62]** *volba:* Vlastník nemovitosti
+- **[B2.63]** *volba:* OSVČ
+- **[B2.64]** *volba:* Jiné
+- **[B2.65]** *popisek:* Zadlužení ručitele
+- **[B2.66]** *volba:* Žádné
+- **[B2.67]** *volba:* Střední
+- **[B2.68]** *volba:* Vysoké
+- **[B2.69]** *popisek:* Vztah k nájemníkovi
+- **[B2.70]** *volba:* Rodina
+- **[B2.71]** *volba:* Známý
+- **[B2.72]** *volba:* Jiný
+- **[B2.73]** *tlačítko:* Zpět
+- **[B2.74]** *text:* Našli jsme rizikových faktorů a konkrétních doporučení Rozpad ukazuje, co přesně tohle skóre srazilo dolů, a co si u tohohle nájemníka ošetřit ve smlouvě, aby vás to nestálo peníze. Hned ho zobrazíme. Jméno a příjmení vas@email.cz Souhlasím se zpracováním osobních údajů, aby mi PTF reality zobrazila výsledek a ozvala se s nabídkou prověření nájemníka a pronájmu. Údaje o zájemci zadáváte bez jména. Uložíme je spolu s výsledkem k vašemu dotazu. Co skóre srazilo dolů ✕ Co si u tohohle nájemníka ošetřit ✓ Skóre vám řekne riziko. Nezbaví vás ho. Prověříme zájemce v insolvenčním rejstříku a evidenci exekucí, ověříme příjem, zavoláme předchozímu pronajímateli a připravíme smlouvu, která obstojí u soudu. A pokud už problémového nájemníka v bytě máte, řešíme i to. 603 834 921 Už mám problém Výsledek je orientační pomůcka, nikoli rozhodnutí, a nenahrazuje právní ani finanční poradenství. Při zpracování údajů o zájemcích postupujte v souladu s GDPR a uchovávejte jen to, co potřebujete.
+- **[B2.75]** *text:* Průběžné skóre
+- **[B2.76]** *text:* Bonita nájemníka
+- **[B2.77]** *text:* ze 100
+- **[B2.78]** *text:* Nájem k příjmu
+- **[B2.79]** *text:* Zbyde po závazcích
+- **[B2.80]** *text:* Rezerva v nájmech
+- **[B2.81]** *text:* Zadlužení k příjmu
+- **[B2.82]** *text:* Spolehlivost výsledku
+- **[B2.83]** *odstavec:* Dokud nejsou ověřené rejstříky, doložený příjem a reference, výsledek nemůže vyjít jako nízké riziko. Je to odhad na základě tvrzení zájemce.
+- **[B2.84]** *odstavec:* Všechna klíčová ověření jsou hotová. Skóre stojí na doložených údajích.
+- **[B2.85]** *tlačítko:* ← Upravit údaje
+- **[B2.86]** *odstavec:* Výpočet běží u vás v prohlížeči. Nic se neodesílá, dokud sám nechcete.
+- **[B2.87]** *text:* Problémový nájemník
+- **[B2.88]** *odstavec:* Vedení případů problémových nájemníků od výzvy po předání klíčů. Právní úkony zajišťuje advokátka Zuzana Schneider Valentová.
+- **[B2.89]** *text:* Kontakt
+- **[B2.90]** *odrážka:* +420 603 834 921
+- **[B2.91]** *odrážka:* info@ptf.cz
+- **[B2.92]** *odrážka:* Po–Pá 8:00–17:00
+- **[B2.93]** *text:* Další
+- **[B2.94]** *odrážka:* Mám problémového nájemníka
+- **[B2.95]** *odrážka:* Teprve budu pronajímat
+- **[B2.96]** *odrážka:* Blog
+- **[B2.97]** *text:* © 2026 problemovynajemnik.cz
+- **[B2.98]** *odkaz:* Ochrana osobních údajů
+- **[B2.99]** *odkaz:* Cookies
+- **[B2.100]** *odkaz:* Obchodní podmínky
 
 
 ## C) TEPRVE BUDU PRONAJÍMAT — `budu-pronajimat.html`
@@ -421,8 +418,8 @@ je pravděpodobně na webu skrytý.
 - **[C1.4]** *odstavec:* Tato stránka je určena výhradně pro majitele nemovitostí, kteří se chystají poprvé pronajímat.
 - **[C1.5]** *odkaz:* Nechci udělat chybu při pronájmu
 - **[C1.6]** *nadpis H2:* Proč je profesionální přístup klíčový už od začátku
-- **[C1.7]** *text:* 84%
-- **[C1.8]** *odstavec:* problémů s nájemníky vzniká kvůli špatně nastaveným podmínkám na začátku pronájmu.
+- **[C1.7]** *text:* Začátek rozhoduje
+- **[C1.8]** *odstavec:* Řadě problémů s nájemníky jde předejít prověřením zájemce, dobrou smlouvou a kaucí.
 - **[C1.9]** *odstavec:* Pronájem nemovitosti není jen o podpisu smlouvy a vybírání nájemného. První kroky rozhodují o tom, zda váš pronájem bude bezproblémový nebo se promění v noční můru.
 - **[C1.10]** *nadpis H3:* Co riskujete při amatérském přístupu:
 - **[C1.11]** *odrážka:* Problémové nájemníky, které bude těžké vystěhovat
@@ -452,7 +449,7 @@ je pravděpodobně na webu skrytý.
 - **[C1.35]** *nadpis:* Klíčové prvky smlouvy:
 - **[C1.36]** *odrážka:* Jasné vymezení práv a povinností
 - **[C1.37]** *odrážka:* Přesné určení výše a splatnosti nájemného
-- **[C1.38]** *odrážka:* Sankce za pozdní platby a porušení podmínek
+- **[C1.38]** *odrážka:* Úrok z prodlení a jasný postup při pozdní platbě
 - **[C1.39]** *odrážka:* Pravidla pro ukončení nájmu
 - **[C1.40]** *odrážka:* Notářský zápis s doložkou přímé vykonatelnosti
 - **[C1.41]** *odstavec:* Náš tip: "Investice do právně ošetřené nájemní smlouvy je zlomkem částky, kterou byste zaplatili za řešení problémů s nevhodným nájemníkem."
@@ -478,93 +475,63 @@ je pravděpodobně na webu skrytý.
 - **[C1.61]** *odstavec:* Vyvarujte se těchto problémů a ušetřete si bolesti hlavy, čas i peníze
 - **[C1.62]** *nadpis H3:* Nedostatečné prověření nájemníka
 - **[C1.63]** *odstavec:* Mnoho majitelů nemovitostí vybírá nájemníky pouze podle prvního dojmu a neprovádí důkladné prověření.
-- **[C1.64]** *odstavec:* Důsledky: Až 40% problematických nájemníků má historii problémů u předchozích pronajímatelů, které by odhalilo jednoduché prověření.
+- **[C1.64]** *odstavec:* Důsledky: Dluhy a exekuce zájemce jsou veřejně dohledatelné. Kdo je nezkontroluje, zjistí je až od exekutora.
 - **[C1.65]** *nadpis H3:* Nekvalitní nájemní smlouva
 - **[C1.66]** *odstavec:* Používání šablon z internetu nebo nevhodných formulářových smluv bez konzultace s právníkem.
 - **[C1.67]** *odstavec:* Důsledky: Nespecifické nebo neúplné smlouvy vedou k právním sporům a prodloužení procesu vystěhování problémového nájemníka o 3-8 měsíců.
 - **[C1.68]** *nadpis H3:* Tolerování opožděných plateb
 - **[C1.69]** *odstavec:* Přehlížení pozdních plateb nájmu v počátcích nastavuje špatný precedens.
-- **[C1.70]** *odstavec:* Důsledky: Více než 75% případů neplacení nájmu začíná drobnými opožděními, které pronajímatel přehlížel.
+- **[C1.70]** *odstavec:* Důsledky: Neplacení často začíná drobnými opožděními. Kdo je přehlíží, přijde o čas na výzvu a výpověď.
 - **[C1.71]** *nadpis H3:* Špatně stanovené nájemné
 - **[C1.72]** *odstavec:* Stanovení nájemného bez analýzy trhu nebo naopak přecenění nemovitosti.
 - **[C1.73]** *odstavec:* Důsledky: Příliš nízké nájemné snižuje příjmy a přitahuje méně solventní nájemníky. Příliš vysoké vede k dlouhým obdobím bez nájemníka.
 - **[C1.74]** *nadpis H3:* Nevedení řádné dokumentace
 - **[C1.75]** *odstavec:* Nedostatečná evidence komunikace, kontrol a stavu nemovitosti.
-- **[C1.76]** *odstavec:* Důsledky: Až 65% soudních sporů o škody na majetku prohrávají pronajímatelé kvůli nedostatečné dokumentaci stavu před nastěhováním.
+- **[C1.76]** *odstavec:* Důsledky: Bez protokolu a fotek výchozího stavu se škoda u soudu těžko dokazuje.
 - **[C1.77]** *nadpis H3:* Podcenění pojištění
 - **[C1.78]** *odstavec:* Ignorování pojištění nebo nedostatečné pokrytí specifických rizik spojených s pronájmem.
-- **[C1.79]** *odstavec:* Důsledky: Průměrné finanční ztráty nepojištěných pronajímatelů dosahují až 120 000 Kč na jeden incident poškození majetku.
+- **[C1.79]** *odstavec:* Důsledky: Škodu nad výši kauce pak platíte ze svého.
 - **[C1.80]** *nadpis H2:* Ochrana a jistota pro vaše nemovitosti
 - **[C1.81]** *odstavec:* Zajistíme vám bezproblémový pronájem bez rizika, se smluvní ochranou a prověřenými nájemníky
 - **[C1.82]** *nadpis H3:* Komplexní právní ochrana
 - **[C1.83]** *odstavec:* Získáte profesionálně sestavenou nájemní smlouvu, předávací protokol a všechny dokumenty potřebné k bezpečnému pronájmu. Vše připraveno právníky specializovanými na nájemní právo.
 - **[C1.84]** *nadpis H3:* Důkladné prověření nájemníků
-- **[C1.85]** *odstavec:* Využíváme speciální metodiku pro výběr spolehlivosti plateb a historií nájemníků. Prověříme rejstříky, předchozí nájmy a platební morálku. Jen 0,5% námi prověřených nájemníků se později stane problémovými.
+- **[C1.85]** *odstavec:* Využíváme speciální metodiku pro výběr spolehlivosti plateb a historií nájemníků. Prověříme rejstříky, předchozí nájmy a platební morálku.
 - **[C1.86]** *nadpis H3:* Optimální nastavení nájmu
 - **[C1.87]** *odstavec:* Pomoc při stanovení tržního nájemného, kauce a dalších podmínek. Díky našim datovým analýzám víme, jaké parametry jsou optimální pro různé typy nemovitostí a lokalit.
 - **[C1.88]** *nadpis H3:* Systém včasného varování
 - **[C1.89]** *odstavec:* Získáte přístup k systému, který vás upozorní na blížící se termíny plateb a pomůže vám okamžitě reagovat na známky potenciálních problémů.
-- **[C1.90]** *nadpis H3:* Proč nám důvěřují
-- **[C1.91]** *text:* 98%
-- **[C1.92]** *nadpis H3:* Spokojených klientů
-- **[C1.93]** *odstavec:* nemá nikdy problémy s nájemníky
-- **[C1.94]** *text:* 12+
-- **[C1.95]** *nadpis H3:* Let zkušeností
-- **[C1.96]** *odstavec:* s pronájmy nemovitostí
-- **[C1.97]** *text:* 4000+
-- **[C1.98]** *nadpis H3:* Úspěšných pronájmů
-- **[C1.99]** *odstavec:* bez problémů a bez dluhů
-- **[C1.100]** *text:* 94%
-- **[C1.101]** *nadpis H3:* Věrných klientů
-- **[C1.102]** *odstavec:* pronajímá s námi opakovaně
-- **[C1.103]** *odkaz:* Chci začít spolu s vámi
-- **[C1.104]** *nadpis H2:* Příběhy úspěšných pronajímatelů
-- **[C1.105]** *odstavec:* Poslechněte si, jak ostatní zvládli svůj první pronájem s naší pomocí
-- **[C1.106]** *text:* Petr Novák
-- **[C1.107]** *text:* Pronajímá byt 2+kk v Praze
-- **[C1.108]** *text:* Lucie Svobodová
-- **[C1.109]** *text:* Pronajímá rodinný dům v Brně
-- **[C1.110]** *text:* Martin Horák
-- **[C1.111]** *text:* Pronajímá 3 byty v Ostravě
-- **[C1.112]** *odkaz:* I vy můžete mít podobnou zkušenost
-- **[C1.113]** *nadpis H2:* Nejčastější otázky o ochraně před problémovými nájemníky
-- **[C1.114]** *odstavec:* Odpovídáme na dotazy, které pronajímatelé řeší při zajišťování bezpečného pronájmu
-- **[C1.115]** *tlačítko:* Jak poznám potenciálně problémového nájemníka ještě před podpisem smlouvy?
-- **[C1.116]** *odstavec:* Problémového nájemníka lze často odhalit už při prvních interakcích. Varovné signály jsou: vyhýbavé odpovědi na otázky o zaměstnání nebo předchozích nájmech, neochota doložit příjmy, tlak na rychlé uzavření smlouvy bez důkladného prověření, nabízení hotovostních záloh místo standardních převodů, nebo nevysvětlené změny v požadavcích. Naše metodika prověření zachytí 99,5% potenciálně problémových nájemníků ještě před podpisem smlouvy.
-- **[C1.117]** *tlačítko:* Jaké právní nástroje nejvíce ochrání mou nemovitost při pronájmu?
-- **[C1.118]** *odstavec:* Klíčovým nástrojem je profesionálně sestavená nájemní smlouva, která jasně definuje všechna práva a povinnosti stran, sankce za porušení podmínek a postupy při ukončení nájmu. Důležité jsou také podrobný předávací protokol s fotodokumentací stavu nemovitosti, notářský zápis s doložkou přímé vykonatelnosti pro rychlejší vymáhání a kauce ve správné výši. Naše smlouvy chrání pronajímatele podle aktuální judikatury a obsahují speciální doložky proti obvyklým problémům.
-- **[C1.119]** *tlačítko:* Jak správně nastavit výši kauce a jakou má právní ochranu?
-- **[C1.120]** *odstavec:* Optimální výše kauce je 2-3 měsíční nájemné v závislosti na hodnotě vybavení a lokalitě. Pro maximální právní ochranu doporučujeme evidovat kauci na samostatném účtu (usnadňuje dokazování při sporech) a podrobně ve smlouvě specifikovat podmínky jejího čerpání a vrácení. Nastavení kauce a její ochranu máme detailně propracovanou v našich smlouvách, včetně mechanismů rychlého čerpání při neplacení nájmu a jasných deadlinů.
-- **[C1.121]** *tlačítko:* Jak postupovat, když nájemník přestane platit nájemné?
-- **[C1.122]** *odstavec:* Při neplacení nájemného je klíčová rychlost reakce. Okamžitě kontaktujte nájemníka a zašlete písemnou upomínku. Pokud do 5 dnů neplatí, zašlete druhou upomínku s urgencí a výhradou odstoupení od smlouvy. Po 10 dnech zašlete formální výpověď z nájmu a přistupte k čerpání kauce. Naši klienti mají na tyto situace připravené postupy a šablony dokumentů, které respektují právní náležitosti a garantují maximální úspěšnost při vymáhání.
-- **[C1.123]** *tlačítko:* Jaké jsou nejčastější typy poškození nemovitosti a jak se před nimi chránit?
-- **[C1.124]** *odstavec:* Nejčastější jsou drobná mechanická poškození (díry ve zdech, poškrábané podlahy), poškozené vybavení z důvodu nesprávného používání, znečištění vyžadujícím nákladnou sanaci (kvůli domácím mazlíčkům, kouření) a poškozené instalace z důvodu zanedbání údržby. Pro ochranu je klíčový podrobný předávací protokol s fotodokumentací, adekvátní kauce, správné pojištění nemovitosti pro pronájem a jasné definování povinností nájemníků ohledně údržby ve smlouvě.
-- **[C1.125]** *tlačítko:* Co dělat, když nájemník odmitá opustit nemovitost po ukončení nájmu?
-- **[C1.126]** *odstavec:* Pokud nájemník neopustí nemovitost po skončení nájemní smlouvy, doporučujeme tento postup: nejprve zašlete písemnou výzvu s konkrétním termínem na vystěhování, pořiďte záznam o odmítnutí předání, podání žaloby na vyklizení nemovitosti a následně návrh na exekuci. Klienti našeho VIP programu mají přednostní právní asistenci a optimalizované postupy, které celý proces urychly řádově o 30-50% oproti běžným případům.
-- **[C1.127]** *nadpis H2:* Omezená kapacita pro nové klienty
-- **[C1.128]** *odstavec:* Abychom zajistili prvotřídní kvalitu služeb, přijímáme pouze omezený počet nových klientů měsíčně.
-- **[C1.129]** *nadpis H3:* Rezervujte si místo ještě dnes
-- **[C1.130]** *odstavec:* Bereme omezený počet nových klientů měsíčně, abychom stihli každému dát čas, který potřebuje. Až bude kapacita plná, řekneme vám to rovnou a domluvíme termín.
-- **[C1.131]** *volba:* Typ nemovitosti k pronájmu
-- **[C1.132]** *volba:* Byt
-- **[C1.133]** *volba:* Rodinný dům
-- **[C1.134]** *volba:* Komerční prostor
-- **[C1.135]** *volba:* Jiné
-- **[C1.136]** *popisek:* Souhlasím se zpracováním osobních údajů za účelem vyřízení poptávky.
-- **[C1.137]** *text:* Máme to. Ozveme se do 24 hodin v pracovní dny.
-- **[C1.138]** *odstavec:* Nechcete čekat? Zavolejte rovnou na 603 834 921 .
-- **[C1.139]** *odstavec:* Odpovíme vám do 24 hodin v pracovní dny. Nejrychleji se domluvíme na 603 834 921.
-- **[C1.140]** *text:* Bez závazků
-- **[C1.141]** *text:* 100% garance spokojenosti
-- **[C1.142]** *text:* Odborná podpora
-- **[C1.143]** *nadpis H2:* Zdarma e-book pro nové pronajímatele
-- **[C1.144]** *odstavec:* Získejte komplexní průvodce úspěšným pronájmem nemovitosti. Více než 50 stran praktických tipů, rad a vzorových dokumentů.
-- **[C1.145]** *odrážka:* Jak stanovit optimální nájemné
-- **[C1.146]** *odrážka:* Checklist pro prověření nájemníků
-- **[C1.147]** *odrážka:* Vzorové dokumenty a formuláře
-- **[C1.148]** *odrážka:* Daňové tipy pro pronajímatele
-- **[C1.149]** *odrážka:* Řešení nejčastějších problémů
-- **[C1.150]** *odstavec:* Náš tip: "Díky našemu e-booku budete mít kompletní přehled o tom, jak pronájem nemovitosti zvládnout bez problémů."
+- **[C1.90]** *odkaz:* Chci začít spolu s vámi
+- **[C1.91]** *nadpis H2:* Nejčastější otázky o ochraně před problémovými nájemníky
+- **[C1.92]** *odstavec:* Odpovídáme na dotazy, které pronajímatelé řeší při zajišťování bezpečného pronájmu
+- **[C1.93]** *tlačítko:* Jak poznám potenciálně problémového nájemníka ještě před podpisem smlouvy?
+- **[C1.94]** *odstavec:* Problémového nájemníka lze často odhalit už při prvních interakcích. Varovné signály jsou: vyhýbavé odpovědi na otázky o zaměstnání nebo předchozích nájmech, neochota doložit příjmy, tlak na rychlé uzavření smlouvy bez důkladného prověření, nabízení hotovostních záloh místo standardních převodů, nebo nevysvětlené změny v požadavcích. Prověření v insolvenčním rejstříku, evidenci exekucí a u předchozího pronajímatele riziko výrazně sníží, úplně vyloučit ho nedokáže nikdo.
+- **[C1.95]** *tlačítko:* Jaké právní nástroje nejvíce ochrání mou nemovitost při pronájmu?
+- **[C1.96]** *odstavec:* Klíčovým nástrojem je profesionálně sestavená nájemní smlouva, která jasně definuje všechna práva a povinnosti stran, postup při prodlení a při ukončení nájmu. Důležité jsou také podrobný předávací protokol s fotodokumentací stavu nemovitosti, notářský zápis s doložkou přímé vykonatelnosti pro rychlejší vymáhání a kauce ve správné výši. Smlouvu připravuje advokátka, se kterou spolupracujeme.
+- **[C1.97]** *tlačítko:* Jak správně nastavit výši kauce a jakou má právní ochranu?
+- **[C1.98]** *odstavec:* Kauce může být nejvýš trojnásobek měsíčního nájemného a je úročená. Doporučujeme ji vést na samostatném účtu a ve smlouvě popsat, kdy a jak se čerpá a vrací.
+- **[C1.99]** *tlačítko:* Jak postupovat, když nájemník přestane platit nájemné?
+- **[C1.100]** *odstavec:* Rychle. Hned nájemníka písemně upomeňte a vyzvěte k zaplacení. Když dluh dosáhne nájemného a služeb aspoň za tři měsíce, můžete dát výpověď bez výpovědní doby (§ 2291 OZ), předtím ale musíte nájemníka vyzvat k nápravě. Od nájmu bytu odstoupit nejde. Postup a znění výpovědi doporučujeme konzultovat s advokátem.
+- **[C1.101]** *tlačítko:* Jaké jsou nejčastější typy poškození nemovitosti a jak se před nimi chránit?
+- **[C1.102]** *odstavec:* Nejčastější jsou drobná mechanická poškození (díry ve zdech, poškrábané podlahy), poškozené vybavení z důvodu nesprávného používání, znečištění vyžadujícím nákladnou sanaci (kvůli domácím mazlíčkům, kouření) a poškozené instalace z důvodu zanedbání údržby. Pro ochranu je klíčový podrobný předávací protokol s fotodokumentací, adekvátní kauce, správné pojištění nemovitosti pro pronájem a jasné definování povinností nájemníků ohledně údržby ve smlouvě.
+- **[C1.103]** *tlačítko:* Co dělat, když nájemník odmitá opustit nemovitost po ukončení nájmu?
+- **[C1.104]** *odstavec:* Písemně ho vyzvěte k vyklizení s konkrétním termínem, nejméně 14 dní před podáním návrhu k soudu. Od roku 2026 lze u skončeného nájmu podat návrh na rozkaz k vyklizení, jinak žalobu na vyklizení. Vyklizení pak provede exekutor. Výměna zámku nebo vynesení věcí je protiprávní. Případ za vás můžeme vést, právní úkony dělá advokátka.
+- **[C1.105]** *nadpis H2:* Chcete byt pronajmout s námi?
+- **[C1.106]** *odstavec:* Pronájem s prověřeným nájemníkem, smlouvou od advokátky a předávacím protokolem. Na přání i správa. Plzeň a Praha.
+- **[C1.107]** *nadpis H3:* Napište nám o svém bytě
+- **[C1.108]** *odstavec:* Stačí pár údajů. Ozveme se, probereme výši nájmu a domluvíme další postup.
+- **[C1.109]** *volba:* Typ nemovitosti k pronájmu
+- **[C1.110]** *volba:* Byt
+- **[C1.111]** *volba:* Rodinný dům
+- **[C1.112]** *volba:* Komerční prostor
+- **[C1.113]** *volba:* Jiné
+- **[C1.114]** *popisek:* Souhlasím se zpracováním osobních údajů za účelem vyřízení poptávky.
+- **[C1.115]** *text:* Máme to. Ozveme se do 24 hodin v pracovní dny.
+- **[C1.116]** *odstavec:* Nechcete čekat? Zavolejte rovnou na 603 834 921 .
+- **[C1.117]** *odstavec:* Odpovíme vám do 24 hodin v pracovní dny. Nejrychleji se domluvíme na 603 834 921.
+- **[C1.118]** *text:* Bez závazků
+- **[C1.119]** *text:* Plzeň a Praha
+- **[C1.120]** *text:* Odborná podpora
 
 
 ## D) PRŮVODCE DIAGNOSTIKOU — `js/diagnostika.js`
@@ -617,7 +584,7 @@ je pravděpodobně na webu skrytý.
 - **[D.46]** *poznámka k možnosti:* Opakované zpoždění, vyhýbá se kontaktu, drobné dluhy na službách
 - **[D.47]** *popis lhůty:* Za touhle hranicí vzniká nárok na výpověď bez výpovědní doby. Pod ní máte nástrojů podstatně míň, proto se rozhoduje teď.
 - **[D.48]** *popis lhůty:* Zákonné maximum je trojnásobek nájemného. Jakmile ho dluh přeroste, jde ztráta plně z vaší kapsy.
-- **[D.49]** *popis lhůty:* Do této lhůty musí odejít písemná výzva k vyklizení. Jinak se nájem obnovuje a rychlá cesta padá.
+- **[D.49]** *popis lhůty:* U nájmu na dobu určitou musí do této lhůty odejít písemná výzva k vyklizení. Jinak se nájem obnovuje a rychlá cesta padá.
 - **[D.50]** *popis lhůty:* Výzva musí být doručena do bytu nebo do datové schránky nejméně 14 dní předem.
 - **[D.51]** *popis lhůty:* Lhůta začne běžet až dnem skončení nájmu. Připravte si výzvu dopředu, ať odejde hned první den — tím si necháte celé tři měsíce jako rezervu, ne jako termín.
 - **[D.52]** *popis lhůty:* Tolik zbývá do 

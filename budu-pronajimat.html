@@ -96,9 +96,9 @@
                 <div class="fade-in-up" x-intersect:enter="$el.classList.add('show')">
                     <div class="bg-blue-50 border border-blue-100 rounded-xl p-8 mb-8 shadow-sm">
                         <div class="flex items-center justify-center mb-4">
-                            <span class="text-5xl font-bold text-blue-600">84%</span>
+                            <span class="text-3xl font-bold text-blue-600">Začátek rozhoduje</span>
                         </div>
-                        <p class="text-xl font-semibold text-center text-gray-800">problémů s nájemníky vzniká kvůli špatně nastaveným podmínkám na začátku pronájmu.</p>
+                        <p class="text-xl font-semibold text-center text-gray-800">Řadě problémů s nájemníky jde předejít prověřením zájemce, dobrou smlouvou a kaucí.</p>
                     </div>
                     
                     <p class="text-lg text-gray-700 mb-6">
@@ -292,7 +292,7 @@
                                 <svg class="h-5 w-5 text-green-500 mr-2 mt-0.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                                 </svg>
-                                <span class="text-gray-700">Sankce za pozdní platby a porušení podmínek</span>
+                                <span class="text-gray-700">Úrok z prodlení a jasný postup při pozdní platbě</span>
                             </li>
                             <li class="flex items-start">
                                 <svg class="h-5 w-5 text-green-500 mr-2 mt-0.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -472,7 +472,7 @@
                         </div>
                         <p class="text-gray-700 mb-4">Mnoho majitelů nemovitostí vybírá nájemníky pouze podle prvního dojmu a neprovádí důkladné prověření.</p>
                         <div class="bg-red-50 p-4 rounded">
-                            <p class="text-sm text-red-700"><strong>Důsledky:</strong> Až 40% problematických nájemníků má historii problémů u předchozích pronajímatelů, které by odhalilo jednoduché prověření.</p>
+                            <p class="text-sm text-red-700"><strong>Důsledky:</strong> Dluhy a exekuce zájemce jsou veřejně dohledatelné. Kdo je nezkontroluje, zjistí je až od exekutora.</p>
                         </div>
                     </div>
                 </div>
@@ -508,7 +508,7 @@
                         </div>
                         <p class="text-gray-700 mb-4">Přehlížení pozdních plateb nájmu v počátcích nastavuje špatný precedens.</p>
                         <div class="bg-red-50 p-4 rounded">
-                            <p class="text-sm text-red-700"><strong>Důsledky:</strong> Více než 75% případů neplacení nájmu začíná drobnými opožděními, které pronajímatel přehlížel.</p>
+                            <p class="text-sm text-red-700"><strong>Důsledky:</strong> Neplacení často začíná drobnými opožděními. Kdo je přehlíží, přijde o čas na výzvu a výpověď.</p>
                         </div>
                     </div>
                 </div>
@@ -544,7 +544,7 @@
                         </div>
                         <p class="text-gray-700 mb-4">Nedostatečná evidence komunikace, kontrol a stavu nemovitosti.</p>
                         <div class="bg-red-50 p-4 rounded">
-                            <p class="text-sm text-red-700"><strong>Důsledky:</strong> Až 65% soudních sporů o škody na majetku prohrávají pronajímatelé kvůli nedostatečné dokumentaci stavu před nastěhováním.</p>
+                            <p class="text-sm text-red-700"><strong>Důsledky:</strong> Bez protokolu a fotek výchozího stavu se škoda u soudu těžko dokazuje.</p>
                         </div>
                     </div>
                 </div>
@@ -562,7 +562,7 @@
                         </div>
                         <p class="text-gray-700 mb-4">Ignorování pojištění nebo nedostatečné pokrytí specifických rizik spojených s pronájmem.</p>
                         <div class="bg-red-50 p-4 rounded">
-                            <p class="text-sm text-red-700"><strong>Důsledky:</strong> Průměrné finanční ztráty nepojištěných pronajímatelů dosahují až 120 000 Kč na jeden incident poškození majetku.</p>
+                            <p class="text-sm text-red-700"><strong>Důsledky:</strong> Škodu nad výši kauce pak platíte ze svého.</p>
                         </div>
                     </div>
                 </div>
@@ -601,7 +601,7 @@
                         </div>
                         <div>
                             <h3 class="text-xl font-semibold text-gray-900 mb-2">Důkladné prověření nájemníků</h3>
-                            <p class="text-gray-700">Využíváme speciální metodiku pro výběr spolehlivosti plateb a historií nájemníků. Prověříme rejstříky, předchozí nájmy a platební morálku. Jen 0,5% námi prověřených nájemníků se později stane problémovými.</p>
+                            <p class="text-gray-700">Využíváme speciální metodiku pro výběr spolehlivosti plateb a historií nájemníků. Prověříme rejstříky, předchozí nájmy a platební morálku.</p>
                         </div>
                     </div>
                     
@@ -634,43 +634,7 @@
                         </div>
                     </div>
                     
-                    <!-- Statistiky důvěry -->
-                    <div class="bg-white rounded-2xl shadow-xl overflow-hidden mt-8 fade-in-right" x-intersect:enter="$el.classList.add('show')">
-                        <div class="p-8">
-                            <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Proč nám důvěřují</h3>
-                            
-                            <div class="grid grid-cols-2 gap-6">
-                                <!-- Statistika 1 -->
-                                <div class="text-center">
-                                    <div class="text-4xl font-bold text-gray-900 mb-2">98%</div>
-                                    <h3 class="text-sm font-semibold text-gray-900 mb-1">Spokojených klientů</h3>
-                                    <p class="text-gray-600 text-xs">nemá nikdy problémy s nájemníky</p>
-                                </div>
-                                
-                                <!-- Statistika 2 -->
-                                <div class="text-center">
-                                    <div class="text-4xl font-bold text-gray-900 mb-2">12+</div>
-                                    <h3 class="text-sm font-semibold text-gray-900 mb-1">Let zkušeností</h3>
-                                    <p class="text-gray-600 text-xs">s pronájmy nemovitostí</p>
-                                </div>
-                                
-                                <!-- Statistika 3 -->
-                                <div class="text-center">
-                                    <div class="text-4xl font-bold text-gray-900 mb-2">4000+</div>
-                                    <h3 class="text-sm font-semibold text-gray-900 mb-1">Úspěšných pronájmů</h3>
-                                    <p class="text-gray-600 text-xs">bez problémů a bez dluhů</p>
-                                </div>
-                                
-                                <!-- Statistika 4 -->
-                                <div class="text-center">
-                                    <div class="text-4xl font-bold text-gray-900 mb-2">94%</div>
-                                    <h3 class="text-sm font-semibold text-gray-900 mb-1">Věrných klientů</h3>
-                                    <p class="text-gray-600 text-xs">pronajímá s námi opakovaně</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                                    </div>
             </div>
             
             <!-- CTA Button -->
@@ -680,85 +644,6 @@
                     <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                     </svg>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sekce: Příběhy úspěšných pronajímatelů -->
-    <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900 fade-in-up" x-intersect:enter="$el.classList.add('show')">Příběhy úspěšných pronajímatelů</h2>
-            <p class="text-xl text-center text-gray-600 mb-16 max-w-3xl mx-auto fade-in-up" x-intersect:enter="$el.classList.add('show')">Poslechněte si, jak ostatní zvládli svůj první pronájem s naší pomocí</p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Příběh 1 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden fade-in-up" x-intersect:enter="$el.classList.add('show')">
-                    <div class="relative pb-48">
-                        <img src="images/testimonial-1.jpg" class="absolute inset-0 h-full w-full object-cover" alt="Petr Novák, Praha">
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-baseline mb-2">
-                            <div class="text-yellow-500 flex">
-                                <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
-                                <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
-                                <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
-                                <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
-                                <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
-                            </div>
-                        </div>
-                        <blockquote class="italic text-gray-700 mb-4">"Díky profesionálnímu postupu jsem se vyhnul mnoha chybám. Konzultanti mi pomohli najít ideálního nájemníka, který v mém bytě bydlí již třetím rokem bez jediného problému."</blockquote>
-                        <div class="font-semibold text-gray-900">Petr Novák</div>
-                        <div class="text-gray-600 text-sm">Pronajímá byt 2+kk v Praze</div>
-                    </div>
-                </div>
-                
-                <!-- Příběh 2 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden fade-in-up" x-intersect:enter="$el.classList.add('show')">
-                    <div class="relative pb-48">
-                        <img src="images/testimonial-2.jpg" class="absolute inset-0 h-full w-full object-cover" alt="Lucie Svobodová, Brno">
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-baseline mb-2">
-                            <div class="text-yellow-500 flex">
-                                <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
-                                <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
-                                <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
-                                <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
-                                <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
-                            </div>
-                        </div>
-                        <blockquote class="italic text-gray-700 mb-4">"Po zdědění domu jsem vůbec nevěděla, jak začít s pronájmem. Jejich podpora mi dala jistotu, že vše dělám správně. Důkladné prověření nájemníků byl klíč k mému klidu."</blockquote>
-                        <div class="font-semibold text-gray-900">Lucie Svobodová</div>
-                        <div class="text-gray-600 text-sm">Pronajímá rodinný dům v Brně</div>
-                    </div>
-                </div>
-                
-                <!-- Příběh 3 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden fade-in-up" x-intersect:enter="$el.classList.add('show')">
-                    <div class="relative pb-48">
-                        <img src="images/testimonial-3.jpg" class="absolute inset-0 h-full w-full object-cover" alt="Martin Horák, Ostrava">
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-baseline mb-2">
-                            <div class="text-yellow-500 flex">
-                                <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
-                                <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
-                                <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
-                                <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
-                                <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
-                            </div>
-                        </div>
-                        <blockquote class="italic text-gray-700 mb-4">"Měl jsem špatnou zkušenost s prvním pronájmem, který jsem se pokusil řešit sám. Na doporučení jsem vyzkoušel jejich služby a rozdíl byl ohromující. Profesionální smlouva a předávací protokol mě ochránily."</blockquote>
-                        <div class="font-semibold text-gray-900">Martin Horák</div>
-                        <div class="text-gray-600 text-sm">Pronajímá 3 byty v Ostravě</div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="mt-12 text-center fade-in-up" x-intersect:enter="$el.classList.add('show')">
-                <a href="#kontakt" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition duration-300 shadow-md hover:shadow-lg">
-                    I vy můžete mít podobnou zkušenost
                 </a>
             </div>
         </div>
@@ -780,7 +665,7 @@
                         </svg>
                     </button>
                     <div x-show="open" x-transition class="p-6 bg-white border border-gray-200 rounded-b-lg mt-1">
-                        <p class="text-gray-700">Problémového nájemníka lze často odhalit už při prvních interakcích. Varovné signály jsou: vyhýbavé odpovědi na otázky o zaměstnání nebo předchozích nájmech, neochota doložit příjmy, tlak na rychlé uzavření smlouvy bez důkladného prověření, nabízení hotovostních záloh místo standardních převodů, nebo nevysvětlené změny v požadavcích. Naše metodika prověření zachytí 99,5% potenciálně problémových nájemníků ještě před podpisem smlouvy.</p>
+                        <p class="text-gray-700">Problémového nájemníka lze často odhalit už při prvních interakcích. Varovné signály jsou: vyhýbavé odpovědi na otázky o zaměstnání nebo předchozích nájmech, neochota doložit příjmy, tlak na rychlé uzavření smlouvy bez důkladného prověření, nabízení hotovostních záloh místo standardních převodů, nebo nevysvětlené změny v požadavcích. Prověření v insolvenčním rejstříku, evidenci exekucí a u předchozího pronajímatele riziko výrazně sníží, úplně vyloučit ho nedokáže nikdo.</p>
                     </div>
                 </div>
                 
@@ -793,7 +678,7 @@
                         </svg>
                     </button>
                     <div x-show="open" x-transition class="p-6 bg-white border border-gray-200 rounded-b-lg mt-1">
-                        <p class="text-gray-700">Klíčovým nástrojem je profesionálně sestavená nájemní smlouva, která jasně definuje všechna práva a povinnosti stran, sankce za porušení podmínek a postupy při ukončení nájmu. Důležité jsou také podrobný předávací protokol s fotodokumentací stavu nemovitosti, notářský zápis s doložkou přímé vykonatelnosti pro rychlejší vymáhání a kauce ve správné výši. Naše smlouvy chrání pronajímatele podle aktuální judikatury a obsahují speciální doložky proti obvyklým problémům.</p>
+                        <p class="text-gray-700">Klíčovým nástrojem je profesionálně sestavená nájemní smlouva, která jasně definuje všechna práva a povinnosti stran, postup při prodlení a při ukončení nájmu. Důležité jsou také podrobný předávací protokol s fotodokumentací stavu nemovitosti, notářský zápis s doložkou přímé vykonatelnosti pro rychlejší vymáhání a kauce ve správné výši. Smlouvu připravuje advokátka, se kterou spolupracujeme.</p>
                     </div>
                 </div>
                 
@@ -806,7 +691,7 @@
                         </svg>
                     </button>
                     <div x-show="open" x-transition class="p-6 bg-white border border-gray-200 rounded-b-lg mt-1">
-                        <p class="text-gray-700">Optimální výše kauce je 2-3 měsíční nájemné v závislosti na hodnotě vybavení a lokalitě. Pro maximální právní ochranu doporučujeme evidovat kauci na samostatném účtu (usnadňuje dokazování při sporech) a podrobně ve smlouvě specifikovat podmínky jejího čerpání a vrácení. Nastavení kauce a její ochranu máme detailně propracovanou v našich smlouvách, včetně mechanismů rychlého čerpání při neplacení nájmu a jasných deadlinů.</p>
+                        <p class="text-gray-700">Kauce může být nejvýš trojnásobek měsíčního nájemného a je úročená. Doporučujeme ji vést na samostatném účtu a ve smlouvě popsat, kdy a jak se čerpá a vrací.</p>
                     </div>
                 </div>
                 
@@ -819,7 +704,7 @@
                         </svg>
                     </button>
                     <div x-show="open" x-transition class="p-6 bg-white border border-gray-200 rounded-b-lg mt-1">
-                        <p class="text-gray-700">Při neplacení nájemného je klíčová rychlost reakce. Okamžitě kontaktujte nájemníka a zašlete písemnou upomínku. Pokud do 5 dnů neplatí, zašlete druhou upomínku s urgencí a výhradou odstoupení od smlouvy. Po 10 dnech zašlete formální výpověď z nájmu a přistupte k čerpání kauce. Naši klienti mají na tyto situace připravené postupy a šablony dokumentů, které respektují právní náležitosti a garantují maximální úspěšnost při vymáhání.</p>
+                        <p class="text-gray-700">Rychle. Hned nájemníka písemně upomeňte a vyzvěte k zaplacení. Když dluh dosáhne nájemného a služeb aspoň za tři měsíce, můžete dát výpověď bez výpovědní doby (§ 2291 OZ), předtím ale musíte nájemníka vyzvat k nápravě. Od nájmu bytu odstoupit nejde. Postup a znění výpovědi doporučujeme konzultovat s advokátem.</p>
                     </div>
                 </div>
                 
@@ -845,7 +730,7 @@
                         </svg>
                     </button>
                     <div x-show="open" x-transition class="p-6 bg-white border border-gray-200 rounded-b-lg mt-1">
-                        <p class="text-gray-700">Pokud nájemník neopustí nemovitost po skončení nájemní smlouvy, doporučujeme tento postup: nejprve zašlete písemnou výzvu s konkrétním termínem na vystěhování, pořiďte záznam o odmítnutí předání, podání žaloby na vyklizení nemovitosti a následně návrh na exekuci. Klienti našeho VIP programu mají přednostní právní asistenci a optimalizované postupy, které celý proces urychly řádově o 30-50% oproti běžným případům.</p>
+                        <p class="text-gray-700">Písemně ho vyzvěte k vyklizení s konkrétním termínem, nejméně 14 dní před podáním návrhu k soudu. Od roku 2026 lze u skončeného nájmu podat návrh na rozkaz k vyklizení, jinak žalobu na vyklizení. Vyklizení pak provede exekutor. Výměna zámku nebo vynesení věcí je protiprávní. Případ za vás můžeme vést, právní úkony dělá advokátka.</p>
                     </div>
                 </div>
             </div>
@@ -856,13 +741,13 @@
     <section class="py-16 bg-gradient-to-br from-blue-600 to-blue-800 text-white" id="kontakt">
         <div class="container mx-auto px-4">
             <div class="max-w-5xl mx-auto text-center">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in-up" x-intersect:enter="$el.classList.add('show')">Omezená kapacita pro nové klienty</h2>
-                <p class="text-xl mb-8 fade-in-up" x-intersect:enter="$el.classList.add('show')">Abychom zajistili prvotřídní kvalitu služeb, přijímáme pouze omezený počet nových klientů měsíčně.</p>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in-up" x-intersect:enter="$el.classList.add('show')">Chcete byt pronajmout s námi?</h2>
+                <p class="text-xl mb-8 fade-in-up" x-intersect:enter="$el.classList.add('show')">Pronájem s prověřeným nájemníkem, smlouvou od advokátky a předávacím protokolem. Na přání i správa. Plzeň a Praha.</p>
                 
                 <div class="bg-white text-gray-900 rounded-xl p-8 mb-10 max-w-2xl mx-auto shadow-2xl fade-in-up" x-intersect:enter="$el.classList.add('show')">
-                    <h3 class="text-2xl font-bold mb-6">Rezervujte si místo ještě dnes</h3>
+                    <h3 class="text-2xl font-bold mb-6">Napište nám o svém bytě</h3>
                     
-                    <p class="text-gray-700 mb-6">Bereme omezený počet nových klientů měsíčně, abychom stihli každému dát čas, který potřebuje. Až bude kapacita plná, řekneme vám to rovnou a domluvíme termín.</p>
+                    <p class="text-gray-700 mb-6">Stačí pár údajů. Ozveme se, probereme výši nájmu a domluvíme další postup.</p>
                     
                     <div x-data="poptavka()">
                       <form class="space-y-4" @submit.prevent="odeslat()" x-show="!hotovo">
@@ -919,78 +804,13 @@
                         <svg class="h-6 w-6 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
                         </svg>
-                        <span>100% garance spokojenosti</span>
+                        <span>Plzeň a Praha</span>
                     </div>
                     <div class="flex items-center fade-in-up" x-intersect:enter="$el.classList.add('show')">
                         <svg class="h-6 w-6 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
                         </svg>
                         <span>Odborná podpora</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Sekce: Nabídka e-booku -->
-    <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="bg-white rounded-xl shadow-xl overflow-hidden max-w-5xl mx-auto fade-in-up" x-intersect:enter="$el.classList.add('show')">
-                <div class="md:flex">
-                    <div class="md:w-1/2 p-8 md:p-12">
-                        <h2 class="text-3xl font-bold mb-4 text-gray-900">Zdarma e-book pro nové pronajímatele</h2>
-                        <p class="text-gray-700 mb-6">Získejte komplexní průvodce úspěšným pronájmem nemovitosti. Více než 50 stran praktických tipů, rad a vzorových dokumentů.</p>
-                        
-                        <ul class="space-y-3 mb-8">
-                            <li class="flex items-start">
-                                <svg class="h-5 w-5 text-green-500 mr-2 mt-0.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                </svg>
-                                <span class="text-gray-700">Jak stanovit optimální nájemné</span>
-                            </li>
-                            <li class="flex items-start">
-                                <svg class="h-5 w-5 text-green-500 mr-2 mt-0.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                </svg>
-                                <span class="text-gray-700">Checklist pro prověření nájemníků</span>
-                            </li>
-                            <li class="flex items-start">
-                                <svg class="h-5 w-5 text-green-500 mr-2 mt-0.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                </svg>
-                                <span class="text-gray-700">Vzorové dokumenty a formuláře</span>
-                            </li>
-                            <li class="flex items-start">
-                                <svg class="h-5 w-5 text-green-500 mr-2 mt-0.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                </svg>
-                                <span class="text-gray-700">Daňové tipy pro pronajímatele</span>
-                            </li>
-                            <li class="flex items-start">
-                                <svg class="h-5 w-5 text-green-500 mr-2 mt-0.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                </svg>
-                                <span class="text-gray-700">Řešení nejčastějších problémů</span>
-                            </li>
-                        </ul>
-                        
-                        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4">
-                            <div class="flex">
-                                <div class="flex-shrink-0">
-                                    <svg class="h-5 w-5 text-yellow-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
-                                    </svg>
-                                </div>
-                                <div class="ml-3">
-                                    <p class="text-sm text-yellow-700">
-                                        <strong>Náš tip:</strong> "Díky našemu e-booku budete mít kompletní přehled o tom, jak pronájem nemovitosti zvládnout bez problémů."
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="md:w-1/2 bg-gray-200 relative">
-                        <img src="images/ebook-cover.jpg" alt="E-book pro nové pronajímatele" class="absolute inset-0 h-full w-full object-cover">
                     </div>
                 </div>
             </div>

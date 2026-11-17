@@ -146,7 +146,7 @@ function evaluateTriage(a) {
     if (stage === 'ended_stays' || a.term === 'fixed_ended') {
       deadlines.push({
         label: '3 měsíce od skončení nájmu',
-        text: 'Do této lhůty musí odejít písemná výzva k vyklizení. Jinak se nájem obnovuje a rychlá cesta padá.',
+        text: 'U nájmu na dobu určitou musí do této lhůty odejít písemná výzva k vyklizení. Jinak se nájem obnovuje a rychlá cesta padá.',
       });
     }
     deadlines.push({
