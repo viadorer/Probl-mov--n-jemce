@@ -65,7 +65,7 @@ const TRIAGE_STEPS = [
   },
   {
     id: 'notice',
-    question: 'Poslal jste už něco písemně?',
+    question: 'Poslali jste už něco písemně?',
     hint: 'SMS ani telefonát se za doručenou výzvu obvykle nepovažují.',
     options: [
       { value: 'none', label: 'Zatím nic, jen jsme spolu mluvili' },
@@ -105,7 +105,7 @@ function evaluateTriage(a) {
     leverage.push('Dluh ve výši tří nájmů zakládá zvlášť závažné porušení povinností, tedy výpověď bez výpovědní doby.');
   }
   if (a.notice === 'demand' || a.notice === 'termination') {
-    leverage.push('Něco už jste poslal písemně, takže lhůty vám pravděpodobně běží. Ověříme doručení.');
+    leverage.push('Něco už jste poslali písemně, takže lhůty vám pravděpodobně běží. Ověříme doručení.');
   }
 
   if (noContract) {
@@ -124,7 +124,7 @@ function evaluateTriage(a) {
     blockers.push('Zatím chybí doložitelná písemná výzva, bez které soud návrh nepřijme.');
   }
   if (stage === 'early' && a.notice === 'none') {
-    blockers.push('Zatím jste nic neposlal písemně, takže o zpoždění neexistuje jediný doklad.');
+    blockers.push('Zatím jste nic neposlali písemně, takže o zpoždění neexistuje jediný doklad.');
   }
   if (stage === 'early') {
     leverage.push('Jste ve fázi, kde má výběr ještě smysl. Většina případů, které řešíme, se dala zastavit tady.');

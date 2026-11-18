@@ -329,7 +329,7 @@ function scoreTenant(i) {
       band: 'medium',
       bandLabel: 'Nelze potvrdit',
       bandNote:
-        'Body vycházejí z toho, co jste zadal, ale klíčové údaje nejsou ověřené: ' +
+        'Body vycházejí z toho, co jste zadali, ale klíčové údaje nejsou ověřené: ' +
         unverified.join(', ') +
         '. Dokud to nedoložíte, je tohle jen odhad na základě tvrzení zájemce.',
       unverified,

@@ -35,8 +35,8 @@ je pravděpodobně na webu skrytý.
 
 ### A2. HERO
 
-- **[A2.1]** *text:* Od 1. 1. 2026 běží nové lhůty
-- **[A2.2]** *nadpis H1:* Váš byt zpátky. Bez toho, abyste to táhli sám.
+- **[A2.1]** *text:* Od 1. 1. 2026 platí nová pravidla
+- **[A2.2]** *nadpis H1:* Váš byt zpátky. Starosti nechte na nás.
 - **[A2.3]** *odstavec:* Převezmeme případ problémového nájemníka od první výzvy až po předání klíčů. Osmnáct starostí, které dnes řešíte vy, přejde na nás.
 - **[A2.4]** *odkaz:* Potřebuji vyřešit problém
 - **[A2.5]** *odkaz:* Prodat byt i s nájemníkem
@@ -106,9 +106,9 @@ je pravděpodobně na webu skrytý.
 ### A6. OSMNÁCT STAROSTÍ
 
 - **[A6.1]** *nadpis H2:* Osmnáct starostí, které přestanou být vaše
-- **[A6.2]** *odstavec:* Vlevo je váš dnešek, vpravo den po podpisu. Projděte si to a spočítejte, kolik z levé strany jste dělal za poslední měsíc.
+- **[A6.2]** *odstavec:* Vlevo je váš dnešek, vpravo den po podpisu. Projděte si to a spočítejte, kolik z levé strany jste dělali za poslední měsíc.
 - **[A6.3]** *text:* 01 · Komunikace a klid
-- **[A6.4]** *text:* Skládáte mu zprávy tak, aby to neznělo měkce, ale ani abyste si tím neuškodil
+- **[A6.4]** *text:* Skládáte mu zprávy tak, aby to neznělo měkce, ale ani abyste si tím neuškodili
 - **[A6.5]** *text:* Nepíšete mu vůbec. Komunikaci vedeme my a nereagujeme v afektu
 - **[A6.6]** *text:* Patnáctého otevíráte bankovnictví a koukáte, jestli přišla platba
 - **[A6.7]** *text:* Platby hlídáme my a víme, co se má stát ten den, kdy nepřijdou
@@ -125,13 +125,13 @@ je pravděpodobně na webu skrytý.
 - **[A6.18]** *text:* Doručujeme sami, na správné adresy a s dokladem, který obstojí u soudu
 - **[A6.19]** *text:* Obvoláváte advokáty, porovnáváte sazby a máte složit zálohu bez záruky
 - **[A6.20]** *text:* Advokátku máme. Rozpočet znáte předem a naše odměna je až po předání klíčů
-- **[A6.21]** *text:* Nevíte, jestli jste už něco nepokazil tou SMS nebo přijatou částkou
-- **[A6.22]** *text:* S advokátkou projdeme, co jste zatím udělal. Co se dá napravit, napravíme
+- **[A6.21]** *text:* Nevíte, jestli jste už něco nepokazili tou SMS nebo přijatou částkou
+- **[A6.22]** *text:* S advokátkou projdeme, co jste zatím udělali. Co se dá napravit, napravíme
 - **[A6.23]** *text:* Skládáte dohromady výpisy, zprávy a fotky a nevíte, co z toho je důkaz
 - **[A6.24]** *text:* Spis sestavíme za vás a víme, co soud u rozkazu vyžaduje
 - **[A6.25]** *text:* 03 · Soud a vyklizení
 - **[A6.26]** *text:* Berete si volno v práci na jednání, o kterých nevíte, kolik jich bude
-- **[A6.27]** *text:* Rozkaz k vyklizení se vydává bez jednání a zastupuje vás advokátka. Když nájemník podá odpor, jednání bude, ale nejdete na něj sám
+- **[A6.27]** *text:* Rozkaz k vyklizení se vydává bez jednání a zastupuje vás advokátka. Když nájemník podá odpor, jednání bude, ale nepůjdete na něj sami
 - **[A6.28]** *text:* Sháníte exekutora a domlouváte termín vyklizení
 - **[A6.29]** *text:* Vyklizení domluvíme, zkoordinujeme a jsme u něj
 - **[A6.30]** *text:* Nevíte, kam s jeho věcmi. Vyhodit se nesmí, ale skladovat je nemáte kde
@@ -171,7 +171,7 @@ je pravděpodobně na webu skrytý.
 - **[A7.11]** *odstavec:* Návrh podává a u soudu vás zastupuje advokátka na základě vaší smlouvy s ní. My koordinujeme vyklizení: exekutor, stěhování, výměna zámků, převzetí bytu.
 - **[A7.12]** *text:* Vyčíslení a vymáhání dluhu
 - **[A7.13]** *odstavec:* Dlužné nájemné, škody a náklady sečteme a advokátka je uplatní. Kolik se reálně vymůže, záleží na majetku nájemníka.
-- **[A7.14]** *text:* A k tomu, protože nechceme, abyste to řešil znovu
+- **[A7.14]** *text:* A k tomu, protože nechceme, abyste to řešili znovu
 - **[A7.15]** *odstavec:* Tři služby, které jinak prodáváme samostatně. V programu je nedoplácíte.
 - **[A7.16]** *text:* Prověření dalšího nájemníka.
 - **[A7.17]** *text:* Insolvenční rejstřík, evidence exekucí, ověření příjmu, reference.
@@ -361,7 +361,7 @@ je pravděpodobně na webu skrytý.
 - **[B2.53]** *volba:* Evidence exekucí čistá
 - **[B2.54]** *volba:* Nalezena exekuce
 - **[B2.55]** *volba:* Nalezena insolvence
-- **[B2.56]** *odstavec:* Insolvenční rejstřík i centrální evidenci exekucí si můžete ověřit sám. Prověření zájemce děláme i za vás.
+- **[B2.56]** *odstavec:* Insolvenční rejstřík i centrální evidenci exekucí si můžete ověřit sami. Prověření zájemce děláme i za vás.
 - **[B2.57]** *popisek:* Má aktivní exekuci
 - **[B2.58]** *popisek:* Nájemník má ručitele
 - **[B2.59]** *popisek:* Měsíční příjem ručitele (Kč)
@@ -391,7 +391,7 @@ je pravděpodobně na webu skrytý.
 - **[B2.83]** *odstavec:* Dokud nejsou ověřené rejstříky, doložený příjem a reference, výsledek nemůže vyjít jako nízké riziko. Je to odhad na základě tvrzení zájemce.
 - **[B2.84]** *odstavec:* Všechna klíčová ověření jsou hotová. Skóre stojí na doložených údajích.
 - **[B2.85]** *tlačítko:* ← Upravit údaje
-- **[B2.86]** *odstavec:* Výpočet běží u vás v prohlížeči. Nic se neodesílá, dokud sám nechcete.
+- **[B2.86]** *odstavec:* Výpočet běží u vás v prohlížeči. Nic se neodesílá, dokud sami nechcete.
 - **[B2.87]** *text:* Problémový nájemník
 - **[B2.88]** *odstavec:* Vedení případů problémových nájemníků od výzvy po předání klíčů. Právní úkony zajišťuje advokátka Zuzana Schneider Valentová.
 - **[B2.89]** *text:* Kontakt
@@ -541,7 +541,7 @@ je pravděpodobně na webu skrytý.
 - **[D.3]** *otázka:* Na jakou dobu je nájem sjednaný?
 - **[D.4]** *otázka:* Kolik měsíčních nájmů zhruba dluží?
 - **[D.5]** *otázka:* Jak dlouho už to trvá?
-- **[D.6]** *otázka:* Poslal jste už něco písemně?
+- **[D.6]** *otázka:* Poslali jste už něco písemně?
 - **[D.7]** *nápověda:* Vyberte, co sedí nejvíc. Podrobnosti doladíme na hovoru.
 - **[D.8]** *nápověda:* Tohle rozhoduje o tom, jestli je pro vás dostupná rychlá cesta.
 - **[D.9]** *nápověda:* Dluh ve výši tří nájmů otevírá nejsilnější nástroj, jaký pronajímatel má.
