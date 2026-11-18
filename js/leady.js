@@ -101,7 +101,9 @@ async function odeslatLead(data) {
     marketing_consent: data.marketing_consent || false,
     website: data.website || '',
     _formElapsedMs: data._formElapsedMs,
-    metadata: { ...(data.metadata || {}), form: (data.metadata && data.metadata.form) || slugStranky() },
+    // form = konkrétní formulář (zdroj), podle něj backend určí typ případu
+    // a přiřazení. Stránka zvlášť, ať jde poznat, kde formulář byl.
+    metadata: { ...(data.metadata || {}), form: (data.metadata && data.metadata.form) || data.source || slugStranky(), stranka: slugStranky() },
     visitor_data: navstevnik(),
   };
 
@@ -128,6 +130,10 @@ async function odeslatLead(data) {
     const vysledek = await res.json();
     // 'ok' místo UUID znamená, že to backend vyhodnotil jako robota.
     const ulozeno = !!vysledek.id && vysledek.id !== 'ok';
+    // Konverze do GA, jen když lead opravdu vznikl.
+    if (ulozeno && typeof window.gtag === 'function') {
+      try { window.gtag('event', 'generate_lead', { form: telo.metadata.form }); } catch (e) { /* měření nesmí shodit formulář */ }
+    }
     return { ulozeno, prijato: true, id: vysledek.id, chyba: '' };
   } catch (e) {
     return { ulozeno: false, prijato: false, chyba: 'Spojení se nepodařilo navázat.' };

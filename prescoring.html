@@ -316,14 +316,18 @@
             </div>
             <label class="flex items-start gap-2.5 text-[13px] text-white/70 cursor-pointer">
               <input type="checkbox" class="mt-0.5 w-4 h-4" x-model="consent">
-              <span>Souhlasím se zpracováním osobních údajů, aby mi PTF reality zobrazila výsledek a ozvala se s nabídkou prověření nájemníka a pronájmu.</span>
+              <span>Souhlasím se zpracováním jména a e-mailu, aby mi PTF reality zobrazila rozpad a doporučení.</span>
+            </label>
+            <label class="flex items-start gap-2.5 text-[13px] text-white/70 cursor-pointer">
+              <input type="checkbox" class="mt-0.5 w-4 h-4" x-model="marketing">
+              <span>Nepovinné: můžete se mi ozvat s nabídkou prověření nájemníka, pronájmu nebo správy.</span>
             </label>
             <p x-show="error" x-text="error" class="text-sm text-red-300"></p>
             <button @click="unlock()" :disabled="sending"
               class="w-full px-6 py-4 rounded-full bg-white text-gray-900 font-bold hover:bg-gray-100 transition-colors disabled:opacity-50">
               <span x-text="sending ? 'Odesílám…' : 'Zobrazit rozpad a doporučení'"></span>
             </button>
-            <p class="text-[12px] text-white/50">Údaje o zájemci zadáváte bez jména. Uložíme je spolu s výsledkem k vašemu dotazu.</p>
+            <p class="text-[12px] text-white/50">Údaje o zájemci zadáváte bez jména. Ukládáme jen výsledné skóre a doporučení, ne vyplněné údaje.</p>
           </div>
         </div>
       </template>

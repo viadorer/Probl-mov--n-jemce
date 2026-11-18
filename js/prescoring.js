@@ -403,6 +403,7 @@ function prescoring() {
     jmeno: '',
     email: '',
     consent: false,
+    marketing: false,
     sent: false,
     hp: honeypot(),
     result: null,
@@ -498,9 +499,9 @@ function prescoring() {
         message: 'Prescoring nájemníka: skóre ' + (this.result && this.result.score) + ' ze 100.',
         source: 'prescoring_landing',
         gdpr_consent: this.consent,
+        marketing_consent: this.marketing,
         ...this.hp.payload(),
         metadata: {
-          prescoring_form: this.form,
           prescoring_result: this.result,
           completed_at: new Date().toISOString(),
         },

@@ -1,0 +1,9 @@
+# GitHub Pages (Jekyll): interní podklady se nenasazují.
+# TEXTY.md a nástroje byly veřejně dostupné (audit 18. 11. 2026).
+exclude:
+  - TEXTY.md
+  - CENIK.md
+  - nastroje
+  - archiv
+  - "_*.md"
+  - "_*.html"

@@ -273,7 +273,7 @@ je pravděpodobně na webu skrytý.
 - **[A13.8]** *odrážka:* Prescoring nájemníka zdarma
 - **[A13.9]** *odrážka:* Teprve budu pronajímat
 - **[A13.10]** *odrážka:* Blog
-- **[A13.11]** *text:* © 2026 problemovynajemnik.cz
+- **[A13.11]** *text:* © 2026 PTF reality, s.r.o., IČO 06684394, Dřevěná 99/3, 301 00 Plzeň, zapsaná u Krajského soudu v Plzni, C 35601
 - **[A13.12]** *odkaz:* Ochrana osobních údajů
 - **[A13.13]** *odkaz:* Cookies
 - **[A13.14]** *odkaz:* Obchodní podmínky
@@ -368,7 +368,7 @@ je pravděpodobně na webu skrytý.
 - **[B2.71]** *volba:* Známý
 - **[B2.72]** *volba:* Jiný
 - **[B2.73]** *tlačítko:* Zpět
-- **[B2.74]** *text:* Našli jsme rizikových faktorů a konkrétních doporučení Rozpad ukazuje, co přesně tohle skóre srazilo dolů, a co si u tohohle nájemníka ošetřit ve smlouvě, aby vás to nestálo peníze. Hned ho zobrazíme. Jméno a příjmení vas@email.cz Souhlasím se zpracováním osobních údajů, aby mi PTF reality zobrazila výsledek a ozvala se s nabídkou prověření nájemníka a pronájmu. Údaje o zájemci zadáváte bez jména. Uložíme je spolu s výsledkem k vašemu dotazu. Co skóre srazilo dolů ✕ Co si u tohohle nájemníka ošetřit ✓ Skóre vám řekne riziko. Nezbaví vás ho. Prověříme zájemce v insolvenčním rejstříku a evidenci exekucí, ověříme příjem, zavoláme předchozímu pronajímateli a připravíme smlouvu, která obstojí u soudu. A pokud už problémového nájemníka v bytě máte, řešíme i to. 603 834 921 Už mám problém Výsledek je orientační pomůcka, nikoli rozhodnutí, a nenahrazuje právní ani finanční poradenství. Při zpracování údajů o zájemcích postupujte v souladu s GDPR a uchovávejte jen to, co potřebujete.
+- **[B2.74]** *text:* Našli jsme rizikových faktorů a konkrétních doporučení Rozpad ukazuje, co přesně tohle skóre srazilo dolů, a co si u tohohle nájemníka ošetřit ve smlouvě, aby vás to nestálo peníze. Hned ho zobrazíme. Jméno a příjmení vas@email.cz Souhlasím se zpracováním jména a e-mailu, aby mi PTF reality zobrazila rozpad a doporučení. Nepovinné: můžete se mi ozvat s nabídkou prověření nájemníka, pronájmu nebo správy. Údaje o zájemci zadáváte bez jména. Ukládáme jen výsledné skóre a doporučení, ne vyplněné údaje. Co skóre srazilo dolů ✕ Co si u tohohle nájemníka ošetřit ✓ Skóre vám řekne riziko. Nezbaví vás ho. Prověříme zájemce v insolvenčním rejstříku a evidenci exekucí, ověříme příjem, zavoláme předchozímu pronajímateli a připravíme smlouvu, která obstojí u soudu. A pokud už problémového nájemníka v bytě máte, řešíme i to. 603 834 921 Už mám problém Výsledek je orientační pomůcka, nikoli rozhodnutí, a nenahrazuje právní ani finanční poradenství. Při zpracování údajů o zájemcích postupujte v souladu s GDPR a uchovávejte jen to, co potřebujete.
 - **[B2.75]** *text:* Průběžné skóre
 - **[B2.76]** *text:* Bonita nájemníka
 - **[B2.77]** *text:* ze 100
