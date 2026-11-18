@@ -224,75 +224,64 @@ je pravděpodobně na webu skrytý.
 - **[A9.5]** *odkaz:* Spustit prescoring zdarma
 - **[A9.6]** *zadání pro fotografa (skryté):* Screenshot Skutečný výstup prescoringu Snímek výsledku s velkým skóre, pásmem a rozpadem rizik. Ideálně případ, který dopadl špatně. Vyfoť to i na mobilu v ruce, většina lidí to otevře v telefonu. Proč to prodává: nikdo neklikne na nástroj, o kterém neví, jak vypadá. Náhled výstupu zvedne prokliky a ukáže, že to není další formulář na sběr e-mailů.
 
-### A10. DŮVĚRA
+### A10. ZAKÁZANÁ ŘEŠENÍ
 
-- **[A10.1]** *nadpis H2:* Kdo případ povede
-- **[A10.2]** *zadání pro fotografa (skryté):* Portrét David, pas nahoru, neutrální pozadí, denní světlo. Ne oblek s kravatou, ale ani tričko. Pohled do objektivu.
-- **[A10.3]** *text:* David Choc
-- **[A10.4]** *text:* 30 let v realitách, PTF reality, specializace na pronájmy a správu
-- **[A10.5]** *odstavec:* Případ vede jeden konkrétní člověk od prvního hovoru až po předání klíčů. Nebudete pokaždé vysvětlovat všechno znovu někomu jinému.
-- **[A10.6]** *text:* Právní část zajišťuje advokátka Zuzana Schneider Valentová
-- **[A10.7]** *odstavec:* Sepis podání, právní úkony a zastoupení u soudu zajišťuje advokátka Zuzana Schneider Valentová. Naší rolí je vedení případu, dokumentace, komunikace s nájemníkem a koordinace celého procesu — vy máte jeden kontakt a nemusíte řešit, co komu poslat.
-- **[A10.8]** *zadání pro fotografa (skryté):* Foto nebo logo Advokát, se kterým spolupracujete Portrét advokáta se jménem a číslem zápisu v ČAK, nebo aspoň logo kanceláře. Nejlepší je společná fotka vás dvou v kanceláři. Proč to prodává: „spolupracující advokátní kancelář" bez jména zní jako výmluva. Konkrétní jméno je zároveň splnění zákonné povinnosti i odpověď na námitku „proč vy a ne rovnou právník".
+- **[A10.1]** *nadpis H2:* Čtyři věci, které vás napadnou. Ani jednu nedělejte.
+- **[A10.2]** *odstavec:* Tohle si majitelé hledají nejčastěji, obvykle pozdě večer, když jim dojde trpělivost. Chápeme proč. Problém je, že každá z nich obrátí případ proti vám — a vy jste do té chvíle byli ta strana, která má pravdu.
+- **[A10.3]** *text:* Vyměnit zámek
+- **[A10.4]** *odstavec:* Dokud nájemník byt fakticky užívá, je chráněný, i když nájem už skončil. Výměnou zámku mu bráníte v přístupu k jeho věcem a do jeho obydlí.
+- **[A10.5]** *text:* Co z toho bývá
+- **[A10.6]** *odstavec:* Domáhá se obnovení stavu, vy platíte zámečníka podruhé a k tomu jeho náklady. V horším případě je z toho trestní rovina a vy se ze žalobce stanete obviněným.
+- **[A10.7]** *text:* Odpojit vodu, elektřinu nebo topení
+- **[A10.8]** *odstavec:* Nejčastější rada z diskuzí a nejdražší omyl. Odběr služeb souvisí s bydlením, ne s tím, jestli je někdo platí.
+- **[A10.9]** *text:* Co z toho bývá
+- **[A10.10]** *odstavec:* Nárok na náhradu škody a silný argument pro nájemníka u soudu. Případ, který byl o jeho dluhu, je najednou o vašem jednání.
+- **[A10.11]** *text:* Zavolat policii, ať ho vystěhuje
+- **[A10.12]** *odstavec:* Policie spor mezi pronajímatelem a nájemníkem neřeší, je to soukromoprávní věc. Přijede kvůli narušení pořádku, ale nikoho nevystěhuje.
+- **[A10.13]** *text:* Jak to je
+- **[A10.14]** *odstavec:* Vyklizení nařizuje soud a provádí exekutor nebo soudní vykonavatel. Jiná cesta neexistuje — proto je celý spor o to, jak rychle se k tomu rozhodnutí dostanete.
+- **[A10.15]** *text:* Vystěhovat mu věci nebo si je nechat
+- **[A10.16]** *odstavec:* Ani po vyklizení nejsou jeho věci vaše. Zadržovací právo má úzké podmínky a svépomocné vyklizení mezi ně nepatří.
+- **[A10.17]** *text:* Co z toho bývá
+- **[A10.18]** *odstavec:* Odpovědnost za škodu na věcech, jejichž hodnotu si určí on. Proto se u řádného vyklizení dělá soupis a věci jdou do úschovy.
+- **[A10.19]** *nadpis H3:* Legální cesta existuje a od ledna 2026 trvá měsíce, ne roky
+- **[A10.20]** *odstavec:* Důvod, proč lidé sahají po zkratkách, je ten, že řádná cesta bývala nekonečná. To se změnilo. Rozkaz k vyklizení se vydává bez jednání a rozhodnutí může přijít za dva až pět měsíců — pokud jsou papíry v pořádku, lhůty se nepropásnou a nájemník nepodá odpor.
+- **[A10.21]** *odkaz:* Zjistit, jak dlouho by to trvalo u mě
+- **[A10.22]** *odkaz:* 603 834 921
 
-### A11. ZAKÁZANÁ ŘEŠENÍ
+### A11. FAQ
 
-- **[A11.1]** *nadpis H2:* Čtyři věci, které vás napadnou. Ani jednu nedělejte.
-- **[A11.2]** *odstavec:* Tohle si majitelé hledají nejčastěji, obvykle pozdě večer, když jim dojde trpělivost. Chápeme proč. Problém je, že každá z nich obrátí případ proti vám — a vy jste do té chvíle byli ta strana, která má pravdu.
-- **[A11.3]** *text:* Vyměnit zámek
-- **[A11.4]** *odstavec:* Dokud nájemník byt fakticky užívá, je chráněný, i když nájem už skončil. Výměnou zámku mu bráníte v přístupu k jeho věcem a do jeho obydlí.
-- **[A11.5]** *text:* Co z toho bývá
-- **[A11.6]** *odstavec:* Domáhá se obnovení stavu, vy platíte zámečníka podruhé a k tomu jeho náklady. V horším případě je z toho trestní rovina a vy se ze žalobce stanete obviněným.
-- **[A11.7]** *text:* Odpojit vodu, elektřinu nebo topení
-- **[A11.8]** *odstavec:* Nejčastější rada z diskuzí a nejdražší omyl. Odběr služeb souvisí s bydlením, ne s tím, jestli je někdo platí.
-- **[A11.9]** *text:* Co z toho bývá
-- **[A11.10]** *odstavec:* Nárok na náhradu škody a silný argument pro nájemníka u soudu. Případ, který byl o jeho dluhu, je najednou o vašem jednání.
-- **[A11.11]** *text:* Zavolat policii, ať ho vystěhuje
-- **[A11.12]** *odstavec:* Policie spor mezi pronajímatelem a nájemníkem neřeší, je to soukromoprávní věc. Přijede kvůli narušení pořádku, ale nikoho nevystěhuje.
-- **[A11.13]** *text:* Jak to je
-- **[A11.14]** *odstavec:* Vyklizení nařizuje soud a provádí exekutor nebo soudní vykonavatel. Jiná cesta neexistuje — proto je celý spor o to, jak rychle se k tomu rozhodnutí dostanete.
-- **[A11.15]** *text:* Vystěhovat mu věci nebo si je nechat
-- **[A11.16]** *odstavec:* Ani po vyklizení nejsou jeho věci vaše. Zadržovací právo má úzké podmínky a svépomocné vyklizení mezi ně nepatří.
-- **[A11.17]** *text:* Co z toho bývá
-- **[A11.18]** *odstavec:* Odpovědnost za škodu na věcech, jejichž hodnotu si určí on. Proto se u řádného vyklizení dělá soupis a věci jdou do úschovy.
-- **[A11.19]** *nadpis H3:* Legální cesta existuje a od ledna 2026 trvá měsíce, ne roky
-- **[A11.20]** *odstavec:* Důvod, proč lidé sahají po zkratkách, je ten, že řádná cesta bývala nekonečná. To se změnilo. Rozkaz k vyklizení se vydává bez jednání a rozhodnutí může přijít za dva až pět měsíců — pokud jsou papíry v pořádku, lhůty se nepropásnou a nájemník nepodá odpor.
-- **[A11.21]** *odkaz:* Zjistit, jak dlouho by to trvalo u mě
-- **[A11.22]** *odkaz:* 603 834 921
+- **[A11.1]** *nadpis H2:* Na co se ptají nejčastěji
+- **[A11.2]** *odstavec:* Informace na této stránce jsou orientační a nenahrazují právní poradenství. Konkrétní kroky ve vašem případě konzultujeme s advokátem.
 
-### A12. FAQ
+### A12. ZÁVĚREČNÉ CTA
 
-- **[A12.1]** *nadpis H2:* Na co se ptají nejčastěji
-- **[A12.2]** *odstavec:* Informace na této stránce jsou orientační a nenahrazují právní poradenství. Konkrétní kroky ve vašem případě konzultujeme s advokátem.
+- **[A12.1]** *nadpis H2:* Každý měsíc, který uplyne, zaplatíte vy
+- **[A12.2]** *odstavec:* Diagnostika trvá dvě minuty a je zdarma. Když z toho nic nebude, aspoň budete vědět, na čem jste.
+- **[A12.3]** *odkaz:* Spustit diagnostiku
+- **[A12.4]** *odkaz:* 603 834 921
 
-### A13. ZÁVĚREČNÉ CTA
+### A13. PATIČKA
 
-- **[A13.1]** *nadpis H2:* Každý měsíc, který uplyne, zaplatíte vy
-- **[A13.2]** *odstavec:* Diagnostika trvá dvě minuty a je zdarma. Když z toho nic nebude, aspoň budete vědět, na čem jste.
-- **[A13.3]** *odkaz:* Spustit diagnostiku
-- **[A13.4]** *odkaz:* 603 834 921
+- **[A13.1]** *text:* Problémový nájemník
+- **[A13.2]** *odstavec:* Vedení případů problémových nájemníků od výzvy po předání klíčů. Právní úkony zajišťuje advokátka Zuzana Schneider Valentová.
+- **[A13.3]** *text:* Kontakt
+- **[A13.4]** *odrážka:* +420 603 834 921
+- **[A13.5]** *odrážka:* info@ptf.cz
+- **[A13.6]** *odrážka:* Po–Pá 8:00–17:00
+- **[A13.7]** *text:* Další
+- **[A13.8]** *odrážka:* Prescoring nájemníka zdarma
+- **[A13.9]** *odrážka:* Teprve budu pronajímat
+- **[A13.10]** *odrážka:* Blog
+- **[A13.11]** *text:* © 2026 problemovynajemnik.cz
+- **[A13.12]** *odkaz:* Ochrana osobních údajů
+- **[A13.13]** *odkaz:* Cookies
+- **[A13.14]** *odkaz:* Obchodní podmínky
 
-### A14. PATIČKA
+### A14. STICKY CTA NA MOBILU
 
-- **[A14.1]** *text:* Problémový nájemník
-- **[A14.2]** *odstavec:* Vedení případů problémových nájemníků od výzvy po předání klíčů. Právní úkony zajišťuje advokátka Zuzana Schneider Valentová.
-- **[A14.3]** *text:* Kontakt
-- **[A14.4]** *odrážka:* +420 603 834 921
-- **[A14.5]** *odrážka:* info@ptf.cz
-- **[A14.6]** *odrážka:* Po–Pá 8:00–17:00
-- **[A14.7]** *text:* Další
-- **[A14.8]** *odrážka:* Prescoring nájemníka zdarma
-- **[A14.9]** *odrážka:* Teprve budu pronajímat
-- **[A14.10]** *odrážka:* Blog
-- **[A14.11]** *text:* © 2026 problemovynajemnik.cz
-- **[A14.12]** *odkaz:* Ochrana osobních údajů
-- **[A14.13]** *odkaz:* Cookies
-- **[A14.14]** *odkaz:* Obchodní podmínky
-
-### A15. STICKY CTA NA MOBILU
-
-- **[A15.1]** *odkaz:* Zavolat
-- **[A15.2]** *odkaz:* Spustit diagnostiku
+- **[A14.1]** *odkaz:* Zavolat
+- **[A14.2]** *odkaz:* Spustit diagnostiku
 
 
 ## B) PRESCORING — `prescoring.html`
