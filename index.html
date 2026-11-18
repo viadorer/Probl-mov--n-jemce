@@ -25,14 +25,8 @@
 <script src="js/diagnostika.js"></script>
 <script src="js/leady.js"></script>
 
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-6YFF3XYT5Z"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-6YFF3XYT5Z');
-</script>
+<!-- Souhlas s cookies, Google Analytics až po souhlasu -->
+<script src="/js/souhlas.js"></script>
 
 <style>
   [x-cloak]{display:none!important}
@@ -672,27 +666,20 @@
 
         <div class="mt-8 bg-gray-50 rounded-3xl p-8">
           <div class="font-extrabold mb-1">A k tomu, protože nechceme, abyste to řešili znovu</div>
-          <p class="text-gray-500 mb-6">Tři služby, které jinak prodáváme samostatně. V programu je nedoplácíte.</p>
+          <p class="text-gray-500 mb-6">Tři věci, které jsou součástí programu.</p>
 
           <div class="space-y-3.5">
             <div class="flex items-baseline justify-between gap-6 pb-3.5 border-b border-gray-200">
               <div><span class="font-bold">Prověření dalšího nájemníka.</span> <span class="text-gray-600">Insolvenční rejstřík, evidence exekucí, ověření příjmu, reference.</span></div>
-              <div class="num text-gray-400 line-through shrink-0">3 900 Kč</div>
             </div>
             <div class="flex items-baseline justify-between gap-6 pb-3.5 border-b border-gray-200">
               <div><span class="font-bold">Nájemní smlouva od advokátky, připravená na rok 2026.</span> <span class="text-gray-600">Splňuje podmínky pro rozkaz k vyklizení včetně doručování do datové schránky.</span></div>
-              <div class="num text-gray-400 line-through shrink-0">4 900 Kč</div>
             </div>
             <div class="flex items-baseline justify-between gap-6 pb-3.5 border-b border-gray-200">
               <div><span class="font-bold">Dvanáct měsíců hlídání plateb.</span> <span class="text-gray-600">Při prvním zpoždění jednáme hned. Právě tam vzniká další průšvih.</span></div>
-              <div class="num text-gray-400 line-through shrink-0">8 280 Kč</div>
             </div>
           </div>
 
-          <div class="flex items-baseline justify-between gap-6 pt-5 mt-4 border-t-2 border-gray-900">
-            <div class="font-extrabold">Hodnota, kterou nedoplácíte</div>
-            <div class="num font-extrabold text-xl">17 080 Kč</div>
-          </div>
         </div>
 
         <!-- FOTO 3 -->
@@ -1041,6 +1028,7 @@
       <span>&copy; 2026 PTF reality, s.r.o., IČO 06684394, Dřevěná 99/3, 301 00 Plzeň, zapsaná u Krajského soudu v Plzni, C 35601</span>
       <a href="gdpr.html" class="hover:text-white transition-colors">Ochrana osobních údajů</a>
       <a href="cookies.html" class="hover:text-white transition-colors">Cookies</a>
+      <a href="#" onclick="window.nastaveniCookies && window.nastaveniCookies(); return false;" class="hover:text-white transition-colors">Nastavení cookies</a>
       <a href="obchodni-podminky.html" class="hover:text-white transition-colors">Obchodní podmínky</a>
     </div>
   </div>

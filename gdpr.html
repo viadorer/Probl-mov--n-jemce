@@ -3,67 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ochrana osobních údajů (GDPR) | PTF reality</title>
+    <title>Ochrana osobních údajů | Problémový nájemník</title>
+    <meta name="description" content="Jak PTF reality zpracovává osobní údaje z formulářů na problemovynajemnik.cz.">
+    <link rel="canonical" href="https://www.problemovynajemnik.cz/gdpr.html">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="/js/souhlas.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
 </head>
 <body class="bg-gray-50">
-    <div class="max-w-4xl mx-auto px-4 py-16">
-        <h1 class="text-4xl font-bold text-gray-900 mb-8">Ochrana osobních údajů (GDPR)</h1>
-        
-        <div class="prose prose-lg max-w-none">
-            <p class="mb-6">
-                Společnost PTF reality, s.r.o., se sídlem Dřevěná 99/3, 301 00 Plzeň, IČO: 06684394, jako správce osobních údajů, 
-                zpracovává osobní údaje v souladu s Nařízením Evropského parlamentu a Rady (EU) 2016/679 ze dne 27. dubna 2016.
-            </p>
+    <div id="header-placeholder"></div>
+    <main class="max-w-3xl mx-auto px-4 pt-28 pb-16 text-gray-700 leading-relaxed">
 
-            <h2 class="text-2xl font-semibold text-gray-900 mt-8 mb-4">1. Rozsah zpracování osobních údajů</h2>
-            <p class="mb-4">Zpracováváme osobní údaje, které nám poskytnete v souvislosti s:</p>
-            <ul class="list-disc list-inside mb-6">
-                <li>Využíváním našich služeb</li>
-                <li>Vyplněním formuláře, diagnostiky případu nebo prescoringu na tomto webu</li>
-                <li>Registrací k newsletteru</li>
-                <li>Komunikací s námi</li>
-            </ul>
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Ochrana osobních údajů</h1>
+        <p class="mb-4">Správcem osobních údajů z tohoto webu je PTF reality, s.r.o., IČO 06684394, se sídlem Dřevěná 99/3, 301 00 Plzeň, zapsaná v obchodním rejstříku u Krajského soudu v Plzni, oddíl C, vložka 35601 (dále „my“). S čímkoli kolem osobních údajů se ozvěte na
+        <a href="mailto:info@ptf.cz" class="underline">info@ptf.cz</a> nebo <a href="tel:+420603834921" class="underline">603 834 921</a>.</p>
 
-            <h2 class="text-2xl font-semibold text-gray-900 mt-8 mb-4">2. Účel zpracování</h2>
-            <p class="mb-4">Vaše osobní údaje zpracováváme za účelem:</p>
-            <ul class="list-disc list-inside mb-6">
-                <li>Poskytování našich služeb</li>
-                <li>Zasílání informačních materiálů a newsletteru</li>
-                <li>Zlepšování našich služeb</li>
-                <li>Plnění zákonných povinností</li>
-            </ul>
+        <h2 class="text-xl font-semibold text-gray-900 mt-10 mb-3">Jaké údaje zpracováváme</h2>
+        <ul class="list-disc pl-5 space-y-1.5 mb-4">
+            <li><strong>Kontaktní údaje</strong>, které vyplníte: jméno, telefon, e-mail.</li>
+            <li><strong>Popis situace</strong>: odpovědi z diagnostiky případu (typ problému, jak dlouho trvá, typ nemovitosti, případně adresa a vlastní popis).</li>
+            <li><strong>Výsledek prescoringu</strong>: skóre, rizikové faktory a doporučení. Údaje o zájemci o nájem, které do prescoringu zadáte, neukládáme.</li>
+            <li><strong>Údaje o návštěvě</strong> odeslané s formulářem: stránka, odkud jste přišli, označení kampaně (UTM) a typ zařízení.</li>
+            <li><strong>IP adresa</strong> při odeslání formuláře, kvůli ochraně před roboty a zneužitím.</li>
+        </ul>
 
-            <h2 class="text-2xl font-semibold text-gray-900 mt-8 mb-4">3. Doba zpracování</h2>
-            <p class="mb-6">
-                Osobní údaje zpracováváme po dobu nezbytně nutnou k naplnění účelu zpracování, 
-                případně po dobu vyžadovanou příslušnými právními předpisy.
-            </p>
+        <h2 class="text-xl font-semibold text-gray-900 mt-10 mb-3">Proč a na jakém základě</h2>
+        <ul class="list-disc pl-5 space-y-1.5 mb-4">
+            <li><strong>Vyřízení vašeho dotazu a jednání o smlouvě</strong> (čl. 6 odst. 1 písm. b GDPR): ozveme se vám, probereme situaci a připravíme nabídku.</li>
+            <li><strong>Plnění smlouvy</strong>, pokud ji uzavřeme, a <strong>zákonné povinnosti</strong> (účetnictví, daně, praní peněz) podle čl. 6 odst. 1 písm. b a c.</li>
+            <li><strong>Obchodní nabídky</strong> (pronájem, správa, prověření nájemníka) jen s vaším souhlasem (čl. 6 odst. 1 písm. a). Souhlas je dobrovolný a jde kdykoli odvolat.</li>
+            <li><strong>Ochrana webu</strong> před roboty a zneužitím formulářů na základě oprávněného zájmu (čl. 6 odst. 1 písm. f).</li>
+            <li><strong>Měření návštěvnosti</strong> přes Google Analytics jen s vaším souhlasem, viz <a href="/cookies.html" class="underline">cookies</a>.</li>
+        </ul>
 
-            <h2 class="text-2xl font-semibold text-gray-900 mt-8 mb-4">4. Vaše práva</h2>
-            <p class="mb-4">V souvislosti se zpracováním osobních údajů máte následující práva:</p>
-            <ul class="list-disc list-inside mb-6">
-                <li>Právo na přístup k osobním údajům</li>
-                <li>Právo na opravu</li>
-                <li>Právo na výmaz</li>
-                <li>Právo na omezení zpracování</li>
-                <li>Právo na přenositelnost údajů</li>
-                <li>Právo vznést námitku</li>
-                <li>Právo kdykoli odvolat souhlas</li>
-                <li>Právo podat stížnost u Úřadu pro ochranu osobních údajů (www.uoou.cz)</li>
-            </ul>
-            <p class="mb-6">Údaje z formulářů ukládáme v našem systému pro správu klientů. Při řešení případu je předáváme jen tomu, kdo se na něm podílí, typicky spolupracující advokátce. Návštěvnost webu měříme přes Google Analytics.</p>
+        <h2 class="text-xl font-semibold text-gray-900 mt-10 mb-3">Komu údaje předáváme</h2>
+        <p class="mb-3">Údaje neprodáváme. Předáváme je jen tomu, kdo pro nás pracuje nebo se na vašem případu podílí:</p>
+        <ul class="list-disc pl-5 space-y-1.5 mb-4">
+            <li><strong>spolupracující advokátce</strong>, pokud s vaším souhlasem předáme případ k právním úkonům,</li>
+            <li><strong>dodavatelům IT</strong>, kteří pro nás údaje zpracovávají podle smlouvy: provoz serveru (Railway) a databáze (Supabase, Irsko), rozesílání e-mailů (Brevo, Ecomail), SMS, měření (Google Analytics, jen se souhlasem),</li>
+            <li><strong>úřadům</strong>, pokud to ukládá zákon.</li>
+        </ul>
+        <p class="mb-4">Někteří dodavatelé jsou firmy z USA (Google, Railway). Předání do USA chrání rámec EU–USA (Data Privacy Framework) nebo standardní smluvní doložky schválené Evropskou komisí.</p>
 
-            <h2 class="text-2xl font-semibold text-gray-900 mt-8 mb-4">5. Kontakt</h2>
-            <p class="mb-6">
-                V případě jakýchkoliv dotazů nebo žádostí týkajících se zpracování vašich osobních údajů 
-                nás můžete kontaktovat na e-mailu info@ptf.cz nebo na telefonu 603 834 921.
-            </p>
+        <h2 class="text-xl font-semibold text-gray-900 mt-10 mb-3">Jak dlouho údaje držíme</h2>
+        <ul class="list-disc pl-5 space-y-1.5 mb-4">
+            <li>Dotaz, ze kterého nevznikne spolupráce: 3 roky od posledního kontaktu.</li>
+            <li>Klientské údaje: po dobu spolupráce a 3 roky po jejím skončení.</li>
+            <li>Účetní doklady: 10 let, jak ukládá zákon.</li>
+            <li>Souhlas s obchodními nabídkami: do odvolání, nejdéle 5 let.</li>
+        </ul>
 
-            <p class="text-sm text-gray-600 mt-12">
-                Poslední aktualizace: 17. listopadu 2026
-            </p>
-        </div>
-    </div>
+        <h2 class="text-xl font-semibold text-gray-900 mt-10 mb-3">Vaše práva</h2>
+        <ul class="list-disc pl-5 space-y-1.5 mb-4">
+            <li>vědět, jaké údaje o vás máme, a dostat jejich kopii,</li>
+            <li>nechat je opravit, vymazat nebo omezit jejich zpracování,</li>
+            <li>dostat je ve strojově čitelné podobě,</li>
+            <li>vznést námitku proti zpracování na základě oprávněného zájmu,</li>
+            <li>kdykoli odvolat souhlas, aniž by tím bylo dotčeno zpracování před odvoláním,</li>
+            <li>podat stížnost u Úřadu pro ochranu osobních údajů (<a href="https://uoou.gov.cz" class="underline">uoou.gov.cz</a>).</li>
+        </ul>
+        <p class="mb-4">Žádost stačí poslat na <a href="mailto:info@ptf.cz" class="underline">info@ptf.cz</a>. Odpovíme nejpozději do měsíce.</p>
+
+        <p class="text-sm text-gray-500 mt-12">Poslední aktualizace: 18. listopadu 2026</p>
+    </main>
+    <div id="footer-placeholder"></div>
+    <script src="js/main.js"></script>
 </body>
 </html>

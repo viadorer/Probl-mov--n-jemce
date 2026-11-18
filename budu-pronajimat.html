@@ -1,17 +1,11 @@
 <!DOCTYPE html>
-<html lang="cs">
+<html lang="cs" style="overflow-x:clip">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teprve budu pronajímat - Profesionální přístup k pronájmu</title>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YFF3XYT5Z"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-6YFF3XYT5Z');
-    </script>
+    <!-- Souhlas s cookies, Google Analytics až po souhlasu -->
+<script src="/js/souhlas.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="js/leady.js"></script>
     <script defer src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
@@ -59,7 +53,7 @@
         }
     </style>
 </head>
-<body class="bg-white" x-data="{ showModal: false, isLandlord: localStorage.getItem('isLandlord') === 'true', showBanner: true }">
+<body class="bg-white" style="overflow-x:clip" x-data="{ showModal: false, isLandlord: localStorage.getItem('isLandlord') === 'true', showBanner: true }">
     <!-- Header placeholder -->
     <div id="header-placeholder"></div>
 

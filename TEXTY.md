@@ -172,30 +172,25 @@ je pravděpodobně na webu skrytý.
 - **[A7.12]** *text:* Vyčíslení a vymáhání dluhu
 - **[A7.13]** *odstavec:* Dlužné nájemné, škody a náklady sečteme a advokátka je uplatní. Kolik se reálně vymůže, záleží na majetku nájemníka.
 - **[A7.14]** *text:* A k tomu, protože nechceme, abyste to řešili znovu
-- **[A7.15]** *odstavec:* Tři služby, které jinak prodáváme samostatně. V programu je nedoplácíte.
+- **[A7.15]** *odstavec:* Tři věci, které jsou součástí programu.
 - **[A7.16]** *text:* Prověření dalšího nájemníka.
 - **[A7.17]** *text:* Insolvenční rejstřík, evidence exekucí, ověření příjmu, reference.
-- **[A7.18]** *text:* 3 900 Kč
-- **[A7.19]** *text:* Nájemní smlouva od advokátky, připravená na rok 2026.
-- **[A7.20]** *text:* Splňuje podmínky pro rozkaz k vyklizení včetně doručování do datové schránky.
-- **[A7.21]** *text:* 4 900 Kč
-- **[A7.22]** *text:* Dvanáct měsíců hlídání plateb.
-- **[A7.23]** *text:* Při prvním zpoždění jednáme hned. Právě tam vzniká další průšvih.
-- **[A7.24]** *text:* 8 280 Kč
-- **[A7.25]** *text:* Hodnota, kterou nedoplácíte
-- **[A7.26]** *text:* 17 080 Kč
-- **[A7.27]** *zadání pro fotografa (skryté):* Foto Listinná složka jednoho případu, rozložená na stole Seshora rozložené papíry: smlouva, výzva, výpověď, dodejky, protokol, fotodokumentace, návrh k soudu. Klidně dvacet listů přes celý stůl. Anonymizuj jména, ale ať je vidět objem. Proč to prodává: vizuální ospravedlnění ceny. Dokud vidí jen odrážky, cena zní vysoko. Když uvidí, kolik papírů by musel obstarat sám, zní levně.
-- **[A7.28]** *text:* Na začátku zaplatíte
-- **[A7.29]** *text:* 9 900 Kč
-- **[A7.30]** *odstavec:* Aktivační poplatek. Převezmeme případ, založíme spis a připravíme plnou moc. Odečítá se od konečné odměny. Když případ nevezmeme nebo byt nezískáme zpátky, vracíme ho celý.
-- **[A7.31]** *text:* Až po předání klíčů
-- **[A7.32]** *text:* Odměna za výsledek
-- **[A7.33]** *odstavec:* Konkrétní částku uvidíte v písemném plánu dřív, než cokoli podepíšete. Bez výsledku nevzniká.
-- **[A7.34]** *text:* Za výsledek platíte, jen když výsledek je
-- **[A7.35]** *odrážka:* Nedopadne to, odměnu neplatíte. Aktivační poplatek vracíme. Zůstávají jen poplatky soudu a exekutora a služby advokátky podle smlouvy s ní.
-- **[A7.36]** *odrážka:* Beznadějný případ řekneme rovnou. Co nedává smysl, nebereme a neúčtujeme.
-- **[A7.37]** *odrážka:* Nechcete čekat? Byt se dá prodat. I s nájemníkem uvnitř, investorovi, který s tím počítá.
-- **[A7.38]** *odkaz:* Zjistit, jak by to vypadalo u mě
+- **[A7.18]** *text:* Nájemní smlouva od advokátky, připravená na rok 2026.
+- **[A7.19]** *text:* Splňuje podmínky pro rozkaz k vyklizení včetně doručování do datové schránky.
+- **[A7.20]** *text:* Dvanáct měsíců hlídání plateb.
+- **[A7.21]** *text:* Při prvním zpoždění jednáme hned. Právě tam vzniká další průšvih.
+- **[A7.22]** *zadání pro fotografa (skryté):* Foto Listinná složka jednoho případu, rozložená na stole Seshora rozložené papíry: smlouva, výzva, výpověď, dodejky, protokol, fotodokumentace, návrh k soudu. Klidně dvacet listů přes celý stůl. Anonymizuj jména, ale ať je vidět objem. Proč to prodává: vizuální ospravedlnění ceny. Dokud vidí jen odrážky, cena zní vysoko. Když uvidí, kolik papírů by musel obstarat sám, zní levně.
+- **[A7.23]** *text:* Na začátku zaplatíte
+- **[A7.24]** *text:* 9 900 Kč
+- **[A7.25]** *odstavec:* Aktivační poplatek. Převezmeme případ, založíme spis a připravíme plnou moc. Odečítá se od konečné odměny. Když případ nevezmeme nebo byt nezískáme zpátky, vracíme ho celý.
+- **[A7.26]** *text:* Až po předání klíčů
+- **[A7.27]** *text:* Odměna za výsledek
+- **[A7.28]** *odstavec:* Konkrétní částku uvidíte v písemném plánu dřív, než cokoli podepíšete. Bez výsledku nevzniká.
+- **[A7.29]** *text:* Za výsledek platíte, jen když výsledek je
+- **[A7.30]** *odrážka:* Nedopadne to, odměnu neplatíte. Aktivační poplatek vracíme. Zůstávají jen poplatky soudu a exekutora a služby advokátky podle smlouvy s ní.
+- **[A7.31]** *odrážka:* Beznadějný případ řekneme rovnou. Co nedává smysl, nebereme a neúčtujeme.
+- **[A7.32]** *odrážka:* Nechcete čekat? Byt se dá prodat. I s nájemníkem uvnitř, investorovi, který s tím počítá.
+- **[A7.33]** *odkaz:* Zjistit, jak by to vypadalo u mě
 
 ### A8. ODKUP
 
@@ -276,7 +271,8 @@ je pravděpodobně na webu skrytý.
 - **[A13.11]** *text:* © 2026 PTF reality, s.r.o., IČO 06684394, Dřevěná 99/3, 301 00 Plzeň, zapsaná u Krajského soudu v Plzni, C 35601
 - **[A13.12]** *odkaz:* Ochrana osobních údajů
 - **[A13.13]** *odkaz:* Cookies
-- **[A13.14]** *odkaz:* Obchodní podmínky
+- **[A13.14]** *odkaz:* Nastavení cookies
+- **[A13.15]** *odkaz:* Obchodní podmínky
 
 ### A14. STICKY CTA NA MOBILU
 
