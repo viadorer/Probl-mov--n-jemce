@@ -1,184 +1,159 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - Problémový nájemce | Tipy a rady pro pronájem nemovitostí</title>
-    <meta name="description" content="Objevte užitečné tipy, právní rady a aktuální trendy v oblasti pronájmu nemovitostí. Blog od expertů Extra nájem.">
-    <meta name="keywords" content="pronájem nemovitostí, blog, tipy, právní rady, nájemní smlouva">
-    
-    <!-- Open Graph meta tags -->
-    <meta property="og:title" content="Blog - Extra nájem">
-    <meta property="og:description" content="Užitečné tipy a rady pro pronájem nemovitostí od expertů">
-    <meta property="og:image" content="/images/blog/blog-og-image.jpg">
-    <meta property="og:url" content="https://www.extranajem.cz/blog.html">
-    <meta property="og:type" content="website">
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <script src="/js/load-components.js"></script>
-    <script src="/js/souhlas.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog pro pronajímatele | Problémový nájemník</title>
+<meta name="description" content="Praktické články pro majitele bytů: výběr nájemníka, nájemní smlouva, daně, pojištění a cena nájmu.">
+<link rel="canonical" href="https://www.problemovynajemnik.cz/blog.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Blog pro pronajímatele | Problémový nájemník">
+<meta property="og:description" content="Praktické články pro majitele bytů: výběr nájemníka, nájemní smlouva, daně, pojištění a cena nájmu.">
+<meta property="og:url" content="https://www.problemovynajemnik.cz/blog.html">
+<meta property="og:image" content="https://www.problemovynajemnik.cz/images/blog/jisty-najem-nejbezpecnejsi-pronajem.jpg">
+<meta property="og:locale" content="cs_CZ">
+<link rel="icon" href="/images/logo.png">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="/js/souhlas.js"></script>
+
+<style>
+  body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+  .clanek{font-size:1.0625rem;line-height:1.75;color:#374151}
+  .clanek h2{font-size:1.5rem;line-height:1.3;font-weight:800;color:#111827;margin:2.5rem 0 .75rem}
+  .clanek h3{font-size:1.2rem;line-height:1.35;font-weight:700;color:#111827;margin:2rem 0 .5rem}
+  .clanek p{margin:0 0 1.1rem}
+  .clanek ul,.clanek ol{margin:0 0 1.1rem;padding-left:1.4rem}
+  .clanek ul{list-style:disc}.clanek ol{list-style:decimal}
+  .clanek li{margin:.3rem 0}
+  .clanek a{color:#111827;text-decoration:underline;text-underline-offset:3px}
+  .clanek strong{color:#111827}
+  .clanek table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:.95rem}
+  .clanek th,.clanek td{border-top:1px solid #E5E7EB;padding:.6rem .5rem;text-align:left;vertical-align:top}
+  .clanek .lead{font-size:1.2rem;color:#1F2937}
+  .clanek > div[class*="bg-"]{border-radius:1rem}
+  .clanek a[class*="rounded-full"]{text-decoration:none;color:#fff}
+</style>
 </head>
-<body class="min-h-screen bg-gray-50">
-    <!-- Navigation -->
-    <div id="navigation-container"></div>
+<body class="bg-white text-gray-900">
+<!-- Vygenerováno skriptem nastroje/sestav-blog.py, needitovat ručně. -->
+<nav class="bg-white/85 backdrop-blur-md sticky top-0 z-40 border-b border-gray-100">
+  <div class="max-w-7xl mx-auto px-6 flex justify-between items-center h-20">
+    <a href="/" class="flex items-center gap-3">
+      <img src="/images/logo.png" class="h-11 w-11 rounded-full shadow-md object-cover" alt="Problémový nájemník">
+      <span class="text-xl font-bold tracking-tight">Problémový nájemník</span>
+    </a>
+    <div class="flex items-center gap-8">
+      <div class="hidden lg:flex items-center gap-8 text-sm font-medium text-gray-600">
+        <a href="/#starosti" class="hover:text-gray-900 transition-colors">Co za vás převezmeme</a>
+        <a href="/#program" class="hover:text-gray-900 transition-colors">Ceník</a>
+        <a href="/#odkup" class="hover:text-gray-900 transition-colors">Prodej s nájemníkem</a>
+        <a href="/prescoring.html" class="hover:text-gray-900 transition-colors">Prescoring</a>
+        <a href="/blog.html" class="hover:text-gray-900 transition-colors">Blog</a>
+      </div>
+      <a href="tel:+420603834921" class="px-5 py-2.5 rounded-full bg-gray-900 text-white text-sm font-semibold hover:bg-gray-800 transition-colors">
+        <span class="hidden sm:inline">603 834 921</span><span class="sm:hidden">Zavolat</span>
+      </a>
+    </div>
+  </div>
+</nav>
 
-    <!-- Blog Header -->
-    <section class="pt-32 pb-16 bg-gradient-to-br from-[#0D28F2] to-blue-600">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
-                Blog Extra nájem
-            </h1>
-            <p class="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-                Praktické tipy, právní rady a nejnovější trendy v oblasti pronájmu nemovitostí
-            </p>
-        </div>
-    </section>
+<main class="max-w-5xl mx-auto px-6 pt-12 pb-20">
+  <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Blog pro pronajímatele</h1>
+  <p class="mt-3 text-lg text-gray-600 max-w-2xl">Praktické články pro majitele bytů: výběr nájemníka, smlouva, daně, pojištění a cena nájmu.</p>
+  <div class="mt-12 grid sm:grid-cols-2 gap-x-10 gap-y-14">
+  <a href="/blog/jisty-najem-nejbezpecnejsi-pronajem.html" class="block group">
+    <picture><source type="image/webp" srcset="/images/blog/jisty-najem-nejbezpecnejsi-pronajem.webp"><img src="/images/blog/jisty-najem-nejbezpecnejsi-pronajem.jpg" alt="Ruka s klíčem od bytu a smlouvou o jistém nájmu" width="1200" height="600" loading="lazy" class="w-full aspect-[2/1] object-cover rounded-2xl bg-gray-100"></picture>
+    <div class="mt-4 text-sm text-gray-500">Trh a finance · 7 min čtení</div>
+    <h2 class="mt-1 text-xl font-bold leading-snug group-hover:underline">Jistý nájem: Nejbezpečnější cesta pro majitele bytů?</h2>
+    <p class="mt-2 text-gray-600 leading-relaxed">Uvažujete o pronájmu bytu a hledáte jistotu? Jistý nájem může být řešením. Přečtěte si o výhodách a nevýhodách tohoto modelu a zjistěte, zda je pro vás vhodný.</p>
+  </a>
+  <a href="/blog/3-chyby-pri-vyberu-najemnika.html" class="block group">
+    <picture><source type="image/webp" srcset="/images/blog/3-chyby-pri-vyberu-najemnika.webp"><img src="/images/blog/3-chyby-pri-vyberu-najemnika.jpg" alt="Ruce si podávají nad smlouvou o pronájmu" width="1200" height="600" loading="lazy" class="w-full aspect-[2/1] object-cover rounded-2xl bg-gray-100"></picture>
+    <div class="mt-4 text-sm text-gray-500"> · 7 min čtení</div>
+    <h2 class="mt-1 text-xl font-bold leading-snug group-hover:underline">3 zásadní chyby při výběru nájemníka, které vás mohou draho stát</h2>
+    <p class="mt-2 text-gray-600 leading-relaxed">Výběr nájemníka je klíčový pro bezproblémový pronájem. Vyvarujte se těmto třem zásadním chybám a ušetřete si spoustu starostí, času i peněz. Prověřujte, dokumentujte a jednejte s rozvahou.</p>
+  </a>
+  <a href="/blog/tipy-pro-uspesny-pronajem.html" class="block group">
+    <picture><source type="image/webp" srcset="/images/blog/tipy-pro-uspesny-pronajem.webp"><img src="/images/blog/tipy-pro-uspesny-pronajem.jpg" alt="Klíče od bytu a podpis nájemní smlouvy" width="1200" height="600" loading="lazy" class="w-full aspect-[2/1] object-cover rounded-2xl bg-gray-100"></picture>
+    <div class="mt-4 text-sm text-gray-500">Tipy · 8 min čtení</div>
+    <h2 class="mt-1 text-xl font-bold leading-snug group-hover:underline">10 tipů pro úspěšný pronájem nemovitosti</h2>
+    <p class="mt-2 text-gray-600 leading-relaxed">Objevte osvědčené strategie, které vám pomohou najít spolehlivé nájemníky a maximalizovat výnos z vaší nemovitosti.</p>
+  </a>
+  <a href="/blog/pravni-aspekty-najemni-smlouvy.html" class="block group">
+    <picture><source type="image/webp" srcset="/images/blog/pravni-aspekty-najemni-smlouvy.webp"><img src="/images/blog/pravni-aspekty-najemni-smlouvy.jpg" alt="Právní dokumenty a smlouva" width="1200" height="600" loading="lazy" class="w-full aspect-[2/1] object-cover rounded-2xl bg-gray-100"></picture>
+    <div class="mt-4 text-sm text-gray-500">Právo · 12 min čtení</div>
+    <h2 class="mt-1 text-xl font-bold leading-snug group-hover:underline">Právní aspekty nájemní smlouvy, které musíte znát</h2>
+    <p class="mt-2 text-gray-600 leading-relaxed">Kompletní průvodce právními náležitostmi nájemní smlouvy. Vyvarujte se chyb, které mohou stát tisíce korun.</p>
+  </a>
+  <a href="/blog/jak-stanovit-spravedlivou-cenu-najmu.html" class="block group">
+    <picture><source type="image/webp" srcset="/images/blog/jak-stanovit-spravedlivou-cenu-najmu.webp"><img src="/images/blog/jak-stanovit-spravedlivou-cenu-najmu.jpg" alt="Kalkulačka a grafy s cenami nemovitostí" width="1200" height="600" loading="lazy" class="w-full aspect-[2/1] object-cover rounded-2xl bg-gray-100"></picture>
+    <div class="mt-4 text-sm text-gray-500">Trh a finance · 10 min čtení</div>
+    <h2 class="mt-1 text-xl font-bold leading-snug group-hover:underline">Jak stanovit spravedlivou cenu nájmu</h2>
+    <p class="mt-2 text-gray-600 leading-relaxed">Praktický návod na stanovení optimální ceny nájemného. Analýza trhu, faktory ovlivňující cenu a kalkulace nákladů.</p>
+  </a>
+  <a href="/blog/dane-z-pronajmu-kompletni-pruvodce.html" class="block group">
+    <picture><source type="image/webp" srcset="/images/blog/dane-z-pronajmu-kompletni-pruvodce.webp"><img src="/images/blog/dane-z-pronajmu-kompletni-pruvodce.jpg" alt="Daňové formuláře a kalkulačka" width="1200" height="600" loading="lazy" class="w-full aspect-[2/1] object-cover rounded-2xl bg-gray-100"></picture>
+    <div class="mt-4 text-sm text-gray-500">Právo · 15 min čtení</div>
+    <h2 class="mt-1 text-xl font-bold leading-snug group-hover:underline">Daně z pronájmu: Kompletní průvodce pro rok 2024</h2>
+    <p class="mt-2 text-gray-600 leading-relaxed">Vše co potřebujete vědět o zdanění příjmů z pronájmu nemovitosti. Výdaje, které si můžete odečíst a jak ušetřit.</p>
+  </a>
+  <a href="/blog/pojisteni-nemovitosti-pro-pronajmatele.html" class="block group">
+    <picture><source type="image/webp" srcset="/images/blog/pojisteni-nemovitosti-pro-pronajmatele.webp"><img src="/images/blog/pojisteni-nemovitosti-pro-pronajmatele.jpg" alt="Dům pod ochranným deštníkem" width="1200" height="600" loading="lazy" class="w-full aspect-[2/1] object-cover rounded-2xl bg-gray-100"></picture>
+    <div class="mt-4 text-sm text-gray-500">Tipy · 7 min čtení</div>
+    <h2 class="mt-1 text-xl font-bold leading-snug group-hover:underline">Pojištění nemovitosti pro pronajímatele</h2>
+    <p class="mt-2 text-gray-600 leading-relaxed">Jaké pojištění potřebujete jako pronajímatel? Porovnání typů pojištění a tipy pro výběr správné pojistky.</p>
+  </a>
+  <a href="/blog/trendy-najemniho-bydleni-2024.html" class="block group">
+    <picture><source type="image/webp" srcset="/images/blog/trendy-najemniho-bydleni-2024.webp"><img src="/images/blog/trendy-najemniho-bydleni-2024.jpg" alt="Moderní byt s designovým nábytkem" width="1200" height="600" loading="lazy" class="w-full aspect-[2/1] object-cover rounded-2xl bg-gray-100"></picture>
+    <div class="mt-4 text-sm text-gray-500">Trh a finance · 9 min čtení</div>
+    <h2 class="mt-1 text-xl font-bold leading-snug group-hover:underline">Trendy nájemního bydlení v roce 2024</h2>
+    <p class="mt-2 text-gray-600 leading-relaxed">Aktuální trendy na trhu s nájemním bydlením. Co chtějí nájemníci a jak přizpůsobit svou nabídku poptávce.</p>
+  </a>
+  </div>
+</main>
 
-    <!-- Blog Posts -->
-    <section class="py-16" x-data="blogIndex()">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Categories Filter -->
-            <div class="mb-12">
-                <div class="flex flex-wrap gap-4 justify-center">
-                    <button @click="selectedCategory = 'all'" 
-                            :class="selectedCategory === 'all' ? 'bg-[#0D28F2] text-white' : 'bg-white text-gray-700 hover:bg-gray-50'"
-                            class="px-6 py-3 rounded-full font-medium transition-colors border">
-                        Všechny články
-                    </button>
-                    <button @click="selectedCategory = 'tips'" 
-                            :class="selectedCategory === 'tips' ? 'bg-[#0D28F2] text-white' : 'bg-white text-gray-700 hover:bg-gray-50'"
-                            class="px-6 py-3 rounded-full font-medium transition-colors border">
-                        Tipy & Triky
-                    </button>
-                    <button @click="selectedCategory = 'legal'" 
-                            :class="selectedCategory === 'legal' ? 'bg-[#0D28F2] text-white' : 'bg-white text-gray-700 hover:bg-gray-50'"
-                            class="px-6 py-3 rounded-full font-medium transition-colors border">
-                        Právní rady
-                    </button>
-                    <button @click="selectedCategory = 'market'" 
-                            :class="selectedCategory === 'market' ? 'bg-[#0D28F2] text-white' : 'bg-white text-gray-700 hover:bg-gray-50'"
-                            class="px-6 py-3 rounded-full font-medium transition-colors border">
-                        Trh & Finance
-                    </button>
-                </div>
-            </div>
-
-            <!-- Loading State -->
-            <div x-show="loading" class="text-center py-12">
-                <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-[#0D28F2] mx-auto"></div>
-                <p class="mt-4 text-gray-600">Načítám články...</p>
-            </div>
-
-            <!-- Blog Posts Grid -->
-            <div x-show="!loading" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <template x-for="post in filteredPosts" :key="post.id">
-                    <article class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                        <div class="aspect-w-16 aspect-h-9">
-                            <img :src="post.image" :alt="post.imageAlt" class="w-full h-48 object-cover">
-                        </div>
-                        <div class="p-6">
-                            <div class="flex items-center justify-between mb-3">
-                                <span :class="getCategoryClass(post.category)" 
-                                      class="inline-block px-3 py-1 text-xs font-semibold rounded-full">
-                                    <span x-text="post.categoryName"></span>
-                                </span>
-                                <time :datetime="post.date" class="text-sm text-gray-500" x-text="post.dateFormatted"></time>
-                            </div>
-                            <h2 class="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
-                                <a :href="`/blog/detail.html?post=${post.id}`" 
-                                   class="hover:text-[#0D28F2] transition-colors"
-                                   x-text="post.title"></a>
-                            </h2>
-                            <p class="text-gray-600 mb-4 line-clamp-3" x-text="post.excerpt"></p>
-                            <div class="flex items-center justify-between">
-                                <span class="text-sm text-gray-500" x-text="`${post.readTime} min čtení`"></span>
-                                <a :href="`/blog/detail.html?post=${post.id}`" 
-                                   class="text-[#0D28F2] hover:underline font-medium">
-                                    Číst více →
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-                </template>
-            </div>
-
-            <!-- No Posts Message -->
-            <div x-show="!loading && filteredPosts.length === 0" class="text-center py-12">
-                <div class="text-gray-400 mb-4">
-                    <svg class="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                    </svg>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-600 mb-2">Žádné články v této kategorii</h3>
-                <p class="text-gray-500">Zkuste vybrat jinou kategorii nebo se vraťte později.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="py-16 bg-gradient-to-br from-gray-900 to-gray-800">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold text-white mb-6">
-                Potřebujete pomoc s pronájmem?
-            </h2>
-            <p class="text-xl text-gray-300 mb-8">
-                Naše tipy vám pomohou, ale profesionální správa vašeho majetku vám ušetří čas i starosti.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="/index.html#garance-najmu" 
-                   class="inline-block bg-[#0D28F2] text-white font-semibold px-8 py-3 rounded-full hover:bg-blue-700 transition-colors">
-                    Získat garanci nájmu
-                </a>
-                <a href="/index.html#kontakt" 
-                   class="inline-block border-2 border-white text-white font-semibold px-8 py-3 rounded-full hover:bg-white hover:text-gray-900 transition-colors">
-                    Konzultace zdarma
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <div id="footer-container"></div>
-
-    <script src="/js/blog.js"></script>
-    <script>
-        function blogIndex() {
-            return {
-                posts: [],
-                loading: true,
-                selectedCategory: 'all',
-                
-                get filteredPosts() {
-                    if (this.selectedCategory === 'all') {
-                        return this.posts;
-                    }
-                    return this.posts.filter(post => post.category === this.selectedCategory);
-                },
-                
-                getCategoryClass(category) {
-                    const classes = {
-                        'tips': 'bg-blue-100 text-blue-800',
-                        'legal': 'bg-green-100 text-green-800',
-                        'market': 'bg-purple-100 text-purple-800',
-                        'default': 'bg-gray-100 text-gray-800'
-                    };
-                    return classes[category] || classes.default;
-                },
-                
-                async init() {
-                    try {
-                        const response = await fetch('/blog/posts.json');
-                        const data = await response.json();
-                        this.posts = data.posts || [];
-                        this.loading = false;
-                    } catch (error) {
-                        console.error('Chyba při načítání článků:', error);
-                        this.loading = false;
-                    }
-                }
-            }
-        }
-    </script>
+<section class="max-w-3xl mx-auto px-6 pb-16">
+  <div class="rounded-3xl bg-gray-900 text-white p-8 sm:p-10">
+    <h2 class="text-2xl font-extrabold mb-3">Máte s nájemníkem problém právě teď?</h2>
+    <p class="text-white/70 mb-6">Za dvě minuty zjistíte, jaké lhůty vám běží a co udělat jako první. Zdarma a bez závazku.</p>
+    <div class="flex flex-col sm:flex-row gap-3">
+      <a href="/#diagnostika" class="text-center px-6 py-3.5 rounded-full bg-white text-gray-900 font-semibold">Spustit diagnostiku</a>
+      <a href="tel:+420603834921" class="text-center px-6 py-3.5 rounded-full border-2 border-white/30 font-semibold">Zavolat 603 834 921</a>
+    </div>
+  </div>
+</section>
+<footer class="bg-gray-900 text-white py-14">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid sm:grid-cols-3 gap-10 mb-10">
+      <div>
+        <div class="font-extrabold mb-3">Problémový nájemník</div>
+        <p class="text-white/60 leading-relaxed">Vedení případů problémových nájemníků od výzvy po předání klíčů. Právní úkony zajišťuje advokátka Zuzana Schneider Valentová.</p>
+      </div>
+      <div>
+        <div class="font-extrabold mb-3">Kontakt</div>
+        <ul class="space-y-1.5 text-white/60">
+          <li><a href="tel:+420603834921" class="hover:text-white transition-colors">+420 603 834 921</a></li>
+          <li><a href="mailto:info@ptf.cz" class="hover:text-white transition-colors">info@ptf.cz</a></li>
+          <li>Po–Pá 8:00–17:00</li>
+        </ul>
+      </div>
+      <div>
+        <div class="font-extrabold mb-3">Další</div>
+        <ul class="space-y-1.5 text-white/60">
+          <li><a href="/prescoring.html" class="hover:text-white transition-colors">Prescoring nájemníka zdarma</a></li>
+          <li><a href="/budu-pronajimat.html" class="hover:text-white transition-colors">Teprve budu pronajímat</a></li>
+          <li><a href="/blog.html" class="hover:text-white transition-colors">Blog</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-8 border-t border-white/10 flex flex-wrap gap-x-6 gap-y-2 text-[13px] text-white/40">
+      <span>&copy; 2026 PTF reality, s.r.o., IČO 06684394, Dřevěná 99/3, 301 00 Plzeň, zapsaná u Krajského soudu v Plzni, C 35601</span>
+      <a href="/gdpr.html" class="hover:text-white transition-colors">Ochrana osobních údajů</a>
+      <a href="/cookies.html" class="hover:text-white transition-colors">Cookies</a>
+      <a href="#" onclick="window.nastaveniCookies && window.nastaveniCookies(); return false;" class="hover:text-white transition-colors">Nastavení cookies</a>
+      <a href="/obchodni-podminky.html" class="hover:text-white transition-colors">Obchodní podmínky</a>
+    </div>
+  </div>
+</footer>
 </body>
 </html>

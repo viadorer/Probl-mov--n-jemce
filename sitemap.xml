@@ -5,8 +5,8 @@
 
   Nepatří sem: header.html a footer.html (fragmenty načítané fetchem),
   index-puvodni.html (přesměrování na úvod) a
-  detail.html (článek se vybírá query parametrem ?post=, samotná
-  stránka je bez něj prázdná).
+  detail.html a blog/detail.html (přesměrování starých odkazů ?post=
+  na statické články blog/<slug>.html).
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
@@ -33,9 +33,65 @@
 
   <url>
     <loc>https://www.problemovynajemnik.cz/blog.html</loc>
-    <lastmod>2026-09-09</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.problemovynajemnik.cz/blog/jisty-najem-nejbezpecnejsi-pronajem.html</loc>
+    <lastmod>2026-03-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://www.problemovynajemnik.cz/blog/3-chyby-pri-vyberu-najemnika.html</loc>
+    <lastmod>2026-03-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://www.problemovynajemnik.cz/blog/tipy-pro-uspesny-pronajem.html</loc>
+    <lastmod>2024-12-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://www.problemovynajemnik.cz/blog/pravni-aspekty-najemni-smlouvy.html</loc>
+    <lastmod>2024-12-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://www.problemovynajemnik.cz/blog/jak-stanovit-spravedlivou-cenu-najmu.html</loc>
+    <lastmod>2024-12-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://www.problemovynajemnik.cz/blog/dane-z-pronajmu-kompletni-pruvodce.html</loc>
+    <lastmod>2024-12-05</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://www.problemovynajemnik.cz/blog/pojisteni-nemovitosti-pro-pronajmatele.html</loc>
+    <lastmod>2024-11-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://www.problemovynajemnik.cz/blog/trendy-najemniho-bydleni-2024.html</loc>
+    <lastmod>2024-11-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
   </url>
 
   <url>

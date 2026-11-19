@@ -3,7 +3,7 @@
     {
       "date": "2026-03-08",
       "slug": "jisty-najem-nejbezpecnejsi-pronajem",
-      "image": "/images/blog/garantovany-najem-nejbezpecnejsi-pronajem.png",
+      "image": "/images/blog/jisty-najem-nejbezpecnejsi-pronajem.webp",
       "title": "Jistý nájem: Nejbezpečnější cesta pro majitele bytů?",
       "excerpt": "Uvažujete o pronájmu bytu a hledáte jistotu? Jistý nájem může být řešením. Přečtěte si o výhodách a nevýhodách tohoto modelu a zjistěte, zda je pro vás vhodný.",
       "category": "market",
@@ -15,13 +15,14 @@
       "categoryName": "Trh & Finance",
       "dateFormatted": "8. března 2026",
       "seoDescription": "Jistý nájem: Jistota příjmu a správy bytu bez starostí. Jak funguje, pro koho je vhodný a kolik stojí?",
-      "id": "jisty-najem-nejbezpecnejsi-pronajem"
+      "id": "jisty-najem-nejbezpecnejsi-pronajem",
+      "url": "/blog/jisty-najem-nejbezpecnejsi-pronajem.html"
     },
     {
       "id": "3-chyby-pri-vyberu-najemnika",
       "date": "2026-03-07",
       "slug": "3-chyby-pri-vyberu-najemnika",
-      "image": "/images/blog/clanek8.png",
+      "image": "/images/blog/3-chyby-pri-vyberu-najemnika.webp",
       "title": "3 zásadní chyby při výběru nájemníka, které vás mohou draho stát",
       "excerpt": "Výběr nájemníka je klíčový pro bezproblémový pronájem. Vyvarujte se těmto třem zásadním chybám a ušetřete si spoustu starostí, času i peněz. Prověřujte, dokumentujte a jednejte s rozvahou.",
       "category": "guide",
@@ -32,20 +33,8 @@
       "seoTitle": "Výběr nájemníka: 3 chyby, kterým se vyhnout",
       "categoryName": "Průvodce",
       "dateFormatted": "7. března 2026",
-      "seoDescription": "Chcete se vyhnout problémům s nájemníky? Přečtěte si o 3 nejčastějších chybách při výběru a jak se jim vyvarovat. Prevence je klíčová!"
-    },
-    {
-      "id": "past-na-neplatice-a-vandaly-3krokova-proverka",
-      "title": "Past na neplatiče a vandaly: Jak naše 3kroková prověrka chrání vaši nemovitost (a váš klid) už před podpisem smlouvy!",
-      "excerpt": "Objevte naši osvědčenou 3krokovou metodu prověřování nájemníků, která funguje jako neprůstřelný štít proti problémovým nájemníkům. Prevence je milionkrát levnější než řešení následků.",
-      "category": "tips",
-      "categoryName": "Tipy & Triky",
-      "image": "/images/blog/clanek7.png",
-      "imageAlt": "Prověřování dokumentů a podpis smlouvy",
-      "date": "2024-12-24",
-      "dateFormatted": "24. prosince 2024",
-      "readTime": 12,
-      "keywords": "prověřování nájemníků, solventnost, reference, problémový nájemník, prevence"
+      "seoDescription": "Chcete se vyhnout problémům s nájemníky? Přečtěte si o 3 nejčastějších chybách při výběru a jak se jim vyvarovat. Prevence je klíčová!",
+      "url": "/blog/3-chyby-pri-vyberu-najemnika.html"
     },
     {
       "id": "tipy-pro-uspesny-pronajem",
@@ -53,12 +42,14 @@
       "excerpt": "Objevte osvědčené strategie, které vám pomohou najít spolehlivé nájemníky a maximalizovat výnos z vaší nemovitosti.",
       "category": "tips",
       "categoryName": "Tipy & Triky",
-      "image": "/images/blog/clanek1.png",
+      "image": "/images/blog/tipy-pro-uspesny-pronajem.webp",
       "imageAlt": "Klíče od bytu a podpis nájemní smlouvy",
       "date": "2024-12-20",
       "dateFormatted": "20. prosince 2024",
       "readTime": 8,
-      "keywords": "pronájem nemovitosti, nájemníci, tipy, strategie"
+      "keywords": "pronájem nemovitosti, nájemníci, tipy, strategie",
+      "slug": "tipy-pro-uspesny-pronajem",
+      "url": "/blog/tipy-pro-uspesny-pronajem.html"
     },
     {
       "id": "pravni-aspekty-najemni-smlouvy",
@@ -66,12 +57,14 @@
       "excerpt": "Kompletní průvodce právními náležitostmi nájemní smlouvy. Vyvarujte se chyb, které mohou stát tisíce korun.",
       "category": "legal",
       "categoryName": "Právní rady",
-      "image": "/images/blog/clanek2.png",
+      "image": "/images/blog/pravni-aspekty-najemni-smlouvy.webp",
       "imageAlt": "Právní dokumenty a smlouva",
       "date": "2024-12-15",
       "dateFormatted": "15. prosince 2024",
       "readTime": 12,
-      "keywords": "nájemní smlouva, právo, právní aspekty, smlouva"
+      "keywords": "nájemní smlouva, právo, právní aspekty, smlouva",
+      "slug": "pravni-aspekty-najemni-smlouvy",
+      "url": "/blog/pravni-aspekty-najemni-smlouvy.html"
     },
     {
       "id": "jak-stanovit-spravedlivou-cenu-najmu",
@@ -79,12 +72,14 @@
       "excerpt": "Praktický návod na stanovení optimální ceny nájemného. Analýza trhu, faktory ovlivňující cenu a kalkulace nákladů.",
       "category": "market",
       "categoryName": "Trh & Finance",
-      "image": "/images/blog/clanek3.png",
+      "image": "/images/blog/jak-stanovit-spravedlivou-cenu-najmu.webp",
       "imageAlt": "Kalkulačka a grafy s cenami nemovitostí",
       "date": "2024-12-10",
       "dateFormatted": "10. prosince 2024",
       "readTime": 10,
-      "keywords": "cena nájmu, tržní cena, kalkulace, oceňování"
+      "keywords": "cena nájmu, tržní cena, kalkulace, oceňování",
+      "slug": "jak-stanovit-spravedlivou-cenu-najmu",
+      "url": "/blog/jak-stanovit-spravedlivou-cenu-najmu.html"
     },
     {
       "id": "dane-z-pronajmu-kompletni-pruvodce",
@@ -92,12 +87,14 @@
       "excerpt": "Vše co potřebujete vědět o zdanění příjmů z pronájmu nemovitosti. Výdaje, které si můžete odečíst a jak ušetřit.",
       "category": "legal",
       "categoryName": "Právní rady",
-      "image": "/images/blog/clanek4.png",
+      "image": "/images/blog/dane-z-pronajmu-kompletni-pruvodce.webp",
       "imageAlt": "Daňové formuláře a kalkulačka",
       "date": "2024-12-05",
       "dateFormatted": "5. prosince 2024",
       "readTime": 15,
-      "keywords": "daně, pronájem, daňové přiznání, výdaje"
+      "keywords": "daně, pronájem, daňové přiznání, výdaje",
+      "slug": "dane-z-pronajmu-kompletni-pruvodce",
+      "url": "/blog/dane-z-pronajmu-kompletni-pruvodce.html"
     },
     {
       "id": "pojisteni-nemovitosti-pro-pronajmatele",
@@ -105,12 +102,14 @@
       "excerpt": "Jaké pojištění potřebujete jako pronajímatel? Porovnání typů pojištění a tipy pro výběr správné pojistky.",
       "category": "tips",
       "categoryName": "Tipy & Triky",
-      "image": "/images/blog/clanek5.png",
+      "image": "/images/blog/pojisteni-nemovitosti-pro-pronajmatele.webp",
       "imageAlt": "Dům pod ochranným deštníkem",
       "date": "2024-11-28",
       "dateFormatted": "28. listopadu 2024",
       "readTime": 7,
-      "keywords": "pojištění, pronajímatel, ochrana majetku, pojistka"
+      "keywords": "pojištění, pronajímatel, ochrana majetku, pojistka",
+      "slug": "pojisteni-nemovitosti-pro-pronajmatele",
+      "url": "/blog/pojisteni-nemovitosti-pro-pronajmatele.html"
     },
     {
       "id": "trendy-najemniho-bydleni-2024",
@@ -118,12 +117,14 @@
       "excerpt": "Aktuální trendy na trhu s nájemním bydlením. Co chtějí nájemníci a jak přizpůsobit svou nabídku poptávce.",
       "category": "market",
       "categoryName": "Trh & Finance",
-      "image": "/images/blog/clanek6.png",
+      "image": "/images/blog/trendy-najemniho-bydleni-2024.webp",
       "imageAlt": "Moderní byt s designovým nábytkem",
       "date": "2024-11-20",
       "dateFormatted": "20. listopadu 2024",
       "readTime": 9,
-      "keywords": "trendy, nájemní bydlení, trh, poptávka"
+      "keywords": "trendy, nájemní bydlení, trh, poptávka",
+      "slug": "trendy-najemniho-bydleni-2024",
+      "url": "/blog/trendy-najemniho-bydleni-2024.html"
     }
   ]
 }
